@@ -1,0 +1,76 @@
+// Place all the styles related to the statics_views controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	//font-family: 'Open Sans Condensed', sans-serif;
+	//font-family: 'Oswald', sans-serif;
+	font-family: 'Arimo', sans-serif;
+}
+b{font-weight:900;}
+h1{font-size:30px; font-weight:900; }
+
+.heather-grandient{
+	background: rgb(145,242,118); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(145,242,118,1) 0%, rgba(229,52,52,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(145,242,118,1)), color-stop(100%,rgba(229,52,52,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(145,242,118,1) 0%,rgba(229,52,52,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(145,242,118,1) 0%,rgba(229,52,52,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(145,242,118,1) 0%,rgba(229,52,52,1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(145,242,118,1) 0%,rgba(229,52,52,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91f276', endColorstr='#e53434',GradientType=1 ); /* IE6-9 */
+	padding:10px;
+	margin:0;
+	position:absolute;
+	width:110%;
+	margin-left:-15px;
+    margin-top:-15px;
+    color:#fff;
+
+}
+
+.column1{
+	width:47%;
+	position:absolute;
+	height:500px;
+	margin-top:20px;
+	margin-left:5px;
+	padding:5px;
+	text-align:justify;
+
+}
+
+.column2{
+	width:44%;
+	position:absolute;
+	height:500px;
+	margin-top:20px;
+	margin-left:50%;
+    padding:5px;
+    text-align:justify;
+
+
+}
+
+.title_al{
+	position:absolute;
+	margin-top:-10px;
+	float:left;
+	width:30%;
+	z-index:111111111;
+	margin-left:140px;
+	background:#445C7C;
+	padding:17px;
+	color:#fff;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-box-shadow: -8px 4px 18px 0px rgba(37, 50, 50, 0.61);
+	-moz-box-shadow:    -8px 4px 18px 0px rgba(37, 50, 50, 0.61);
+	box-shadow:         -8px 4px 18px 0px rgba(37, 50, 50, 0.61);
+}
+
+
