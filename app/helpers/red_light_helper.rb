@@ -1,0 +1,2 @@
+module RedLightHelper
+end

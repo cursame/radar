@@ -1,0 +1,24 @@
+<%= form_for @user do  |f|%>
+    <%= f.label :nombre %></br>
+    <%= f.text_field 'name'%></br>
+    <%= f.label :email %></br>
+    <%= f.text_field 'email'%></br>
+    <%= f.label :contraseña_mínimo_8_caracteres %></br>
+    <%= f.password_field :password%></br>
+    <%= f.label :confirma_contraseña %></br>
+    <%= f.password_field :password_confirmation %></br>
+    <%= f.label :cargo_que_desempeña %></br>
+    <%= f.text_field 'charge'%></br>
+       <%= f.fields_for :institutions do |builder|%>
+       	  <%= builder.label :nombre_de_la_institución_que_lo_solicita %></br>
+          <%= builder.text_field :name%></br>
+          <%= builder.label :url_de_la_institución %></br>
+          <%= builder.text_field :url%></br>
+          <%= builder.label :teléfono %></br>
+          <%= builder.text_field :phone%></br>
+          <%= builder.label :extención %></br>
+          <%= builder.text_field :extencion%></br>
+       <%end%>
+    <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%><%= f.check_box :terms_of_service%></br>
+    <%= f.submit 'Crear Usuario' %></br>
+<%end%>

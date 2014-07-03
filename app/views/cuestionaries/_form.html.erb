@@ -1,0 +1,18 @@
+<%= form_for @cuestionary do |f|%>
+
+	   <%= content_tag(:p, "Título")%>
+	   <%= f.text_field :title%>
+	   <%= content_tag(:p, "Instrucciones")%>
+	   <%= f.text_area :instructions%></br>
+	   <%= content_tag(:p, "Pregunstas")%>
+
+      
+		<div id="questions_container" class="questions_container">
+	        <%= f.fields_for :questions do |builder|%>
+	        	<%= render  'question_fields', f: builder %>
+	        <%end%>
+	    </div>
+      	<%= link_to_add_fields "Agregar pregunta", f, :questions, '#questions_container' %>
+
+	   <%= f.submit %>
+<%end%>

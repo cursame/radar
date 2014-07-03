@@ -1,0 +1,52 @@
+<h1>Cuestionario de victimización </h1>
+<p>Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado 
+
+con tus compañeros (as ) de la escuela. Recuerda que esta denuncia es totalmente confidencial 
+
+y el objetivo es que si alguna situación está sucediendo en tu escuela la podamos detener y 
+
+solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la 
+
+escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela 
+
+debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera. Estamos contigo y 
+
+te apoyamos hoy y siempre :)
+</p>
+<%= form_for @red_ligth do |f|%>
+	Mail: <%= f.text_field :mail %>
+    Nombre: <%= f.text_field :name %></br>
+    <%= f.hidden_field :institution_code %></br>
+    <%= f.hidden_field :type_denunce, value: 'personal'%>
+    <center>
+    <table width="97%;">
+	    <tr>
+	     <td><b>Preguntas</b></td>
+	     <td width="40px;"><b>Selecciona las que sucedan</b></td>
+	    </tr>
+	    <tr><td>Me han golpeado con la intención de lastimarme en el último mes en la escuela</td><td><%= f.check_box :cuestion_1,value: false%></td></tr>
+	    <tr><td>Me han amenazado con hacerme daño o lastimarme</td><td><%= f.check_box :cuestion_2,value: false %></td></tr>
+	    <tr><td>Han inventado rumores parea hacerme sentir mal a propósito</td> <td><%= f.check_box :cuestion_3,value: false %> </td></tr>
+	    <tr><td>Siento que muy seguido me han dañado o lastimado de alguna manera con la intensión de hacerme sentir mal </td><td><%= f.check_box :cuestion_4,value: false %></td></tr>
+	    <tr><td>Siento que no me puedo defender de esta persona o estas personas</td><td><%= f.check_box :cuestion_5,value: false %></td></tr>
+	    <tr><td>Estoy asustado , triste y me siento indefenso ante lo que me hacen </td><td><%= f.check_box :cuestion_6 ,value: false%></td></tr>
+	    <tr><td>Han dañado mi material, mis útiles etc... con la intención de hacerme sentir mal y afectarme </td><td><%= f.check_box :cuestion_7,value: false %></td></tr>
+	    <tr><td> Me han dicho cosas que me hieren, humillan, lastiman y no sé cómo detenerlo</td><td><%= f.check_box :cuestion_8,value: false %></td></tr>
+	    <tr><td>Siento que no quiero ir a la escuela para evitar sentirme mal a causa de algún compañero (a) </td><td><%= f.check_box :cuestion_9,value: false %></td></tr>
+	    <tr><td>He inventado pretextos para no ir a la escuela para evitar que me molesten </td><td><%= f.check_box :cuestion_10,value: false %></td></tr>
+	    <tr><td>Se han burlado de mi persona, de lo que digo, de lo que pienso y lo han hecho a propósito con la intención de dañarme </td><td><%= f.check_box :cuestion_11,value: false %></td></tr>
+	    <tr><td>Han subido algún video de mi en alguna situación vergonzosa que me hace sentir mal , apenado, avergonzado </td><td><%= f.check_box :cuestion_12,value: false%></td></tr>
+	    <tr><td>Me han amenazado o me han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarme y hacerme sentir mal </td><td><%= f.check_box :cuestion_13,value: false%></td></tr>
+	    <tr><td>No me han dejado participar en alguna actividad, me ignoran, hacen como que no existo para dañarme de alguna manera </td><td><%= f.check_box :cuestion_14,value: false%></td></tr>
+    </table>
+    </center>
+    <div>
+    <p><b>¿Quieres contarnos la historia o existe alguna otra cosa que nos quieres platicar con respecto al tema?</b></p></br>
+    <%= f.text_area :history, cols:80, rows:10%></br>
+    <p><b>¿Quieres Identificar a los agresores?</b></p></br>
+    <%= f.text_area :aggressors, cols:80, rows:10%></br>
+    </div>
+    <%= f.submit "Generar Reporte"%>
+
+    
+<%end%>

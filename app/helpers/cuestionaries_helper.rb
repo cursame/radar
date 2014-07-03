@@ -1,0 +1,2 @@
+module CuestionariesHelper
+end

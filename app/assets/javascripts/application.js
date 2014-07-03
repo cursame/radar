@@ -17,459 +17,40 @@
 //= require highcharts
 //= require highcharts/highcharts-more
 
-		
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
+
+function add_fields(link, association, content, id_recive) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  var execute = $(link).before(content.replace(regexp, new_id));
+  //console.log(execute);
+  event.preventDefault()
+}
+
+$(document).on('change','select',function(e){
+    var id = e.target.id
+    var option = $("#"+id).val();
+    var getNext = $("#"+id).next("div");
+    var getNextId = $(getNext).attr('id');
+    Generate_Question_TYPES_by_Dinamic_USES(option, getNextId );
+
+});
+
+function Generate_Question_TYPES_by_Dinamic_USES(option, getNextId){
+     console.log(option);
+     console.log(getNextId);
+    if (option == 'mULT'){
+        
+    }
+
+
+}
+
 $(function () {
 	
-    $('#velosim1').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        plotBackgroundColor: null,
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false
-	    },
-	    
-	    title: {
-	        text: ''
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150,
-	        background: [{
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#FFF'],
-	                    [1, '#333']
-	                ]
-	            },
-	            borderWidth: 0,
-	            outerRadius: '109%'
-	        }, {
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#333'],
-	                    [1, '#FFF']
-	                ]
-	            },
-	            borderWidth: 1,
-	            outerRadius: '107%'
-	        }, {
-	            // default background
-	        }, {
-	            backgroundColor: '#DDD',
-	            borderWidth: 0,
-	            outerRadius: '105%',
-	            innerRadius: '103%'
-	        }]
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-	        min: 0,
-	        max: 200,
-	        
-	        minorTickInterval: 'auto',
-	        minorTickWidth: 1,
-	        minorTickLength: 10,
-	        minorTickPosition: 'inside',
-	        minorTickColor: '#666',
-	
-	        tickPixelInterval: 30,
-	        tickWidth: 2,
-	        tickPosition: 'inside',
-	        tickLength: 10,
-	        tickColor: '#666',
-	        labels: {
-	            step: 2,
-	            rotation: 'auto'
-	        },
-	        title: {
-	            text: 'Acoso'
-	        },
-	        plotBands: [{
-	            from: 0,
-	            to: 20,
-	            color: '#55BF3B' // green
-	        }, {
-	            from: 20,
-	            to: 30,
-	            color: '#DDDF0D' // yellow
-	        }, {
-	            from: 30,
-	            to: 100,
-	            color: '#DF5353' // red
-	        }]        
-	    },
-	
-	    series: [{
-	        name: 'Acoso',
-	        data: [40.24],
-	        tooltip: {
-	            valueSuffix: '%'
-	        }
-	    }]
-	
-	}, 
-	// Add some life
-	function (chart) {
-		if (!chart.renderer.forExport) {
-		    setInterval(function () {
-		        var point = chart.series[0].points[0],
-		            newVal,
-		            inc = Math.round((Math.random() - 0.5) * 20);
-		        
-		        newVal = point.y + inc;
-		        if (newVal < 0 || newVal > 200) {
-		            newVal = point.y - inc;
-		        }
-		        
-		        point.update(newVal);
-		        
-		    }, 3000);
-		}
-	});
-
-    $('#velosim2').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        plotBackgroundColor: null,
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false
-	    },
-	    
-	    title: {
-	        text: ''
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150,
-	        background: [{
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#FFF'],
-	                    [1, '#333']
-	                ]
-	            },
-	            borderWidth: 0,
-	            outerRadius: '109%'
-	        }, {
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#333'],
-	                    [1, '#FFF']
-	                ]
-	            },
-	            borderWidth: 1,
-	            outerRadius: '107%'
-	        }, {
-	            // default background
-	        }, {
-	            backgroundColor: '#DDD',
-	            borderWidth: 0,
-	            outerRadius: '105%',
-	            innerRadius: '103%'
-	        }]
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-	        min: 0,
-	        max: 200,
-	        
-	        minorTickInterval: 'auto',
-	        minorTickWidth: 1,
-	        minorTickLength: 10,
-	        minorTickPosition: 'inside',
-	        minorTickColor: '#666',
-	
-	        tickPixelInterval: 30,
-	        tickWidth: 2,
-	        tickPosition: 'inside',
-	        tickLength: 10,
-	        tickColor: '#666',
-	        labels: {
-	            step: 2,
-	            rotation: 'auto'
-	        },
-	        title: {
-	            text: 'Amenazas'
-	        },
-	        plotBands: [{
-	            from: 0,
-	            to: 20,
-	            color: '#55BF3B' // green
-	        }, {
-	            from: 20,
-	            to: 30,
-	            color: '#DDDF0D' // yellow
-	        }, {
-	            from: 30,
-	            to: 100,
-	            color: '#DF5353' // red
-	        }]        
-	    },
-	
-	    series: [{
-	        name: 'Amenazas',
-	        data: [25.35],
-	        tooltip: {
-	            valueSuffix: '%'
-	        }
-	    }]
-	
-	}, 
-	// Add some life
-	function (chart) {
-		if (!chart.renderer.forExport) {
-		    setInterval(function () {
-		        var point = chart.series[0].points[0],
-		            newVal,
-		            inc = Math.round((Math.random() - 0.5) * 20);
-		        
-		        newVal = point.y + inc;
-		        if (newVal < 0 || newVal > 200) {
-		            newVal = point.y - inc;
-		        }
-		        
-		        point.update(newVal);
-		        
-		    }, 3000);
-		}
-	});
-   $('#velosim3').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        plotBackgroundColor: null,
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false
-	    },
-	    
-	    title: {
-	        text: ''
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150,
-	        background: [{
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#FFF'],
-	                    [1, '#333']
-	                ]
-	            },
-	            borderWidth: 0,
-	            outerRadius: '109%'
-	        }, {
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#333'],
-	                    [1, '#FFF']
-	                ]
-	            },
-	            borderWidth: 1,
-	            outerRadius: '107%'
-	        }, {
-	            // default background
-	        }, {
-	            backgroundColor: '#DDD',
-	            borderWidth: 0,
-	            outerRadius: '105%',
-	            innerRadius: '103%'
-	        }]
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-	        min: 0,
-	        max: 200,
-	        
-	        minorTickInterval: 'auto',
-	        minorTickWidth: 1,
-	        minorTickLength: 10,
-	        minorTickPosition: 'inside',
-	        minorTickColor: '#666',
-	
-	        tickPixelInterval: 30,
-	        tickWidth: 2,
-	        tickPosition: 'inside',
-	        tickLength: 10,
-	        tickColor: '#666',
-	        labels: {
-	            step: 2,
-	            rotation: 'auto'
-	        },
-	        title: {
-	            text: 'Acoso verval'
-	        },
-	        plotBands: [{
-	            from: 0,
-	            to: 20,
-	            color: '#55BF3B' // green
-	        }, {
-	            from: 20,
-	            to: 30,
-	            color: '#DDDF0D' // yellow
-	        }, {
-	            from: 30,
-	            to: 100,
-	            color: '#DF5353' // red
-	        }]        
-	    },
-	
-	    series: [{
-	        name: 'Acoso verval',
-	        data: [44.47],
-	        tooltip: {
-	            valueSuffix: '%'
-	        }
-	    }]
-	
-	}, 
-	// Add some life
-	function (chart) {
-		if (!chart.renderer.forExport) {
-		    setInterval(function () {
-		        var point = chart.series[0].points[0],
-		            newVal,
-		            inc = Math.round((Math.random() - 0.5) * 20);
-		        
-		        newVal = point.y + inc;
-		        if (newVal < 0 || newVal > 200) {
-		            newVal = point.y - inc;
-		        }
-		        
-		        point.update(newVal);
-		        
-		    }, 3000);
-		}
-	});
-   $('#velosim4').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        plotBackgroundColor: null,
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false
-	    },
-	    
-	    title: {
-	        text: ''
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150,
-	        background: [{
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#FFF'],
-	                    [1, '#333']
-	                ]
-	            },
-	            borderWidth: 0,
-	            outerRadius: '109%'
-	        }, {
-	            backgroundColor: {
-	                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-	                stops: [
-	                    [0, '#333'],
-	                    [1, '#FFF']
-	                ]
-	            },
-	            borderWidth: 1,
-	            outerRadius: '107%'
-	        }, {
-	            // default background
-	        }, {
-	            backgroundColor: '#DDD',
-	            borderWidth: 0,
-	            outerRadius: '105%',
-	            innerRadius: '103%'
-	        }]
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-	        min: 0,
-	        max: 200,
-	        
-	        minorTickInterval: 'auto',
-	        minorTickWidth: 1,
-	        minorTickLength: 10,
-	        minorTickPosition: 'inside',
-	        minorTickColor: '#666',
-	
-	        tickPixelInterval: 30,
-	        tickWidth: 2,
-	        tickPosition: 'inside',
-	        tickLength: 10,
-	        tickColor: '#666',
-	        labels: {
-	            step: 2,
-	            rotation: 'auto'
-	        },
-	        title: {
-	            text: 'Golpeado'
-	        },
-	        plotBands: [{
-	            from: 0,
-	            to: 20,
-	            color: '#55BF3B' // green
-	        }, {
-	            from: 20,
-	            to: 30,
-	            color: '#DDDF0D' // yellow
-	        }, {
-	            from: 30,
-	            to: 100,
-	            color: '#DF5353' // red
-	        }]        
-	    },
-	
-	    series: [{
-	        name: 'Golpeado',
-	        data: [17],
-	        tooltip: {
-	            valueSuffix: '%'
-	        }
-	    }]
-	
-	}, 
-	// Add some life
-	function (chart) {
-		if (!chart.renderer.forExport) {
-		    setInterval(function () {
-		        var point = chart.series[0].points[0],
-		            newVal,
-		            inc = Math.round((Math.random() - 0.5) * 20);
-		        
-		        newVal = point.y + inc;
-		        if (newVal < 0 || newVal > 200) {
-		            newVal = point.y - inc;
-		        }
-		        
-		        point.update(newVal);
-		        
-		    }, 3000);
-		}
-	});
-
     function CalculusRo(){
       var porcentdially = 18000000 * 0.61
 
@@ -489,7 +70,7 @@ $(function () {
             var dicplayned = acumulado;
                 dicplayned = acumulado + minute;
            
-            $('#acumulado').html('Posibles casos de bullying hoy:'+' '+dicplayned.toFixed(2));
+            $('#acumulado').html('Posibles casos de violencia hoy:'+' '+dicplayned.toFixed(2));
 
 
     }, 1000);
@@ -526,7 +107,7 @@ $(function () {
                 }
             },
             title: {
-                text: 'Casos de bullying cada segundo.'
+                text: 'Casos de violencia cada segundo.'
             },
             xAxis: {
                 type: 'datetime',
@@ -574,4 +155,65 @@ $(function () {
             }]
         });
     });
+   $('#radar').highcharts({
+        
+	    chart: {
+	        polar: true
+	    },
+	    
+	    title: {
+	        text: 'Violencia'
+	    },
+	    
+	    pane: {
+	        startAngle: 0,
+	        endAngle: 360
+	    },
+	
+	    xAxis: {
+	        tickInterval: 45,
+	        min: 0,
+	        max: 360,
+	        labels: {
+	        	formatter: function () {
+	        		return this.value + '°';
+	        	}
+	        }
+	    },
+	        
+	    yAxis: {
+	        min: 0
+	    },
+	    
+	    plotOptions: {
+	        series: {
+	            pointStart: 0,
+	            pointInterval: 45
+	        },
+	        column: {
+	            pointPadding: 0,
+	            groupPadding: 0
+	        }
+	    },
+	
+	    series: [{
+	    	type: 'area',
+	        name: 'Acoso Verbal',
+	        data: [44, 47, 50, 63, 65, 68, 70, 85, 70,90],
+	        pointPlacement: 'between'
+	       
+	    },  {
+	        type: 'area',
+	        name: 'Acoso',
+	        data: [40,42,40,50,54,57,60]
+	    },{
+	        type: 'area',
+	        name: 'Amenazas',
+	        data: [20,24,25,25,27,30,35]
+	    },{
+	        type: 'area',
+	        name: 'Golpeado',
+	        data: [17, 18, 12, 17, 30, 16, 24, 25]
+	    }]
+	});
 });

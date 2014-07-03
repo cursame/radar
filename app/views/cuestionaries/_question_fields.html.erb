@@ -1,0 +1,13 @@
+<fieldset>
+ <%= content_tag(:p, "Ingresa tu pregunta")%>
+ <%= f.text_field :title %>
+ <%= link_to_function "remove", "remove_fields(this)" %>
+ <%= f.select :question_type ,[['Multiple', 'mULT'], ['Escalas', 'sCAL'], ['Texto', 'tEXT'], ['Campo', 'cAMP']] %>
+ <div id="puts_answers_<%=rand(5..2000)%>">
+ </div>
+ <div>
+ <%= f.text_area :question_requires, value: "opcción1,opcción2,opcción3", cols: 35, rows: 12%>
+ </div>
+
+
+</fieldset>
