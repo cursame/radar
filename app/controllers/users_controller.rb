@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :session_filter
   def new
       @user = User.new
   end
@@ -30,6 +31,9 @@ class UsersController < ApplicationController
     @ui = @user.institutions.first
     if @user.id == current_user.id
       puts "ususario permitido"
+       if @user.admin_attributes
+         redirect_to 
+       end
     else
       redirect_to user_path(@user)
 
@@ -63,6 +67,12 @@ class UsersController < ApplicationController
 
 private
   #######@@@@@@ encripted password validations @@@@@###########
+
+  def session_filter
+   if session[:user] == nil
+      redirect_to root_path
+   end
+  end
   def password_cript(password, user)
       sha256 = Digest::SHA256.new
       digest = sha256.update password

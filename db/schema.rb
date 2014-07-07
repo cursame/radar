@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707172610) do
+ActiveRecord::Schema.define(version: 20140707190211) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -97,8 +97,9 @@ ActiveRecord::Schema.define(version: 20140707172610) do
     t.datetime "updated_at"
     t.boolean  "terms_of_service"
     t.string   "salt"
-    t.boolean  "confirmation"
+    t.boolean  "confirmation",     default: false
     t.integer  "confirmed_by"
+    t.boolean  "admin_attributes", default: false
   end
 
 end

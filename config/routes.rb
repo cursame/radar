@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+
+
   ############ home ###########
   root 'statics_views#home'
 
@@ -26,7 +28,14 @@ Rails.application.routes.draw do
   get "register", :to => 'users#register', :as => :register
   get "session_create", :to => 'users#session_create', :as => :session_create
   get "login", :to => 'users#login', :as => :login
+  
 
+  ############ admin #########
+  get 'management/applications', :as => :admin
+
+  get 'management/hot_spots', :as => :admin_hot_spots
+
+  get 'management/institutions', :as => :admin_institutions
 
   ############ cuestionaries #########
   get 'questions/create'
