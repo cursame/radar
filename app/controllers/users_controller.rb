@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if @user.id == current_user.id
       puts "ususario permitido"
        if @user.admin_attributes
-         redirect_to 
+         redirect_to admin_path
        end
     else
       redirect_to user_path(@user)
@@ -54,7 +54,13 @@ class UsersController < ApplicationController
 		session[:user] = nil
 		redirect_to root_path
 	end
+  
 
+  def accept_in_radar
+    @user = User.find(params[:id])
+    @user.update_attributes({confirmation: true, confirmed_by: current_user.id})
+    redirect_to :back
+  end
 
 
 

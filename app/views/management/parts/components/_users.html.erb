@@ -1,0 +1,13 @@
+<% users.reverse.each do |u| %>
+   Nombre: <%= u.name%></br>
+   Cargo: <%= u.charge%></br>
+   <% u.institutions.each do |i|%>
+    Institución: <%= i.name %></br>
+    Url: <%= i.url %></br>
+    Teléfono: <%= i.phone %></br>
+    Extención : <%= i.extencion %></br>
+   <%end%>
+   <% if !u.confirmation %>
+   	<%= link_to 'Aceptar al usuario', accept_in_radar_path(u.id)%>
+   <%end%>
+<%end%> 
