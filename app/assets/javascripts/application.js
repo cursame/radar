@@ -30,6 +30,8 @@ function add_fields(link, association, content, id_recive) {
   event.preventDefault()
 }
 
+
+
 $(document).on('change','select',function(e){
     var id = e.target.id
     var option = $("#"+id).val();

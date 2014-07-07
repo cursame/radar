@@ -6,20 +6,40 @@ class UsersController < ApplicationController
   def register
       @user = User.new
       @institution = Institution.new
-
       institutions = @user.institutions.build
-
   end
 
 	def create
 	  @user = User.create(user_params)
+
+    if @user.save
+      digest = Digest::SHA2.hexdigest(@user.password)
+      @user.password = digest
+      @user.salt = rand(235..1234)
+      @user.save
+    end
+
     redirect_to :back
 	end
+
+  def login
+  end
+
+  def show
+    @user = User.find(params[:id])
+
+    if @user.id == current_user.id
+      puts "ususario permitido"
+    else
+      redirect_to user_path(@user)
+
+    end
+  end
 
 	######## session metodods ############
 
 	def session_create
-		@user = Member.find_by_email(params[:email])
+		@user = User.find_by_email(params[:email])
 		password_cript(params[:password], @user)
 	end
 
@@ -27,7 +47,7 @@ class UsersController < ApplicationController
 
 
 	def session_exit
-		session[:member] = nil
+		session[:user] = nil
 		redirect_to root_path
 	end
 
@@ -51,7 +71,7 @@ private
 
       if  backend_validate == true
       	session[:user] = "#{user.id}"
-      	redirect_to member_path(user.id)
+      	redirect_to user_path(user.id)
         else
         	session[:user] = nil
         	redirect_to :back

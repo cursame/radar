@@ -1,0 +1,13 @@
+<div>
+	<div id="tab1" class="tabs" data-target="dresser_attacks">Deunucia Personal</div>
+    <div id="tab2" class="tabs" data-target="dresser_conflicts ">Deunucia como Testigo</div>
+</div>
+<div id="dresser_attacks" class="to_tabs">
+	<%= render partial: '/red_lights/dresser_attacks', locals: { :red_ligth => red_ligth } %>
+</div>
+<div id="dresser_conflicts" style="diaply:none;" class="to_tabs">
+	<%= render partial: '/red_lights/dresser_conflicts', locals: { :red_ligth => red_ligth } %>
+</div>
+<script type="text/javascript">
+
+</script>

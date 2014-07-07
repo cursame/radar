@@ -14,12 +14,14 @@ class RedLightsController < ApplicationController
 
   def dresser_attacks 
   	 @red_ligth = RedLight.new
-
   end
 
   def dresser_conflicts
   	 @red_ligth = RedLight.new
+  end
 
+  def alert_point
+     @red_ligth = RedLight.new
   end
 
   def index

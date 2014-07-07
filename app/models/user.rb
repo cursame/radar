@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
      
      ####### validates ###############
      validates_presence_of :password
-     validates_confirmation_of :password
+     validates_confirmation_of :password, on: :create
      validates_length_of :password, minimum: 8
      validates_inclusion_of :terms_of_service, :in => [true], message: 'must be true'
      validates_presence_of :email
@@ -16,4 +16,26 @@ class User < ActiveRecord::Base
      ######### atributes to nested ###############
 
      accepts_nested_attributes_for :institutions, allow_destroy: true
+
+     ####### codification ##########
+    def encripted_codification
+    Digest::SHA2.hexdigest( self.salt + self.password.to_s + secure_key ) 
+    end
+
+    def secure_key
+       "supercalifragilisticoespriralidoso35903randomicenoesconfortable92051siempre0419dma40910492damasco"
+    end 
+
+    def w_digest(passtd)
+     cript = Digest::SHA2.hexdigest( self.salt + passtd.to_s + secure_key )
+     compare_acces(cript, encripted_codification )
+    end
+
+    def compare_acces(cript, decript)
+        if cript ==  decript
+          true
+          else
+            false
+        end
+    end
 end

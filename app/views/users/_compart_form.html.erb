@@ -1,0 +1,18 @@
+<h1>Foco Rojo</h1>
+
+<div>
+  <textarea style="width:400px; height:200px;">
+  	 <iframe src=""></iframe>
+  </textarea>
+</div>
+
+<script>
+  if ('<%= data.url %>' == document.URL) {
+  	// la url es la correcta
+    console.log('<%= data.url %>');
+  }else {
+  	// la url es incorrecta
+    console.log(document.URL);
+
+  }
+</script>
