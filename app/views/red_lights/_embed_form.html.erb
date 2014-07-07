@@ -3,11 +3,8 @@
     <div id="tab2" class="tabs" data-target="dresser_conflicts ">Deunucia como Testigo</div>
 </div>
 <div id="dresser_attacks" class="to_tabs">
-	<%= render partial: '/red_lights/dresser_attacks', locals: { :red_ligth => red_ligth } %>
+	<%= render partial: '/red_lights/dresser_attacks', locals: { :red_ligth => red_ligth, :institution => institution } %>
 </div>
 <div id="dresser_conflicts" style="diaply:none;" class="to_tabs">
-	<%= render partial: '/red_lights/dresser_conflicts', locals: { :red_ligth => red_ligth } %>
+	<%= render partial: '/red_lights/dresser_conflicts', locals: { :red_ligth => red_ligth, :institution => institution } %>
 </div>
-<script type="text/javascript">
-
-</script>

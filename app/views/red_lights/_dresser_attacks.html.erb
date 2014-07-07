@@ -16,7 +16,7 @@ te apoyamos hoy y siempre :)
 <%= form_for red_ligth do |f|%>
 	Mail: <%= f.text_field :mail %>
     Nombre: <%= f.text_field :name %></br>
-    <%= f.hidden_field :institution_code %></br>
+    <%= f.hidden_field :institution_code, value: institution %></br>
     <%= f.hidden_field :type_denunce, value: 'personal'%>
     <center>
     <table width="97%;">

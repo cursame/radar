@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @ui = @user.institutions.first
     if @user.id == current_user.id
       puts "ususario permitido"
     else

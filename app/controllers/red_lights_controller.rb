@@ -21,7 +21,11 @@ class RedLightsController < ApplicationController
   end
 
   def alert_point
+     @institution = params[:institution]
      @red_ligth = RedLight.new
+     @i = Institution.find_by_tokenspecialforms(params[:institution])
+     @url = @i.url
+
   end
 
   def index
