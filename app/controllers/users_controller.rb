@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :session_filter
+  before_filter :session_filter, :only => [:show]
   def new
       @user = User.new
   end

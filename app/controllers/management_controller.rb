@@ -5,6 +5,7 @@ layout 'admin'
   end
 
   def hot_spots
+  	 @redlight = RedLight.all
   end
 
   def institutions

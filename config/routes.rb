@@ -32,6 +32,10 @@ Rails.application.routes.draw do
   get "accept_in_radar/:id", :to => 'users#accept_in_radar', :as => :accept_in_radar
   
 
+  ############ json ##########
+
+  get "/app/red_lights_js", :to => 'red_lights#red_lights_js', :as => :red_lights_js
+
   ############ admin #########
   get 'management/applications', :as => :admin
 
