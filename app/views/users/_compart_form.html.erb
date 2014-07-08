@@ -2,7 +2,10 @@
 
 <div>
   <textarea style="width:400px; height:200px;" >
-  	 <iframe src="http://localhost:3000/alert_point?institution=<%= data.tokenspecialforms%>" width:500px; height:600px;></iframe>
+  <!--Require jquery-->
+   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--Embed code-->
+  <script type="text/javascript">$.get("http://localhost:3000/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});</script><div id="redalert"></div>
   </textarea>
 </div>
 
