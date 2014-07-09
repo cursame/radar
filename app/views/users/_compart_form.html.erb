@@ -20,9 +20,15 @@
 </div>
 
 <div style="width:60%; float:left;">
-  <% data.red_lights.each do |r| %>
+<% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
+  <% @red_lights.each do |r| %>
     <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
   <%end%>
 </div>
+<div style="width:60%; float:right;">
+
+<%= will_paginate @red_lights %>
+</div>
+
 
 

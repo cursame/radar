@@ -2,8 +2,9 @@
 	<div> El usuario no ha sido confirmado, usted recibirá una llamada de confirmación antes de activar el sistema </div>
 <%end%>
 
-<%@user.institutions.each do |i|%>
+<% @user.institutions.each do |i|%>
   <%= render partial: 'users/compart_form', locals: {data: i}%> 
 <%end%>
+
 
     

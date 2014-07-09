@@ -54,6 +54,14 @@ class RedLightsController < ApplicationController
   	 params.require(:red_light).permit(:red_light,:mail, :name, :institution_code, :type_denunce, :cuestion_1, :cuestion_2, :cuestion_3, :cuestion_4, :cuestion_5, :cuestion_6, :cuestion_7, :cuestion_8, :cuestion_9, :cuestion_10, :cuestion_11, :cuestion_12, :cuestion_13, :cuestion_14, :cuestion_15, :cuestion_16, :cuestion_16, :cuestion_17, :cuestion_18, :cuestion_19, :cuestion_20, :history, :aggressors)
   end
 
+  def paginate
+    @institution = Institution.find_by_tokenspecialforms(params[:institution])
+    @red_ligths = @institution.red_ligths.paginate(:page => params[:page], :per_page => 30)
+    respod_to do |format|
+      format.js
+    end
+  end
+
   def parce_url(url, acces, pathx)
     ######### parce url #########
     remove = ['http', 'https', '/', 'www', ':', '.', "#{pathx}"]

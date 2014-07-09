@@ -85,18 +85,15 @@ class ApplicationController < ActionController::Base
  	  	       acts.push('He escuchado que le dicen cosas que hieren, humillan, lastiman y no sé cómo detenerlo')
  	  	    end
  	  	    if @red_ligth.cuestion_9
- 	          acts.push('Siento que no quiero ir a la escuela para evitar sentirme mal a causa de algún compañero (a) ')
- 	  	    end
- 	  	    if @red_ligth.cuestion_10
  	          acts.push('Se han burlado de esta persona, de lo que dice, de lo que piensa y lo han hecho a propósito con la intención de dañar  ')
  	  	    end
- 	  	    if @red_ligth.cuestion_11
+ 	  	    if @red_ligth.cuestion_10
  	          acts.push('Han subido algún video de mi compañero(a) en alguna situación vergonzosa que lo hace sentir mal , apenad(a), avergonzado(a)  ')
  	  	    end
- 	  	    if @red_ligth.cuestion_12
+ 	  	    if @red_ligth.cuestion_11
  	          acts.push('He sabido que le han amenazado o le han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarlo(a) y hacerlo(a) sentir mal ')
  	  	    end
- 	  	    if @red_ligth.cuestion_13
+ 	  	    if @red_ligth.cuestion_12
  	          acts.push('He visto que no lo han dejado participar en alguna actividad, lo ignoran, hacen como que no existe para dañarlo(a) de alguna manera ')
  	  	    end
    	 end
