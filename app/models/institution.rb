@@ -10,4 +10,8 @@ class Institution < ActiveRecord::Base
 		self.tokenspecialviews = SecureRandom.hex(8)
 		self.save
 	end
+
+	def red_lights
+		@red_lights = RedLight.where(:institution_code => self.tokenspecialforms)
+	end
 end

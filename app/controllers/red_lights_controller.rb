@@ -3,6 +3,8 @@ class RedLightsController < ApplicationController
 
   def create
   	@red_ligth = RedLight.create(red_ligth_params)
+    flash[:notice] = 'Cuestionario agregado correctamente'
+    redirect_to :back
   end
 
   def new
@@ -20,6 +22,7 @@ class RedLightsController < ApplicationController
 
   def dresser_conflicts
   	 @red_ligth = RedLight.new
+
   end
 
   def alert_point

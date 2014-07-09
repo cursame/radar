@@ -1,14 +1,9 @@
 <% if !@user.confirmation %>
 	<div> El usuario no ha sido confirmado, usted recibirá una llamada de confirmación antes de activar el sistema </div>
 <%end%>
-<h1>Visor de mi institución </h1>
+
 <%@user.institutions.each do |i|%>
-  Institución: <%= i.name %></br>
-  Url: <%= i.url %></br>
-  Telefono: <%= i.phone %></br>
-  Extención: <%= i.extencion if !i.extencion.nil?  %></br>
-  <%= render partial: 'users/compart_form', locals: {data: i}%>
-  
+  <%= render partial: 'users/compart_form', locals: {data: i}%> 
 <%end%>
 
     
