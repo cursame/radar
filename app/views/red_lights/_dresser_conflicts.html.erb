@@ -40,10 +40,12 @@ mal de ninguna manera.
     </table>
     </center>
     <div>
-    <p><b>¿Quieres contarnos la historia o existe alguna otra cosa que nos quieres platicar con respecto al tema?</b></p></br>
+    <p><b>¿Existe alguna otra cosa que nos quieres platicar con respecto al tema?</b></p></br>
     <%= f.text_area :history, cols:80, rows:10%></br>
-    <p><b>¿Quieres Identificar a los agresores?</b></p></br>
-    <%= f.text_area :aggressors, cols:80, rows:10%></br>
+    <p><b>¿Quieres decirnos el nombre de los agresores a los agresores?</b> <a id="responce_si_2" class="afirmation" data-target="aggressors_2">Si</a> | <a id="responce_no_2" class="negation" data-target="aggressors_2">No</a></p></br>
+    <div id="aggressors_2" style="display:none;">
+    	<%= f.text_area :aggressors, cols:80, rows:10%></br>
+    </div>
     </div>
     <%= f.submit "Generar Reporte"%>
 
