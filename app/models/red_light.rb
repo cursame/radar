@@ -16,14 +16,14 @@ class RedLight < ActiveRecord::Base
         diference = (acert/total)*100
 
         if (1..20).include?(diference) == true
-        	@v = "Peligrosidad Baja"
+        	@v = "Peligrosidad Moderada"
         end
 
         if (21..49).include?(diference) == true
         	@v = "Peligrosidad Media"
         end
         if (50..100).include?(diference) == true
-        	@v = "Peligrosidad Alta"
+        	@v = "Peligrosidad Grave"
         end
         @v
 	end
