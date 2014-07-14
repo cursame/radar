@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
    helper_method :interptreter_quest
    helper_method :current_user
+   helper_method :index_by_institution_violence
 
    def current_user
     @user = User.find(session[:user])
@@ -116,5 +117,29 @@ class ApplicationController < ActionController::Base
    	      @acts = acts
 
    end
+
+
+   def index_by_institution_violence(institution)
+     refactory = 0
+     institution.red_lights.each do |red|
+        array_detection = []
+        case red.type_denunce
+         when 'personal'
+           array_detection.push(red.cuestion_1, red.cuestion_2, red.cuestion_3, red.cuestion_4, red.cuestion_5, red.cuestion_6,  red.cuestion_7,  red.cuestion_8, red.cuestion_9, red.cuestion_10, red.cuestion_11, red.cuestion_12, red.cuestion_13, red.cuestion_14, red.cuestion_15, red.cuestion_16, red.cuestion_17, red.cuestion_18, red.cuestion_19) 
+         when 'non personal'
+           array_detection.push(red.cuestion_1, red.cuestion_2, red.cuestion_3, red.cuestion_4, red.cuestion_5, red.cuestion_6,  red.cuestion_7,  red.cuestion_8, red.cuestion_9, red.cuestion_10, red.cuestion_11, red.cuestion_12)
+        end   
+        array_detection
+        counts = Hash.new(0)
+        array_detection.each { |name| counts[name] += 1 }
+        acert = counts[true].to_f
+        total = (array_detection.count).to_f
+        diference = (acert/total)*100
+        refactory = refactory + diference
+     end
+      @refact = refactory / institution.red_lights.count
+   end
+
+
   
 end

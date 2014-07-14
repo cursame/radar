@@ -19,10 +19,10 @@ class RedLight < ActiveRecord::Base
         	@v = "Peligrosidad Baja"
         end
 
-        if (21..59).include?(diference) == true
+        if (21..49).include?(diference) == true
         	@v = "Peligrosidad Media"
         end
-        if (60..100).include?(diference) == true
+        if (50..100).include?(diference) == true
         	@v = "Peligrosidad Alta"
         end
         @v
