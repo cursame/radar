@@ -80,7 +80,7 @@ class ApplicationController < ActionController::Base
  	          acts.push('He visto como golpean a algún compañero(a) con la intención de lastimarlo y esto sucede muy a menudo ')
  	  	    end
  	  	 	if @red_ligth.cuestion_2
- 	          acts.push('Siento que muy seguido dañan o lastiman físicamente a esta persona con la intensión  de hacerlo sentir mal y mi compañero(a) no se defiende ')
+ 	          acts.push('Siento que muy seguido dañan o lastiman físicamente a esta persona con la intención  de hacerlo sentir mal y mi compañero(a) no se defiende ')
  	  	    end
  	  	 	if @red_ligth.cuestion_3
  	          acts.push('Sé que mi compañero(a)  ha sido amenazado con que le van a hacer daño o lastimar')
