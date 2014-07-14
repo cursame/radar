@@ -1,11 +1,9 @@
 <h1>Cuestionario respondido nº <%= red_ligth.id %></h1>
 Indice: <%= red_ligth.operator %></br>
-<% if red_ligth.type_denunce == 'personal' %>
 	Tipos de violencia detectados:
 		<% red_ligth.types_of_violence.each do |types_of_violence|%>
 		  <%= types_of_violence %>
 		<%end%>
-<%end%>
 <center>
 	<div style="text-align:justify; width:95%;">
 		<b>Casos</b></br></br>

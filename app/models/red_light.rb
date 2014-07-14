@@ -61,6 +61,24 @@ class RedLight < ActiveRecord::Base
 	      	validates_violence_types.push('Daño a pertenencias')
 	      end
 	   when 'non personal'
+	   	 if self.cuestion_1 == true && self.cuestion_2 == true
+	      	validates_violence_types.push('Físico')
+	      end
+	      if self.cuestion_3 == true && self.cuestion_4 == true
+	      	validates_violence_types.push('Amenaza')
+	      end
+	      if self.cuestion_5 == true && self.cuestion_6 == true
+	      	validates_violence_types.push('Exclusión')
+	      end
+	      if self.cuestion_8 == true && self.cuestion_9 == true
+	      	validates_violence_types.push('Indefensión / Malestar escolar')
+	      end
+	      if self.cuestion_10 == true && self.cuestion_11 == true
+	      	validates_violence_types.push('Violencia verbal / Burla ')
+	      end
+	      if self.cuestion_12 == true && self.cuestion_13 == true
+	      	validates_violence_types.push('Cyber Bullying')
+	      end
 	  end
       validates_violence_types
 	end
