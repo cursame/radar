@@ -121,6 +121,7 @@ class ApplicationController < ActionController::Base
 
    def index_by_institution_violence(institution)
      refactory = 0
+     if institution.red_lights != 0
      institution.red_lights.each do |red|
         array_detection = []
         case red.type_denunce
@@ -138,6 +139,9 @@ class ApplicationController < ActionController::Base
         refactory = refactory + diference
      end
       @refact = refactory / institution.red_lights.count
+     else
+      @refact = 0
+     end
    end
 
 
