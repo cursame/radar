@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       @user.password = digest
       @user.salt = rand(235..1234)
       @user.save
+      @mailer = InstitutionManagment.create_notification(@user).deliver
     end
 
     redirect_to :back
