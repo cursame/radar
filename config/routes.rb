@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   ############ home ###########
   root 'statics_views#home'
+  ############ statics ###########
+  get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
+  get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
+  get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
+  get 'contacto', :to => 'statics_views#contacto', :as => :contacto
 
   ############ foco rojo ############
 
