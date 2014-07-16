@@ -39,3 +39,5 @@ gem 'will_paginate', '~> 3.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'meta_request', group: :development
+gem 'bourbon'
