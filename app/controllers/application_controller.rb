@@ -18,98 +18,98 @@ class ApplicationController < ActionController::Base
      acts = []
    	 case type_f
  	  	 when 'personal'            
- 	  	 	if @red_ligth.cuestion_1
+ 	  	 	if @red_ligth.question_1
  	          acts.push('Me  han golpeado con la intención de lastimarme en el último mes en la escuela')
  	  	    end
- 	  	 	if @red_ligth.cuestion_2
+ 	  	 	if @red_ligth.question_2
  	          acts.push('Me han dañado  o lastimado el cuerpo de alguna manera ')
  	  	    end
- 	  	 	if @red_ligth.cuestion_3
+ 	  	 	if @red_ligth.question_3
  	          acts.push('Me han amenazado con hacerme algo que me puede dañar')
  	  	    end
- 	  	 	if @red_ligth.cuestion_4
+ 	  	 	if @red_ligth.question_4
  	          acts.push('Me han amenazado con hacerme daño o lastimarme si digo algo de lo que me hacen ')
  	  	    end
- 	  	 	if @red_ligth.cuestion_5
+ 	  	 	if @red_ligth.question_5
  	          acts.push('Han inventado rumores para hacerme sentir mal a propósito y para que los demás no me hablen')
  	  	    end
- 	  	    if @red_ligth.cuestion_6
+ 	  	    if @red_ligth.question_6
  	          acts.push('No me han dejado participar en alguna actividad para hacerme sentir mal')
  	  	    end
- 	  	    if @red_ligth.cuestion_7
+ 	  	    if @red_ligth.question_7
  	          acts.push('Me ignoran, hacen como que no existo para dañarme de alguna manera ')
  	  	    end
- 	  	    if @red_ligth.cuestion_8
+ 	  	    if @red_ligth.question_8
  	  	       acts.push('Siento que no me puedo defender de esta persona o estas personas ')
  	  	    end
- 	  	    if @red_ligth.cuestion_9
+ 	  	    if @red_ligth.question_9
  	          acts.push('Estoy asustado , triste y me siento indefenso ante lo que me hacen ')
  	  	    end
- 	  	    if @red_ligth.cuestion_10
+ 	  	    if @red_ligth.question_10
  	          acts.push('Siento que no quiero ir a la escuela para evitar sentirme mal a causa de algún compañero (a)')
  	  	    end
- 	  	    if @red_ligth.cuestion_11
+ 	  	    if @red_ligth.question_11
  	          acts.push('He inventado pretextos para no ir a la escuela para evitar que me molesten ')
  	  	    end
- 	  	    if @red_ligth.cuestion_12
+ 	  	    if @red_ligth.question_12
  	          acts.push('Me han dicho cosas que me hieren, humillan, lastiman y no sé cómo detenerlo ')
  	  	    end
- 	  	    if @red_ligth.cuestion_13
+ 	  	    if @red_ligth.question_13
  	          acts.push('Me dicen un apodo o groserías que me lastiman ')
  	  	    end
- 	  	    if @red_ligth.cuestion_14
+ 	  	    if @red_ligth.question_14
  	          acts.push('Se han burlado de mi persona, o de mis gustos, o de mi forma de vestir y lo han hecho a propósito con la intención de dañarme ')
  	  	    end
-          if @red_ligth.cuestion_15
+          if @red_ligth.question_15
            acts.push('Se ríen cuando hablo o participo en clase con la intención de que me sienta mal')
           end
-          if @red_ligth.cuestion_16
+          if @red_ligth.question_16
            acts.push('Me han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarme y hacerme sentir mal ')
           end
-          if @red_ligth.cuestion_17
+          if @red_ligth.question_17
            acts.push('Han subido algún video de mi en alguna situación vergonzosa que me hace sentir mal , apenado, avergonzado')
           end
-          if @red_ligth.cuestion_18
+          if @red_ligth.question_18
            acts.push('Me han escondido material de clase, cuadernos, mochila para molestarme')
           end
-          if @red_ligth.cuestion_19
+          if @red_ligth.question_19
            acts.push('Han dañado mi material,  mis útiles etc... con la intención de hacerme sentir mal y afectarme ')
           end
  	  	 when 'non personal'
- 	  	 	if @red_ligth.cuestion_1
+ 	  	 	if @red_ligth.question_1
  	          acts.push('He visto como golpean a algún compañero(a) con la intención de lastimarlo y esto sucede muy a menudo ')
  	  	    end
- 	  	 	if @red_ligth.cuestion_2
+ 	  	 	if @red_ligth.question_2
  	          acts.push('Siento que muy seguido dañan o lastiman físicamente a esta persona con la intención  de hacerlo sentir mal y mi compañero(a) no se defiende ')
  	  	    end
- 	  	 	if @red_ligth.cuestion_3
+ 	  	 	if @red_ligth.question_3
  	          acts.push('Sé que mi compañero(a)  ha sido amenazado con que le van a hacer daño o lastimar')
  	  	    end
- 	  	 	if @red_ligth.cuestion_4
+ 	  	 	if @red_ligth.question_4
  	          acts.push('He visto que lo han amenazado si dice a alguien lo que le hacen ')
  	  	    end
- 	  	 	if @red_ligth.cuestion_5
+ 	  	 	if @red_ligth.question_5
  	          acts.push('Han inventado rumores para hacerlo(a) sentir mal a propósito para que los demás lo rechacemos o no le hablemos ')
  	  	    end
- 	  	    if @red_ligth.cuestion_6
+ 	  	    if @red_ligth.question_6
  	          acts.push('He visto que no lo han dejado participar en alguna actividad, lo ignoran, hacen como que no existe para dañarlo(a)  de alguna manera ')
  	  	    end
- 	  	    if @red_ligth.cuestion_7
+ 	  	    if @red_ligth.question_7
  	          acts.push('Siento que no puedo defender a mi compañero(a) de estas personas por que me da miedo que después me lo hagan a mi')
  	  	    end
- 	  	    if @red_ligth.cuestion_8
+ 	  	    if @red_ligth.question_8
  	  	       acts.push('Estoy asustado , triste y enojado ante lo que veo que le hacen a mi compañero (a) y siento que no hay nada que podamos hacer')
  	  	    end
- 	  	    if @red_ligth.cuestion_9
+ 	  	    if @red_ligth.question_9
  	          acts.push('He escuchado que le dicen  cosas que  hieren, humillan, lastiman')
  	  	    end
- 	  	    if @red_ligth.cuestion_10
+ 	  	    if @red_ligth.question_10
  	          acts.push(' Se han burlado de esta persona, de lo que dice, de lo que piensa y lo han hecho a propósito con la intención de dañar')
  	  	    end
- 	  	    if @red_ligth.cuestion_11
+ 	  	    if @red_ligth.question_11
  	          acts.push('Han subido algún video de mi compañero(a)  en alguna situación vergonzosa que lo hace sentir mal , apenado(a), avergonzado(a)')
  	  	    end
- 	  	    if @red_ligth.cuestion_12
+ 	  	    if @red_ligth.question_12
  	          acts.push('He sabido que le han amenazado o le han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarlo(a) y hacerlo(a) sentir mal ')
  	  	    end
    	 end
@@ -126,9 +126,9 @@ class ApplicationController < ActionController::Base
         array_detection = []
         case red.type_denunce
          when 'personal'
-           array_detection.push(red.cuestion_1, red.cuestion_2, red.cuestion_3, red.cuestion_4, red.cuestion_5, red.cuestion_6,  red.cuestion_7,  red.cuestion_8, red.cuestion_9, red.cuestion_10, red.cuestion_11, red.cuestion_12, red.cuestion_13, red.cuestion_14, red.cuestion_15, red.cuestion_16, red.cuestion_17, red.cuestion_18, red.cuestion_19) 
+           array_detection.push(red.question_1, red.question_2, red.question_3, red.question_4, red.question_5, red.question_6,  red.question_7,  red.question_8, red.question_9, red.question_10, red.question_11, red.question_12, red.question_13, red.question_14, red.question_15, red.question_16, red.question_17, red.question_18, red.question_19) 
          when 'non personal'
-           array_detection.push(red.cuestion_1, red.cuestion_2, red.cuestion_3, red.cuestion_4, red.cuestion_5, red.cuestion_6,  red.cuestion_7,  red.cuestion_8, red.cuestion_9, red.cuestion_10, red.cuestion_11, red.cuestion_12)
+           array_detection.push(red.question_1, red.question_2, red.question_3, red.question_4, red.question_5, red.question_6,  red.question_7,  red.question_8, red.question_9, red.question_10, red.question_11, red.question_12)
         end   
         array_detection
         counts = Hash.new(0)

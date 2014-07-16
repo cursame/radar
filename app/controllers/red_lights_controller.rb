@@ -51,7 +51,7 @@ class RedLightsController < ApplicationController
   end
 
   def red_ligth_params
-  	 params.require(:red_light).permit(:red_light,:mail, :name, :institution_code, :type_denunce, :cuestion_1, :cuestion_2, :cuestion_3, :cuestion_4, :cuestion_5, :cuestion_6, :cuestion_7, :cuestion_8, :cuestion_9, :cuestion_10, :cuestion_11, :cuestion_12, :cuestion_13, :cuestion_14, :cuestion_15, :cuestion_16, :cuestion_16, :cuestion_17, :cuestion_18, :cuestion_19, :cuestion_20, :history, :aggressors)
+  	 params.require(:red_light).permit(:red_light,:mail, :name, :institution_code, :type_denunce, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :question_7, :question_8, :question_9, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_16, :question_17, :question_18, :question_19, :question_20, :history, :aggressors)
   end
 
   def paginate

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707190211) do
+ActiveRecord::Schema.define(version: 20140716201448) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -62,30 +62,30 @@ ActiveRecord::Schema.define(version: 20140707190211) do
     t.string   "name"
     t.string   "institution_code"
     t.string   "type_denunce"
-    t.boolean  "cuestion_1"
-    t.boolean  "cuestion_2"
-    t.boolean  "cuestion_3"
-    t.boolean  "cuestion_4"
-    t.boolean  "cuestion_5"
-    t.boolean  "cuestion_6"
-    t.boolean  "cuestion_7"
-    t.boolean  "cuestion_8"
-    t.boolean  "cuestion_9"
-    t.boolean  "cuestion_10"
-    t.boolean  "cuestion_11"
-    t.boolean  "cuestion_12"
-    t.boolean  "cuestion_13"
-    t.boolean  "cuestion_14"
-    t.boolean  "cuestion_15"
-    t.boolean  "cuestion_16"
-    t.boolean  "cuestion_17"
-    t.boolean  "cuestion_18"
-    t.boolean  "cuestion_19"
-    t.boolean  "cuestion_20"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "history"
     t.text     "aggressors"
+    t.boolean  "question_1",       default: false
+    t.boolean  "question_2",       default: false
+    t.boolean  "question_3",       default: false
+    t.boolean  "question_4",       default: false
+    t.boolean  "question_5",       default: false
+    t.boolean  "question_6",       default: false
+    t.boolean  "question_7",       default: false
+    t.boolean  "question_8",       default: false
+    t.boolean  "question_9",       default: false
+    t.boolean  "question_10",      default: false
+    t.boolean  "question_11",      default: false
+    t.boolean  "question_12",      default: false
+    t.boolean  "question_13",      default: false
+    t.boolean  "question_14",      default: false
+    t.boolean  "question_15",      default: false
+    t.boolean  "question_16",      default: false
+    t.boolean  "question_17",      default: false
+    t.boolean  "question_18",      default: false
+    t.boolean  "question_19",      default: false
+    t.boolean  "question_20",      default: false
   end
 
   create_table "users", force: true do |t|
