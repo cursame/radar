@@ -7,7 +7,7 @@ class InstitutionManagment < ActionMailer::Base
    end
 
    def red_alert(owner)
-   	 @user = user
+   	 @user = owner
    	 mail(to: @user.email, subject: 'Tienes una nueva alerta en tu muro')
    end
 

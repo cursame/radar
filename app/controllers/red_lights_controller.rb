@@ -3,7 +3,13 @@ class RedLightsController < ApplicationController
 
   def create
   	@red_ligth = RedLight.create(red_ligth_params)
-    flash[:notice] = 'Cuestionario agregado correctamente'
+    if @red_ligth.save
+      flash[:notice] = 'Cuestionario agregado correctamente'
+      @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
+      @mailer = InstitutionManagment.red_alert(@institution.user).deliver
+       else
+      flash[:notice] = "Por alguna razón no hemos podido agregar el cuestionario."
+    end
     redirect_to :back
   end
 
