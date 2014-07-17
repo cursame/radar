@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
         if cript ==  decript
           true
           else
-            false
+           false
         end
     end
 end

@@ -4,9 +4,9 @@ class RedLight < ActiveRecord::Base
 		array_detection = []
 		case self.type_denunce
 		 when 'personal'
-		 	 array_detection.push(self.cuestion_1, self.cuestion_2, self.cuestion_3, self.cuestion_4, self.cuestion_5, self.cuestion_6,  self.cuestion_7,  self.cuestion_8, self.cuestion_9, self.cuestion_10, self.cuestion_11, self.cuestion_12, self.cuestion_13, self.cuestion_14, self.cuestion_15, self.cuestion_16, self.cuestion_17, self.cuestion_18, self.cuestion_19) 
+		 	 array_detection.push(self.question_1, self.question_2, self.question_3, self.question_4, self.question_5, self.question_6,  self.question_7,  self.question_8, self.question_9, self.question_10, self.question_11, self.question_12, self.question_13, self.question_14, self.question_15, self.question_16, self.question_17, self.question_18, self.question_19) 
 		 when 'non personal'
-		 	 array_detection.push(self.cuestion_1, self.cuestion_2, self.cuestion_3, self.cuestion_4, self.cuestion_5, self.cuestion_6,  self.cuestion_7,  self.cuestion_8, self.cuestion_9, self.cuestion_10, self.cuestion_11, self.cuestion_12)
+		 	 array_detection.push(self.question_1, self.question_2, self.question_3, self.question_4, self.question_5, self.question_6,  self.question_7,  self.question_8, self.question_9, self.question_10, self.question_11, self.question_12)
 		end 	
 		array_detection
 		counts = Hash.new(0)
@@ -33,50 +33,50 @@ class RedLight < ActiveRecord::Base
       validates_violence_types = []
      case self.type_denunce
       when 'personal'
-	      if self.cuestion_1 == true && self.cuestion_2 == true
+	      if self.question_1 == true && self.question_2 == true
 	      	validates_violence_types.push('Físico')
 	      end
-	      if self.cuestion_3 == true && self.cuestion_4 == true
+	      if self.question_3 == true && self.question_4 == true
 	      	validates_violence_types.push('Amenaza')
 	      end
-	      if (self.cuestion_5 == true && self.cuestion_6 == true) || (self.cuestion_6 == true && self.cuestion_7 == true) || (self.cuestion_5 == true && self.cuestion_7 == true)
+	      if (self.question_5 == true && self.question_6 == true) || (self.question_6 == true && self.question_7 == true) || (self.question_5 == true && self.question_7 == true)
 	      	validates_violence_types.push('Exclusión')
 	      end
-	      if self.cuestion_8 == true && self.cuestion_9 == true
+	      if self.question_8 == true && self.question_9 == true
 	      	validates_violence_types.push('Indefensión')
 	      end
-	      if self.cuestion_10 == true && self.cuestion_11 == true
+	      if self.question_10 == true && self.question_11 == true
 	      	validates_violence_types.push('Malestar escolar')
 	      end
-	      if self.cuestion_12 == true && self.cuestion_13 == true
+	      if self.question_12 == true && self.question_13 == true
 	      	validates_violence_types.push('Violencia verbal')
 	      end
-	      if self.cuestion_14 == true && self.cuestion_15 == true
+	      if self.question_14 == true && self.question_15 == true
 	      	validates_violence_types.push('Burla')
 	      end
-	      if self.cuestion_16 == true && self.cuestion_17 == true
+	      if self.question_16 == true && self.question_17 == true
 	      	validates_violence_types.push('Cyber bullying')
 	      end
-	      if self.cuestion_18 == true && self.cuestion_19 == true
+	      if self.question_18 == true && self.question_19 == true
 	      	validates_violence_types.push('Daño a pertenencias')
 	      end
 	   when 'non personal'
-	   	 if self.cuestion_1 == true && self.cuestion_2 == true
+	   	 if self.question_1 == true && self.question_2 == true
 	      	validates_violence_types.push('Físico')
 	      end
-	      if self.cuestion_3 == true && self.cuestion_4 == true
+	      if self.question_3 == true && self.question_4 == true
 	      	validates_violence_types.push('Amenaza')
 	      end
-	      if self.cuestion_5 == true && self.cuestion_6 == true
+	      if self.question_5 == true && self.question_6 == true
 	      	validates_violence_types.push('Exclusión')
 	      end
-	      if self.cuestion_8 == true && self.cuestion_9 == true
+	      if self.question_8 == true && self.question_9 == true
 	      	validates_violence_types.push('Indefensión / Malestar escolar')
 	      end
-	      if self.cuestion_10 == true && self.cuestion_11 == true
+	      if self.question_10 == true && self.question_11 == true
 	      	validates_violence_types.push('Violencia verbal / Burla ')
 	      end
-	      if self.cuestion_12 == true && self.cuestion_13 == true
+	      if self.question_12 == true && self.question_13 == true
 	      	validates_violence_types.push('Cyber Bullying')
 	      end
 	  end

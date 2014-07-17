@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :session_filter, :only => [:show]
+  before_filter :confirmation, :only => [:show]
   def new
       @user = User.new
   end
@@ -45,7 +46,12 @@ class UsersController < ApplicationController
 
 	def session_create
 		@user = User.find_by_email(params[:email])
+    if @user != nil
 		password_cript(params[:password], @user)
+       else
+        flash[:notice] = 'Usuario no existente pruebe de nuevo'
+        redirect_to :back
+    end
 	end
 
    ######## session destroy ##########
@@ -80,6 +86,20 @@ private
       redirect_to root_path
    end
   end
+  
+  def confirmation
+    @user = User.find(session[:user])
+     if @user.confirmation 
+         flash[:notice] = 'Bienbenido a radar' 
+       else
+         flash[:notice] = 'No has sido confirmado como miembro espera la llamada de alguno denuestro ejecutivos' 
+         session[:user] = nil
+         redirect_to root_path
+     end
+  end
+
+protected
+  ############## protected methods ###################
   def password_cript(password, user)
       sha256 = Digest::SHA256.new
       digest = sha256.update password
