@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
     @user = User.find(session[:user])
    end
 
+   def action_host
+   end
+
 
    ############# intepreta los cuestionarios de foco rojo #############
    def interptreter_quest(type_f, id)
