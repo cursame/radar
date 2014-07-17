@@ -5,12 +5,19 @@ class ApplicationController < ActionController::Base
    helper_method :interptreter_quest
    helper_method :current_user
    helper_method :index_by_institution_violence
+   helper_method :action_host
 
    def current_user
     @user = User.find(session[:user])
    end
 
    def action_host
+    case Rails.env
+       when 'production'
+         'http://radarescolar.com'
+       when 'development'
+         'http://localhost:3000'
+    end
    end
 
 
