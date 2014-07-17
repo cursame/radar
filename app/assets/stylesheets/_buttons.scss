@@ -1,0 +1,13 @@
+.btn {
+  font-family: $font-radar;
+  border-radius: 3px;
+  height: 15px;
+  padding: 10px;
+  line-height: 15px;
+}
+
+.btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,.2);
+}

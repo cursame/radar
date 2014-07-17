@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-
-
   ############ home ###########
   root 'statics_views#home'
   ############ statics ###########
@@ -36,7 +34,6 @@ Rails.application.routes.draw do
   get "login", :to => 'users#login', :as => :login
   get "accept_in_radar/:id", :to => 'users#accept_in_radar', :as => :accept_in_radar
   
-
   ############ json ##########
 
   get "/app/red_lights_js", :to => 'red_lights#red_lights_js', :as => :red_lights_js

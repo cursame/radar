@@ -1,0 +1,182 @@
+* {
+	-webkit-font-smoothing: antialiased;
+}
+
+body{
+	position:absolute;
+	width:100%;
+	height:100%;
+	margin:auto;
+	text-align:center;
+	border-collapse:collapse;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+
+p{
+	font-size: 15px;
+	line-height: 22px;
+}
+
+h1,h2,h3,h4,h5{
+	font-family: $font-radar;
+}
+
+h1{
+	font-size: 58px;
+	line-height: 64px;
+	margin-bottom: 30px;
+	padding-top: 80px;
+	text-shadow: 1px 2px #204E62;
+	color: white;
+}
+
+h2{
+	font-size: 35px;
+}
+
+h3{
+	font-size: 24px;
+}
+
+h5{
+	font-size: 23px;
+	line-height: 32px;
+}
+
+h6{
+	font-family: sans-serif;
+	color: white;
+	font-size: 23px;
+	line-height: 32px;
+	font-weight: lighter;
+	text-shadow: 1px 2px #204E62;
+}
+
+.header{
+	height: 70px;
+	width: 100%;
+	margin: auto;
+	background-color: #f7f7f7;
+	
+
+	ul.menu li {
+		height: 70px;
+		float:left;
+		list-style-type: none;
+		padding-top: 5px;
+		font-family: $font-radar;
+
+		&.space{
+			height: 48px;
+			padding-top: 25px;
+			padding-left: 40px; 
+		}
+
+		a.nav-top{
+			font-size: 13px;
+			color: #076da9;
+		}
+	}
+	.singin-button{
+		float: right;
+		padding-top: 25px;
+	}
+}
+
+.block{
+	opacity: 0.9;
+	height: 220px;
+	width: 100%;
+	display: block;
+	text-align: justify;
+	margin: 80px 0 80px 0;
+	border-radius: 3px;
+	color: $white;
+	position: relative;
+
+	.block-content {
+		padding: 30px;
+	}
+
+	.img-block{
+		float: right;
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+	}
+
+	.btn {
+		position: absolute;
+		bottom: 30px;
+	}
+
+	.nav-btn{
+		color:#FFFFFF;
+		font-size: 14px;
+	}
+}
+
+.bg-orange{
+	background-color: #f36506;
+}
+
+.bg-green{
+	background-color: #63a30f;
+}
+
+
+.footer{
+	height:80px;
+	width: 100%;
+	position: relative;
+	padding-top: 20px;
+	background-color: #f8f8f8;
+	@include clearfix;
+	float: left;
+
+	.footer-menu{
+		float: left;
+		text-align: left;
+	}
+
+	.footermenu {
+
+		li {
+			height: 40px;
+			float:left;
+			list-style-type: none;
+			padding-top: 10px;
+
+			.space{
+				padding-top: 12px;
+				padding-right: 25px; 
+			}
+		}
+	
+		a.nav-bottom{
+			color: #076DA9;
+			font-size: 13px;
+			padding-right: 30px;
+		}
+	}
+
+	.powered-by {
+		font-size: 13px;
+		float: right;	
+	}
+}
+
+.intro{
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	&.home-intro{
+		background-image: url(bg_home.png);
+	}
+}
+
