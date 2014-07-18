@@ -10,7 +10,7 @@ body{
 	text-align:center;
 	border-collapse:collapse;
 	font-family: sans-serif;
-	font-weight: lighter;
+	font-weight: regular;
 }
 
 p{
@@ -32,7 +32,10 @@ h1{
 }
 
 h2{
-	font-size: 35px;
+	font-size: 44px;
+	padding: 80px 0 10px 0;
+	text-shadow: 1px 2px #c66321;
+	color: white;
 }
 
 h3{
@@ -117,15 +120,6 @@ h6{
 	}
 }
 
-.bg-orange{
-	background-color: #f36506;
-}
-
-.bg-green{
-	background-color: #63a30f;
-}
-
-
 .footer{
 	height:80px;
 	width: 100%;
@@ -178,5 +172,45 @@ h6{
 	&.home-intro{
 		background-image: url(bg_home.png);
 	}
+	&.denuncia-intro{
+		background-image: url(headaer_denuncia.png);
+	}
 }
+
+.titlebox{
+	text-align: justify;
+	color: white;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	p{
+		@include text-size-large;
+	}
+}
+
+.right{
+	float: right;
+	padding-top: 60px;
+}
+
+.info{
+	float: left;
+	text-align: justify;
+	padding: 130px 0 0 0px;
+}
+
+.bg-orange{
+	background-color: #f36506;
+}
+
+.bg-green{
+	background-color: #63a30f;
+}
+.bg-blue{
+	background-color: #000;
+}
+
 
