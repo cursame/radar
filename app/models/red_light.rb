@@ -1,5 +1,10 @@
 class RedLight < ActiveRecord::Base
 
+	def help_institution
+		@i = Institution.where(:tokenspecialforms => self.institution_code)
+		@i
+	end
+
 	def operator
 		array_detection = []
 		case self.type_denunce
