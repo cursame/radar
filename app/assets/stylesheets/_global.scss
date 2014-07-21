@@ -16,6 +16,7 @@ body{
 p{
 	font-size: 15px;
 	line-height: 22px;
+	color: #4a4a4a;
 }
 
 h1,h2,h3,h4,h5{
@@ -81,7 +82,22 @@ h6{
 	.singin-button{
 		float: right;
 		padding-top: 25px;
+		a.login{
+		font-size: 13px;
+		color: #076da9;
+		}
 	}
+}
+
+.bg-orange{
+	background-color: #f36506;
+}
+
+.bg-green{
+	background-color: #63a30f;
+}
+.bg-blue{
+	background-color: #21386a;
 }
 
 .block{
@@ -92,7 +108,6 @@ h6{
 	text-align: justify;
 	margin: 80px 0 80px 0;
 	border-radius: 3px;
-	color: $white;
 	position: relative;
 
 	.block-content {
@@ -154,7 +169,7 @@ h6{
 
 	.powered-by {
 		font-size: 13px;
-		float: right;	
+		float: right;
 	}
 }
 
@@ -165,6 +180,7 @@ h6{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: white;
 	
 	&.home-intro {
 		background-image: url(bg_home.png);
@@ -174,8 +190,16 @@ h6{
 		background-image: url(headaer_denuncia.png);
 	}
 
-	&.intro-autodiagnostico {
-		
+	&.intro-diagnostico {
+		background-image: url(headaer_diagnostico.png);
+	}
+
+	&.intro-us {
+		background-image: url(headaer_us.png);
+	}
+
+	&.bg_foco1{
+		background-image: url(bg_foco1.png);
 	}
 }
 
@@ -190,7 +214,7 @@ h6{
 	background-size: cover;
 
 	h2, p {
-		text-shadow: 1px 2px #c66321;
+		text-shadow: 1px 2px #545454;
 		color: white;
 	}
 
@@ -214,15 +238,9 @@ h6{
 	padding: 130px 0 0 0px;
 }
 
-.bg-orange{
-	background-color: #f36506;
-}
-
-.bg-green{
-	background-color: #63a30f;
-}
-.bg-blue{
-	background-color: #000;
-}
+.center-content {
+	text-align: center;
+		padding: 60px 0;
+	}
 
 
