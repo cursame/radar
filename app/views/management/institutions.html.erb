@@ -1,2 +1,11 @@
-<h1>Management#institutions</h1>
-<p>Find me in app/views/management/institutions.html.erb</p>
+<h1>Instituciones</h1>
+<p> Instituciones que tenemos actualmente </p>
+<% @institution.each do |i| %> 
+	<%=i.name %></br>
+    <%=i.url %></br>
+    <%=i.phone %></br>
+    <%=i.extencion %></br>
+    <%=i.user.name if i.user %></br>
+    <%=i.user.email if i.user %></br>
+<%end%>
+<%= will_paginate @institution %>

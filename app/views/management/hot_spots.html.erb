@@ -1,2 +1,7 @@
-<h1>Management#hot_spots</h1>
-<p>Find me in app/views/management/hot_spots.html.erb</p>
+<h1>Alertas</h1>
+<% @redlight.each do |r| %>
+      <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
+      En: <%=  r.help_institution[0].name %>
+
+<%end%>
+<%= will_paginate @redlight %>
