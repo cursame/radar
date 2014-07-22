@@ -33,9 +33,6 @@ class UsersController < ApplicationController
     @ui = @user.institutions.first
     if @user.id == current_user.id
       puts "ususario permitido"
-       if @user.admin_attributes
-         redirect_to admin_path
-       end
     else
       redirect_to user_path(@user)
 

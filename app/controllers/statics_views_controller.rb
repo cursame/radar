@@ -1,4 +1,5 @@
 class StaticsViewsController < ApplicationController
+  before_filter :session_act
   def home
   end
 
@@ -15,5 +16,11 @@ class StaticsViewsController < ApplicationController
   end
 
   def nosotros
+  end
+private
+  def session_act
+    if session[:user] != nil
+       redirect_to user_path(current_user.id)
+    end
   end
 end
