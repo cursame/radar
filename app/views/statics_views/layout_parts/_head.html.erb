@@ -1,32 +1,32 @@
-  <div class="header">
-		<div class="wrapper">
-			<div class="cols-12">
-        <div class="col col-12">
-          <div class="col-inner">
-            <% if session[:user] == nil %>
-             <ul class="menu">
-               <li><%= link_to image_tag('radar.png'), root_path %></li>
-               <li class="space">
-                 <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %></li>
-               <li class="space">
-                 <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %></li>
-               <li class="space">
-                 <%= link_to "Contacto", contacto_path, class: "nav-top" %>
-               </li>
-             </ul>
-             <div class="singin-button">
-               <%= link_to "Iniciar sesión →", login_path, class: "login" %>
-             </div>
-            <%else%>
-             <ul class="menu">
-               <li><%= link_to image_tag('radar.png'), root_path %></li>
-             </ul>
-             <div class="singin-button">
-               <%= link_to "Salir →", session_exit_path, class: "login" %>
-             </div>
-           <%end%>
-          </div>
+<div class="header">
+	<div class="wrapper">
+		<div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <% if session[:user] == nil %>
+           <ul class="menu">
+             <li><%= link_to image_tag('radar.png'), root_path %></li>
+             <li class="space">
+               <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %></li>
+             <li class="space">
+               <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %></li>
+             <li class="space">
+               <%= link_to "Contacto", contacto_path, class: "nav-top" %>
+             </li>
+           </ul>
+           <div class="singin-button">
+             <%= link_to "Iniciar sesión →", login_path, class: "login" %>
+           </div>
+          <%else%>
+           <ul class="menu">
+             <li><%= link_to image_tag('radar.png'), root_path %></li>
+           </ul>
+           <div class="singin-button">
+             <%= link_to "Salir →", session_exit_path, class: "login" %>
+           </div>
+         <%end%>
         </div>
       </div>
-		</div>
+    </div>
 	</div>
+</div>
