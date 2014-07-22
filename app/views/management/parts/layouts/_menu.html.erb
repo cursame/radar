@@ -1,4 +1,21 @@
-<%= link_to 'solicitudes', admin_path%>
-<%= link_to 'usuarios', admin_users_path%>
-<%= link_to 'focos rojos', admin_hot_spots_path%>
-<%= link_to 'instituciones', admin_institutions_path%>
+    <div class="header">
+		  <div class="wrapper">
+			  <div class="cols-12">
+          <div class="col col-12">
+              <div class="col-inner">
+		            <ul class="menu">
+			            <li><%= link_to image_tag('radar.png'), admin_path %></li>
+									<li class="space"><%= link_to 'solicitudes', admin_path%></li>
+									<li class="space"><%= link_to 'usuarios', admin_users_path%></li>
+									<li class="space"><%= link_to 'focos rojos', admin_hot_spots_path%></li>
+									<li class="space"><%= link_to 'instituciones', admin_institutions_path%></li>
+									<li class="space"><%= link_to 'Regresar Al usuario', user_path(current_user.id)%></li>
+						  	</ul>
+						  	<div class="singin-button">
+                  <%= link_to "Salir →", session_exit_path, class: "login" %>
+                </div>
+				      </div>
+			    </div>
+			  </div>
+		  </div>
+	  </div>
