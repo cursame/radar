@@ -243,4 +243,26 @@ h6{
 		padding: 60px 0;
 	}
 
+.section-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
 
+
+.bullying-detection {
+	padding: 100px 0px;
+
+	.participants {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	img {
+		margin-bottom: 20px;
+	}
+
+	p {
+		color: $white;
+		@include text-size-medium;
+	}
+}
