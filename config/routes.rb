@@ -47,6 +47,9 @@ Rails.application.routes.draw do
 
   get 'management/users', :as => :admin_users
 
+  get 'management/analitics', :as => :admin_analitics
+
+
 
   ############ cuestionaries #########
   get 'questions/create'
