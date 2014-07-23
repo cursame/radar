@@ -1,10 +1,8 @@
-<h1>Ingresa</h1>
+<h2>Ingresa</h2>
 <%= form_tag('/users/session_create') do -%>
-  
   <%= label_tag 'email' %>
-  <%= email_field_tag 'email' %>
+  <%= email_field_tag 'email', '' , placeholder: 'Email' %>
   <%= label_tag 'password' %>
-  <%= password_field_tag 'password' %>
-  
-  <div><%= submit_tag 'Iniciar', :class => 'button' %></div>
+  <%= password_field_tag 'password', '' , placeholder: 'Contraseña'  %>
+  <div><%= submit_tag 'Iniciar', :class => 'btn-outline' %></div>
 <% end -%>
