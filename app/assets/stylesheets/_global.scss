@@ -37,7 +37,12 @@ h2{
 }
 
 h3{
-	font-size: 24px;
+	font-size: 32px;
+}
+
+h4{
+	font-size: 20px;
+	line-height: 22px;
 }
 
 h5{
@@ -59,33 +64,15 @@ h6{
 	width: 100%;
 	margin: auto;
 	background-color: #f7f7f7;
-	
+}
 
-	ul.menu li {
-		height: 70px;
-		float:left;
-		list-style-type: none;
-		padding-top: 5px;
-		font-family: $font-radar;
-
-		&.space{
-			height: 48px;
-			padding-top: 25px;
-			padding-left: 40px; 
-		}
-
-		a.nav-top{
-			font-size: 13px;
-			color: #076da9;
-		}
-	}
-	.singin-button{
-		float: right;
-		padding-top: 25px;
-		a.login{
-		font-size: 13px;
-		color: #076da9;
-		}
+.singin-button{
+  float: right;
+  padding-top: 25px;
+  
+  a.login{
+  font-size: 13px;
+  color: #076da9;
 	}
 }
 
@@ -98,6 +85,12 @@ h6{
 }
 .bg-blue{
 	background-color: #21386a;
+}
+.bg-redgradient{
+	@include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
+}
+.bg-greengradient{
+	@include linear-gradient(75deg, #4f8805 0%, #6cb012 100%);
 }
 
 .block{
@@ -129,6 +122,9 @@ h6{
 	.nav-btn{
 		color:#FFFFFF;
 		font-size: 14px;
+	}
+	& p{
+		color: white;
 	}
 }
 
@@ -201,6 +197,10 @@ h6{
 	&.bg_foco1{
 		background-image: url(bg_foco1.png);
 	}
+
+	&.bg_diagnostico{
+		background-image: url(bg_diagnostico.png);
+	}
 }
 
 .titlebox{
@@ -227,32 +227,21 @@ h6{
 	}
 }
 
-.right{
-	float: right;
-	padding-top: 60px;
-}
-
 .info{
 	float: left;
-	text-align: justify;
-	padding: 130px 0 0 0px;
-}
+	text-align: left;
+	padding-top: 6em;
+	padding-bottom: 30px;
 
-.center-content {
-	text-align: center;
-		padding: 60px 0;
+	& h3{
+		margin-bottom: 25px;
 	}
-
-.section-title {
-	text-align: center;
-	margin-bottom: 20px;
 }
 
+.bullying-detection{
+	padding: 100px 0px 50px 0;
 
-.bullying-detection {
-	padding: 100px 0px;
-
-	.participants {
+	.section-title  {
 		text-align: center;
 		margin-top: 30px;
 	}
@@ -264,5 +253,54 @@ h6{
 	p {
 		color: $white;
 		@include text-size-medium;
+		margin-bottom: 30px;
+	}
+	span{
+		color: #b5e018;
+	}
+}
+
+.tipos-bullying{
+	text-align: center;
+	padding-top: 80px;
+
+		.section-title  {
+		text-align: center;
+		padding: 30px 0;
+	}
+
+	img{
+		margin: 70px 0;
+	}
+}
+
+.funcion{
+	text-align: center;
+	padding: 80px 0;
+
+
+	.section-title  {
+	text-align: center;
+	padding-bottom: 30px;
+	}
+
+	& p{
+		margin-bottom: 20px;
+	}
+}
+
+.call{
+	text-align: center;
+	padding: 80px 0 100px 0;
+
+			.section-title  {
+		text-align: center;
+		padding: 20px 0;
+	}
+
+		p {
+		color: $white;
+		@include text-size-medium;
+		margin-bottom: 50px;
 	}
 }
