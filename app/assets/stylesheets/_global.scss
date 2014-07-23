@@ -37,7 +37,12 @@ h2{
 }
 
 h3{
-	font-size: 24px;
+	font-size: 32px;
+}
+
+h4{
+	font-size: 20px;
+	line-height: 22px;
 }
 
 h5{
@@ -83,6 +88,9 @@ h6{
 }
 .bg-redgradient{
 	@include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
+}
+.bg-greengradient{
+	@include linear-gradient(75deg, #4f8805 0%, #6cb012 100%);
 }
 
 .block{
@@ -189,6 +197,10 @@ h6{
 	&.bg_foco1{
 		background-image: url(bg_foco1.png);
 	}
+
+	&.bg_diagnostico{
+		background-image: url(bg_diagnostico.png);
+	}
 }
 
 .titlebox{
@@ -220,6 +232,10 @@ h6{
 	text-align: left;
 	padding-top: 6em;
 	padding-bottom: 30px;
+
+	& h3{
+		margin-bottom: 25px;
+	}
 }
 
 .bullying-detection{
@@ -258,6 +274,21 @@ h6{
 	}
 }
 
+.funcion{
+	text-align: center;
+	padding: 80px 0;
+
+
+	.section-title  {
+	text-align: center;
+	padding-bottom: 30px;
+	}
+
+	& p{
+		margin-bottom: 20px;
+	}
+}
+
 .call{
 	text-align: center;
 	padding: 80px 0 100px 0;
@@ -272,5 +303,4 @@ h6{
 		@include text-size-medium;
 		margin-bottom: 50px;
 	}
-
 }
