@@ -92,6 +92,9 @@ h6{
 .bg-greengradient{
 	@include linear-gradient(75deg, #4f8805 0%, #6cb012 100%);
 }
+.bg-bluegradient{
+	@include linear-gradient(135deg, #1B4251 0%, #296D7F 100%);
+}
 
 .block{
 	opacity: 0.9;
@@ -194,12 +197,20 @@ h6{
 		background-image: url(headaer_us.png);
 	}
 
+	&.intro-contact {
+	background-image: url(header_contact.png);
+	}
+
 	&.bg_foco1{
 		background-image: url(bg_foco1.png);
 	}
 
 	&.bg_diagnostico{
 		background-image: url(bg_diagnostico.png);
+	}
+
+	&.bg_login{
+	background-image: url(bg_login.png);
 	}
 }
 
@@ -278,7 +289,6 @@ h6{
 	text-align: center;
 	padding: 80px 0;
 
-
 	.section-title  {
 	text-align: center;
 	padding-bottom: 30px;
@@ -303,4 +313,27 @@ h6{
 		@include text-size-medium;
 		margin-bottom: 50px;
 	}
+}
+
+.us-info{
+	text-align: justify;
+	padding: 80px 0 100px 0;
+					
+	.section-title  {
+	padding: 20px 0;
+	}
+
+	p {
+	color: $white;
+	@include text-size-medium;
+	margin-bottom: 50px;}
+}
+
+.loginbox{
+	margin: 11em auto;
+	padding: 20ps 25px;
+	background: white;
+	width: 22em;
+	height: auto;
+	color: #a4a4a4;
 }
