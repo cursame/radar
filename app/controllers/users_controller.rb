@@ -73,8 +73,6 @@ class UsersController < ApplicationController
     	 params.require(:user).permit(:name, :email, :charge, :password, :password_confirmation, :terms_of_service, institutions_attributes: [:name, :url, :phone, :extencion])
   end
 
-
-
 private
   #######@@@@@@ encripted password validations @@@@@###########
 
