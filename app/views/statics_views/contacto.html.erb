@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="titlebox intro intro-contact bg-blue">
   <div class="wrapper">
     <div class="cols-12">
@@ -13,38 +13,31 @@
     </div>
   </div>
 </div>
-
-
 <div class="contact-form">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-
-
-
-
+          <%= form_tag('/statics_views/mail_to_contact') do -%>
+          <%= label_tag 'email *' %></br>
+          <%= email_field_tag 'email *', '' , placeholder: 'Email' %></br>
+          <%= label_tag 'Nombre' %></br>
+          <%= text_field_tag 'nombre *', '' , placeholder: 'Nombre' %></br>
+          <%= label_tag 'Institución  *' %></br>
+          <%= text_field_tag 'institucion *', '' , placeholder: 'Institución' %></br>
+          <%= label_tag 'Cargo *' %></br>
+          <%= text_field_tag 'cargo  *', '' , placeholder: 'Cargo que desempeñas' %></br>
+          <%= label_tag 'Teléfono *' %></br>
+          <%= number_field_tag 'phone', '' , placeholder: 'Número Telefónico' %></br>
+          <%= label_tag 'Extención' %></br>
+          <%= number_field_tag 'extencion', '' , placeholder: 'Extención' %></br>
+          <%= label_tag 'Tema *' %></br>
+          <%= text_area_tag 'tema', '' , placeholder: 'Coloque aqui la descripcción detallada de su asunto' %></br>
+          <div>
+            <%= submit_tag 'Contactar', :class => 'btn' %>
+          </div>
+          <% end -%>
       </div>
     </div>
   </div>
 </div>
-=======
-<h2>Contacto</h2>
-<%= form_tag('/statics_views/mail_to_contact') do -%>
-  <%= label_tag 'email *' %></br>
-  <%= email_field_tag 'email *', '' , placeholder: 'Email' %></br>
-  <%= label_tag 'Nombre' %></br>
-  <%= text_field_tag 'nombre *', '' , placeholder: 'Nombre' %></br>
-  <%= label_tag 'Institución  *' %></br>
-  <%= text_field_tag 'institucion *', '' , placeholder: 'Institución' %></br>
-  <%= label_tag 'Cargo *' %></br>
-  <%= text_field_tag 'cargo  *', '' , placeholder: 'Cargo que desempeñas' %></br>
-  <%= label_tag 'Teléfono *' %></br>
-  <%= number_field_tag 'phone', '' , placeholder: 'Número Telefónico' %></br>
-  <%= label_tag 'Extención' %></br>
-  <%= number_field_tag 'extencion', '' , placeholder: 'Extención' %></br>
-  <%= label_tag 'Tema *' %></br>
-  <%= text_area_tag 'tema', '' , placeholder: 'Coloque aqui la descripcción detallada de su asunto' %></br>
-  <div><%= submit_tag 'Contactar', :class => 'btn' %></div>
-<% end -%>
->>>>>>> 9674b2fbad8a4cec583baf6e48c4acaae515e45b
