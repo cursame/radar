@@ -116,8 +116,10 @@
             <h3>¿Quieres monitorear tu institución?</h3>
           </div>
           <p>Registrate y te notificaremos cuando auto diagnostico este listo.</p>
-          <input type="text"class="inputs" placeholder="tu@correo.com" /> 
-          <%= link_to 'Enviar', register_path, class: "btn btn-call" %>
+          <%= form_tag('/statics_views/subscriber') do -%>
+            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', :class => 'inputs'%>
+            <%= submit_tag 'Enviar', :class => "btn btn-call" %>
+          <%end%>
         </div>
       </div>
     </div>
