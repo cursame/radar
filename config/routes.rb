@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
   get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
   get 'contacto', :to => 'statics_views#contacto', :as => :contacto
+  ########### mail de contacto #########
+  get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
+  post '/statics_views/mail_to_contact'
 
   ############ foco rojo ############
 

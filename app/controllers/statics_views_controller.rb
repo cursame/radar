@@ -17,6 +17,12 @@ class StaticsViewsController < ApplicationController
 
   def nosotros
   end
+
+  def mail_to_contact
+    respond_to do |format|
+      format.html
+    end
+  end
 private
   def session_act
     if session[:user] != nil
