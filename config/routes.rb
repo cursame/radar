@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   ########### mail de contacto #########
   get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
   post '/statics_views/mail_to_contact'
+  ########## mail de suscript ########
+  get 'subscriber', :to => 'statics_views#subscriber', :as => :subscriber
+  post '/statics_views/subscriber'
 
   ############ foco rojo ############
 
