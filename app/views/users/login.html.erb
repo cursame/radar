@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+<div class="intro bg_login">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="loginbox">
+            <h3>Ingresa</h3>
+
+            <%= form_tag('/users/session_create') do -%>
+              <%= label_tag 'email' %>
+              <%= email_field_tag 'email', '' , placeholder: 'tu@correo.com' %>
+              <br/>
+              <%= label_tag 'password' %>
+              <%= password_field_tag 'password', '' , placeholder: 'Contraseña'  %>
+              <div>
+                <%= submit_tag 'Iniciar', :class => 'btn-outline' %>
+              </div>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+=======
 <h2>Ingresa</h2>
 <%= form_tag('/users/session_create') do -%>
   <%= label_tag 'email' %>
@@ -6,3 +32,4 @@
   <%= password_field_tag 'password', '' , placeholder: 'Contraseña'  %>
   <div><%= submit_tag 'Iniciar', :class => 'btn' %></div>
 <% end -%>
+>>>>>>> 9674b2fbad8a4cec583baf6e48c4acaae515e45b
