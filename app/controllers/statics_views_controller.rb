@@ -19,6 +19,11 @@ class StaticsViewsController < ApplicationController
   end
 
   def mail_to_contact
+    @person = "Email: #{params[:email]}, Nombre: #{params[:nombre]}, Institución #{params[:institucion]}, Cargo #{params[:cargo]}, Teléfono: #{params[:phone]}, Extención: #{params[:extencion]}"
+    @message = "Tema: #{params[:tema]}"
+
+    @message_sending = InstitutionManagment.contact(@message, @person).deliver
+    
     respond_to do |format|
       format.html
     end
