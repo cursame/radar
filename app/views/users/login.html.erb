@@ -4,21 +4,31 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="loginbox">
-            <h3>Ingresa</h3>
-
-            <%= form_tag('/users/session_create') do -%>
-              <%= label_tag 'email' %>
+            <div class="titlesign">
+                <h5> Iniciar sesión</h5>
+            </div>
+            <div class="content">
+              <%= form_tag('/users/session_create') do -%>
+              <%= label_tag 'Usuario' %>
               <%= email_field_tag 'email', '' , placeholder: 'tu@correo.com' %>
               <br/>
               <%= label_tag 'password' %>
               <%= password_field_tag 'password', '' , placeholder: 'Contraseña'  %>
               <div>
-                <%= submit_tag 'Iniciar', :class => 'btn-outline' %>
+                <span class="btn btn-input btn-outline "><%= submit_tag 'Iniciar' %></span>
               </div>
-            <% end -%>
+              <% end -%>
+            </div>
+            <div class="bottomsign">
+              <span class="a-sign"> <%= link_to "¿Olvidaste tu contraseña?"%>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
