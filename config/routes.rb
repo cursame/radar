@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   get 'api/documentation_methods'
+  get 'api/acces_to_red_lights'
+  get 'api/register_by_api'
 
   ############ home ###########
   root 'statics_views#home'
