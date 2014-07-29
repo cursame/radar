@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'api/documentation_methods'
+
   ############ home ###########
   root 'statics_views#home'
   ############ statics ###########
