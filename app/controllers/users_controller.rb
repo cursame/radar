@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :session_filter, :only => [:show]
+  before_filter :session_filter, :only => [:show, :configurate]
   before_filter :confirmation, :only => [:show]
   def new
       @user = User.new
@@ -65,7 +65,10 @@ class UsersController < ApplicationController
     @user.update_attributes({confirmation: true, confirmed_by: current_user.id})
     redirect_to :back
   end
-
+  
+  def configurate
+    @user = current_user
+  end
 
 
 	############ define user params #############
