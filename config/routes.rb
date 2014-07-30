@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     collection do
       post 'session_create'
       post 'accept_in_radar'
+      post 'deliver_resset_pass_instructions'
+      post 'change_password'
     end
   end
 
@@ -44,6 +46,9 @@ Rails.application.routes.draw do
   get "login", :to => 'users#login', :as => :login
   get "accept_in_radar/:id", :to => 'users#accept_in_radar', :as => :accept_in_radar
   get "sign_out", :to => 'users#session_exit', :as => :session_exit
+  get "mail_to_reconfirm_password", :to => 'users#mail_to_reconfirm_password', :as => :mail_to_reconfirm_password
+  get "view_change_pass", :to => 'users#view_change_pass', :as => :view_change_pass
+ 
   ############ json ##########
 
   get "/app/red_lights_js", :to => 'red_lights#red_lights_js', :as => :red_lights_js

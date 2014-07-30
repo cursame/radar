@@ -1,0 +1,27 @@
+<div class="intro bg_login">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="loginbox">
+            <div class="titlesign">
+                <h5>Cambio contraseña <%=@user.name%></h5>
+            </div>
+            <div class="content">
+        			<%= form_tag('/users/change_password') do -%>
+        			  <%= password_field_tag 'password', '' , placeholder: 'Coloca tu nueva contraseña' %>
+                <%= password_field_tag 'password_confirmation', '' , placeholder: 'Confirma tu nueva contraseña' %>
+        			 <div>
+        			  <span class="btn btn-input btn-outline "><%= submit_tag 'Cambiar mi contraseña' %></span>
+        		   </div>
+        			<%end%>
+      			</div>
+            <div class="bottomsign">
+             <p><b>Instrucciones:</b> Indique y confirme su nueva contraseña</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -72,6 +72,65 @@ class UsersController < ApplicationController
 	def user_params
     	 params.require(:user).permit(:name, :email, :charge, :password, :password_confirmation, :terms_of_service, institutions_attributes: [:name, :url, :phone, :extencion])
   end
+  ########### methods to reconfirm password ########
+
+    #### vista de acceso para cambio de contrasena ####
+    def mail_to_reconfirm_password
+    end
+    #### metodo de cambio email #####
+    def deliver_resset_pass_instructions
+      @user = User.find_by_email(params[:email])
+      if @user != nil
+        if @user.confirmation == true
+         @link = "#{action_host}/view_change_pass?id=#{@user.id}&&token=#{@user.salt}"
+         @email = InstitutionManagment.reset_password(@user, @link).deliver
+         flash[:notice] = 'Se han mandado las instrucciones a tu email'
+         redirect_to root_path
+        else
+         flash[:notice] = 'Aún no has sido confirmado ponte en contacto con nosotros para que te confirmemos'
+         redirect_to root_path
+        end
+       else
+         flash[:notice] = 'Tu usuario no existe puede que te equivocaras de email vuelve a intentarlo'
+         redirect_to :back
+      end
+    end
+
+    #### vista para cambio de password ####
+    def view_change_pass
+      session[:user] = nil
+      @user = User.find_by_id_and_salt(params[:id], params[:token])
+      if @user != nil
+      session[:user_to_change_password] = @user.id
+      else
+        flash[:notice] = 'El link del usuario al que esta intentando ingresar no existe'
+        redirect_to root_path
+      end
+    end
+    ##### meto para cambiar contrasena #####
+    def change_password
+      @user = User.find(session[:user_to_change_password]) 
+      if params[:password] == params[:password_confirmation] && params[:password] != nil
+        passw = digest(params[:password]).to_s
+        @user.password = passw
+        @user.salt = rand(235..1234)
+        @user.save
+        if @user.save
+          @email = InstitutionManagment.notificate_password_change(@user).deliver
+          flash[:notice] = 'Contraseña cambiada correctamente'
+          session[:user] = @user.id 
+          session[:user_to_change_password] = nil
+          redirect_to root_path
+        else
+          flash[:notice] = 'Por alguna razón el cambio de contraseña no se pudo realizar intentelo mas tarde'
+          redirect_to root_path
+        end
+      else
+        flash[:notice] = 'Las contraseñas no coinciden vuelva a intentarolo'
+        redirect_to :back
+      end
+
+    end
 
 private
   #######@@@@@@ encripted password validations @@@@@###########
@@ -96,9 +155,8 @@ private
 protected
   ############## protected methods ###################
   def password_cript(password, user)
-      sha256 = Digest::SHA256.new
-      digest = sha256.update password
-      backend_validate = user.w_digest(digest)
+      passw = digest(password).to_s
+      backend_validate = user.w_digest(passw)
       puts "#{backend_validate}"
 
       if  backend_validate == true
@@ -109,6 +167,11 @@ protected
         	redirect_to :back
       end
       puts "#{session[:user]}"
+   end
+
+   def digest(param_to_digest)
+      sha256 = Digest::SHA256.new
+      @digest = sha256.update param_to_digest.to_s
    end
 
 end
