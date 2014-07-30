@@ -1,85 +1,81 @@
 Rails.application.routes.draw do
   
-  get 'api/documentation_methods'
-  get 'api/acces_to_red_lights'
-  get 'api/register_by_api'
+
 
   ############ home ###########
-  root 'statics_views#home'
+    root 'statics_views#home'
+
   ############ statics ###########
-  get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
-  get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
-  get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
-  get 'contacto', :to => 'statics_views#contacto', :as => :contacto
+    get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
+    get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
+    get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
+    get 'contacto', :to => 'statics_views#contacto', :as => :contacto
+
   ########### mail de contacto #########
-  get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
-  post '/statics_views/mail_to_contact'
+    get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
+    post '/statics_views/mail_to_contact'
+
   ########## mail de suscript ########
-  get 'subscriber', :to => 'statics_views#subscriber', :as => :subscriber
-  post '/statics_views/subscriber'
+    get 'subscriber', :to => 'statics_views#subscriber', :as => :subscriber
+    post '/statics_views/subscriber'
 
   ############ foco rojo ############
-
-  resources :red_lights do 
-    collection do 
-      post 'dresser_attacks'
-      post 'dresser_conflicts'
+    resources :red_lights do 
+      collection do 
+        post 'dresser_attacks'
+        post 'dresser_conflicts'
+      end
     end
-  end
 
+    ############ rutas de formularios ######
+    get 'dresser_attacks', :to =>  'red_lights#dresser_attacks', :as =>  :dresser_attacks 
+    get 'dresser_conflicts', :to =>  'red_lights#dresser_conflicts', :as => :dresser_conflicts 
+    get 'alert_point', :to => 'red_lights#alert_point', :as => :alert_point
 
-  get 'dresser_attacks', :to =>  'red_lights#dresser_attacks', :as =>  :dresser_attacks 
-  get 'dresser_conflicts', :to =>  'red_lights#dresser_conflicts', :as => :dresser_conflicts 
-  get 'alert_point', :to => 'red_lights#alert_point', :as => :alert_point
+    ############ json ##########
+    get "/app/red_lights_js", :to => 'red_lights#red_lights_js', :as => :red_lights_js
+  
+  ########### usuario #############
 
-  resources :users do 
-    collection do
-      post 'session_create'
-      post 'accept_in_radar'
-      post 'deliver_resset_pass_instructions'
-      post 'change_password'
+    ########### metodos de posteo ##########
+    resources :users do 
+      collection do
+        post 'session_create'
+        post 'accept_in_radar'
+        post 'deliver_resset_pass_instructions'
+        post 'change_password'
+      end
     end
-  end
 
-  get "register", :to => 'users#register', :as => :register
-  get "session_create", :to => 'users#session_create', :as => :session_create
-  get "login", :to => 'users#login', :as => :login
-  get "accept_in_radar/:id", :to => 'users#accept_in_radar', :as => :accept_in_radar
-  get "sign_out", :to => 'users#session_exit', :as => :session_exit
-  get "mail_to_reconfirm_password", :to => 'users#mail_to_reconfirm_password', :as => :mail_to_reconfirm_password
-  get "view_change_pass", :to => 'users#view_change_pass', :as => :view_change_pass
- 
-  ############ json ##########
-
-  get "/app/red_lights_js", :to => 'red_lights#red_lights_js', :as => :red_lights_js
+    ########## rutas estaticas ###########
+    get "register", :to => 'users#register', :as => :register
+    get "session_create", :to => 'users#session_create', :as => :session_create
+    get "login", :to => 'users#login', :as => :login
+    get "accept_in_radar/:id", :to => 'users#accept_in_radar', :as => :accept_in_radar
+    get "sign_out", :to => 'users#session_exit', :as => :session_exit
+    get "mail_to_reconfirm_password", :to => 'users#mail_to_reconfirm_password', :as => :mail_to_reconfirm_password
+    get "view_change_pass", :to => 'users#view_change_pass', :as => :view_change_pass
+    get "configurate", :to => 'users#configurate', :as => :configurate
 
   ############ admin #########
-  get 'management/applications', :as => :admin
-
-  get 'management/hot_spots', :as => :admin_hot_spots
-
-  get 'management/institutions', :as => :admin_institutions
-
-  get 'management/users', :as => :admin_users
-
-  get 'management/analitics', :as => :admin_analitics
-
-
+    get 'management/applications', :as => :admin
+    get 'management/hot_spots', :as => :admin_hot_spots
+    get 'management/institutions', :as => :admin_institutions
+    get 'management/users', :as => :admin_users
+    get 'management/analitics', :as => :admin_analitics
 
   ############ cuestionaries #########
-  get 'questions/create'
+    get 'questions/create'
+    get 'questions/delete'
+    get 'cuestions/create'
+    get 'cuestions/delete'
+    resources :cuestionaries
+    get 'statics_views/home'
+    get 'statics_views/panel'
 
-  get 'questions/delete'
-
-  get 'cuestions/create'
-
-  get 'cuestions/delete'
-
-  resources :cuestionaries
-
-
-  get 'statics_views/home'
-
-  get 'statics_views/panel'
+  ####### api ########
+    get 'api/documentation_methods'
+    get 'api/acces_to_red_lights'
+    get 'api/register_by_api'
 
 end
