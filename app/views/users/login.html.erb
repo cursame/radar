@@ -6,6 +6,7 @@
           <div class="loginbox">
             <div class="titlesign">
                 <h5> Iniciar sesión</h5>
+                <span class=""><%= link_to "Registrate", register_path, class: "nav-bottom" %></span>
             </div>
             <div class="content">
               <%= form_tag('/users/session_create') do -%>

@@ -10,9 +10,17 @@
     <% if notice %>
       <div id="notice"> <%= notice %></div>
     <%end%>
-    <%= render partial: '/statics_views/layout_parts/head'%>
+    <% if session[:user] == nil %>
+      <%= render partial: '/statics_views/layout_parts/head'%>
+    <% else %>
+      <%= render partial: '/shared/dashboard/dashboard_header' %>
+    <% end %>
      <%= yield %>
-    <%= render partial: '/statics_views/layout_parts/footer' %>
+    <% if session[:user] == nil %>
+      <%= render partial: '/statics_views/layout_parts/footer' %>
+    <% else %>
+      <%= render partial: '/shared/dashboard/dashboard_footer' %>
+    <% end %>
 </body>
 </html>
 

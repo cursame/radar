@@ -1,35 +1,60 @@
-<div style="width:35%; float:left;">
-<h1>Visor de mi institución </h1>
-  Institución: <%= data.name %></br>
-  Url: <%= data.url %></br>
-  Telefono: <%= data.phone %></br>
-  Extención: <%= data.extencion if !data.extencion.nil?  %></br>
-  <textarea style="width:90%; height:200px;" >
-  <!--Require jquery-->
-   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <!--Embed code-->
-  <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});</script><div id="redalert"></div>
-  </textarea>
+<div class="intro bg-bluegradient intto-panel">
+  <div class="wrapper">
+    
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="contenido">
+          <div class="title-dashboard">
+            <h2>Estado Actual de Peligrosidad</h2>
+            <h4>Estado Actual de Peligrosidad</h4>
+          </div>
+          <div class="current-stat-grade">
+            <div class="speech" style="left: <%= "50" %>%;">
+              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %></h3>
+              <span>Indicador de peligro</span>
+              <span class="tip"></span>
+            </div>
+            <div class="grades">
+              <%= image_tag ('semaforo_dashboard.png') %>
+            </div>
 
-  <p><b>Nota:</b></br>
-   <p style="width:90%; height:200px; text-align:justify;">El sistema de radar esta validado para utilizar jquery
-      en caso de no tenerlo instalado en su Web es necesario que
-      peque el código de jquery, en caso de ya tenerlo solo el embed code.
-   </p>
-  </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div style="width:60%; float:left;">
-<h3>Denuncias actualmente: <%= data.red_lights.count %></h3>
-<h3>Indicador de peligro: <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> </h3>
+<div class="total-filtro">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="filter-line">
+            <div>
+              <h4>Denuncias totales <%= data.red_lights.count %>  </h4>
+            </div>
+            <div class="filtro">
+              <p>Ordenar por:</p>
+            </div>
+           </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
-  <% @red_lights.each do |r| %>
-    <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
-  <%end%>
-</div>
-<div style="width:60%; float:right;">
+<% @red_lights.each do |r| %>
+<%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
+<%end%>
 
-<%= will_paginate @red_lights %>
+<div style="width:60%; float:right;">
+  <%= will_paginate @red_lights %>
 </div>
 
 

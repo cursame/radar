@@ -1,0 +1,24 @@
+.i {
+  background-image: url("pack.png");
+  background-repeat: no-repeat;
+  @include inline-block;
+  vertical-align: middle;
+}
+
+.i-stats {
+  width: 16px;
+  height: 16px;
+  background-position: 0 4px;
+}
+
+.i-config {
+  width: 16px;
+  height: 16px;
+  background-position: -16px 0;
+}
+
+.i-arrow1 {
+  width: 14px;
+  height: 9px;
+  background-position: 0 -26px;
+}
