@@ -22,9 +22,8 @@ class ApplicationController < ActionController::Base
 
 
    ############# intepreta los cuestionarios de foco rojo #############
-   def interptreter_quest(type_f, id)
-     @red_ligth = RedLight.find(id)
-     puts "#{@red_ligth}"
+   def interptreter_quest(type_f, red_ligth)
+     @red_ligth = red_ligth
      acts = []
    	 case type_f
  	  	 when 'personal'            

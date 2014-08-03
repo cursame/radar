@@ -133,6 +133,7 @@ h6{
 }
 
 .footer{
+	text-align: left;
 	height:80px;
 	width: 100%;
 	position: relative;
@@ -202,7 +203,7 @@ h6{
 		background-image: url(header_contact.png);
 	}
 
-	&.intto-panel {
+	&.intro-panel {
 		background-image: url(bg_panel.png);
 	}
 
@@ -566,9 +567,6 @@ h6{
 
 .filter-line {
 	
-
-
-
 	.filtro {
 
 		p {
@@ -579,9 +577,8 @@ h6{
 	}
 }
 
-
-
 .list-item {
+	font-family: $font-radar;
 	text-align: left;
 	height: 50px;
 	width: 100%;
@@ -590,10 +587,14 @@ h6{
 	background: #Fcfcfc;
 	padding: 10px 0 20px 25px;
 	margin: 8px 0;
+	color: #666666;
 
 	h5 {
 		color: #323232;
 	}
 
-
+	& p {
+		color: #999999;
+		font-size: 14px;
+	}
 }
