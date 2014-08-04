@@ -1,5 +1,6 @@
 class RedLight < ActiveRecord::Base
     has_many :comments
+
 	def help_institution
 		@i = Institution.where(:tokenspecialforms => self.institution_code)
 		@i
