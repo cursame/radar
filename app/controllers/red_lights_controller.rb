@@ -19,7 +19,6 @@ class RedLightsController < ApplicationController
 
   def show
   	 @red_ligth = RedLight.find(params[:id])
-  	 puts "***************#{@red_ligth}"
   end
 
   def dresser_attacks 
