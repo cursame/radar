@@ -1,16 +1,37 @@
-  <div class="intro bg-bluegradient">
-    <div class="wrapper">
-      <div class="cols-12">
-        <div class="col col-12">
-          <div class="col-inner">
-						<h4>Cuestionario respondido nº <%= @red_ligth.id %></h4>
+<div class="intro-element bg-bluegradient">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+					<h4># <%= @red_ligth.id %> Denuncia como testigo</h4>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+
+<div class="detail-element">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="back"></div>
+          <p>Físico Amenaza Exclusión Indefensión</p>
+          <p>Peligrosidad Moderada  ·  Jueves 21 de Abril del 2014</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 						Indice: <%= @red_ligth.operator %></br>
 						Tipos de violencia detectados:
 						<% @red_ligth.types_of_violence.each do |types_of_violence|%>
 						<%= types_of_violence %>
 						<%end%>
 						<center>
-						<div style="text-align:justify; width:95%;">
+						<div>
 							<b>Casos</b></br></br>
 							<% interptreter_quest(@red_ligth.type_denunce, @red_ligth).each do |r| %>
 							  <%= r %></br>
@@ -20,11 +41,7 @@
 							<%= simple_format(@red_ligth.history) %>
 							<b>Agresores</b>
 							<%= simple_format(@red_ligth.aggressors) %>
-	     			 </div>
-        		</div>
-        	</div>
-       </div>
-      </div>
+
 
 
 <%= render partial: '/internal_comunication/comment_content', locals: {red_ligth: @red_ligth}%>

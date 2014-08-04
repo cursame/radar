@@ -671,14 +671,44 @@ h6{
 
 
 .copy-script {
-	padding: 25px 40px;
+	padding: 30px 30px;
 	width: 600px;
-	height: 130px;
+	height: 160px;
 	color: #666666;
 	margin: 50px 0 20px 0;
+
 }
 
 .btn-copy {
 	text-align: center;
 }
 
+.note {
+
+	p {
+		font-size: 13px;
+		color: #666666;
+		margin: 25px 0;
+	}
+
+	span {
+		font-weight: bold;
+		color: red;
+		font-variant: small-caps;
+	}
+}
+
+
+.intro-element {
+	color:$white;
+	text-align: left;
+	height: 20px;
+	padding: 60px 0;
+}
+
+.detail-element {
+		width: 100%;
+		text-align: left;		
+		background-color: #f6f6f6;
+		height: 100px;
+	}
