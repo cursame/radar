@@ -28,4 +28,7 @@ class InstitutionsController < ApplicationController
   		format.js
   	end
   end
+
+  
+
 end

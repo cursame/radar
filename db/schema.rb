@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724163417) do
+ActiveRecord::Schema.define(version: 20140804184643) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
     t.boolean  "checked"
     t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "red_light_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,6 +114,7 @@ ActiveRecord::Schema.define(version: 20140724163417) do
     t.boolean  "confirmation",     default: false
     t.integer  "confirmed_by"
     t.boolean  "admin_attributes", default: false
+    t.boolean  "adviser"
   end
 
 end

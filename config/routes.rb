@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   
-
-
-
   ############ home ###########
     root 'statics_views#home'
 
@@ -65,6 +62,18 @@ Rails.application.routes.draw do
     get 'institutions/update'
     get 'institutions/edit', :as => :edit_institution
     get 'institutions/cancel', :as => :cancel_institution
+
+
+    ####### metodos de comunicacion interna ##########
+
+    post 'internal_comunication/create_comment'
+    post 'internal_comunication/delete_comment'
+    post 'internal_comunication/update_comment'
+    get 'internal_comunication/create_comment'
+    get 'internal_comunication/update_comment'
+    get 'internal_comunication/delete_comment', :as => :delete_comment
+    get 'internal_comunication/edit_comment', :as => :edit_comment
+
 
   ############ admin #########
     get 'management/applications', :as => :admin

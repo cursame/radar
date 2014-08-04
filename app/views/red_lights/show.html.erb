@@ -17,3 +17,5 @@ Indice: <%= @red_ligth.operator %></br>
 		<b>Agresores</b>
 
 		<%= simple_format(@red_ligth.aggressors) %>
+
+<%= render partial: '/internal_comunication/comment_content', locals: {red_ligth: @red_ligth}%>
