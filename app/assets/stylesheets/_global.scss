@@ -524,17 +524,27 @@ h6{
 	}
 }
 
-.globe {
-	height: 80px;
-	padding: 25px;
-	display: block;
-	background: #FFFEEF;
-	border-radius: 5px;
-	width: 195px;
+.title-config {
+	text-align: center;
 
+		h2 {
+		font-size: 24px;
+		font-weight: bold;
+		margin: 25px 0;
+	}
+
+	h4 {
+		font-size: 16px;
+		color: #cdd2d5;
+	}
+
+	img {
+		margin-bottom: 35px;
+	}
 }
 
 .current-stat-grade {
+	text-align: center;
 	position: relative;
 	height: 240px;
 
@@ -598,6 +608,11 @@ h6{
 }
 
 .filter-line {
+
+	h4 {
+			color: #666666;
+			font-size: 24px;
+		}
 	
 	.filtro {
 
@@ -653,3 +668,17 @@ h6{
 		}
 	}
 }
+
+
+.copy-script {
+	padding: 25px 40px;
+	width: 600px;
+	height: 130px;
+	color: #666666;
+	margin: 50px 0 20px 0;
+}
+
+.btn-copy {
+	text-align: center;
+}
+

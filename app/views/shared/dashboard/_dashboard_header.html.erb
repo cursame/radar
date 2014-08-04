@@ -8,13 +8,12 @@
             </div>
              <ul class="dashboard-menu">
               <li>
-                <%= link_to user_path() do %>
+                <%= link_to user_path(current_user.id) do %>
                   <i class="i i-stats"></i> Estado actual
                 <% end %>
               </li>
-
               <li>
-                <%= link_to do %>
+                <%= link_to configurate_path do %>
                   <i class="i i-config"></i> Configuración
                 <% end %>
               </li>

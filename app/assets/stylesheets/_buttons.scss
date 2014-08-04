@@ -81,3 +81,20 @@
     }
   }
 }
+
+
+.btn-embed {
+  @include inline-block;
+
+
+      input {
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: lighter;
+      color: $white;
+      padding: 5px 20px;
+      background: #1991C3;
+      border: 1px solid #4280A3;
+      height: 45px;
+    }
+}

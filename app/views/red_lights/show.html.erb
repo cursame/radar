@@ -1,19 +1,31 @@
-<h1>Cuestionario respondido nº <%= @red_ligth.id %></h1>
-Indice: <%= @red_ligth.operator %></br>
-	Tipos de violencia detectados:
-		<% @red_ligth.types_of_violence.each do |types_of_violence|%>
-		  <%= types_of_violence %>
-		<%end%>
-<center>
-	<div style="text-align:justify; width:95%;">
-		<b>Casos</b></br></br>
+  <div class="intro bg-bluegradient">
+    <div class="wrapper">
+      <div class="cols-12">
+        <div class="col col-12">
+          <div class="col-inner">
+						<h4>Cuestionario respondido nº <%= @red_ligth.id %></h4>
+						Indice: <%= @red_ligth.operator %></br>
+						Tipos de violencia detectados:
+						<% @red_ligth.types_of_violence.each do |types_of_violence|%>
+						<%= types_of_violence %>
+						<%end%>
+						<center>
+						<div style="text-align:justify; width:95%;">
+							<b>Casos</b></br></br>
+							<% interptreter_quest(@red_ligth.type_denunce, @red_ligth).each do |r| %>
+							  <%= r %></br>
+							<%end%></br>
+							<b>Histioria y faltantes</b>
 
-		<% interptreter_quest(@red_ligth.type_denunce, @red_ligth).each do |r| %>
-		  <%= r %></br>
-		<%end%></br>
-		<b>Histioria y faltantes</b>
+							<%= simple_format(@red_ligth.history) %>
+							<b>Agresores</b>
+							<%= simple_format(@red_ligth.aggressors) %>
+	     			 </div>
+        		</div>
+        	</div>
+       </div>
+      </div>
 
-		<%= simple_format(@red_ligth.history) %>
-		<b>Agresores</b>
 
-		<%= simple_format(@red_ligth.aggressors) %>
+
+
