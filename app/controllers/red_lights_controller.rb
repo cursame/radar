@@ -27,7 +27,6 @@ class RedLightsController < ApplicationController
 
   def dresser_conflicts
   	 @red_ligth = RedLight.new
-
   end
 
   def alert_point
@@ -39,6 +38,7 @@ class RedLightsController < ApplicationController
 
   def index
   end
+
 
   def red_lights_js
     @institution = Institution.find_by_tokenspecialforms(params[:institution])
@@ -86,6 +86,7 @@ class RedLightsController < ApplicationController
         false
     end
   end
+ 
   
   def set_access_control_headers  
     headers['Access-Control-Allow-Origin'] = '*'
@@ -93,6 +94,6 @@ class RedLightsController < ApplicationController
     headers['Access-Control-Request-Method'] = '*'
     headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     response.headers.delete('X-Frame-Options')
-    end
+  end
 
 end

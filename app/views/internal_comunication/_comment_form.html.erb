@@ -1,0 +1,5 @@
+<%= form_tag('/internal_comunication/create_comment', remote: true) do -%>
+    <%= hidden_field_tag 'to_red_light', red_ligth.id%>
+ 	<%= text_area_tag 'content', '', placeholder: 'Comenta ...'%>
+ 	<%= submit_tag 'Comentar'%>
+<%end%>

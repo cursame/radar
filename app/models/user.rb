@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	 has_many :institutions
+     has_many :comments
      
      ####### validates ###############
      validates_presence_of :password

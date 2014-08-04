@@ -1,0 +1,19 @@
+<h3>Editar</h3>
+
+<%= form_for @user do |f|%>
+	<%= f.text_field :name %>
+    <%= f.text_field :email %>
+	<%= f.text_field :charge %>
+    <%= f.submit 'Editar Perfil'%>
+<%end%>
+
+<% @user.institutions.each do |i|%>
+   <div id="institution_show_<%=i.id%>">
+   <%= i.name %>
+   <%= i.url %>
+   <%= i.phone %>
+   <%= i.extencion %>
+   <%= link_to 'Editar Institución', edit_institution_path(:id => i.id), remote: true if Institution.exists?(i.id)%>
+   </div>
+   <div id="institution_edit_<%=i.id%>"></div>
+<%end%>

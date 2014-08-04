@@ -1,8 +1,20 @@
 class UsersController < ApplicationController
-  before_filter :session_filter, :only => [:show, :configurate]
+  before_filter :session_filter, :only => [:show, :configurate, :edit]
   before_filter :confirmation, :only => [:show]
   def new
       @user = User.new
+  end
+
+  def update
+      @user = current_user
+      @user_edit = @user.update_attributes(user_params)
+      flash[:notice] = 'Se ha actualizado el usuario'
+      redirect_to :back
+  end
+
+  def edit
+    @user = current_user
+    institutions = @user.institutions.build
   end
 
   def register

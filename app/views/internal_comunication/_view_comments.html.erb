@@ -1,0 +1,4 @@
+<div id="new_comment"></div>
+<% red_ligth.comments.reverse.each do |comment|%>
+  <%= render partial: '/internal_comunication/comment_show', locals: {comment: comment}%>
+<%end%>

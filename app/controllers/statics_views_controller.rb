@@ -42,6 +42,8 @@ class StaticsViewsController < ApplicationController
       redirect_to :back
     end
   end
+
+   
 private
   def session_act
     if session[:user] != nil

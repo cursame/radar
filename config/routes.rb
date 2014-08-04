@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-
-
   ############ home ###########
     root 'statics_views#home'
 
@@ -57,6 +55,25 @@ Rails.application.routes.draw do
     get "mail_to_reconfirm_password", :to => 'users#mail_to_reconfirm_password', :as => :mail_to_reconfirm_password
     get "view_change_pass", :to => 'users#view_change_pass', :as => :view_change_pass
     get "configurate", :to => 'users#configurate', :as => :configurate
+    get "edit_my_info", :to => 'users#edit', :as => :edit_my_info
+
+    ######## metodos de institucion ######
+    post 'institutions/update'
+    get 'institutions/update'
+    get 'institutions/edit', :as => :edit_institution
+    get 'institutions/cancel', :as => :cancel_institution
+
+
+    ####### metodos de comunicacion interna ##########
+
+    post 'internal_comunication/create_comment'
+    post 'internal_comunication/delete_comment'
+    post 'internal_comunication/update_comment'
+    get 'internal_comunication/create_comment'
+    get 'internal_comunication/update_comment'
+    get 'internal_comunication/delete_comment', :as => :delete_comment
+    get 'internal_comunication/edit_comment', :as => :edit_comment
+
 
   ############ admin #########
     get 'management/applications', :as => :admin

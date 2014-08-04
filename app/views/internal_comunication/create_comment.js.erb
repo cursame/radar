@@ -1,0 +1,2 @@
+$('#new_comment').prepend('<%= escape_javascript(render(partial: '/internal_comunication/comment_show', locals: {comment: @comment}))%>');
+$('#content').val('');
