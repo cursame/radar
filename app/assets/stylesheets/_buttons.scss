@@ -30,16 +30,13 @@
   color: #fff;
   border: 2px solid #fff;
   background: rgba(255,255,255,.2);
-
-  input{
-
-  }
 }
 
 .btn-call {
   border: none;
   background: white;
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
+  height: 35px;
 
   & p{
     font-size: 14px;
@@ -54,6 +51,7 @@
   }
 
 .btn-form {
+  float: left;
   border: none;
   background: #0A5F8A;
   border-radius: 3px;
