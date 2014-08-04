@@ -1,0 +1,2 @@
+$('#institution_edit_'+<%=@institution.id%>).html('<%= escape_javascript(render(partial: "/institutions/edit", locals: {institution: @institution}))%>');
+$('#institution_show_'+<%=@institution.id%>).hide();
