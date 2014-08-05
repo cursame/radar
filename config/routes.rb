@@ -74,7 +74,8 @@ Rails.application.routes.draw do
     get 'internal_comunication/delete_comment', :as => :delete_comment
     get 'internal_comunication/edit_comment', :as => :edit_comment
 
-
+    ####### clear notices #########
+    get 'internal_comunication/clear_notices'
   ############ admin #########
     get 'management/applications', :as => :admin
     get 'management/hot_spots', :as => :admin_hot_spots

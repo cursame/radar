@@ -28,4 +28,12 @@ class InternalComunicationController < ApplicationController
           format.js
         end
     end
+
+    def clear_notices
+      @user = current_user
+      flash.clear
+        respond_to do |format|
+          format.js
+        end
+    end
 end

@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @ui = @user.institutions.first
+    flash[:notice] = nil
     if @user.id == current_user.id
       puts "ususario permitido"
     else
@@ -145,6 +146,7 @@ class UsersController < ApplicationController
       end
 
     end
+
 
 private
   #######@@@@@@ encripted password validations @@@@@###########

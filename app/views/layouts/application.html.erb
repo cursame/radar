@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <% if notice %>
-      <div id="notice"> <%= notice %></div>
+    <% if !flash.empty? %>
+      <div id="notice"> <%= flash[:notice] %></div>
     <%end%>
     <% if session[:user] == nil %>
       <%= render partial: '/statics_views/layout_parts/head'%>
@@ -25,7 +25,10 @@
 </html>
 
 <script type="text/javascript">
-	setTimeout(function(){$('#notice').hide();}, 4000);
+	setTimeout(function(){
+    $('#notice').hide();
+    $.get('/internal_comunication/clear_notices');
+}, 4000);
 
 </script>
 

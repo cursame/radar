@@ -1,5 +1,6 @@
 class StaticsViewsController < ApplicationController
   before_filter :session_act
+
   def home
   end
 
@@ -20,6 +21,7 @@ class StaticsViewsController < ApplicationController
   
   def actualizaciones
   end
+
   def mail_to_contact
     @person = "Email: #{params[:email]}, Nombre: #{params[:nombre]}, Institución #{params[:institucion]}, Cargo #{params[:cargo]}, Teléfono: #{params[:phone]}, Extención: #{params[:extencion]}"
     @message = "Tema: #{params[:tema]}"
