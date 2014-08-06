@@ -97,8 +97,6 @@
     }
 }
 
-
-
 .btn-comment {
   @include inline-block;
       input {
@@ -107,4 +105,22 @@
       right: 20px; 
       float: right;
     }
+}
+
+.btn-load {
+      input {
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: lighter;
+      padding: 5px 20px;
+      background: #ececec;
+      border: 1px solid #dddddd;
+      color: #666;
+      height: 45px;
+      width: 100%;
+    }
+
+  :hover {
+    background: #DEDEDE;
+  }
 }

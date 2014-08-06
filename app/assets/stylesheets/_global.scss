@@ -500,6 +500,7 @@ h6{
 }
 
 .contenido {
+	text-align: center;
 
 	& img {
 		margin: 15px 0;
@@ -536,6 +537,7 @@ h6{
 	}
 
 	img {
+		text-align: center;
 		margin-bottom: 35px;
 	}
 }
@@ -585,10 +587,10 @@ h6{
 	}
 
 	.grades {
-		text-align: center;
 		position: absolute;
-		left: 0;
 		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }
 
@@ -605,6 +607,7 @@ h6{
 }
 
 .filter-line {
+	vertical-align: middle;
 
 	h4 {
 			color: #666666;
@@ -625,7 +628,6 @@ h6{
 	font-family: $font-radar;
 	text-align: left;
 	height: 50px;
-	width: 100%;
 	border: #ccc solid 1px;
 	border-radius: 5px;
 	background: #Fcfcfc;
@@ -828,3 +830,9 @@ h6{
 	}
 }
 
+.load-more {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	}

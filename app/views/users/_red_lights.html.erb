@@ -6,13 +6,15 @@
         <div class="col-inner">
           <div class="contenido">
           <div class="title-dashboard">
-            <h2>Estado Actual de Peligrosidad</h2>
-            <i class="i i-school"></i>
+            <div class="school-name">
+              <h2>Estado Actual de Peligrosidad</h2>
+              <i class="i i-school"></i>
+            </div>
             <h4><%= data.name %></h4>
           </div>
           <div class="current-stat-grade">
             <div class="speech" style="left: <%= "50" %>%;">
-              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> %<i class="i i-arrow3"></i></h3> 
+              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> % <i class="i i-arrow3"></i> </h3> 
               <span>Indicador de peligro</span>
               <span class="tip"></span>
             </div>
@@ -46,16 +48,32 @@
   </div>
 </div>
 
-<% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
-<% @red_lights.each do |r| %>
-<%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
-<%end%>
 
-<div>
-  <%= will_paginate @red_lights %>
+<div class="box-list">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="filter-line">
+            <div>
+    <% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
+    <% @red_lights.each do |r| %>
+    <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
+    <%end%>
+
+    <div>
+      <%= will_paginate @red_lights %>
+    </div>
+    <div class="load-more">
+      <span class="btn btn-load">
+        <%= submit_tag 'Cargar más Denuncias' %>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-          <div class="btn-copy">
-            <span class="btn btn-embed">
-              <%= submit_tag 'Copiar Código Completo' %>
-            </span>
