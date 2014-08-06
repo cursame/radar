@@ -220,6 +220,10 @@ h6{
 	&.bg_login{
 	background-image: url(bg_login.png);
 	}
+
+	&.comments {
+		background:#1A4859;
+	}
 }
 
 .titlebox{
@@ -433,12 +437,8 @@ h6{
 				float:left;
 				color: $white;
 				font-size: 13px;
-
 				border-right: 1px solid #309AC7;
 				border-left: 1px solid #1382B0;
-
-
-
 
 				& a {
 					color: $white;
@@ -447,11 +447,9 @@ h6{
 	}
 }
 
-
 .help{
   float: right;
   padding-top: 18px;
-
   
   & a, li {
   font-size: 13px;
@@ -499,7 +497,6 @@ h6{
 		position: relative;
 		bottom: 30px;
 	}
-
 }
 
 .contenido {
@@ -669,7 +666,6 @@ h6{
 	}
 }
 
-
 .copy-script {
 	padding: 30px 30px;
 	width: 600px;
@@ -698,17 +694,137 @@ h6{
 	}
 }
 
+.detail-element {
+		width: 100%;
+		text-align: left;		
+		background-color: #f6f6f6;
+		height: 60px;
+		padding-top: 35px;
+		margin-bottom: 30px;
+	}
+
+.title {
+	font-family: $font-radar;
+	list-style-type: none;
+
+		 li.title-line {
+			height: 40px;
+			float:left;
+			padding-top: 10px;
+			color: #999999;
+		}
+
+	 h5 {
+	 	color: #333;
+	 	line-height: 15px;
+	 }
+
+	 i {
+	 	margin: 10px 20px 10px 0;
+	 	float: left;
+	 }
+}
 
 .intro-element {
 	color:$white;
 	text-align: left;
 	height: 20px;
 	padding: 60px 0;
+
+	h3 {
+		font-size: 24px;
+	}
 }
 
-.detail-element {
-		width: 100%;
-		text-align: left;		
-		background-color: #f6f6f6;
-		height: 100px;
+
+.cases {
+	text-align: left;
+	
+	h5 {
+		color: #333;
 	}
+}
+
+.case-item {
+	width: 90%;
+	background: #fcfcfc;
+	margin: 20px 0;
+	padding: 15px;
+	border: #efefef solid 1px;
+	border-radius: 5px ;
+	
+	p {
+		color: #666666;
+	}
+}
+
+.others {
+	margin: 35px 0;
+	background: #F5f5f5;
+	padding: 30px;
+	border-radius: 5px;
+
+		h5 {
+		color: #333;
+	}
+}
+
+
+.comment-new {
+	text-align: left;
+	margin-top: 45px;
+	position: relative;
+	top: 5px;
+
+	.tex-area-comment {
+
+		label, textarea {
+		height: 80px;
+		}
+	}
+
+
+	h4 {
+		font-size: 15px;
+		margin-bottom: 15px;
+	}
+}
+
+.comment-view {
+	text-align: left;
+	margin: 15px 0;
+	padding: 5px 10px 8px 30px;
+	border-bottom: 1px solid #476C7A;
+	font-size: 14px;
+
+
+	.name {
+		float: left;
+		margin-right: 30px;
+		
+		p {
+			font-family: $font-radar;
+			color: $white;
+		}
+
+		span {
+			font-size: 11px;
+			color: #ccc;
+		}
+	}
+
+	.comment_say {
+		float: left;
+		text-align: left;
+	}
+
+	.delete {
+		a {
+			color: #1990C2;
+			font-size: 13px;
+			line-height: 30px;
+			margin-bottom: 45px;
+		}
+	}
+}
+

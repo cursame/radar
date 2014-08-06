@@ -1,5 +1,10 @@
-<%= form_tag('/internal_comunication/create_comment', remote: true) do -%>
+<div class="comment-new">
+  <h4>Agrega un comentario</h4>
+  <div class="tex-area-comment"> 
+    <%= form_tag('/internal_comunication/create_comment', remote: true) do -%>
     <%= hidden_field_tag 'to_red_light', red_ligth.id%>
- 	<%= text_area_tag 'content', '', placeholder: 'Comenta ...'%>
- 	<%= submit_tag 'Comentar'%>
-<%end%>
+    <%= text_area_tag 'content', '', placeholder: 'Deja tu comentario aquí'%>
+  </div>
+    <span class="btn btn-embed"><%= submit_tag 'Comentar'%></span>
+    <%end%>
+</div>

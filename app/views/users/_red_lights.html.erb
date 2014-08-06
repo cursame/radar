@@ -7,11 +7,12 @@
           <div class="contenido">
           <div class="title-dashboard">
             <h2>Estado Actual de Peligrosidad</h2>
-            <h4><%= data.name %></h4>
+            <i class="i i-school">
+            <h4><%= data.name %></h4></i>
           </div>
           <div class="current-stat-grade">
             <div class="speech" style="left: <%= "50" %>%;">
-              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> %</h3>
+              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> %<i class="i i-arrow3"></i></h3> 
               <span>Indicador de peligro</span>
               <span class="tip"></span>
             </div>
@@ -50,6 +51,6 @@
 <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
 <%end%>
 
-<div style="width:60%; float:right;">
+<div>
   <%= will_paginate @red_lights %>
 </div>

@@ -1,5 +1,11 @@
 <div id="comment_content_<%= comment.id %>">
- <%= comment.content %> </br>
- <%= comment.user.name %> 
- <%= link_to 'Eliminar', delete_comment_path(id: comment.id), remote: true%>
+  <div class="comment-view"> 
+    <div class="name">
+    <p><%= comment.user.name %> <span>dijo</span> </p> 
+    </div>
+
+    <%= comment.content %> </br>
+
+    <span class="delete"><%= link_to 'Eliminar', delete_comment_path(id: comment.id), remote: true%></span>
+  </div>
 </div>
