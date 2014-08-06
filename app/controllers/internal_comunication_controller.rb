@@ -2,6 +2,11 @@ class InternalComunicationController < ApplicationController
 	########### coments in red lights ###########
     def create_comment
     	@comment = Comment.create(user_id: current_user.id, red_light_id: params[:to_red_light], content: params[:content] )
+        if @comment.save
+           @cf = true
+        else
+           @cf = false
+        end
         respond_to do |format|
           format.js
         end
