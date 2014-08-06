@@ -24,21 +24,23 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="contenido">
-            <textarea class="copy-script" >
-            <!--Require jquery-->
-            <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-            <!--Embed code-->
+             <textarea id="jquery" class="copy-script" style="display:none;">
+             <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+             <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});</script>
+            <div id="redalert"></div>
+             </textarea>
+            <textarea id="red_acces" class="copy-script" >
             <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});</script>
             <div id="redalert"></div>
             </textarea>
           </div>
           
           <div class="btn-copy">
-            <span class="btn btn-embed">
-              <%= submit_tag 'Copiar Código Completo' %>
+            <span id="copy_jquery" class="btn btn-embed" data-target="jquery">
+              <%= submit_tag 'Copiar Código con Jquery' %>
             </span>
 
-            <span class="btn btn-embed">
+            <span id="copy_red_acces" class="btn btn-embed" data-target="red_acces">
               <%= submit_tag 'Copiar Código Embed' %>
             </span>
           </div>

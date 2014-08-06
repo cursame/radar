@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       end
     end
 
+    get 'paginte_red_lights', :to => 'red_lights#paginate', :as => :red_lights_paginate
+
     ############ rutas de formularios ######
     get 'dresser_attacks', :to =>  'red_lights#dresser_attacks', :as =>  :dresser_attacks 
     get 'dresser_conflicts', :to =>  'red_lights#dresser_conflicts', :as => :dresser_conflicts 

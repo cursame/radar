@@ -60,9 +60,15 @@ class RedLightsController < ApplicationController
   end
 
   def paginate
-    @institution = Institution.find_by_tokenspecialforms(params[:institution])
-    @red_ligths = @institution.red_ligths.paginate(:page => params[:page], :per_page => 30)
-    respod_to do |format|
+    @institution = Institution.find(params[:institution])
+    @red_lights = @institution.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')
+    if params[:page].to_i != @red_lights.total_pages.to_i
+      @actual_page = params[:page].to_i + 1
+     else 
+      @actual_page = 0
+    end
+
+    respond_to do |format|
       format.js
     end
   end
