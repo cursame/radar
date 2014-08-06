@@ -7,8 +7,8 @@
           <div class="contenido">
           <div class="title-dashboard">
             <h2>Estado Actual de Peligrosidad</h2>
-            <i class="i i-school">
-            <h4><%= data.name %></h4></i>
+            <i class="i i-school"></i>
+            <h4><%= data.name %></h4>
           </div>
           <div class="current-stat-grade">
             <div class="speech" style="left: <%= "50" %>%;">
@@ -54,3 +54,8 @@
 <div>
   <%= will_paginate @red_lights %>
 </div>
+
+          <div class="btn-copy">
+            <span class="btn btn-embed">
+              <%= submit_tag 'Copiar Código Completo' %>
+            </span>

@@ -85,13 +85,7 @@
 
 .btn-embed {
   @include inline-block;
-
-
       input {
-      position: absolute;
-      top:53px; 
-      right: 20px; 
-      float: right;
       border-radius: 3px;
       font-size: 13px;
       font-weight: lighter;
@@ -100,5 +94,17 @@
       background: #1991C3;
       border: 1px solid #4280A3;
       height: 45px;
+    }
+}
+
+
+
+.btn-comment {
+  @include inline-block;
+      input {
+      position: absolute;
+      top:53px; 
+      right: 20px; 
+      float: right;
     }
 }
