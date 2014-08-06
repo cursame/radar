@@ -47,15 +47,17 @@
 </div>
 
 <% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
-<% @red_lights.each do |r| %>
-<%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
-<%end%>
-
-<div>
-  <%= will_paginate @red_lights %>
+<%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights }%>
+<div id="act_acces">
 </div>
 
-          <div class="btn-copy">
-            <span class="btn btn-embed">
-              <%= submit_tag 'Copiar Código Completo' %>
-            </span>
+<% if @red_lights.total_pages > 1 && params[:page].to_i != @red_lights.total_pages.to_i %>
+  <div class="btn-copy">
+    <span class="btn btn-embed">
+      <div id="paginate">
+      <%= link_to 'Siguiente', red_lights_paginate_path(page: 2, institution: data), remote: true  %>
+      </div>
+    </span>
+  </div>
+<%end%>
+
