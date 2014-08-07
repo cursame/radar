@@ -14,7 +14,7 @@
           </div>
           <div class="current-stat-grade">
             <div class="speech" style="left: <%= "50" %>%;">
-              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> % <i class="i i-arrow3"></i> </h3> 
+              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> % </h3> 
               <span>Indicador de peligro</span>
               <span class="tip"></span>
             </div>
@@ -35,11 +35,12 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="filter-line">
-            <div>
-              <h4>Denuncias totales <%= data.red_lights.count %>  </h4>
-            </div>
+            <span class="tip2"></span>
+              <div class="total">
+                <h4>Denuncias totales <%= data.red_lights.count %>  </h4>
+              </div>
             <div class="filtro">
-              <p>Ordenar por:</p>
+              
             </div>
            </div>
           </div>

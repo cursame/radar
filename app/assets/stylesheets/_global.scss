@@ -435,9 +435,6 @@ h6{
 			float:left;
 			list-style-type: none;
 
-			& ul {
-  		}
-
 			& li {
 				padding: 16px 20px 0 15px;
 				height: 34px;
@@ -455,22 +452,27 @@ h6{
 	}
 }
 
-.help{
-  float: right;
-  padding-top: 18px;
-  
-  & a, li {
-  font-size: 13px;
-  color: $white;
-  list-style: none;
-  float: left;
-  margin-right: 10px;
+	.help {
+			float:right;
+			list-style-type: none;
+
+
+			& li {
+				padding: 16px 20px 0 15px;
+				height: 34px;
+				display: block;
+				float:left;
+				color: $white;
+				font-size: 13px;
+				border-right: 1px solid #309AC7;
+				border-left: 1px solid #1382B0;
+
+				& a {
+					color: $white;
+				}
+			}
 	}
 
-	.arrow1 {
-	float: left;
-	}
-}
 
 .dashboard-footer {
 	font-family: $font-radar;
@@ -608,6 +610,23 @@ h6{
 	margin-top: 20px;
 	height: 70px;
 	vertical-align: middle;
+	position: relative;
+	top: 0;
+
+			.tip2 {
+			position: absolute;
+			left: 50%;
+			top:-20px;
+			left:200px;
+			width: 54px;
+			height: 20px;
+			background: url('pack.png') 0 -98px no-repeat;
+		}
+}
+
+.total {
+	margin-top: 30px;
+	padding-left: 10px;
 }
 
 .lista-denuncias {
@@ -615,7 +634,6 @@ h6{
 }
 
 .filter-line {
-	vertical-align: middle;
 
 	h4 {
 			color: #666666;
@@ -624,7 +642,7 @@ h6{
 	
 	.filtro {
 
-		p {
+		label {
 		text-align: right;
 		font-family: $font-radar;
 		font-size: 13px;
