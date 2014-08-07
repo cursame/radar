@@ -2,6 +2,8 @@
 $('#new_comment').prepend('<%= escape_javascript(render(partial: '/internal_comunication/comment_show', locals: {comment: @comment}))%>');
 $('#content').val('');
 $('#content').css("border","thin");
+$('#content').attr("placeholder", 'Deja tu comentario aquí');
+
 <% else %>
 $('#content').attr("placeholder", 'El comentario no ha sido creado porque el campo esta vacio');
 $('#content').css("border","solid 2px #587A86");
