@@ -25,8 +25,9 @@
         <div class="col-inner">
           <div class="contenido">
              <textarea id="jquery" class="copy-script" style="display:none;">
-             <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-             <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});</script>
+             <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?<br/>
+institution=<%=data.tokenspecialforms%>&pathx=/", function(data)
+{$('#redalert').html(data)});</script>
             <div id="redalert"></div>
              </textarea>
             <textarea id="red_acces" class="copy-script" >

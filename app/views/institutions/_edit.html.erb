@@ -1,8 +1,8 @@
 <%= form_tag("/institutions/update?id=#{institution.id}") do -%>
-	<%= text_field_tag 'name', institution.name%>
-	<%= text_field_tag 'url', institution.url%>
-	<%= text_field_tag 'phone', institution.phone%>
-	<%= text_field_tag 'extencion', institution.extencion %>
-	<%= submit_tag 'Guardar'%>
-	<%= link_to 'Cancelar', cancel_institution_path(id: institution.id), remote: true%>
+	<%= text_field_tag 'name', institution.name, placeholder: 'Nombre de la institución'%>
+	<%= text_field_tag 'url', institution.url, placeholder: 'Sitio web (URL)'%>
+	<%= text_field_tag 'phone', institution.phone, placeholder: 'Número Telefónico'%>
+	<%= text_field_tag 'extencion', institution.extencion, placeholder: 'Extensión' %>
+	<span class="btn btn-embed"><%= submit_tag 'Guardar'%></span>
+	<span class="cancel-link"><%= link_to 'Cancelar', cancel_institution_path(id: institution.id), remote: true%></span>
 <%end%>

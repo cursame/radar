@@ -48,12 +48,11 @@
   </div>
 </div>
 
-<div class="box-list">
+
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-          <div class="filter-line">
             <div>
               <% @red_lights = data.red_lights.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')%>
               <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights }%>
@@ -63,14 +62,12 @@
                   <div class="load-more">
                     <span class="btn btn-load">
                     <div id="paginate">
-                      <%= link_to 'Siguiente', red_lights_paginate_path(page: 2, institution: data), remote: true, class: 'sig' %>
+                      <%= link_to 'Cargar más denuncias', red_lights_paginate_path(page: 2, institution: data), remote: true, class: 'sig' %>
                     </div>
                     </span>
                   </div>
               <%end%>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

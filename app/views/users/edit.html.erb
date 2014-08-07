@@ -1,19 +1,59 @@
-<h3>Editar</h3>
+<div class="edit bg-bluegradient">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="edit-info">
+           <h4>Edita tu información</h4>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= form_for @user do |f|%>
-	<%= f.text_field :name %>
-    <%= f.text_field :email %>
-	<%= f.text_field :charge %>
-    <%= f.submit 'Editar Perfil'%>
-<%end%>
 
-<% @user.institutions.each do |i|%>
-   <div id="institution_show_<%=i.id%>">
-   <%= i.name %>
-   <%= i.url %>
-   <%= i.phone %>
-   <%= i.extencion %>
-   <%= link_to 'Editar Institución', edit_institution_path(:id => i.id), remote: true if Institution.exists?(i.id)%>
-   </div>
-   <div id="institution_edit_<%=i.id%>"></div>
-<%end%>
+<div class=" ">
+ <div class="wrapper">
+  <div class="cols-12">
+
+    <div class="col col-6">
+      <div class="col-inner">
+        <div class="data-edit">
+        <h5>Información de usuaro</h5>
+          <%= form_for @user do |f|%>
+          <%= f.text_field :name, placeholder: 'Nombre' %>
+          <%= f.text_field :email, placeholder: 'Correo electrónico' %>
+          <%= f.text_field :charge, placeholder: 'Cargo dentro de la institución' %>
+          <span class="btn btn-embed">  <%= f.submit 'Guardar datos'%></span>
+          <%end%>
+        </div>
+       </div>
+      </div>
+
+
+      <div class="col col-6">
+        <div class="col-inner">
+          <div class="data-edit">
+          <h5>Información de institución</h5>
+            <% @user.institutions.each do |i|%>
+            <div class="school-detail">
+            <div id="institution_show_<%=i.id%>" class="edit-info">
+            <p>
+            <%= i.name %><br/>
+            <%= i.url %><br/>
+            <%= i.phone %><br/>
+            <%= i.extencion %><br/>
+            </p>
+            </div>
+            <%= link_to 'Editar Institución', edit_institution_path(:id => i.id), remote: true if Institution.exists?(i.id)%>
+            </div>
+            <div id="institution_edit_<%=i.id%>"></div>
+            <%end%>
+
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 .btn {
   font-family: $font-radar;
   border-radius: 3px;
-  padding: 10px;
+  padding: 10px 0;
   line-height: 15px;
 
   &.btn-input {
@@ -30,6 +30,7 @@
   color: #fff;
   border: 2px solid #fff;
   background: rgba(255,255,255,.2);
+  padding: 10px 10px;
 }
 
 .btn-call {
@@ -95,14 +96,19 @@
       border: 1px solid #4280A3;
       height: 45px;
     }
+
+    :hover {
+      background-color: #0c63c5;
+    }
 }
 
 .btn-comment {
   @include inline-block;
       input {
+      height: 55px;
       position: absolute;
-      top:53px; 
-      right: 20px; 
+      top:47px; 
+      right: 10px; 
       float: right;
     }
 }
@@ -110,19 +116,19 @@
 .btn-load {
       input,a,p {
       @include inline-block;
-      border-radius: 3px;
+      border-radius: 5px;
       font-size: 13px;
       font-weight: lighter;
-      padding: 5px 20px;
+      padding-top: 20px;
       background: #ececec;
       border: 1px solid #dddddd;
       color: #666;
       height: 30px;
-      width: 96%;
-      margin-left: 10px;
+      width: 100%;
     }
 
   :hover {
     background: #DEDEDE;
+    border-radius: 5px;
   }
 }

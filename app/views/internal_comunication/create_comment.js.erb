@@ -3,6 +3,6 @@ $('#new_comment').prepend('<%= escape_javascript(render(partial: '/internal_comu
 $('#content').val('');
 $('#content').css("border","thin");
 <% else %>
-$('#content').attr("placeholder", 'El comentario no ha sido coreado porque el campo esta vacio');
-$('#content').css("border","solid 5px #D53939");
+$('#content').attr("placeholder", 'El comentario no ha sido creado porque el campo esta vacio');
+$('#content').css("border","solid 2px #587A86");
 <% end %>

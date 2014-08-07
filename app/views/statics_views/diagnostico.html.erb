@@ -116,14 +116,14 @@
             <h3>¿Quieres monitorear tu institución?</h3>
           </div>
           <p>Registrate y te notificaremos cuando auto diagnostico este listo.</p>
-          <span class="middle">
+          <div class="middle">
             <%= form_tag('/statics_views/subscriber') do -%>
             <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com'%>
-          </span>
           <span class="btn btn-call">
-              <%= submit_tag 'Enviar' %>
+              <%= submit_tag 'Enviar'%>
           <%end%>
           </span>
+          </div>
             
         </div>
       </div>

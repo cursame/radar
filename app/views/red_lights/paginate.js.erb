@@ -2,5 +2,5 @@ $('#act_acces').append('<%= escape_javascript(render(partial: '/red_lights/show'
 <% if @actual_page != 0 %>
 $('#paginate').html('<a class="sig" data-remote="true"'+'href="/paginte_red_lights?'+'page='+<%=@actual_page%>+'">Siguiente</a>');
 <%else%>
-$('#paginate').html('<a class="sig">Se han cargado todas las páginas</a>');
+$('#paginate').html('<a class="sig">Se han cargado todas las denuncias</a>');
 <%end%>
