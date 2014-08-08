@@ -6,26 +6,38 @@
             <div class="logo">
               <%= link_to image_tag('logodashboard.png'), root_path %>
             </div>
-             <ul class="dashboard-menu">
+             <ul class="dashboard-menu dropdown-wrap ">
               <li>
                 <%= link_to user_path(current_user.id) do %>
-                  <i class="i i-stats"></i> Estado actual
+                  <i class="i i-stats"></i> <span>Estado actual</span>
                 <% end %>
               </li>
               <li>
                 <%= link_to configurate_path do %>
-                  <i class="i i-config"></i> Configuración
+                  <i class="i i-config "></i> <span>Configuración</span>
                 <% end %>
               </li>
-             </ul>             
+             </ul> 
              <ul class="help">
                <li>
                 <%= link_to "Ayuda", admin_path %>
                </li>
-               <li>
-                <%= link_to do %>
-                  <i class="i i-arrow1"></i> 
-                <% end %>
+               <li class="actions">
+                <div class="dropdown-wrap">
+                  <div class="dropdown-pull">
+                    <i class="i i-arrow1"></i>
+                  </div>
+                  <div class="dropdown-v right">
+                    <ul>
+                      <li class="option1">
+                        <%= link_to 'Editar cuenta', edit_my_info_path() %>
+                      </li>
+                      <li class="option2">
+                        <%= link_to 'Cerrar sesión', session_exit_path() %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 </li>
              </ul>
           </div>

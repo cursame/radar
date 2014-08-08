@@ -116,17 +116,20 @@
             <h3>¿Quieres monitorear tu institución?</h3>
           </div>
           <p>Registrate y te notificaremos cuando auto diagnostico este listo.</p>
-          <div class="middle">
+          <div class="suscribe">
             <%= form_tag('/statics_views/subscriber') do -%>
-            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com'%>
-          <span class="btn btn-call">
+            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail"%>
+          
+          <div class="send">
+            <span class="btn btn-suscribe">
               <%= submit_tag 'Enviar'%>
-          <%end%>
-          </span>
+              <%end%>
+            </span>
           </div>
-            
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>

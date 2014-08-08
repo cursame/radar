@@ -4,9 +4,10 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="loginbox">
-            <div class="titlesign">
-                <h5> Iniciar sesión</h5>
-                <span class=""><%= link_to "Registrate", register_path, class: "nav-bottom" %></span>
+            <div class="title-sign">
+                <h5> Inicia sesión</h5>
+                <p>O regístrate</p>
+                <span><%= link_to "aquí", register_path, class: "nav-bottom" %></span>
             </div>
             <div class="content">
               <%= form_tag('/users/session_create') do -%>
@@ -21,8 +22,7 @@
               <% end -%>
             </div>
             <div class="bottomsign">
-              <span class="a-sign"> <%= link_to "¿Olvidaste tu contraseña?", mail_to_reconfirm_password_path%>
-              </span>
+              <span class="a-sign"> <%= link_to "¿Olvidaste tu contraseña?", mail_to_reconfirm_password_path%></span>
             </div>
           </div>
         </div>

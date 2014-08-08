@@ -10,7 +10,8 @@
    </div>
   </div>
 
-<div class="detail-element">
+<% peligrosidad = @red_ligth.operator.to_s.downcase.gsub!(/\s+/, '-') %>
+<div class="detail-element <%= peligrosidad %>">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">

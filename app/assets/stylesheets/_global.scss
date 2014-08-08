@@ -65,6 +65,8 @@ h6{
 	width: 100%;
 	margin: auto;
 	background-color: #f7f7f7;
+	display: block;
+	box-shadow: 0px 2px 2px #888888;
 }
 
 .singin-button{
@@ -319,7 +321,7 @@ h6{
 	text-align: center;
 	padding: 80px 0 100px 0;
 
-			.section-title  {
+		.section-title  {
 		text-align: center;
 		padding: 20px 0;
 	}
@@ -331,9 +333,25 @@ h6{
 	}
 }
 
-	.middle {
-	width: 45%;
-	text-align: center;
+	.suscribe {
+		text-align: left;
+		margin: auto;
+		background:none;
+		width: 470px;
+		height: auto;
+		color: #a4a4a4;
+		border-radius: 3px;
+
+		.suscribe-field {
+			width: 350px;
+			float: left;
+		}
+
+		input.mail {
+			height: 60px;
+			margin-right: 5px;
+			margin-left: 10px;
+	} 
 }
 
 .us-info{
@@ -352,10 +370,9 @@ h6{
 
 .loginbox{
 	text-align: left;
-	margin: 11em auto;
-	padding: 20ps 25px;
+	margin: 100px auto;
 	background:rgba(255,255,255, 0.2);
-	width: 22em;
+	width: 300px;
 	height: auto;
 	color: #a4a4a4;
 	border-radius: 3px;
@@ -371,10 +388,25 @@ h6{
 		padding-bottom: 25px;
 	}
 
-	.titlesign {
+	.title-sign {
 		background: white;
 		border-radius: 3px 3px 0 0;
 		padding:15px;
+		padding-bottom: 30px;
+		
+		& p {
+			float: left;
+			color: #333;
+			font-size: 13px;
+		}
+	
+		
+		& a {
+			float: left;
+			color: #3789B9;
+			font-size: 13px;
+			margin: 3px 0 5px 3px;
+		} 
 	}
 
 	.bottomsign {
@@ -382,6 +414,7 @@ h6{
 		border-radius: 0 0 3px 3px;
 		padding:15px;
 		color: #3879B4;
+		font-size: 13px;
 
 			span.a-sign{
 			font-size: 11px;
@@ -404,7 +437,7 @@ h6{
 }
 
 .form-contenido{
-
+	text-align: left;
 	
 	label{
 	  font-family: $font-radar;
@@ -414,100 +447,6 @@ h6{
 	}
 }
 
-
-.dashboard_header {
-	font-family: $font-radar;
-	height: 50px;
-	background-color: #1991c3;
-	width: 100%;
-	margin: auto;
-	box-shadow: 0px 2px 2px #888888;
-
-
-	.logo {
-		float: left;
-		position: relative;
-		top:10px;
-		margin-right: 30px;
-	}
-
-	.dashboard-menu {
-			float:left;
-			list-style-type: none;
-
-			& li {
-				padding: 16px 20px 0 15px;
-				height: 34px;
-				display: block;
-				float:left;
-				color: $white;
-				font-size: 13px;
-				border-right: 1px solid #309AC7;
-				border-left: 1px solid #1382B0;
-
-				& a {
-					color: $white;
-				}
-			}
-	}
-}
-
-	.help {
-			float:right;
-			list-style-type: none;
-
-
-			& li {
-				padding: 16px 20px 0 15px;
-				height: 34px;
-				display: block;
-				float:left;
-				color: $white;
-				font-size: 13px;
-				border-right: 1px solid #309AC7;
-				border-left: 1px solid #1382B0;
-
-				& a {
-					color: $white;
-				}
-			}
-	}
-
-
-.dashboard-footer {
-	font-family: $font-radar;
-	text-align: left;
-	width: 100%;
-	position: relative;
-	padding-top: 30px;
-	background-color: #f8f8f8;
-	@include clearfix;
-	float: left;
-	border-top: 1px solid #ccc;
-
-	& p {
-		font-family: sans-serif;
-		color: #666666;
-		font-size: 13px;
-	}
-
-	& span {
-		font-weight: bold;
-	}
-
-	.logo {
-		float: left;
-		position: relative;
-		top:10px;
-	}
-
-			.powered-by {
-		font-size: 13px;
-		float: right;
-		position: relative;
-		bottom: 30px;
-	}
-}
 
 .contenido {
 	text-align: center;
@@ -602,6 +541,15 @@ h6{
 		left: 0;
 		right: 0;
 	}
+
+	@include max-screen(500px) {
+		.grades {
+
+			> img {
+			display: none;
+		}
+	}
+	}
 }
 
 
@@ -616,8 +564,8 @@ h6{
 			.tip2 {
 			position: absolute;
 			left: 50%;
-			top:-20px;
-			left:200px;
+			top:-50px;
+			left:35px;
 			width: 54px;
 			height: 20px;
 			background: url('pack.png') 0 -98px no-repeat;
@@ -634,6 +582,7 @@ h6{
 }
 
 .filter-line {
+	position: relative;
 
 	h4 {
 			color: #666666;
@@ -650,17 +599,28 @@ h6{
 	}
 }
 
-.list-item {
+.list {
+
 	font-family: $font-radar;
-	text-align: left;
-	height: 50px;
-	border: #ccc solid 1px;
-	border-radius: 5px;
+
+
+	
+.list-item {
+	display: block;
 	background: #Fcfcfc;
-	padding: 10px 0 20px 25px;
-	margin: 8px 0;
 	color: #666666;
 	position: relative;
+	text-align: left;
+	height: 50px;
+	padding: 10px 0 20px 25px;
+	margin: 8px 0;
+	border: #ccc solid 1px;
+	border-radius: 5px;
+
+	&:hover {
+		background: darken(#Fcfcfc, 3%);
+	}
+	}
 
 	h5 {
 		color: #323232;
@@ -691,6 +651,13 @@ h6{
 		&.peligrosidad-moderada {
 			background-color: $red-light-green;
 		}
+	}
+
+	.arrow-link {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		margin-top: -7px;
 	}
 }
 
@@ -723,13 +690,25 @@ h6{
 }
 
 .detail-element {
-		width: 100%;
-		text-align: left;		
-		background-color: #f6f6f6;
-		height: 60px;
-		padding-top: 35px;
-		margin-bottom: 30px;
+	width: 100%;
+	text-align: left;		
+	background-color: #f6f6f6;
+	padding: 30px 0 27px 0;
+	margin-bottom: 30px;
+	border-bottom: 3px solid transparent;
+
+	&.peligrosidad-moderada {
+		border-bottom-color: $red-light-green;
 	}
+	
+	&.peligrosidad-grave {
+		border-bottom-color: $red-light-red;
+	}
+
+	&.peligrosidad-media {
+		border-bottom-color: $red-light-yellow;	
+	}
+}
 
 .title {
 	font-family: $font-radar;
@@ -828,7 +807,8 @@ h6{
 
 	.name {
 		float: left;
-		margin-right: 30px;
+		margin-right: 20px;
+		width: 180px;
 		
 		p {
 			font-family: $font-radar;
@@ -873,6 +853,7 @@ h6{
 		margin-bottom: 50px;
 		padding-top: 35px;
 
+	
 	.edit-info {
 		text-align: left;
 		color: $white;
@@ -882,6 +863,7 @@ h6{
 .data-edit {
 	float: left;
 	text-align: left;
+	padding-bottom: 90px;
 }
 
 .school-detail {

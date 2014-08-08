@@ -1,26 +1,21 @@
 .btn {
   font-family: $font-radar;
   border-radius: 3px;
-  padding: 10px 0;
-  line-height: 15px;
 
   &.btn-input {
-    padding: 0;
-    height: auto;
     @include inline-block;
+
 
      input {
       font-size: 13px;
       font-weight: lighter;
       color: $white;
-      padding: 5px 10px;
       background: none;
       border: none;
     }
 
     input:hover {
-    background: white;
-    border: none;
+    background: none;
     color: #0A5F8A;
     }
   }
@@ -31,25 +26,46 @@
   border: 2px solid #fff;
   background: rgba(255,255,255,.2);
   padding: 10px 10px;
+  
+  .btn-orange
+  &:hover {
+    background: #cd5500;
+  }
 }
 
+
 .btn-call {
-  border: none;
+  background: $white;
+  text-align: center;
+  padding: 15px;
+  color: #D94A27;
+
+  :hover {
+    background: #ccc;
+  }
+
+}
+
+.btn-suscribe {
+
   background: white;
-  padding: 5px 20px 20px 20px;
-  height: 35px;
+  padding: 20px 10px 20px 10px;
 
-  & p{
-    font-size: 14px;
+  input {
+    height: 60px;
+    background:none;
+    border:none;
+    color: #61A10D
   }
 
-    input {
-      color: #62A20D;
-      padding: 15px;
-      background: none;
-      border: 0;
+      input:hover {
+    background: none;
+    border: none;
+    color: #0A5F8A;
+
     }
-  }
+
+}
 
 .btn-form {
   float: left;

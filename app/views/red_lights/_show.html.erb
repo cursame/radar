@@ -1,22 +1,16 @@
 <% red_lights.each do |red_ligth| %>
   <div class="list">
-    <div class="wrapper">
-      <div class="cols-12">
-        <div class="col col-12">
-          <div class="col-inner">
-            <% peligrosidad = red_ligth.operator.to_s.downcase.gsub!(/\s+/, '-') %>
-            <%= link_to red_light_path(red_ligth.id) do %>
-             <div class="list-item">
-              <div class="list-item-grade <%= peligrosidad %>"></div>
-  						<h5>Denuncia Nº <%= red_ligth.id %></h5>
-  						<p># <%= red_ligth.id %> · <%= red_ligth.operator %> · <% red_ligth.types_of_violence.each do |types_of_violence|%>
-  						<%= types_of_violence %>
-  						<%end%>
-    				  </div>
-            <% end %>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+    <% peligrosidad = red_ligth.operator.to_s.downcase.gsub!(/\s+/, '-') %>
+    <%= link_to red_light_path(red_ligth.id) do %>
+    <div class="list-item">
+      <div class="list-item-grade <%= peligrosidad %>">
+      </div>
+      <h5>Denuncia Nº <%= red_ligth.id %></h5>
+      <p># <%= red_ligth.id %> · <%= red_ligth.operator %> · <% red_ligth.types_of_violence.each do |types_of_violence|%>
+      <%= types_of_violence %>
+      <%end%>
+      <i class="i i-go arrow-link"></i>
+    </div>
+    <% end %>
   </div>
 <%end%>
