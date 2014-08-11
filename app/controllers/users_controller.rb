@@ -60,6 +60,10 @@ class UsersController < ApplicationController
 
   end
 
+  def expert
+    @user = current_user
+  end
+
 	######## session metods ############
 
 	def session_create

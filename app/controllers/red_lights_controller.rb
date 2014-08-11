@@ -1,11 +1,16 @@
 class RedLightsController < ApplicationController
   after_filter :set_access_control_headers, only: [:red_lights_js, :alert_point]
   before_filter :red_filter, only: [:show]
+  layout 'responce_forms', only: [:red_lights_js, :alert_point]
   def create
   	@red_ligth = RedLight.create(red_ligth_params)
-    @user = User.where(:adviser => true).order("RANDOM()").first
-    @red_ligth.adviser = @user.adviser_code
-    @red_ligth.save
+    if @red_ligth.operator == "Peligrosidad Grave"
+        @user = User.where(:adviser => true).order("RANDOM()").first
+        @red_ligth.adviser = @user.adviser_code
+        @red_ligth.save
+      else
+        puts "***************** Sin necesidad de ser canalizada en este momento *******************"
+    end
     if @red_ligth.save
       flash[:notice] = 'Cuestionario agregado correctamente'
       @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)

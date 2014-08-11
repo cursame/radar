@@ -81,6 +81,8 @@ Rails.application.routes.draw do
 
     ####### usuarios de manejo de institucion manejo de metodos y atributos ##########
     get 'adviser_profile', :to => 'users#adviser_profile', :as => :adviser_profile
+    get 'experts', :to => 'users#expert', :as => :experts
+
   ############ admin #########
     get 'management/applications', :as => :admin
     get 'management/hot_spots', :as => :admin_hot_spots

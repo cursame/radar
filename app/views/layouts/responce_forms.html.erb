@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radar</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <% if !flash.empty? %>
+      <div id="notice"> <%= flash[:notice] %></div>
+    <%end%>
+    <% if session[:user] == nil %>
+      <%#= render partial: '/statics_views/layout_parts/head'%>
+    <% else %>
+      <%#= render partial: '/shared/dashboard/dashboard_header' %>
+    <% end %>
+     <%= yield %>
+    <% if session[:user] == nil %>
+      <%#= render partial: '/statics_views/layout_parts/footer' %>
+    <% else %>
+      <%#= render partial: '/shared/dashboard/dashboard_footer' %>
+    <% end %>
+</body>
+</html>
+
+<script type="text/javascript">
+	setTimeout(function(){
+    $('#notice').hide();
+}, 4000);
+
+</script>
+
