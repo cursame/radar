@@ -34,7 +34,6 @@ class RedLight < ActiveRecord::Base
         @v
 	end
 
-
 	def types_of_violence
       validates_violence_types = []
      case self.type_denunce

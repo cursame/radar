@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804184643) do
+ActiveRecord::Schema.define(version: 20140811164147) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 20140804184643) do
     t.string   "title"
     t.string   "call_code"
     t.text     "instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "help_institutions", force: true do |t|
+    t.string   "name"
+    t.integer  "identifier"
+    t.text     "addres"
+    t.integer  "phone"
+    t.integer  "ext"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -94,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140804184643) do
     t.boolean  "question_18",      default: false
     t.boolean  "question_19",      default: false
     t.boolean  "question_20",      default: false
+    t.integer  "adviser"
   end
 
   create_table "subscribers", force: true do |t|
@@ -111,10 +122,12 @@ ActiveRecord::Schema.define(version: 20140804184643) do
     t.datetime "updated_at"
     t.boolean  "terms_of_service"
     t.string   "salt"
-    t.boolean  "confirmation",     default: false
+    t.boolean  "confirmation",        default: false
     t.integer  "confirmed_by"
-    t.boolean  "admin_attributes", default: false
+    t.boolean  "admin_attributes",    default: false
     t.boolean  "adviser"
+    t.integer  "adviser_code"
+    t.integer  "help_institution_id"
   end
 
 end

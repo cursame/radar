@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+	@in = HelpInstitution.create( name: 'Intitución FIFA anti bullying', identifier: rand(3..5000), addres: 'San Nicolas de la Garza y Garcia Nuevo León #4564', phone: 34234234,  ext:90)
+	puts @in
+	@user = User.create(name: 'Manolo Lama', email: 'manolo@mail.com', charge: 'Supervisor', password: 'alfredo2008', password_confirmation: 'alfredo2008' , terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: @in.id)
+	@user2 = User.create(name: 'Manito Quepes', email: 'manito@mail.com', charge: 'Supervisor', password: 'alfredo2008', password_confirmation: 'alfredo2008', terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: @in.id)
+	@user3 = User.create(name: 'Jorge Campos ', email: 'campos@mail.com', charge: 'Supervisor', password: 'alfredo2008', password_confirmation: 'alfredo2008', terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: @in.id)
+	@user4 = User.create(name: 'Luis Garcia ', email: 'garcia@mail.com', charge: 'Supervisor', password: 'alfredo2008', password_confirmation: 'alfredo2008', terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: @in.id)
+	puts @user
+	puts @user2
+	puts @user3
+	puts @user4

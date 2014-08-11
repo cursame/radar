@@ -78,6 +78,9 @@ Rails.application.routes.draw do
 
     ####### clear notices #########
     get 'internal_comunication/clear_notices'
+
+    ####### usuarios de manejo de institucion manejo de metodos y atributos ##########
+     
   ############ admin #########
     get 'management/applications', :as => :admin
     get 'management/hot_spots', :as => :admin_hot_spots

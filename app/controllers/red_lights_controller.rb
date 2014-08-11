@@ -3,6 +3,9 @@ class RedLightsController < ApplicationController
 
   def create
   	@red_ligth = RedLight.create(red_ligth_params)
+    @user = User.where(:adviser => true).order("RANDOM()").first
+    @red_ligth.adviser = @user.adviser_code
+    @red_ligth.save
     if @red_ligth.save
       flash[:notice] = 'Cuestionario agregado correctamente'
       @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
@@ -55,8 +58,9 @@ class RedLightsController < ApplicationController
     end
   end
 
+
   def red_ligth_params
-  	 params.require(:red_light).permit(:red_light,:mail, :name, :institution_code, :type_denunce, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :question_7, :question_8, :question_9, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_16, :question_17, :question_18, :question_19, :question_20, :history, :aggressors)
+  	 params.require(:red_light).permit(:red_light,:mail, :name, :institution_code, :type_denunce, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :question_7, :question_8, :question_9, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_16, :question_17, :question_18, :question_19, :question_20, :history, :aggressors, :adviser)
   end
 
   def paginate
