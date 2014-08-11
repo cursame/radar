@@ -26,31 +26,34 @@
           <div class="contenido">
             <p> Si no tiene página web puedes utilizar la siguiente URL para que denuncien:</br> 
               <span><%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%></span></p>
+              <textarea id="jquery" class="copy-script" style="display:none;">
+                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?<br/>institution=<%=data.tokenspecialforms%>&pathx=/", function(data){$('#redalert').html(data)});</script>
+              </textarea>
+              <textarea id="red_acces" class="copy-script">
+                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});
+                </script> 
+              </textarea>
 
-             <textarea id="jquery" class="copy-script" style="display:none;">
-              <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?<br/>institution=<%=data.tokenspecialforms%>&pathx=/", function(data){$('#redalert').html(data)});</script>
-             </textarea>
-            <textarea id="red_acces" class="copy-script">
-              <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});
-              </script> 
-            </textarea>
-          </div>
-          
-          <div class="btn-copy">
-            <span id="copy_jquery" class="btn btn-embed" data-target="jquery">
-              <%= submit_tag 'Copiar Código con Jquery' %>
-            </span>
+            <div class="buttons">
+              <div class="btn-copy">
+                <span id="copy_jquery" class="btn btn-embed" data-target="jquery">
+                  <%= submit_tag 'Copiar Código con Jquery' %>
+                </span>
 
-            <span id="copy_red_acces" class="btn btn-embed" data-target="red_acces">
-              <%= submit_tag 'Copiar Código Embed' %>
-            </span>
+                <span id="copy_red_acces" class="btn btn-embed" data-target="red_acces">
+                  <%= submit_tag 'Copiar Código Embed' %>
+                </span>
+              </div>
+            </div>
+            <div class="note">
+              <p><span>nota:</span>
+              El sistema de radar esta validado para utilizar jquery
+              en caso de no tenerlo instalado en su Web es necesario que 
+              peque el código de jquery, en caso de ya tenerlo solo el embed code.</p>
+            </div>
           </div>
-
-          <div class="note">
-            <p><span>nota:</span>
-            El sistema de radar esta validado para utilizar jquery
-            en caso de no tenerlo instalado en<br/> su Web es necesario que 
-            peque el código de jquery, en caso de ya tenerlo solo el embed code.</p>
-          </div>
+        </div>
+      </div>
+    </div>
   </div>
  </div>

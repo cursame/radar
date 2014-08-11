@@ -451,7 +451,6 @@ h6{
 .contenido {
 	text-align: center;
 
-
 	& img {
 		margin: 15px 0;
 		padding-top: 20px;
@@ -459,6 +458,7 @@ h6{
 
 		p {
 			margin-top: 45px;
+			text-align: left;
 	}
 
 	span {
@@ -467,18 +467,26 @@ h6{
 	}
 
 	@include max-screen (500px) {
-		img {
-			display: none;
-		}
 
-	.copy-script {
-		width: 100%;
+		.buttons{
+			text-align:left;
+			float: left;
+			}
+		.copy-script {
+			width: 100%;
+			}
 
-		}
+			img {
+				display: none;
+			}
+
+    .btn-copy {
+	    span {
+	   	 margin-bottom: 20px;
+	    }
+  	}
 	}
 }
-
-
 
 .title-config {
 	text-align: center;
@@ -645,8 +653,7 @@ h6{
 	color: #666666;
 	position: relative;
 	text-align: left;
-	height: 50px;
-	padding: 10px 0 20px 25px;
+	padding: 20px 40px 20px 25px;
 	margin: 8px 0;
 	border: #ccc solid 1px;
 	border-radius: 5px;
@@ -696,13 +703,23 @@ h6{
 	
 	@include max-screen (500px) {
 	
+	.list-item {
+		padding: 5px 0 5px 25px;
+		font-size: 13px;
+	}
+
+
 		& p {
 			color: #999999;
 			font-size: 13px;
 		}
 
-		span {
+		span.case-grade {
 			display: none;
+		}
+
+		span.case-id {
+			font-size: 13px;
 		}
 	}
 	
@@ -721,6 +738,14 @@ h6{
 }
 
 .note {
+
+	
+	@include max-screen (500px) {
+		&.note {
+			text-align: left;
+		}
+	}
+
 
 	p {
 		font-size: 13px;
