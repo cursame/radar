@@ -80,7 +80,7 @@ Rails.application.routes.draw do
     get 'internal_comunication/clear_notices'
 
     ####### usuarios de manejo de institucion manejo de metodos y atributos ##########
-     
+    get 'adviser_profile', :to => 'users#adviser_profile', :as => :adviser_profile
   ############ admin #########
     get 'management/applications', :as => :admin
     get 'management/hot_spots', :as => :admin_hot_spots

@@ -1,6 +1,6 @@
 class RedLightsController < ApplicationController
   after_filter :set_access_control_headers, only: [:red_lights_js, :alert_point]
-
+  before_filter :red_filter, only: [:show]
   def create
   	@red_ligth = RedLight.create(red_ligth_params)
     @user = User.where(:adviser => true).order("RANDOM()").first
@@ -76,7 +76,34 @@ class RedLightsController < ApplicationController
       format.js
     end
   end
-
+  
+  def red_filter
+    if session[:user] != nil
+       if current_user.adviser
+           @red_ligth = RedLight.find_by_id_and_adviser(params[:id], current_user.adviser_code )
+            if @red_ligth
+              puts "acceso consedido"
+            else
+              puts "acceso denegado"
+              redirect_to user_path(current_user.id)
+            end
+       else
+           @red_ligth = RedLight.find(params[:id])
+           if @red_ligth
+             @i = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
+               if current_user.id == @i.user.id
+                   puts "acceso consedido"
+               else
+                redirect_to user_path(current_user.id)
+               end
+           else
+              redirect_to user_path(current_user.id)
+           end
+       end
+      else
+      redirect_to root_path
+    end
+  end
   def parce_url(url, acces, pathx)
     ######### parce url #########
     remove = ['http', 'https', '/', 'www', ':', '.', "#{pathx}"]

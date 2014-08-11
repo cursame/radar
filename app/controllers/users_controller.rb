@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :session_filter, :only => [:show, :configurate, :edit]
+  before_filter :session_filter, :only => [:show, :configurate, :edit, :adviser_profile]
+  before_filter :adviser_filter, :only => [:show, :configurate, :edit]
   before_filter :confirmation, :only => [:show]
   def new
       @user = User.new
@@ -50,8 +51,16 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     end
   end
+  
+  ######### adviser methods #######
 
-	######## session metodods ############
+  def adviser_profile
+    @user = current_user
+    @red_lights = RedLight.where(adviser: @user.adviser_code).paginate(:page => params[:page], :per_page => 5).order('created_at DESC')
+
+  end
+
+	######## session metods ############
 
 	def session_create
 		@user = User.find_by_email(params[:email])
@@ -81,6 +90,7 @@ class UsersController < ApplicationController
   def configurate
     @user = current_user
   end
+  
 
 
 	############ define user params #############
@@ -155,6 +165,12 @@ private
    if session[:user] == nil
       redirect_to root_path
    end
+  end
+
+  def adviser_filter
+    if current_user.adviser
+      redirect_to adviser_profile_path
+    end
   end
   
   def confirmation
