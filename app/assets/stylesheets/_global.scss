@@ -451,30 +451,39 @@ h6{
 .contenido {
 	text-align: center;
 
+
 	& img {
 		margin: 15px 0;
 		padding-top: 20px;
 	}
-}
-.title-dashboard {
-	text-align: left;
-	margin: 30px 0;
-	
-	h2 {
-		font-size: 24px;
+
+		p {
+			margin-top: 45px;
+	}
+
+	span {
+		color: #1991C3;
 		font-weight: bold;
 	}
 
-	h4 {
-		font-size: 16px;
-		color: #cdd2d5;
+	@include max-screen (500px) {
+		img {
+			display: none;
+		}
+
+	.copy-script {
+		width: 100%;
+
+		}
 	}
 }
+
+
 
 .title-config {
 	text-align: center;
 
-		h2 {
+	h2 {
 		font-size: 24px;
 		font-weight: bold;
 		margin: 25px 0;
@@ -494,7 +503,7 @@ h6{
 .current-stat-grade {
 	text-align: center;
 	position: relative;
-	height: 240px;
+	padding: 130px 0;
 
 	.speech {
 		font-family: $font-radar;
@@ -533,22 +542,33 @@ h6{
 			height: 16px;
 			background: url('pack.png') 0 -38px no-repeat;
 		}
-	}
 
-	.grades {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
+		@include max-screen(500px) {
+			
+			.tip {
+				display: none;
+				}
+			}
+		}
+
+		.grades {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
 
 	@include max-screen(500px) {
-		.grades {
 
-			> img {
-			display: none;
+		&.current-stat-grade {
+			padding: 80px 0;
 		}
-	}
+		
+		.grades {
+			img {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -561,15 +581,29 @@ h6{
 	position: relative;
 	top: 0;
 
-			.tip2 {
-			position: absolute;
-			left: 50%;
-			top:-50px;
-			left:35px;
-			width: 54px;
-			height: 20px;
-			background: url('pack.png') 0 -98px no-repeat;
+		.tip2 {
+		position: absolute;
+		left: 50%;
+		top:-50px;
+		left:35px;
+		width: 54px;
+		height: 20px;
+		background: url('pack.png') 0 -98px no-repeat;
+	}
+
+	@include max-screen (500px) {
+
+		.total {
+			& span {
+				font-size: 28px;
+			}
 		}
+
+		.tip2 {
+			margin-left: 75px;
+		}
+
+	}
 }
 
 .total {
@@ -631,6 +665,13 @@ h6{
 		font-size: 14px;
 	}
 
+	.arrow-link {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		margin-top: -7px;
+	}
+
 	.list-item-grade {
 		position: absolute;
 		width: 7px;
@@ -652,22 +693,27 @@ h6{
 			background-color: $red-light-green;
 		}
 	}
+	
+	@include max-screen (500px) {
+	
+		& p {
+			color: #999999;
+			font-size: 13px;
+		}
 
-	.arrow-link {
-		position: absolute;
-		right: 15px;
-		top: 50%;
-		margin-top: -7px;
+		span {
+			display: none;
+		}
 	}
+	
 }
 
 .copy-script {
-	padding: 30px 30px;
+
+	padding: 25px 30px 60px 30px;
 	width: 600px;
-	height: 160px;
 	color: #666666;
 	margin: 50px 0 20px 0;
-
 }
 
 .btn-copy {

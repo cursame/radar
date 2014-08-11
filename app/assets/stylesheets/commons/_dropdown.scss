@@ -16,6 +16,13 @@
    background: darken(#Fcfcfc, 5%);
    border-radius: 3px;
 
+
+    @include max-screen (500px) {
+   .dropdown-v {
+    top: 10%;
+    }
+    }
+
    &.right {
     right: 0;
    }

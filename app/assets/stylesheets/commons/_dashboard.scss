@@ -96,16 +96,54 @@
 
 
   @include max-screen(500px) {
-    .dashboard-menu{
-     float: right;
+    .dashboard-menu {
+     float: left;
+    }
 
-     > li > a p {
-      display: none;
-      }
+  .button-help { 
+    display: none;
+    }
+
+  .dropdown-wrap .dropdown-pull {
+    float: right;
+    right: 0;
   }
+
  } 
 }
 
+
+.title-dashboard {
+  text-align: left;
+  margin: 30px 0;
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 16px;
+    color: #cdd2d5;
+  }
+  
+  @include max-screen (500px) {
+
+    &.title-dashboard {
+      text-align: left;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      line-height: 23px;
+    }
+
+    h4 {
+       line-height: 16px;
+    }
+  }
+
+}
 
 .dashboard-footer {
   font-family: $font-radar;
@@ -140,4 +178,20 @@
     position: relative;
     bottom: 30px;
   }
+
+  @include max-screen (500px) {
+
+  &.dashboard-footer {
+    text-align: center;
+  }
+
+    .powered-by {
+      display: none;
+    }
+
+    p {
+      padding-bottom: 30px;
+    }
+  }
+
 }
