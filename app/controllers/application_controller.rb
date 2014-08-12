@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
    def action_host
     case Rails.env
        when 'production'
-         'http://radarescolar.com'
+         'http://www.radarescolar.com'
        when 'development'
          'http://localhost:3000'
     end
