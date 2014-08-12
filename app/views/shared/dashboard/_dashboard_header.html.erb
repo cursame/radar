@@ -19,9 +19,7 @@
               </li>
              </ul> 
              <ul class="help">
-               <li class="button-help">
-                <%= link_to "Ayuda", admin_path %>
-               </li>
+
                <li class="actions">
                 <div class="dropdown-wrap">
                   <div class="dropdown-pull">
@@ -29,10 +27,13 @@
                   </div>
                   <div class="dropdown-v right">
                     <ul>
-                      <li class="option1">
+                      <li>
+                        <%= link_to 'Administrador', admin_path %>
+                      </li>
+                      <li>
                         <%= link_to 'Editar cuenta', edit_my_info_path() %>
                       </li>
-                      <li class="option2">
+                      <li>
                         <%= link_to 'Cerrar sesión', session_exit_path() %>
                       </li>
                     </ul>

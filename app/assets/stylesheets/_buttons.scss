@@ -58,13 +58,11 @@
     color: #61A10D
   }
 
-      input:hover {
+  input:hover {
     background: none;
     border: none;
     color: #0A5F8A;
-
-    }
-
+  }
 }
 
 .btn-form {
@@ -127,6 +125,13 @@
       right: 10px; 
       float: right;
     }
+
+  @include max-screen (500px) {
+    .btn-comment {
+      float:left;
+    padding: 5px;
+  }
+  }
 }
 
 .btn-load {

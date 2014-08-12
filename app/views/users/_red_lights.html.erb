@@ -38,15 +38,18 @@
             <span class="tip2"></span>
               <div class="total">
                 <h4>Denuncias <span><%= data.red_lights.count %></span></h4>
-                <% if number_with_precision(index_by_institution_violence(data), :precision => 2).to_i > 30 %> 
-                  <%= link_to 'Tu escuela neceista atención urgente contacta a un experto', experts_path %>
-                <%end%>
               </div>
+              <div class="experts">               
+                <span>
+                  <% if number_with_precision(index_by_institution_violence(data), :precision => 2).to_i > 30 %> 
+                  <i class="i i-alert"></i><%= link_to '  Tu institution requiere atención. Contacta un experto aquí', experts_path %>
+                  </span>
+                <%end%>
+              </div>  
             <div class="filtro">
-              
             </div>
-           </div>
           </div>
+        </div>
       </div>
     </div>
   </div>

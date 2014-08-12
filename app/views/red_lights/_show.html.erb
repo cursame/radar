@@ -5,9 +5,9 @@
     <div class="list-item">
       <div class="list-item-grade <%= peligrosidad %>">
       </div>
-      <h5>Denuncia Nº <%= red_ligth.id %></h5>
-      <p># <%= red_ligth.id %> · <%= red_ligth.operator %> · <% red_ligth.types_of_violence.each do |types_of_violence|%>
-      <span><%= types_of_violence %></span>
+      <h5> <span class="case-id"><%= red_ligth.id %> · </span><span><%= red_ligth.operator %> </h5>
+      <p><% red_ligth.types_of_violence.each do |types_of_violence|%>
+      <span class="case-grade"> · <%= types_of_violence %></span>
       <%end%></p>
       <i class="i i-go arrow-link"></i>
     </div>

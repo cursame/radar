@@ -3,9 +3,9 @@
  font-size: 12px;
  text-align: left;
 
-.dropdown-pull {
-  cursor: pointer;
- }
+  .dropdown-pull {
+    cursor: pointer;
+  }
 
  .dropdown-v {
    display: none;
@@ -15,13 +15,6 @@
    min-width: 128px;
    background: darken(#Fcfcfc, 5%);
    border-radius: 3px;
-
-
-    @include max-screen (500px) {
-   .dropdown-v {
-    top: 10%;
-    }
-    }
 
    &.right {
     right: 0;
@@ -40,18 +33,25 @@
  }
 
  .dropdown-content {
-   padding: 15px;
+   padding: 10px;
  }
 
  &.active > .dropdown-v {
    display: block !important;
- }
-
+  }
 }
 
 .dropdown-wrap .dropdown-v > ul li {
   list-style: none;
 
+
+  @include max-screen(500px) {
+
+    .dropdown-wrap .dropdown-v {
+      display: none;
+    }
+  }
+  
   &:first-child a {
     border-top: 0;
     border-radius: 3px 3px 0 0;

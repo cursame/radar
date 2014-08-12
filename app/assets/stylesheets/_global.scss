@@ -229,7 +229,7 @@ h6{
 }
 
 .titlebox{
-	text-align: justify;
+	text-align: left;
 	color: white;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -249,6 +249,23 @@ h6{
 
 	.titlebox-content {
 		padding: 80px 0;
+	}
+
+	@include max-screen (500px) {
+		.titlebox-content {
+			padding: 0 0 20px 0;
+
+			h2 {
+				font-size: 30px;
+				line-height: 30px;
+				padding: 20px 0;
+			}
+
+			p {
+				font-size: 15px;
+				line-height: 17px;
+			}
+		}
 	}
 }
 
@@ -433,24 +450,24 @@ h6{
 }
 
 .contact-form{
-	margin: 80px 0;
+	margin: 30px 0;
+	padding-top: 15px;
+
+	@include max-screen (500px) {
+
+		 p { 
+		 	margin: 0 0 25px 0;
+		}
+	}
 }
 
 .form-contenido{
 	text-align: left;
-	
-	label{
-	  font-family: $font-radar;
-		color: #4a4a4a;
-		font-size: 14px;
-		font-weight: bold;
-	}
 }
 
 
 .contenido {
 	text-align: center;
-
 
 	& img {
 		margin: 15px 0;
@@ -458,7 +475,7 @@ h6{
 	}
 
 		p {
-			margin-top: 45px;
+			margin-top: 40px;
 	}
 
 	span {
@@ -466,27 +483,39 @@ h6{
 		font-weight: bold;
 	}
 
-	@include max-screen (500px) {
-		img {
-			display: none;
-		}
+	@include max-screen (650px) {
 
-	.copy-script {
-		width: 100%;
+		.buttons{
+			text-align:left;
+			float: left;
+			}
+		.copy-script {
+			width: 100%;
+			}
 
-		}
+			p {
+				text-align: left;
+			}
+
+			img {
+				display: none;
+			}
+
+    .btn-copy {
+	    span {
+	   	 margin-bottom: 20px;
+	    }
+  	}
 	}
 }
 
-
-
 .title-config {
 	text-align: center;
+	margin: 25px 0;
 
 	h2 {
 		font-size: 24px;
 		font-weight: bold;
-		margin: 25px 0;
 	}
 
 	h4 {
@@ -576,15 +605,18 @@ h6{
 .total-filtro {
 	text-align: left;
 	margin-top: 20px;
-	height: 70px;
 	vertical-align: middle;
 	position: relative;
 	top: 0;
 
+		.total {
+		padding:25px 0;
+	}
+
 		.tip2 {
 		position: absolute;
 		left: 50%;
-		top:-50px;
+		top:-20px;
 		left:35px;
 		width: 54px;
 		height: 20px;
@@ -595,7 +627,7 @@ h6{
 
 		.total {
 			& span {
-				font-size: 28px;
+				font-size: 23px;
 			}
 		}
 
@@ -604,11 +636,6 @@ h6{
 		}
 
 	}
-}
-
-.total {
-	margin-top: 30px;
-	padding-left: 10px;
 }
 
 .lista-denuncias {
@@ -645,8 +672,7 @@ h6{
 	color: #666666;
 	position: relative;
 	text-align: left;
-	height: 50px;
-	padding: 10px 0 20px 25px;
+	padding: 20px 40px 20px 25px;
 	margin: 8px 0;
 	border: #ccc solid 1px;
 	border-radius: 5px;
@@ -696,13 +722,23 @@ h6{
 	
 	@include max-screen (500px) {
 	
+	.list-item {
+		padding: 5px 0 5px 25px;
+		font-size: 13px;
+	}
+
+
 		& p {
 			color: #999999;
 			font-size: 13px;
 		}
 
-		span {
+		span.case-grade {
 			display: none;
+		}
+
+		span.case-id {
+			font-size: 13px;
 		}
 	}
 	
@@ -721,6 +757,16 @@ h6{
 }
 
 .note {
+	clear: right;
+	padding: 0 20%;
+	
+	@include max-screen (600px) {
+		&.note {
+			text-align: left;
+			padding: 0;
+		}
+	}
+
 
 	p {
 		font-size: 13px;
@@ -760,10 +806,10 @@ h6{
 	font-family: $font-radar;
 	list-style-type: none;
 
-		 li.title-line {
+		.title-line {
 			height: 40px;
 			float:left;
-			padding-top: 10px;
+			padding-top: 12px;
 			color: #999999;
 		}
 
@@ -771,6 +817,10 @@ h6{
 	 	color: #333;
 	 	line-height: 15px;
 	 }
+
+	 p {
+		padding-left: 40px;
+		}
 
 	 i {
 	 	margin: 10px 20px 10px 0;
@@ -786,6 +836,14 @@ h6{
 
 	h3 {
 		font-size: 24px;
+	}
+
+	@include max-screen (680px) {
+		padding: 20px 0;
+
+		h3 {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -832,8 +890,14 @@ h6{
 	.tex-area-comment {
 
 		label, textarea {
-		height: 80px;
+		padding: 25px;
 		}
+		
+	@include max-screen(500px) {
+		textarea {
+padding: 15px 120px 25px 10px;		}
+	}
+
 	}
 
 
@@ -923,4 +987,21 @@ h6{
 			margin-bottom: 45px;
 			padding-left: 35px;
 		}
-		} 	
+} 	
+
+
+.experts {
+
+padding: 10px;
+ position: absolute;
+ background: #fce5a1;
+ border-radius: 5px;
+ display: block;
+ top: 15%;
+ right: 0;
+
+ span a {
+ 	font-size: 13px;
+ 	color: #333;
+ }
+}

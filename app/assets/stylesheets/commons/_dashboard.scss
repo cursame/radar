@@ -43,7 +43,7 @@
       }
   }
 
-  @include max-screen(500px) {
+  @include max-screen(600px) {
     .dashboard-menu{
       float: left;
 
@@ -103,12 +103,6 @@
   .button-help { 
     display: none;
     }
-
-  .dropdown-wrap .dropdown-pull {
-    float: right;
-    right: 0;
-  }
-
  } 
 }
 
