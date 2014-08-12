@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :session_filter, :only => [:show, :configurate, :edit, :adviser_profile]
+  before_filter :session_filter, :only => [:show, :configurate, :edit, :adviser_profile, :expert]
   before_filter :adviser_filter, :only => [:show, :configurate, :edit]
   before_filter :confirmation, :only => [:show]
   def new
