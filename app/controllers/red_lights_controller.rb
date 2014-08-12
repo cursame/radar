@@ -57,13 +57,15 @@ class RedLightsController < ApplicationController
     #@iframe = "<iframe src=#{url_embed} width='100%' height='100%' frameBorder='0'></iframe>"
     ############## link de apertura ################
     url_link = "#{action_host}/alert_point?institution=#{@institution.tokenspecialforms}"
-    @iframe = "<a href=#{url_link} target='_blank' >Denunciar Casos de Bullying</a>"
+    @iframe = "<a style='background-color: #d65129!important; padding:15px; position: fixed; width: 400px; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;
+ nounderline:link; text-decoration:none;  bottom: 0; color:#fff; right:15; font-family: arial' href=#{url_link} target='_blank' >Denunciar casos de bullying <div style='float:right;'>&#8594;</div>
+</a>"
     if  parce_url(@institution.url, @origin, params[:pathx] )
     render :json =>  @iframe.to_json
      else
     render :json =>  @nots.to_json
-
     end
+
   end
 
 
