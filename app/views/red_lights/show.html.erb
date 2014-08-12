@@ -23,8 +23,13 @@
                 <i class="i i-back"></i>
                 <% end %> 
               </li>
-             <li><h5>Físico Amenaza Exclusión Indefensión</h5></li>
-             <li> <p>Peligrosidad Moderada  ·  Date 2014 </p></li>
+             <li>
+              <h5><%= @red_ligth.operator %></h5>
+             </li>
+             <li>
+              <p><% @red_ligth.types_of_violence.each do |types_of_violence|%> <%= types_of_violence %>
+              <%end%></p>
+             </li>
            </ul>
           </div>
          

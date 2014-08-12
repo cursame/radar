@@ -125,6 +125,13 @@
       right: 10px; 
       float: right;
     }
+
+  @include max-screen (500px) {
+    .btn-comment {
+      float:left;
+    padding: 5px;
+  }
+  }
 }
 
 .btn-load {

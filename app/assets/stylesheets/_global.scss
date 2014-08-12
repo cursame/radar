@@ -458,7 +458,6 @@ h6{
 
 		p {
 			margin-top: 45px;
-			text-align: left;
 	}
 
 	span {
@@ -466,7 +465,7 @@ h6{
 		font-weight: bold;
 	}
 
-	@include max-screen (500px) {
+	@include max-screen (650px) {
 
 		.buttons{
 			text-align:left;
@@ -474,6 +473,10 @@ h6{
 			}
 		.copy-script {
 			width: 100%;
+			}
+
+			p {
+				text-align: left;
 			}
 
 			img {
@@ -584,15 +587,18 @@ h6{
 .total-filtro {
 	text-align: left;
 	margin-top: 20px;
-	height: 70px;
 	vertical-align: middle;
 	position: relative;
 	top: 0;
 
+		.total {
+		padding:25px 0;
+	}
+
 		.tip2 {
 		position: absolute;
 		left: 50%;
-		top:-50px;
+		top:-20px;
 		left:35px;
 		width: 54px;
 		height: 20px;
@@ -603,7 +609,7 @@ h6{
 
 		.total {
 			& span {
-				font-size: 28px;
+				font-size: 23px;
 			}
 		}
 
@@ -612,11 +618,6 @@ h6{
 		}
 
 	}
-}
-
-.total {
-	margin-top: 30px;
-	padding-left: 10px;
 }
 
 .lista-denuncias {
@@ -738,11 +739,13 @@ h6{
 }
 
 .note {
-
+	clear: right;
+	padding: 0 20%;
 	
-	@include max-screen (500px) {
+	@include max-screen (600px) {
 		&.note {
 			text-align: left;
+			padding: 0;
 		}
 	}
 
@@ -857,8 +860,14 @@ h6{
 	.tex-area-comment {
 
 		label, textarea {
-		height: 80px;
+		padding: 25px;
 		}
+		
+	@include max-screen(500px) {
+		textarea {
+padding: 15px 120px 25px 10px;		}
+	}
+
 	}
 
 
@@ -948,4 +957,21 @@ h6{
 			margin-bottom: 45px;
 			padding-left: 35px;
 		}
-		} 	
+} 	
+
+
+.experts {
+
+padding: 10px;
+ position: absolute;
+ background: #fce5a1;
+ border-radius: 5px;
+ display: block;
+ top: 15%;
+ right: 0;
+
+ span a {
+ 	font-size: 13px;
+ 	color: #333;
+ }
+}
