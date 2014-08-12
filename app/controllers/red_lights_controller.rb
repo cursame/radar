@@ -52,9 +52,12 @@ class RedLightsController < ApplicationController
     @institution = Institution.find_by_tokenspecialforms(params[:institution])
     @origin = request.referrer
     @nots = "Acceso no permitido ya que su url no coincide con la url que se ha indicado en el registro."
-    url_embed = 'http://localhost:3000/alert_point?institution=' + "#{@institution.tokenspecialforms}"
-    @iframe = "<iframe src=#{url_embed} width='100%' height='100%' frameBorder='0'></iframe>"
-   
+    ############## par el embed form ###############
+    #url_embed = 'http://localhost:3000/alert_point?institution=' + "#{@institution.tokenspecialforms}"
+    #@iframe = "<iframe src=#{url_embed} width='100%' height='100%' frameBorder='0'></iframe>"
+    ############## link de apertura ################
+    url_link = "#{action_host}/alert_point?institution=#{@institution.tokenspecialforms}"
+    @iframe = "<a href=#{url_link} target='_blank' >Denunciar Casos de Bullying</a>"
     if  parce_url(@institution.url, @origin, params[:pathx] )
     render :json =>  @iframe.to_json
      else

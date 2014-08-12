@@ -29,6 +29,22 @@ class InstitutionsController < ApplicationController
   	end
   end
 
+  def help_intitution_contact
+     if session[:user] == nil
+       redirect_to root_path
+     else
+     @us = current_user
+     @title = params[:title]
+     @description = params[:description]
+     @i =  HelpInstitution.all
+       @i.each do |i|
+         @mailer = InstitutionManagment.contact_institutions(@us, i, @title, @description ).deliver
+       end
+      flash[:notice] = 'Te has puesto en contacto con las insitituciones de apoyo anti bullying'
+      redirect_to :back
+    end
+  end
+
   
 
 end

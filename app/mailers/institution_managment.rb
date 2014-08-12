@@ -27,4 +27,13 @@ class InstitutionManagment < ActionMailer::Base
      @message = message
    	 mail(to: 'alfredo@cursa.me', subject: 'Email de contacto')
    end
+
+   def contact_institutions(user, institution_to, title, description)
+     @i_t = institution_to
+     @user = user
+     @institution = @user.institutions.first
+     @title = title
+     @description = description
+     mail(to: @i_t.email , subject: 'Solicitud de ayuda de para una intitución con problemas de bullying')
+   end
 end

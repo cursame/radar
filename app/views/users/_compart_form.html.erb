@@ -29,10 +29,12 @@
 
              <textarea id="jquery" class="copy-script" style="display:none;">
               <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?<br/>institution=<%=data.tokenspecialforms%>&pathx=/", function(data){$('#redalert').html(data)});</script>
+                <div id="redalert"></div>
              </textarea>
             <textarea id="red_acces" class="copy-script">
               <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('#redalert').html(data)});
               </script> 
+              <div id="redalert"></div>
             </textarea>
           </div>
           

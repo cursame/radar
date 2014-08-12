@@ -61,10 +61,11 @@ Rails.application.routes.draw do
 
     ######## metodos de institucion ######
     post 'institutions/update'
+    post 'institutions/help_intitution_contact'
     get 'institutions/update'
     get 'institutions/edit', :as => :edit_institution
     get 'institutions/cancel', :as => :cancel_institution
-
+    get 'institutions/help_intitution_contact'
 
     ####### metodos de comunicacion interna ##########
 
