@@ -17,6 +17,6 @@
 	#puts @user4
 
 	####### creando aministrador #########
-	
+
 	@user = User.create(name: 'Alfredo Reyes', email: 'alfredo@cursa.me', charge: 'Director de Innovación', password: Digest::SHA2.hexdigest('alfredo2008'), password_confirmation: Digest::SHA2.hexdigest('alfredo2008') , terms_of_service: true, salt: rand(1..2323), confirmation: true, admin_attributes: true, adviser: true, adviser_code: rand(5000..909090)) 
-	@i = Institution( name: 'Cúrsame', url: 'cursa.me', user_id: @user.id, phone: 63632893, extencion: 01) 
+	@i = Institution.create( name: 'Cúrsame', url: 'cursa.me', user_id: @user.id, phone: 63632893, extencion: 01) 
