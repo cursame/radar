@@ -57,7 +57,7 @@ class RedLightsController < ApplicationController
     #@iframe = "<iframe src=#{url_embed} width='100%' height='100%' frameBorder='0'></iframe>"
     ############## link de apertura ################
     url_link = "#{action_host}/alert_point?institution=#{@institution.tokenspecialforms}"
-    @iframe = "<a style='background-color: #F95D20 !important; padding:15px; position: fixed; width: 400px; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;
+    @iframe = "<a style='background-color: #F95D20 !important; padding:15px; position: fixed; width: 300px; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;
  nounderline:link; text-decoration:none;  bottom: 0; color:#fff; right:15; font-family: arial; '   href=#{url_link} target='_blank' >Denunciar casos de violencia escolar <div style='float:right;'>&#8594;</div>
 </a>"
 
