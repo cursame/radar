@@ -5,23 +5,26 @@
         <div class="col-inner">
           <div class="titlebox-content">
             <h2>Contacta a los expertos</h2>
-            <p>Ponte en contacto con las instituciones que apoyan la causa del anti bullying de RADAR,</br> ellos recibiran un mail con tus datos de contacto para poder apoyarte en la lucha.</p>
+            <p>Ponte en contacto con las instituciones que apoyan la causa del anti bullying de RADAR,</br> </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div><div class="contact-form">
+</div>
+
+<div class="contact-form">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-6">
         <div class="col-inner">
           <div class="form-contenido">
+          <p>Enviaremos un mail con tus datos de contacto a las instituciones correspondientes para poder apoyarte en la lucha.</p>
 			<%= form_tag('/institutions/help_intitution_contact') do -%>
 				<%= text_field_tag 'title', '', placeholder: 'Razón'%>
 				<%= text_area_tag 'description', '', placeholder: 'Describenos tu problema'%>
 				<div>
-             		 <span class="btn btn-input btn-form"><%= submit_tag 'Enviar a las organizaciones que apoyan RADAR' %></span>
+             		 <span class="btn btn-input btn-form"><%= submit_tag 'Enviar' %></span>
            		</div>
 			<%end%>
 		   </div>

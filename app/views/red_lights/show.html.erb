@@ -16,21 +16,16 @@
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-          <div class="title">
-          <ul class="title-line title">
-             <li>
-                <%= link_to user_path(current_user.id) do %>
-                <i class="i i-back"></i>
-                <% end %> 
-              </li>
-             <li>
-              <h5><%= @red_ligth.operator %></h5>
-             </li>
-             <li>
-              <p><% @red_ligth.types_of_violence.each do |types_of_violence|%> <%= types_of_violence %>
-              <%end%></p>
-             </li>
-           </ul>
+          <div class="title title-line">
+            <%= link_to user_path(current_user.id) do %>
+            <i class="i i-back"></i>
+            <% end %> 
+              
+            <h5><%= @red_ligth.operator %></h5>
+
+            <p><% @red_ligth.types_of_violence.each do |types_of_violence|%> <%= types_of_violence %><%end%></p>
+
+
           </div>
          
 

@@ -229,7 +229,7 @@ h6{
 }
 
 .titlebox{
-	text-align: justify;
+	text-align: left;
 	color: white;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -249,6 +249,23 @@ h6{
 
 	.titlebox-content {
 		padding: 80px 0;
+	}
+
+	@include max-screen (500px) {
+		.titlebox-content {
+			padding: 0 0 20px 0;
+
+			h2 {
+				font-size: 30px;
+				line-height: 30px;
+				padding: 20px 0;
+			}
+
+			p {
+				font-size: 15px;
+				line-height: 17px;
+			}
+		}
 	}
 }
 
@@ -433,18 +450,19 @@ h6{
 }
 
 .contact-form{
-	margin: 80px 0;
+	margin: 30px 0;
+	padding-top: 15px;
+
+	@include max-screen (500px) {
+
+		 p { 
+		 	margin: 0 0 25px 0;
+		}
+	}
 }
 
 .form-contenido{
 	text-align: left;
-	
-	label{
-	  font-family: $font-radar;
-		color: #4a4a4a;
-		font-size: 14px;
-		font-weight: bold;
-	}
 }
 
 
@@ -457,7 +475,7 @@ h6{
 	}
 
 		p {
-			margin-top: 45px;
+			margin-top: 40px;
 	}
 
 	span {
@@ -493,11 +511,11 @@ h6{
 
 .title-config {
 	text-align: center;
+	margin: 25px 0;
 
 	h2 {
 		font-size: 24px;
 		font-weight: bold;
-		margin: 25px 0;
 	}
 
 	h4 {
@@ -788,10 +806,10 @@ h6{
 	font-family: $font-radar;
 	list-style-type: none;
 
-		 li.title-line {
+		.title-line {
 			height: 40px;
 			float:left;
-			padding-top: 10px;
+			padding-top: 12px;
 			color: #999999;
 		}
 
@@ -799,6 +817,10 @@ h6{
 	 	color: #333;
 	 	line-height: 15px;
 	 }
+
+	 p {
+		padding-left: 40px;
+		}
 
 	 i {
 	 	margin: 10px 20px 10px 0;
@@ -814,6 +836,14 @@ h6{
 
 	h3 {
 		font-size: 24px;
+	}
+
+	@include max-screen (680px) {
+		padding: 20px 0;
+
+		h3 {
+			font-size: 18px;
+		}
 	}
 }
 
