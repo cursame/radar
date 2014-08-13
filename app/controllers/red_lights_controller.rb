@@ -57,9 +57,29 @@ class RedLightsController < ApplicationController
     #@iframe = "<iframe src=#{url_embed} width='100%' height='100%' frameBorder='0'></iframe>"
     ############## link de apertura ################
     url_link = "#{action_host}/alert_point?institution=#{@institution.tokenspecialforms}"
-    @iframe = "<a style='background-color: #F95D20 !important; padding:15px; position: fixed; width: 300px; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;
- nounderline:link; text-decoration:none;  bottom: 0; color:#fff; right:15; font-family: arial; '   href=#{url_link} target='_blank' >Denunciar casos de violencia escolar <div style='float:right;'>&#8594;</div>
-</a>"
+    @iframe = "<a style='
+      -webkit-font-smoothing: antialiased;
+      -webkit-border-top-left-radius: 3px; 
+      -webkit-border-top-right-radius: 3px; 
+      -moz-border-radius: 4px; 
+      border-radius: 4px;
+      position: fixed; 
+      bottom: 15px;
+      right:15; 
+      background-color: #E02911 !important; 
+      box-shadow: 0px 2px 5px rgba(0,0,0,.5), 0 0 0 1px rgba(0,0,0,.2);
+      border: 2px solid #FFF;
+      font-size:13px;
+      font-family: arial;
+      font-weight: bold;
+      padding:12px 10px;
+      nounderline:link;
+      text-decoration:none;   
+      color:#fff;'
+      href=#{url_link} target='_blank'>
+        <img src='#{action_host}/images/i_alert.png'/>
+         Denuncia casos de violencia escolar
+      </a>"
 
     if  parce_url(@institution.url, @origin, params[:pathx] )
     render :json =>  @iframe.to_json

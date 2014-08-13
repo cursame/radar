@@ -26,10 +26,9 @@
   border: 2px solid #fff;
   background: rgba(255,255,255,.2);
   padding: 10px 10px;
-  
 
   &:hover {
-    background: #cd5500;
+    background: rgba(255,255,255,.3);
   }
 }
 
@@ -39,11 +38,6 @@
   text-align: center;
   padding: 15px;
   color: #D94A27;
-
-  :hover {
-    background: #ccc;
-  }
-
 }
 
 .btn-suscribe {
@@ -135,7 +129,7 @@
 }
 
 .btn-load {
-      input,a,p {
+    input,a,p {
       @include inline-block;
       border-radius: 5px;
       font-size: 13px;
@@ -153,3 +147,15 @@
     border-radius: 5px;
   }
 }
+
+.btn-option {
+  font-size: 13px;
+  font-weight: thin;
+  text-align: center;
+  float: left;
+  display: block;cursor: pointer;
+  background: #ccc;
+  padding: 5px;
+  width: 20px;
+  margin: 0 5px;
+  }

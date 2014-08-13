@@ -13,7 +13,7 @@
             <h4><%= data.name %></h4>
           </div>
           <div class="current-stat-grade">
-            <div class="speech" style="left: <%= "50" %>%;">
+            <div class="speech" style="left: <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %>%;">
               <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> % </h3> 
               <span>Indicador de peligro</span>
               <span class="tip"></span>

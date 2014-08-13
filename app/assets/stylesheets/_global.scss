@@ -2,6 +2,7 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+
 body{
 	position:absolute;
 	width:100%;
@@ -114,6 +115,7 @@ h6{
 	}
 
 	.img-block{
+		display: block;
 		float: right;
 		position: absolute;
 		bottom: 30px;
@@ -267,6 +269,11 @@ h6{
 			}
 		}
 	}
+}
+
+
+.paddingtop {
+	display: block;
 }
 
 .info{
@@ -463,6 +470,10 @@ h6{
 
 .form-contenido{
 	text-align: left;
+
+	label {
+		font-family: $font-radar
+	}
 }
 
 
