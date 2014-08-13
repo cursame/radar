@@ -1,135 +1,124 @@
-<div class="text-box">
-  <h5>Cuestionario de victimización </h5>
-  <p>Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros (as ) de la escuela. Recuerda que esta denuncia es <b>totalmente confidencial</b> y el objetivo es que si alguna situación está sucediendo en tu escuela la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera. Estamos contigo y te apoyamos hoy y siempre
-  </p>
-</div>
+<div class="tabs-main-content">
+  <div class="bg-bluegradient text-box witness-intro"> 
+    <h4>Cuestionario de victimización </h4>
+    <p>Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros(as) de la escuela. Recuerda que esta denuncia es <b>totalmente confidencial</b> y el objetivo es que si alguna situación está sucediendo en tu escuela la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera. Estamos contigo y te apoyamos hoy y siempre.
+    </p>
 
-<div class="data">
-  <%= form_for red_ligth do |f|%>
-	Mail: <%= f.text_field :mail %>
-    Nombre: <%= f.text_field :name %></br>
-    <%= f.hidden_field :institution_code, value: institution %></br>
-    <%= f.hidden_field :type_denunce, value: 'personal'%>
-</div>
-
-    <table class="question-list">
-	    <tr><td>Me  han golpeado con la intención de lastimarme en el último mes en la escuela <div class="check-box">
-      <div class="check-box">
-      <span><%= f.check_box :question_1,value: false%></span>
-      </div>
-      </div>
-      </td></tr>
-
-	    <tr><td>Me han dañado  o lastimado el cuerpo de alguna manera
-      <div class="check-box">
-      <span><%= f.check_box :question_2,value: false%></span>
-      </div>
-
-      </td>
-      </tr>
-	    
-      <tr><td>Me han amenazado con hacerme algo que me puede dañar
-      <div class="check-box">
-      <span><%= f.check_box :question_3,value: false%></span>
-      </div>
-      </td>
-      </tr>
-	    
-
-      <tr><td>Me han amenazado con hacerme daño o lastimarme si digo algo de lo que me hacen <div class="check-box">
-      <span><%= f.check_box :question_4,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Han inventado rumores para hacerme sentir mal a propósito y para que los demás no me hablen<div class="check-box">
-      <span><%= f.check_box :question_5,value: false %></span>
-      </div>
-      </span>
-      </td></tr>
-	    
-      <tr><td>No me han dejado participar en alguna actividad para hacerme sentir mal<div class="check-box">
-      <span><%= f.check_box :question_6 ,value: false%></span>
-      </div></td></tr>
-	    
-      <tr><td>Me ignoran, hacen como que no existo para dañarme de alguna manera <div class="check-box">
-      <span><%= f.check_box :question_7,value: false %></span>
-      </div>
-      </span></td></tr>
-	    
-      <tr><td> Siento que no me puedo defender de esta persona o estas personas<div class="check-box">
-      <span><%= f.check_box :question_8,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Estoy asustado , triste y me siento indefenso ante lo que me hacen <div class="check-box">
-      <span><%= f.check_box :question_9,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Siento que no quiero ir a la escuela para evitar sentirme mal a causa de algún compañero (a) <div class="check-box">
-      <span><%= f.check_box :question_10,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>He inventado pretextos para no ir a la escuela para evitar que me molesten <div class="check-box">
-      <span><%= f.check_box :question_11,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Me han dicho cosas que me hieren, humillan, lastiman y no sé cómo detenerlo  <div class="check-box">
-      <span><%= f.check_box :question_12,value: false %></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Me dicen un apodo o groserías que me lastiman <div class="check-box">
-      <span><%= f.check_box :question_13,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Se han burlado de mi persona, o de mis gustos, o de mi forma de vestir y lo han hecho a propósito con la intención de dañarme <div class="check-box">
-      <span><%= f.check_box :question_14,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Se ríen cuando hablo o participo en clase con la intención de que me sienta mal <div class="check-box">
-      <span><%= f.check_box :question_15,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Me han faltado el respeto a través de mensajes por celular o red social con la intención de afectarme y hacerme sentir mal<div class="check-box">
-      <span><%= f.check_box :question_16,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Han subido algún video de mi en una situación que me hace sentir mal y avergonzado <div class="check-box">
-      <span><%= f.check_box :question_17,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Me han escondido material de clase, cuadernos, mochila para molestarme <div class="check-box">
-      <span><%= f.check_box :question_18,value: false%></span>
-      </div>
-      </td></tr>
-	    
-      <tr><td>Han dañado mi material,  mis útiles etc... con la intención de hacerme sentir mal y afectarme <div class="check-box">
-      <span><%= f.check_box :question_19,value: false%></span>
-      </div>
-      </td></tr>
-    </table>
-
-  <div class="history">
-    <p><b>¿Existe alguna otra cosa que nos quieres platicar con respecto al tema?</b></p></br>
-
-    <%= f.text_area :history, cols:30, rows:5%></br>
-    <p>¿Quieres decirnos el nombre de los agresores a los agresores?</p>
-    <a id="responce_si_1" class="afirmation btn  btn-option" data-target="aggressors_1">Si</a> 
-    <a id="responce_no_1" class="negation btn  btn-option" data-target="aggressors_1">No</a>
-    </br>
-    <div id="aggressors_1" style="display:none;">
-    	<%= f.text_area :aggressors, cols:30, rows:5%></br>
+    <div class="data">
+      <%= form_for red_ligth do |f|%>
+      Mail: <%= f.text_field :mail %>
+      <%= f.hidden_field :institution_code, value: institution %>
     </div>
+    <div class="data">
+      Nombre: <%= f.text_field :name %>
+      <%= f.hidden_field :type_denunce, value: 'personal'%>
+    </div>
+  </div>
+</div>
 
-    <span class="bnt btn-input btn-form">
-    <%= f.submit "Generar Reporte"%></span>
+<div class="questions-list">  
+  <label class="question-item">
+    Me  han golpeado con la intención de lastimarme en el último mes en la escuela
+    <%= f.check_box :question_1,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me han dañado  o lastimado el cuerpo de alguna manera
+    <%= f.check_box :question_2,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me han amenazado con hacerme algo que me puede dañar
+    <%= f.check_box :question_3,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me han amenazado con hacerme daño o lastimarme si digo algo de lo que me hacen
+    <%= f.check_box :question_4,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Han inventado rumores para hacerme sentir mal a propósito y para que los demás no me hablen
+    <%= f.check_box :question_5,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    No me han dejado participar en alguna actividad para hacerme sentir mal
+    <%= f.check_box :question_6,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me ignoran, hacen como que no existo para dañarme de alguna manera
+    <%= f.check_box :question_7,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Siento que no me puedo defender de esta persona o estas personas
+    <%= f.check_box :question_8,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Estoy asustado , triste y me siento indefenso ante lo que me hacen 
+    <%= f.check_box :question_9,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Siento que no quiero ir a la escuela para evitar sentirme mal a causa de algún compañero (a)
+    <%= f.check_box :question_10,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    He inventado pretextos para no ir a la escuela para evitar que me molesten 
+    <%= f.check_box :question_11,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me han dicho cosas que me hieren, humillan, lastiman y no sé cómo detenerlo 
+    <%= f.check_box :question_12,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me dicen un apodo o groserías que me lastiman
+    <%= f.check_box :question_13,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Se han burlado de mi persona, o de mis gustos, o de mi forma de vestir y lo han hecho a propósito con la intención de dañarme
+    <%= f.check_box :question_14,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Se ríen cuando hablo o participo en clase con la intención de que me sienta mal 
+    <%= f.check_box :question_15,value: false, class:'check-box'%>
+  </label> 
+  <label class="question-item">
+    Me dicen un apodo o groserías que me lastiman
+    <%= f.check_box :question_16,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Me han faltado el respeto a través de mensajes por celular o red social con la intención de afectarme y hacerme sentir mal
+    <%= f.check_box :question_17,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Han subido algún video de mi en una situación que me hace sentir mal y avergonzado
+    <%= f.check_box :question_18,value: false, class:'check-box'%>
+  </label>   
+
+  <label class="question-item">
+    Me han escondido material de clase, cuadernos, mochila para molestarme
+    <%= f.check_box :question_19,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Han dañado mi material,  mis útiles etc... con la intención de hacerme sentir mal y afectarme
+    <%= f.check_box :question_20,value: false, class:'check-box'%>
+  </label>   
+</div>
+
+
+<div class="history">
+  <p>¿Existe alguna otra cosa que nos quieres platicar con respecto al tema?</p>
+  <%= f.text_area :history%></br>
+  <p>¿Quieres decirnos el nombre de los agresores a los agresores?</p>
+  <span class="options">
+  <a id="responce_si_1" class="afirmation btn  btn-option" data-target="aggressors_1">Si</a>
+  </span>
+  <span class="options">
+  <a id="responce_no_1" class="negation btn  btn-option" data-target="aggressors_1">No</a>
+  </span>
+  <div id="aggressors_1" style="display:none;">
+  	<%= f.text_area :aggressors%></br>
+</div>
+
+</div>
+
+<div class="reports-btn">
+  <span class="bnt btn-input btn-form">
+  <%= f.submit "Generar Reporte"%></span>
   <%end%>
 </div>

@@ -57,7 +57,9 @@ class UsersController < ApplicationController
   def adviser_profile
     @user = current_user
     @red_lights = RedLight.where(adviser: @user.adviser_code).paginate(:page => params[:page], :per_page => 5).order('created_at DESC')
-
+    if @user.adviser_code 
+      redirect_to root_path
+    end
   end
 
   def expert

@@ -1,128 +1,95 @@
-<div class="text-box">
-    <h5>Cuestionario de testigos de violencia</h5>
+<div class="tabs-main-content">
+
+<div class="bg-greengradient text-box"> 
+    <h4>Cuestionario de testigos de violencia</h4>
     <p> Por favor indícanos si has presenciado alguna de las siguientes situaciones relacionada con tus compañeros de escuela, tu apoyo es muy importante.
     Recuerda que esta denuncia es totalmente confidencial y el objetivo es que si alguna situación está sucediendo la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que ualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera.
     </p>
+
+
+<div class="data">
+  <%= form_for red_ligth do |f|%>
+  Mail: <%= f.text_field :mail %>
+  <%= f.hidden_field :institution_code, value: institution %>
+</div>
+<div class="data">
+  Nombre: <%= f.text_field :name %>
+  <%= f.hidden_field :type_denunce, value: 'personal'%>
+</div>
+</div>
 </div>
 
-<div class="data form-contenido">
-<%= form_for red_ligth do |f|%>
-	Mail: <%= f.text_field :mail %>
-    Nombre: <%= f.text_field :name %></br>
-    <%= f.hidden_field :institution_code, :value => institution %></br>
-    <%= f.hidden_field :type_denunce, value: 'non personal'%>
+<div class="questions-list">
+  <label class="question-item">
+    He visto como golpean a algún compañero(a) con la intención de lastimarlo y esto sucede muy a menudo <%= f.check_box :question_1,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+     Siento que muy seguido dañan o lastiman físicamente a esta persona con la intención  de hacerlo sentir mal y mi compañero(a) no se defiende 
+    <%= f.check_box :question_2,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Sé que mi compañero(a)  ha sido amenazado con que le van a hacer daño o lastimar
+    <%= f.check_box :question_3,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    do con hacerme daño o lastimarme si digo algo de lo que me hacen
+    <%= f.check_box :question_4,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+     Han inventado rumores para hacerlo(a) sentir mal a propósito para que los demás lo rechacemos o no le hablemos
+    <%= f.check_box :question_5,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    He visto que no lo han dejado participar en alguna actividad, lo ignoran, hacen como que no existe para dañarlo(a)  de alguna manera  
+    <%= f.check_box :question_6,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Siento que no puedo defender a mi compañero(a) de estas personas por que me da miedo que después me lo hagan a mi 
+    <%= f.check_box :question_7,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Estoy asustado , triste y enojado ante lo que veo que le hacen a mi compañero (a) y siento que no hay nada que podamos hacer 
+    <%= f.check_box :question_8,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    He escuchado que le dicen  cosas que  hieren, humillan, lastiman
+    <%= f.check_box :question_9,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Se han burlado de esta persona, de lo que dice, de lo que piensa y lo han hecho a propósito con la intención de dañar 
+    <%= f.check_box :question_10,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    Han subido algún video de mi compañero(a)  en alguna situación vergonzosa que lo hace sentir mal , apenado(a), avergonzado(a) 
+    <%= f.check_box :question_11,value: false, class:'check-box'%>
+  </label>   
+  <label class="question-item">
+    He sabido que le han amenazado o le han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarlo(a) y hacerlo(a) sentir mal  
+    <%= f.check_box :question_12,value: false, class:'check-box'%>
+  </label>   
 </div>
+  
 
 
-  <table class="question-list">
-    <tr><td>He visto como golpean a algún compañero(a) con la intención de lastimarlo y esto sucede muy a menudo 
-    <div class="check-box">
-    <span><%= f.check_box :question_1,value: false%>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>Siento que muy seguido dañan o lastiman físicamente a esta persona con la intención  de hacerlo sentir mal y mi compañero(a) no se defiende 
-    <div class="check-box">
-    <span><%= f.check_box :question_2,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>Sé que mi compañero(a)  ha sido amenazado con que le van a hacer daño o lastimar 
-    <div class="check-box">
-    <span><%= f.check_box :question_3,value: false %>
-    </span>
-    </div>
-
-     </td></tr>
-
-    <tr><td> He visto que lo han amenazado si dice a alguien lo que le hacen 
-    <div class="check-box">
-    <span><%= f.check_box :question_4,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>Han inventado rumores para hacerlo(a) sentir mal a propósito para que los demás lo rechacemos o no le hablemos 
-    <div class="check-box">
-    <span><%= f.check_box :question_5,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>He visto que no lo han dejado participar en alguna actividad, lo ignoran, hacen como que no existe para dañarlo(a)  de alguna manera  
-    <div class="check-box">
-    <span><%= f.check_box :question_6 ,value: false%>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>Siento que no puedo defender a mi compañero(a) de estas personas por que me da miedo que después me lo hagan a mi  
-    <div class="check-box">
-    <span><%= f.check_box :question_7,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td> Estoy asustado , triste y enojado ante lo que veo que le hacen a mi compañero (a) y siento que no hay nada que podamos hacer 
-    <div class="check-box">
-    <span><%= f.check_box :question_8,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>He escuchado que le dicen  cosas que  hieren, humillan, lastiman  
-    <div class="check-box">
-    <span><%= f.check_box :question_9,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>Se han burlado de esta persona, de lo que dice, de lo que piensa y lo han hecho a propósito con la intención de dañar  
-    <div class="check-box">
-    <span><%= f.check_box :question_10,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td> Han subido algún video de mi compañero(a)  en alguna situación vergonzosa que lo hace sentir mal , apenado(a), avergonzado(a) 
-    <div class="check-box">
-    <span><%= f.check_box :question_11,value: false %>
-    </span>
-    </div>
-
-    </td></tr>
-
-    <tr><td>He sabido que le han amenazado o le han faltado el respeto a través de mensajes por celular o por alguna red social con la intención de afectarlo(a) y hacerlo(a) sentir mal  
-    <div class="check-box">
-    <span><%= f.check_box :question_12,value: false%>
-    </span>
-    </div>
-    </td></tr>
-  </table>
-
-  <div class="history">
-    <p><b>¿Existe alguna otra cosa que nos quieres platicar con respecto al tema?</b></p></br>
-
-    <%= f.text_area :history, cols:30, rows:5%></br>
-    <p>¿Quieres decirnos el nombre de los agresores a los agresores?</p>
-      <a id="responce_si_2" class="afirmation btn  btn-option" data-target="aggressors_2">Si</a> 
-  <a id="responce_no_2" class="negation btn  btn-option" data-target="aggressors_2">No</a></br>
-  <div id="aggressors_2" style="display:none;">
-    <%= f.text_area :aggressors, cols:30, rows:5%></br>
-  </div>
-  <span class="bnt btn-input btn-form">
-    <%= f.submit "Generar Reporte"%>
+<div class="history">
+  <p>¿Existe alguna otra cosa que nos quieres platicar con respecto al tema?</p>
+    <%= f.text_area :history%>
+  <p>¿Quieres decirnos el nombre de los agresores a los agresores?</p>
+  <span class="options">
+  <a id="responce_si_2" class="afirmation btn  btn-option" data-target="aggressors_2">Si</a>
   </span>
+  <span class="options">
+  <a id="responce_no_2" class="negation btn  btn-option" data-target="aggressors_2">No</a>
+  </span>
+
+<div id="aggressors_2" style="display:none;">
+    <%= f.text_area :aggressors%></br>
+</div>
+</div>
+
+<div class="reports-btn">
+  <span class="bnt btn-input btn-form">
+  <%= f.submit "Generar Reporte"%></span>
   <%end%>
 </div>
+

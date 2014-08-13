@@ -9,7 +9,7 @@
 </head>
 <body>
     <% if !flash.empty? %>
-      <div id="notice"> <%= flash[:notice] %></div>
+      <div id="notice" class="notice_box"> <%= flash[:notice] %></div>
     <%end%>
     <% if session[:user] == nil %>
       <%#= render partial: '/statics_views/layout_parts/head'%>

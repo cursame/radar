@@ -2,18 +2,32 @@
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
-        <div class="col-inner">          
-         <div class="tabs-place">
-            	<div id="tab1" class="tabs" data-target="dresser_attacks">Deunucia Personal</div>
-              <div id="tab2" class="tabs" data-target="dresser_conflicts ">Deunucia como Testigo</div>
-          </div>
-          <div class="tabs-main-content">
-            <div id="dresser_attacks" class="to_tabs">
-              <%= render partial: '/red_lights/dresser_attacks', locals: { :red_ligth => red_ligth, :institution => institution } %>
+        <div class="col-inner">    
+          <div class="form-sheet">      
+            <div class="tabs-place">
+              	<div id="tab1" class="tabs personal" data-target="dresser_attacks">
+                  Deunucia Personal
+                </div>
+                <div id="tab2" class="tabs  witness" data-target="dresser_conflicts ">
+                  Deunucia como Testigo
+                </div>
             </div>
-            <div id="dresser_conflicts" style="display:none;" class="to_tabs">
-              <%= render partial: '/red_lights/dresser_conflicts', locals: { :red_ligth => red_ligth, :institution => institution } %>
-            </div>              
+              <div class="tabs-main-content">
+              <div id="dresser_attacks" class="to_tabs">
+                <%= render partial: '/red_lights/dresser_attacks', locals: { :red_ligth => red_ligth, :institution => institution } %>
+              </div>
+              <div id="dresser_conflicts" style="display:none;" class="to_tabs">
+                <%= render partial: '/red_lights/dresser_conflicts', locals: { :red_ligth => red_ligth, :institution => institution } %>
+              </div>              
+            </div>
+
+            <div class="logo-form">
+              <p><b>Radar</b> ® Derechos Reservados 2014</p>
+            <div class="powered-by">
+              <%=image_tag('footerlogo.png')%>
+            </div>
+
+
           </div>
         </div>
       </div>

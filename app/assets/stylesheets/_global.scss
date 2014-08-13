@@ -190,39 +190,39 @@ h6{
 	color: white;
 	
 	&.home-intro {
-		background-image: url(bg_home.png);
+		background-image: image-url('bg_home.png');
 	}
 
 	&.intro-foco {
-		background-image: url(headaer_denuncia.png);
+		background-image: image-url('headaer_denuncia.png');
 	}
 
 	&.intro-diagnostico {
-		background-image: url(headaer_diagnostico.png);
+		background-image: image-url('headaer_diagnostico.png');
 	}
 
 	&.intro-us {
-		background-image: url(headaer_us.png);
+		background-image: image-url('headaer_us.png');
 	}
 
 	&.intro-contact {
-		background-image: url(header_contact.png);
+		background-image: image-url('header_contact.png');
 	}
 
 	&.intro-panel {
-		background-image: url(bg_panel.png);
+		background-image: image-url('bg_panel.png');
 	}
 
 	&.bg_foco1{
-		background-image: url(bg_foco1.png);
+		background-image: image-url('bg_foco1.png');
 	}
 
 	&.bg_diagnostico{
-		background-image: url(bg_diagnostico.png);
+		background-image: image-url('bg_diagnostico.png');
 	}
 
 	&.bg_login{
-	background-image: url(bg_login.png);
+	background-image: image-url('bg_login.png');
 	}
 
 	&.comments {
@@ -580,7 +580,7 @@ h6{
 			margin-left: -20px;
 			width: 41px;
 			height: 16px;
-			background: url('pack.png') 0 -38px no-repeat;
+			background: image-url('pack.png') 0 -38px no-repeat;
 		}
 
 		@include max-screen(500px) {
@@ -631,7 +631,7 @@ h6{
 		left:35px;
 		width: 54px;
 		height: 20px;
-		background: url('pack.png') 0 -98px no-repeat;
+		background: image-url('pack.png') 0 -98px no-repeat;
 	}
 
 	@include max-screen (500px) {
@@ -1015,4 +1015,15 @@ padding: 10px;
  	font-size: 13px;
  	color: #333;
  }
+}
+
+.notice_box {
+	font-family: $font-radar;
+	background:rgba(252,229,161,.95);
+  z-index: 100;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding: 15px 25px;
+	color: #323232;
 }

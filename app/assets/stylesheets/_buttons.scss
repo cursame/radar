@@ -84,9 +84,9 @@
     }
 
     input:hover {
-    background: #009398;
+    background: rgba(255,255,255,.3);
     border: none;
-    color: #0A5F8A;
+    color: #fff;
     }
   }
 }
@@ -154,8 +154,10 @@
   text-align: center;
   float: left;
   display: block;cursor: pointer;
-  background: #ccc;
+  background: #e1e1e1;
   padding: 5px;
-  width: 20px;
-  margin: 0 5px;
+  width: 40px;
+  margin: 10px 5px;
+  color: #666;
   }
+
