@@ -17,9 +17,9 @@
   <div class="cols-12">
     <div class="col col-12">
       <div class="col-inner">
-        <div class="titlebox-content">
+        <div>
 	        <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights}%>
-	        <div id="act_acces">
+	        <div id="act_acces titlebox-content">
 
           </div>
           <% if @red_lights.total_pages > 1 && params[:page].to_i != @red_lights.total_pages.to_i %>

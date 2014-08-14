@@ -19,7 +19,18 @@
               <span class="tip"></span>
             </div>
             <div class="grades">
-              <%= image_tag ('semaforo_dashboard.png') %>
+              <div class="lights-imgages light-green">
+                
+                <p>peligrosidad moderada</p>
+              </div>
+              <div class="lights-imgages light-yellow">
+
+                <p>peligrosidad media</p>
+              </div>
+              <div class="lights-imgages light-red">
+
+                <p>peligrosidad grave</p>
+              </div>
             </div>
           </div>
           </div>
@@ -42,8 +53,8 @@
               <div class="experts">               
                 <span>
                   <% if number_with_precision(index_by_institution_violence(data), :precision => 2).to_i > 30 %> 
-                  <i class="i i-alert"></i><%= link_to '  Tu institution requiere atención. Contacta un experto aquí', experts_path %>
-                  </span>
+                  <i class="i i-alert"></i><%= link_to ' Tu institution requiere atención. Contacta un experto aquí', experts_path %>
+                </span>
                 <%end%>
               </div>  
             <div class="filtro">
