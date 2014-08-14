@@ -137,9 +137,14 @@ class RedLightsController < ApplicationController
   end
   def parce_url(url, acces, pathx)
     ######### parce url #########
-    remove = ['http', 'https', '/', 'www', ':', '.', "#{pathx}"]
+    removesimplex = ['http', 'https', '/', 'www', ':', '.', "#{pathx}"]
+
+    remove = removesimplex
+    puts "#{remove}"
     @rl = url
+    puts "#{@rl}"
     @ac = acces
+    puts "#{@ac}"
     ######## parce r ########
     remove.each do |r|
      @rl = @rl.remove("#{r}")
