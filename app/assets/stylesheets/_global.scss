@@ -213,6 +213,10 @@ h6{
 		background-image: image-url('bg_panel.png');
 	}
 
+	&.intro-expert {
+		background-image: image-url('bg_experto.png');	
+	}
+
 	&.bg_foco1{
 		background-image: image-url('bg_foco1.png');
 	}
@@ -541,6 +545,7 @@ h6{
 }
 
 .current-stat-grade {
+	width: 940px;
 	text-align: center;
 	position: relative;
 	padding: 130px 0;

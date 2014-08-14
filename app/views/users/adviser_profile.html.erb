@@ -1,24 +1,38 @@
-
-<h2>Menú de adminsitrador</h2>
+<div class="titlebox intro intro-expert bg-blue">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-            <div>
-			        <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights}%>
-			        <div id="act_acces">
-              </div>
-	              <% if @red_lights.total_pages > 1 && params[:page].to_i != @red_lights.total_pages.to_i %>
-	                  <div class="load-more">
-	                    <span class="btn btn-load">
-		                    <div id="paginate">
-		                      <%= link_to 'Cargar más denuncias', red_lights_paginate_path(page: 2, institution: data), remote: true, class: 'sig' %>
-		                    </div>
-	                    </span>
-	                  </div>
-	              <%end%>
-            </div>
+          <div class="titlebox-content">
+            <h2>Asesor experto</h2>
+            <p>Diagnostica la situación de violencia en tu institución</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="wrapper">
+  <div class="cols-12">
+    <div class="col col-12">
+      <div class="col-inner">
+        <div class="titlebox-content">
+	        <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights}%>
+	        <div id="act_acces">
+
+          </div>
+          <% if @red_lights.total_pages > 1 && params[:page].to_i != @red_lights.total_pages.to_i %>
+          <div class="load-more">
+            <span class="btn btn-load">
+    	        <div id="paginate">
+                <%= link_to 'Cargar más denuncias', red_lights_paginate_path(page: 2, institution: data), remote: true, class: 'sig' %>
+              </div>
+            </span>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
