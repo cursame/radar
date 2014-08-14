@@ -28,10 +28,10 @@
               <span><%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%></span></p>
               <textarea id="jquery" class="copy-script" style="display:none;">
                 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?<br/>institution=<%=data.tokenspecialforms%>&pathx=/", function(data){$('body').append(data)});</script>
+                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/&subdomain=app", function(data){$('body').append(data)});</script>
               </textarea>
               <textarea id="red_acces" class="copy-script">
-                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/", function(data) {$('body').append(data)});
+                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/&subdomain=app", function(data) {$('body').append(data)});
                 </script> 
               </textarea>
 
