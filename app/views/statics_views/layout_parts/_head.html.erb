@@ -6,24 +6,43 @@
              <div class="logo">
               <%= link_to image_tag('radar.png'), root_path %>
             </div>
+          <div class="menu-home">
+             <ul class="menu-main nav-top">
+               <li>
+                 <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %></li>
+               <li>
+                 <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %></li>
+               <li>
+                 <%= link_to "Contacto", contacto_path, class: "nav-top" %>
+               </li>
+             </ul>
+           </div>
 
-           <ul class="menu-main nav-top">
-             <li>
-               <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %></li>
-             <li>
-               <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %></li>
-             <li>
-               <%= link_to "Contacto", contacto_path, class: "nav-top" %>
-             </li>
-           </ul>
+           <div class="menu-mobile">
+             <ul>
+               <li><i class="i i-menu "></i></li>
+             </ul>
+           </div>
             
+          <div class="login">
             <ul class="singin-button">
               <li>
                 <div>
-                  <%= link_to "Iniciar sesión →", login_path, class: "login" %>
+                  <%= link_to "   |  Iniciar sesión →", login_path, class: "login"  %>
                 </div>
               </li>
             </ul>
+          </div>
+
+          <div class="login">
+            <ul class="singin-button">
+              <li>
+                <div>
+                  <%= link_to "Regístrate →  ", register_path, class: "login" %>  
+                </div>
+              </li>
+            </ul>
+          </div>
 
           </div>
         </div>
