@@ -49,6 +49,10 @@ $(function() {
 
 	    }
     });
+
+    $('#liber').click(function(){
+        $('#aviso').toggle('slide');
+    });
 	
 });
 

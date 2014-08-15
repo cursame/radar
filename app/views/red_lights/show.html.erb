@@ -24,12 +24,7 @@
             <h5><%= @red_ligth.operator %></h5>
 
             <p><% @red_ligth.types_of_violence.each do |types_of_violence|%> <%= types_of_violence %><%end%></p>
-
-
           </div>
-         
-
-
         </div>
       </div>
     </div>
@@ -54,25 +49,60 @@
 <div class="col col-6">
         <div class="col-inner">
           <div class="others">
-               <h5>Histioria y faltantes</h5>
-              <%= simple_format(@red_ligth.history) %>
-              <h5>Agresores</h5>
-              <%= simple_format(@red_ligth.aggressors) %>
+              <% if !@red_ligth.history.empty?  %>
+                <h5>Histioria y faltantes</h5>
+                <%= simple_format(@red_ligth.history) %>
+              <%end%>
+              <% if !@red_ligth.aggressors.empty?  %>
+                <h5>Agresores</h5>
+                <%= simple_format(@red_ligth.aggressors) %>
+              <%end%>
+              <% if !@red_ligth.name.empty?  %>
+                 
+                  <% if @red_ligth.deliver  %>
+                      <h5>Victima</h5>
+                      Nombre: <%= @red_ligth.name %></br>
+                      Email: <%= @red_ligth.mail %></br>
+                     <%else%>
+                      <% if @red_ligth.operator == 'Peligrosidad Grave' %>
+                         <% if current_user.adviser  %>
+                           <a id="liber" href="#" data-remote="true">Liberar el nombre</a>
+                           <div id="aviso" style="display:none;">
+                             <p>ATENCIÓN</p>
+                             <p>La herramienta de denuncia es un medio para la Institución no nos hacemos responsables de su uso incorrecto</p>
+                             <p>Es importante aclarar que la información es sensible y debe tratarse como tal, de preferencia con apoyo de un especialista en materia de violencia escolar.</p>
+                             <%= link_to 'Lo entiendo y deseo continuar', deliver_parts_path(id: @red_ligth.id)%>
+                           </div>
+                           <%else%>
+                           <p>Para conocer los datos específicos de lo occurrido ponte en contacto con un asesor.</p>
+                         <%end%>
+                      <%else%>
+                           <a id="liber" href="#" data-remote="true">Liberar el nombre</a>
+                           <div id="aviso" style="display:none;">
+                             <p>ATENCIÓN</p>
+                             <p>La herramienta de denuncia es un medio para la Institución no nos hacemos responsables de su uso incorrecto</p>
+                             <p>Es importante aclarar que la información es sensible y debe tratarse como tal, de preferencia con apoyo de un especialista en materia de violencia escolar.</p>
+                             <%= link_to 'Lo entiendo y deseo continuar', deliver_parts_path(id: @red_ligth.id)%>
+                           </div>
+                      <%end%>
+                  <%end%>
+              <%else%>
+                <h5>Denuncia anónima</h5>
+              <%end%>
           </div>
         </div>
       </div> 
     </div> 
   </div>
-</div>
-
-
-						
+</div>						
 <div class="intro comments">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-<%= render partial: '/internal_comunication/comment_content', locals: {red_ligth: @red_ligth}%>
+          <% if  @red_ligth.operator == 'Peligrosidad Grave' %>
+            <%= render partial: '/internal_comunication/comment_content', locals: {red_ligth: @red_ligth}%>
+          <%end%>
         </div>
       </div> 
     </div> 

@@ -12,7 +12,7 @@ class RedLightsController < ApplicationController
         puts "***************** Sin necesidad de ser canalizada en este momento *******************"
     end
     if @red_ligth.save
-      flash[:notice] = 'Cuestionario agregado correctamente'
+      flash[:notice] = 'Cuestionario agregado correctamente un especialista atenderá tu caso'
       @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
       @mailer = InstitutionManagment.red_alert(@institution.user).deliver
        else
@@ -45,6 +45,13 @@ class RedLightsController < ApplicationController
   end
 
   def index
+  end
+
+  def deliver_parts
+    @red_ligth = RedLight.find(params[:id])
+    @red_ligth.deliver = true
+    @red_ligth.save
+    redirect_to :back
   end
 
 
