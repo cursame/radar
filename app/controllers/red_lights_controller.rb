@@ -81,7 +81,7 @@ class RedLightsController < ApplicationController
          Denuncia casos de violencia escolar
       </a>"
 
-    if  parce_url(@institution.url, @origin, params[:pathx] )
+    if  parce_url(@institution.url, @origin, params[:pathx], params[:subdomain] )
     render :json =>  @iframe.to_json
      else
     render :json =>  @nots.to_json
@@ -135,11 +135,16 @@ class RedLightsController < ApplicationController
       redirect_to root_path
     end
   end
-  def parce_url(url, acces, pathx)
+  def parce_url(url, acces, pathx='/', subdomain='')
     ######### parce url #########
-    remove = ['http', 'https', '/', 'www', ':', '.', "#{pathx}"]
+    removesimplex = ['http', 'https', '/', "#{subdomain}", ':', '.', "#{pathx}"]
+
+    remove = removesimplex
+    puts "#{remove}"
     @rl = url
+    puts "#{@rl}"
     @ac = acces
+    puts "#{@ac}"
     ######## parce r ########
     remove.each do |r|
      @rl = @rl.remove("#{r}")

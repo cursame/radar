@@ -27,9 +27,11 @@
                   </div>
                   <div class="dropdown-v right">
                     <ul>
+                      <% if current_user.admin_attributes %>
                       <li>
                         <%= link_to 'Administrador', admin_path %>
                       </li>
+                      <%end%>
                       <li>
                         <%= link_to 'Editar cuenta', edit_my_info_path() %>
                       </li>
