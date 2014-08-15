@@ -35,6 +35,24 @@ $(function() {
 		    }
 	  });
     });
+
+    $( "form#new_red_light" ).submit(function( event ) {
+	    var n = 0
+	    $('.questions-list').find('input[type=checkbox]').each(function(i,e){
+	       if($(e).is(':checked')){
+	          n = n + 1
+	       }
+	    });
+	    if (n == 0) {
+	    	alert('No puede dejar las casillas de la encuesta vacias solo los campos de texto pueden ser anónimos');
+	        return false;
+
+	    }
+    });
+
+    $('#liber').click(function(){
+        $('#aviso').toggle('slide');
+    });
 	
 });
 
