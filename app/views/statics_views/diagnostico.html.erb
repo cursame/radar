@@ -117,8 +117,8 @@
           </div>
           <p>Registrate y te notificaremos cuando auto diagnostico este listo.</p>
           <div class="suscribe">
-            <%= form_tag('/statics_views/subscriber') do -%>
-            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail"%>
+            <%= form_tag('/statics_views/subscriber', class: 'validate') do -%>
+            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail", required: true%>
           
           <div class="send">
             <span class="btn btn-suscribe">
