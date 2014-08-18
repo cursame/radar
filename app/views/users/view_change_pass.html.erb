@@ -8,9 +8,9 @@
                 <h5>Cambio contraseña <%=@user.name%></h5>
             </div>
             <div class="content">
-        			<%= form_tag('/users/change_password') do -%>
-        			  <%= password_field_tag 'password', '' , placeholder: 'Coloca tu nueva contraseña' %>
-                <%= password_field_tag 'password_confirmation', '' , placeholder: 'Confirma tu nueva contraseña' %>
+        			<%= form_tag('/users/change_password', class: 'validate') do -%>
+        			  <%= password_field_tag 'password', '' , placeholder: 'Coloca tu nueva contraseña', required: true %>
+                <%= password_field_tag 'password_confirmation', '' , placeholder: 'Confirma tu nueva contraseña', required: true %>
         			 <div>
         			  <span class="btn btn-input btn-outline "><%= submit_tag 'Cambiar mi contraseña' %></span>
         		   </div>

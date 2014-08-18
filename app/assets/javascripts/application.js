@@ -16,6 +16,10 @@
 //= require highcharts
 //= require highcharts/highcharts-more
 
+$(document).ready(function(){
+  $(".validate").validate();
+});
+
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".fields").hide();
@@ -28,8 +32,6 @@ function add_fields(link, association, content, id_recive) {
   //console.log(execute);
   event.preventDefault()
 }
-
-
 
 $(document).on('change','select',function(e){
     var id = e.target.id
@@ -46,6 +48,4 @@ function Generate_Question_TYPES_by_Dinamic_USES(option, getNextId){
     if (option == 'mULT'){
         
     }
-
-
 }
