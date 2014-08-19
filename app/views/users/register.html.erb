@@ -3,40 +3,61 @@
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
+          
           <div class="loginbox">
             <div class="title-sign">
-                <h5> Registro</h5>
+              <h5> Regístrate</h5>
+              <p>O inicia sesión</p>
+              <span><%= link_to "aquí", login_path, class: "nav-bottom" %></span>
             </div>
-                <div class="content">
+            <div class="col col-6"> 
+              <div class="column">
                 <%= form_for @user, :html => {:class => "validate"} do  |f|%>
                 <%= f.label :nombre %></br>
-                <%= f.text_field 'name', required: true%></br>
+                <%= f.text_field 'name', placeholder: 'Nombre completo', required: true%></br>
                 <%= f.label :email %></br>
-                <%= f.text_field 'email', required: true%></br>
-                <%= f.label :contraseña_mínimo_8_caracteres %></br>
-                <%= f.password_field :password, required: true%></br>
+                <%= f.text_field 'email', placeholder: 'tu@correo.com', required: true%></br>
+                <%= f.label :contraseña %></br>
+                <%= f.password_field :password, placeholder: 'Mínimo_8_caracteres', required: true%></br>
                 <%= f.label :confirma_contraseña %></br>
-                <%= f.password_field :password_confirmation, required: true %></br>
+                <%= f.password_field :password_confirmation, placeholder: '', required: true %></br>
+              </div>
+            </div>
+            <div class="col col-6"> 
+              <div class="column">   
                 <%= f.label :cargo_que_desempeña %></br>
-                <%= f.text_field 'charge', required: true%></br>
-                   <%= f.fields_for :institutions do |builder|%>
-                      <%= builder.label :nombre_de_la_institución_que_lo_solicita %></br>
-                      <%= builder.text_field :name, required: true%></br>
-                      <%= builder.label :url_de_la_institución %></br>
-                      <%= builder.text_field :url, required: true%></br>
-                      <%= builder.label :teléfono %></br>
-                      <%= builder.text_field :phone, required: true%></br>
-                      <%= builder.label :extención %></br>
-                      <%= builder.text_field :extencion, required: true%></br>
-                   <%end%>
-                <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%><%= f.check_box :terms_of_service, required: true%></br>
-                <span class="btn btn-input btn-outline ">
-                <%= f.submit 'Crear Usuario' %></br>
-                </span>
-                <%end%>
+                <%= f.text_field 'charge', placeholder: 'Director, maestro o alumno', required: true%></br>
+                <%= f.fields_for :institutions do |builder|%>                
+                <%= builder.label :nombre_de_la_institución%></br>
+                <%= builder.text_field :name, placeholder: 'Institución que lo solicita', required: true%></br>
+                <%= builder.label :url_de_la_institución %></br>
+                <%= builder.text_field :url, placeholder: 'Sitio web de la institución', required: true%></br>
+                <%= builder.label :teléfono %></br>
+                <%= builder.text_field :phone, placeholder: '', required: true%></br>
+                <%= builder.label :extención %></br>
+                <%= builder.text_field :extencion, placeholder: ' ', required: true%></br>
+                <%end%>                                
+              </div>
+            </div>
+
+
+            <div class="terminos">
+              <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%>
+              <%= f.check_box :terms_of_service, required: true%></br>  </br>
+              <span class="btn btn-input btn-outline">
+                <%= f.submit 'Crear Usuario' %>
+              </span>
+              <%end%>
+            </div>
               
-                </div>
+            <div class="bottomsign">
+              <span class="a-sign">
+                <%= link_to "¿Olvidaste tu contraseña?", mail_to_reconfirm_password_path%>
+              </span>
+            </div>
+            
           </div>
+
         </div>
       </div>
     </div>

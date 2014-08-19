@@ -205,7 +205,7 @@ h6{
 		float: right;
 		position: absolute;
 		bottom: 30px;
-		right: 30px;
+		right: 35px;
 	}
 
 	.btn {
@@ -232,8 +232,13 @@ h6{
 			padding: 15px;
 		}
 
-		.img-block{
-		display: none;
+	.img-block {
+		position: absolute;
+		right: 0;
+	}
+
+		img {
+			width: 65%;
 		}
 	}
 }
@@ -553,27 +558,40 @@ h6{
 	text-align: left;
 	margin: 100px auto;
 	background:rgba(255,255,255, 0.2);
-	width: 300px;
+	width: 500px;
 	height: auto;
 	color: #a4a4a4;
 	border-radius: 3px;
-
-	label{
-		color: $white;
-		font-size: 14px;
-	}
+	@include clearfix;
 
 	.content {
-		margin: 25px;
-		height: auto;
-		padding-bottom: 25px;
+		width: 380px;
+		padding: 0 55px
+	}
+
+	@include max-screen(500px) {
+		width: 100%;
+		margin: auto;
+	}
+
+
+	.column {
+		padding: 5px 10px 0 10px;
+	}
+
+	form,label,textarea{
+		color: $white;
+		font-size: 14px;
+		
 	}
 
 	.title-sign {
 		background: white;
 		border-radius: 3px 3px 0 0;
-		padding:15px;
+		padding:12px 20px;
 		padding-bottom: 30px;
+		margin-bottom: 20px;
+		
 		
 		& p {
 			float: left;
@@ -596,12 +614,16 @@ h6{
 		padding:15px;
 		color: #3879B4;
 		font-size: 13px;
+		margin-top: 20px;
 
 			span.a-sign{
 			font-size: 11px;
 		}
 	}
-
+	.terminos {
+		padding-left: 25px;
+		padding-bottom: 20px;
+	}
 }
 
 .form-email {
