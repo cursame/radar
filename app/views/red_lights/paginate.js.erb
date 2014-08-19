@@ -1,6 +1,6 @@
 $('#act_acces').append('<%= escape_javascript(render(partial: '/red_lights/show', locals: {red_lights: @red_lights}))%>');
 <% if @actual_page != 0 %>
-$('#paginate').html('<a class="sig" data-remote="true"'+'href="/paginte_red_lights?'+'page='+<%=@actual_page%>+'">Siguiente</a>');
+$('#paginate').html('<a class="sig" data-remote="true"'+'href="/paginte_red_lights?page=<%=@actual_page%>&institution=<%=@institution.id%>">Siguiente</a>');
 <%else%>
 $('#paginate').html('<a class="sig">Se han cargado todas las denuncias</a>');
 <%end%>

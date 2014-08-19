@@ -10,12 +10,12 @@
                 <span><%= link_to "aquí", register_path, class: "nav-bottom" %></span>
             </div>
             <div class="content">
-              <%= form_tag('/users/session_create') do -%>
+              <%= form_tag('/users/session_create', class: 'validate') do -%>
               <%= label_tag 'Usuario' %>
-              <%= email_field_tag 'email', '' , placeholder: 'tu@correo.com' %>
+              <%= email_field_tag 'email', '' , placeholder: 'tu@correo.com', required: true %>
               <br/>
               <%= label_tag 'password' %>
-              <%= password_field_tag 'password', '' , placeholder: 'Contraseña'  %>
+              <%= password_field_tag 'password', '' , placeholder: 'Contraseña', required: true %>
               <div>
                 <span class="btn btn-input btn-outline "><%= submit_tag 'Iniciar' %></span>
               </div>

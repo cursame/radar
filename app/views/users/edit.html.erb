@@ -21,10 +21,10 @@
       <div class="col-inner">
         <div class="data-edit">
         <h5>Información de usuaro</h5>
-          <%= form_for @user do |f|%>
-          <%= f.text_field :name, placeholder: 'Nombre' %>
-          <%= f.text_field :email, placeholder: 'Correo electrónico' %>
-          <%= f.text_field :charge, placeholder: 'Cargo dentro de la institución' %>
+          <%= form_for @user, :html => {:class => "validate"} do |f|%>
+          <%= f.text_field :name, placeholder: 'Nombre', required: true %>
+          <%= f.text_field :email, placeholder: 'Correo electrónico', required: true %>
+          <%= f.text_field :charge, placeholder: 'Cargo dentro de la institución', required: true %>
           <span class="btn btn-embed">  <%= f.submit 'Guardar datos'%></span>
           <%end%>
         </div>

@@ -8,29 +8,31 @@
                 <h5> Registro</h5>
             </div>
                 <div class="content">
-                <%= form_for @user do  |f|%>
+                <%= form_for @user, :html => {:class => "validate"} do  |f|%>
                 <%= f.label :nombre %></br>
-                <%= f.text_field 'name'%></br>
+                <%= f.text_field 'name', required: true%></br>
                 <%= f.label :email %></br>
-                <%= f.text_field 'email'%></br>
+                <%= f.text_field 'email', required: true%></br>
                 <%= f.label :contraseña_mínimo_8_caracteres %></br>
-                <%= f.password_field :password%></br>
+                <%= f.password_field :password, required: true%></br>
                 <%= f.label :confirma_contraseña %></br>
-                <%= f.password_field :password_confirmation %></br>
+                <%= f.password_field :password_confirmation, required: true %></br>
                 <%= f.label :cargo_que_desempeña %></br>
-                <%= f.text_field 'charge'%></br>
+                <%= f.text_field 'charge', required: true%></br>
                    <%= f.fields_for :institutions do |builder|%>
                       <%= builder.label :nombre_de_la_institución_que_lo_solicita %></br>
-                      <%= builder.text_field :name%></br>
+                      <%= builder.text_field :name, required: true%></br>
                       <%= builder.label :url_de_la_institución %></br>
-                      <%= builder.text_field :url%></br>
+                      <%= builder.text_field :url, required: true%></br>
                       <%= builder.label :teléfono %></br>
-                      <%= builder.text_field :phone%></br>
+                      <%= builder.text_field :phone, required: true%></br>
                       <%= builder.label :extención %></br>
-                      <%= builder.text_field :extencion%></br>
+                      <%= builder.text_field :extencion, required: true%></br>
                    <%end%>
-                <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%><%= f.check_box :terms_of_service%></br>
+                <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%><%= f.check_box :terms_of_service, required: true%></br>
+                <span class="btn btn-input btn-outline ">
                 <%= f.submit 'Crear Usuario' %></br>
+                </span>
                 <%end%>
               
                 </div>
