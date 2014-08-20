@@ -108,6 +108,7 @@ h6{
 	padding:25px 15px;
 	border-right: 1px solid #dedede;
 	display: none;
+	cursor: pointer;
 
 	ul {
 		list-style: none;
@@ -565,13 +566,13 @@ h6{
 	@include clearfix;
 
 	.content {
-		width: 380px;
-		padding: 0 55px
+		width: 75%;
+		padding: 0 12%;
 	}
 
 	@include max-screen(500px) {
 		width: 100%;
-		margin: auto;
+		margin: 30px auto;
 	}
 
 
@@ -625,6 +626,10 @@ h6{
 		padding-bottom: 20px;
 	}
 }
+
+
+
+
 
 .form-email {
 	text-align: center;
@@ -1258,4 +1263,45 @@ padding: 10px;
 	width: 100%;
 	padding: 15px 25px;
 	color: #323232;
+}
+
+#menu-imobile {
+	z-index:200; 
+	position:fixed; 
+	margin-top:72px;
+	cursor: pointer;
+  display: none;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+
+
+	& ul li {
+		background:$white;
+		text-align: left;
+		border-top: 1px solid #efefef;
+
+		& a {
+			display: block;
+			padding: 15px;
+			font-size: 13px;
+			color: $main-blue;
+			font-family: $font-radar;
+		}
+
+		:hover {
+			background:#efefef;
+			color: #323232;
+		}
+	}
+}
+
+.error {
+	color: #323232 !important;
+	font-family: $font-radar;
+	font-size: 13px !important;; 
+	width: auto;
+	padding: 12px;
+	text-align: left;
+	background:#F4DE9C;
+	border-radius: 3px;
+	float: right;
 }

@@ -17,7 +17,14 @@
 //= require highcharts/highcharts-more
 
 $(document).ready(function(){
+    // validates 
   $(".validate").validate();
+   // to target function 
+
+  $('.totarget').click(function(){
+   var to_div = $(this).data('target');
+   $('#'+to_div).toggle('blind', 400);
+  });
 });
 
 function remove_fields(link) {
@@ -49,3 +56,5 @@ function Generate_Question_TYPES_by_Dinamic_USES(option, getNextId){
         
     }
 }
+
+
