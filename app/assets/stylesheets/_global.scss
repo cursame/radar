@@ -121,6 +121,14 @@ h6{
 
 
 .menu-main{
+	& a {
+		display: block;
+		font-family: $font-radar;
+		color: $main-blue;
+		font-size: 13px;
+	}
+
+
 	@include max-screen (800px) {
 		display: none;
 	}
@@ -141,32 +149,8 @@ h6{
 			}
 		}
 	}
-
-	& a {
-		display: block;
-		font-family: $font-radar;
-		color: $main-blue;
-		font-size: 13px;
-	}
 }
 
-.singin-button{
-  float: right;
-  padding-top: 25px;
-
-  li {
-  	list-style-type: none;
-  }
-
-  a.login{
-  font-size: 13px;
-  color: #076da9;
-	}
-
-	@include max-screen(800px) {
-		display: none;
-	}
-}
 
 .bg-orange{
 	background-color: #f36506;
@@ -447,10 +431,6 @@ h6{
 	.section-title  {
 		text-align: center;
 		margin-top: 30px;
-
-		& label.mid-label {
-			width: 350px;
-		}
 	}
 	
 	img {
@@ -467,25 +447,66 @@ h6{
 	}
 }
 
-.bulying-types {
-	text-align: center;
-	padding: 60px 0 40px 0;
-	margin: auto;
-	width: auto;
 
-	ul {
-	position: absolute;
-	left: 0;
-	right: 0;
+.tipos-bullying {
+
+	.section-title  {
+		text-align: center;
+		margin-top: 50px;
 	}
 
-	li{
-			float: left;
-			display: block;
+		img {
+
+		margin-bottom: 40px;
 		}
 
-	img{
-		margin: 70px 0;
+		.big {
+			width: 100%;
+		}
+
+		.small {
+			display: none;
+		}
+
+		@include max-screen (800px) {
+				.big {
+			display: none;
+		}
+
+		.small {
+			display: block;
+		}
+	}
+}
+
+.bulying-types {
+	font-family: $font-radar;
+	font-size: 13px;
+	color: #666;
+	margin:40px auto 60px 0; 
+	text-align: center;
+	@include clearfix;
+	
+
+	.b-tipe {
+
+		label {
+			float: left;
+			width: 150px;
+			text-align: center;
+			background:#fefefe;
+			display: block;
+			padding: 10px 20px;
+			margin: 0 10px 10px 0;
+			border-radius: 3px;
+			border: #efefef 1px solid;
+		}
+
+		@include max-screen (600px) {
+			label {
+				width: 235px;
+			}
+		}
 	}
 }
 
@@ -524,13 +545,13 @@ h6{
 		text-align: left;
 		margin: auto;
 		background:none;
-		width: 470px;
+		width: 300px;
 		height: auto;
 		color: #a4a4a4;
 		border-radius: 3px;
 
 		.suscribe-field {
-			width: 350px;
+			width: auto;
 			float: left;
 		}
 
@@ -539,6 +560,14 @@ h6{
 			margin-right: 5px;
 			margin-left: 10px;
 	} 
+
+	@include max-screen(500px) {
+		.suscribe-field {
+			width: 50%;
+		}
+
+
+	}
 }
 
 .us-info{
@@ -769,7 +798,6 @@ h6{
 		}
 
 		@include max-screen(500px) {
-			
 			.tip {
 				display: none;
 				}
@@ -828,7 +856,7 @@ h6{
 
 		&.current-stat-grade {
 			padding: 80px 0;
-			width: 100%;
+			width: auto;
 		}
 		
 		.speech {

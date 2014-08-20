@@ -7,18 +7,18 @@
             <%= link_to image_tag('radar.png'), root_path %>
           </div>
         <div class="menu-home">
-           <ul class="menu-main nav-top">
-             <li>
-               <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %>
-              </li>
-             <li>
-               <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %>
-              </li>
-             <li>
-               <%= link_to "Contacto", contacto_path, class: "nav-top" %>
-             </li>
-           </ul>
-         </div>
+         <ul class="menu-main nav-top">
+           <li>
+             <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %>
+            </li>
+           <li>
+             <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %>
+            </li>
+           <li>
+             <%= link_to "Contacto", contacto_path, class: "nav-top" %>
+           </li>
+         </ul>
+       </div>
 
          <div class="menu-mobile totarget" data-target="menu-imobile">
            <ul>
@@ -26,16 +26,20 @@
            </ul>
 
          </div>
-        <div class="login">
-          <ul class="singin-button">
-            <li>
-              <div>
-                <%= link_to "Iniciar sesión →", login_path, class: "login"  %>
-              </div>
-            </li>
-          </ul>
-        </div>
-
+          <div class="login">
+            <ul class="singin-button">
+              <li>        
+                <div class="btn  btn-input btn-embed">
+                  <%= link_to "Regístrate", register_path  %>
+                 </div>
+              </li>
+              <li>
+                <div>
+                  <%= link_to "Iniciar sesión →", login_path, class: "login"  %>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -45,12 +49,13 @@
 
 
 <div id="menu-imobile">
-     <ul>
-       <li><%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-top" %></li>
-       <li><%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-top" %></li>
-       <li><%= link_to "Contacto", contacto_path, class: "nav-top" %></li>
-       <li><%= link_to "Iniciar sesión →", login_path, class: "login"  %></li>
-       <li class=""><%= link_to "Regístrate →  ", register_path, class: "login" %> </li>
-     </ul>
+  <ul>
+    <li><%= link_to "Denuncia confidencial", foco_rojo_path %></li>
+    <li><%= link_to "Autodiagnóstico", diagnostico_path %></li>
+    <li><%= link_to "Nosotros", nosotros_path %></li>
+    <li><%= link_to "Contacto", contacto_path %></li>
+    <li><%= link_to "· Iniciar sesión", login_path %></li>
+    <li class=""><%= link_to "· Regístrate", register_path %> </li>
+    </ul>
 </div>
 
