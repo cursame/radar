@@ -5,8 +5,7 @@
   &.btn-input {
     @include inline-block;
 
-
-     input {
+    input {
       font-size: 13px;
       font-weight: lighter;
       color: $white;
@@ -15,8 +14,8 @@
     }
 
     input:hover {
-    background: none;
-    color: #0A5F8A;
+      background: none;
+      color: #0A5F8A;
     }
   }
 }
@@ -163,18 +162,40 @@
 
 .singin-button{
   float: right;
-  padding-top: 25px;
+  padding-top: 28px;
 
   li {
     list-style-type: none;
   }
 
   a.login{
-  font-size: 13px;
-  color: #076da9;
+    position: absolute;
+    right: 200px;
+    font-size: 13px;
+    color: #076da9;
   }
 
   @include max-screen(800px) {
     display: none;
+  }
+}
+
+.btn-register {
+
+  position: absolute;
+  right: 90px;
+  top: 20px;
+  float: right;
+  background:#1e7ac2;
+  font-size: 13px;
+
+  a {
+    display: block;
+    color: $white;
+    padding: 7px 10px;
+  }
+
+  :hover {
+    background:rgba(255,255,255,0.2);
   }
 }

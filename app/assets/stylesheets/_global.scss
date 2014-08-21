@@ -60,7 +60,13 @@ h6{
 	text-shadow: 1px 2px #204E62;
 }
 
+a:visited {
+	color: #666;
+}
+
 .header {
+	position: relative;
+	top: 0;
 	z-index: 50;
 	height: 60px;
 	width: 100%;
@@ -121,33 +127,29 @@ h6{
 
 
 .menu-main{
-	& a {
-		display: block;
-		font-family: $font-radar;
-		color: $main-blue;
-		font-size: 13px;
-	}
-
-
-	@include max-screen (800px) {
-		display: none;
-	}
 
 	& li {
-		padding: 27px 10px;
 		float:left;
 		list-style-type: none;
 		display: block;
 		cursor: pointer;
 		margin-right: 5px;
 
-	&:hover {
-		background:$white;
+	& a {
+		display: block;
+		font-family: $font-radar;
+		color: $main-blue;
+		font-size: 13px;
+		padding: 27px 10px;
+	}
 
-			a {
-			color: $gray;
-			}
+	& a:hover {
+		background:$white;
+		color: $gray;
 		}
+	}
+		@include max-screen (800px) {
+		display: none;
 	}
 }
 
@@ -1300,6 +1302,19 @@ padding: 10px;
 	cursor: pointer;
   display: none;
   box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+
+  	& ul li.btn_menu_mobile {
+			background:#1B9CD1;
+			border-top: 1px #fff solid;
+
+			& a {
+				color: $white;
+			}
+
+			:hover {
+			background:#019CB8;
+			}
+		}
 
 
 	& ul li {

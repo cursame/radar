@@ -20,8 +20,11 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="contenido">
-            <p> Si no tiene página web puedes utilizar la siguiente URL para que denuncien:</br> 
-              <span><%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%></span></p>
+            <p> Si tu institución no tiene página web, puedes utilizar el siguiente link para que los alumnos denuncien </br> 
+                <a href="<%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%>" target="_blank" class="btn btn-embed btn-copy">
+                Cuestionaro de violencia
+                </a>
+            </p>
               <textarea id="jquery" class="copy-script" style="display:none;">
                 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
                 <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/&subdomain=www", function(data){$('body').append(data)});</script>

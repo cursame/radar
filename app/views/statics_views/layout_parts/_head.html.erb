@@ -20,22 +20,21 @@
          </ul>
        </div>
 
-         <div class="menu-mobile totarget" data-target="menu-imobile">
-           <ul>
-             <li><i class="i i-menu " ></i></li>
-           </ul>
-
-         </div>
+        <div class="menu-mobile totarget" data-target="menu-imobile">
+         <ul>
+           <li><i class="i i-menu " ></i></li>
+         </ul>
+        </div>
           <div class="login">
             <ul class="singin-button">
               <li>        
-                <div class="btn  btn-input btn-embed">
+                <div class="btn btn-register">
                   <%= link_to "Regístrate", register_path  %>
                  </div>
               </li>
               <li>
                 <div>
-                  <%= link_to "Iniciar sesión →", login_path, class: "login"  %>
+                  <%= link_to "Iniciar sesión", login_path, class: "login"  %>
                 </div>
               </li>
             </ul>
@@ -54,8 +53,8 @@
     <li><%= link_to "Autodiagnóstico", diagnostico_path %></li>
     <li><%= link_to "Nosotros", nosotros_path %></li>
     <li><%= link_to "Contacto", contacto_path %></li>
-    <li><%= link_to "· Iniciar sesión", login_path %></li>
-    <li class=""><%= link_to "· Regístrate", register_path %> </li>
+    <li class="btn_menu_mobile"><%= link_to "Iniciar sesión", login_path %></li>
+    <li class="btn_menu_mobile"><%= link_to "Regístrate", register_path %> </li>
     </ul>
 </div>
 

@@ -12,15 +12,13 @@
     </div>
   </div>
 </div>
-
 <div class="contact-form">
   <div class="wrapper">
-
     <div class="cols-12">
+      <%= form_tag('/statics_views/mail_to_contact', class: 'validate') do -%>
       <div class="col col-6">
         <div class="col-inner">
           <div class="form-contenido">
-            <%= form_tag('/statics_views/mail_to_contact', class: 'validate') do -%>
             <%= label_tag 'email *' %></br>
             <%= email_field_tag 'email', '' , placeholder: 'tu@correo.com', required: true %></br>
             <%= label_tag 'Nombre *' %></br>
@@ -28,8 +26,7 @@
             <%= label_tag 'Institución *' %></br>
             <%= text_field_tag 'institucion', '' , placeholder: 'Nombre de tu institución educativa', required: true%></br>
             <%= label_tag 'Cargo *' %></br>
-            <%= text_field_tag 'cargo', '' , placeholder: 'Cargo que desempeñas', required: true%></br>
-            
+            <%= text_field_tag 'cargo', '' , placeholder: 'Cargo que desempeñas', required: true%></br>    
           </div>
         </div>
       </div>
@@ -41,17 +38,14 @@
             <%= label_tag 'Extensión *' %></br>
             <%= number_field_tag 'extencion', '' , placeholder: 'Extensión', required: true%></br>
             <%= label_tag 'Tema *' %></br>
-            <%= text_area_tag 'tema', '' , placeholder: 'Coloque aqui la descripcción detallada de su asunto', :class =>  'contact tema', required: true %></br>
+            <%= text_area_tag 'tema', '' , placeholder: 'Coloque aqui la descripcción detallada de su asunto', required: true %></br>
             <div>
               <span class="btn btn-input btn-form"><%= submit_tag 'Contactar'%></span>
             </div>
-          <% end -%>
+          </div>
         </div>
-        </div>
+        <% end -%>
+      </div>
     </div>
-
-
-    </div>
-
   </div>
 </div>
