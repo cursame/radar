@@ -341,7 +341,7 @@ a:visited {
 		margin-top: 55px;
 		padding-top: 15px;
 		
-		&.home-intro, &.intro-panel, &.bg-bluegradient {
+		&.home-intro, &.intro-panel, &.bg-bluegradient, &.bg-blue {
 			margin: 0;
 		}
 	}
@@ -1304,15 +1304,13 @@ padding: 10px;
   box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 
   	& ul li.btn_menu_mobile {
-			background:#1B9CD1;
-			border-top: 1px #fff solid;
 
 			& a {
-				color: $white;
+				color: #204A87;
 			}
 
 			:hover {
-			background:#019CB8;
+			color: $main-blue;
 			}
 		}
 
