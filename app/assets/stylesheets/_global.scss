@@ -414,6 +414,15 @@ a:visited {
 	display: block;
 	padding: 0 10%;
 	}
+
+	@include max-screen(650px) {
+		text-align: left;
+
+		img {
+			display: none;
+		}
+	}
+
 }
 
 .info{
@@ -491,22 +500,22 @@ a:visited {
 	
 
 	.b-tipe {
-
+		text-align: center;
 		label {
 			float: left;
-			width: 150px;
 			text-align: center;
 			background:#fefefe;
 			display: block;
-			padding: 10px 20px;
+			padding: 10px 38px;
 			margin: 0 10px 10px 0;
 			border-radius: 3px;
 			border: #efefef 1px solid;
 		}
 
-		@include max-screen (600px) {
+		@include max-screen (650px) {
 			label {
-				width: 235px;
+				width: 100%;
+				padding: 10px 0;
 			}
 		}
 	}
@@ -686,8 +695,15 @@ a:visited {
 .form-contenido{
 	text-align: left;
 
-	label {
-		font-family: $font-radar
+	label.error {
+    position: relative;
+    top: -20px;
+    color: red;
+    border-bottom: 1px #ccc solid;
+	}
+
+	textarea {
+		background:#f1f1f1;
 	}
 }
 
@@ -799,12 +815,13 @@ a:visited {
 			background: image-url('pack.png') 0 -38px no-repeat;
 		}
 
-		@include max-screen(500px) {
-			.tip {
-				display: none;
-				}
+	@include max-screen(500px) {
+
+		.tip {
+			display: none;
 			}
 		}
+	}
 
 	.light-green {
 		background-image: image-url('light_green.png');
@@ -853,16 +870,19 @@ a:visited {
 		}
 	}
 
-
 	@include max-screen(500px) {
 
 		&.current-stat-grade {
-			padding: 80px 0;
+			position: relative;
+			padding: 80px 0 ;
 			width: auto;
+			text-align: left;
 		}
 		
 		.speech {
-			left: 0% !important;
+			position: absolute;
+			right: 0 !important;
+			padding: 5px 5px 5px 10px;
 		}
 
 		.grades {
@@ -907,6 +927,11 @@ a:visited {
 
 .lista-denuncias {
 	text-align: left;
+
+	@include max-screen (650px) {
+	position: relative;
+	top: 80px;
+	}
 }
 
 .filter-line {
@@ -919,45 +944,66 @@ a:visited {
 			color: #666666;
 			font-size: 24px;
 		}
-	
-			.total {
+
+		.total {
 		padding:25px 0;
 		float: left;
-		width: 600px;
+		width: auto;
 		display: block;
 	}
 
 	.filtro {
-
 		label {
 		text-align: right;
 		font-family: $font-radar;
 		font-size: 13px;
 		} 
 	}
+
+	.experts {
+		padding: 10px;
+		position: absolute;
+		background: #fce5a1;
+		border-radius: 5px;
+		display: block;
+		top: 15%;
+		right: 0;
+
+		span a {
+			font-size: 13px;
+			color: #333;
+		}
+	}
+
+	@include  max-screen(600px) {
+
+		.total {
+			padding:10px 0;
+		}
+
+		.experts {
+		top: 50px;
+		}
+	}
 }
 
 .list {
-
 	font-family: $font-radar;
-	
 
+	.list-item {
+		display: block;
+		background: #Fcfcfc;
+		color: #666666;
+		position: relative;
+		text-align: left;
+		padding: 20px 40px 20px 25px;
+		margin: 8px 0;
+		border: #ccc solid 1px;
+		border-radius: 5px;
 
-	
-.list-item {
-	display: block;
-	background: #Fcfcfc;
-	color: #666666;
-	position: relative;
-	text-align: left;
-	padding: 20px 40px 20px 25px;
-	margin: 8px 0;
-	border: #ccc solid 1px;
-	border-radius: 5px;
-
-	&:hover {
-		background: darken(#Fcfcfc, 3%);
-	}
+		&:hover {
+			background: darken(#Fcfcfc, 3%);
+		}
 	}
 
 	h5 {
@@ -1005,7 +1051,6 @@ a:visited {
 		font-size: 13px;
 	}
 
-
 		& p {
 			color: #999999;
 			font-size: 13px;
@@ -1019,7 +1064,6 @@ a:visited {
 			font-size: 13px;
 		}
 	}
-	
 }
 
 .copy-script {
@@ -1044,7 +1088,6 @@ a:visited {
 			padding: 0;
 		}
 	}
-
 
 	p {
 		font-size: 13px;
@@ -1084,26 +1127,26 @@ a:visited {
 	font-family: $font-radar;
 	list-style-type: none;
 
-		.title-line {
-			height: 40px;
-			float:left;
-			padding-top: 12px;
-			color: #999999;
-		}
+	.title-line {
+		height: 40px;
+		float:left;
+		padding-top: 12px;
+		color: #999999;
+	}
 
-	 h5 {
-	 	color: #333;
-	 	line-height: 15px;
-	 }
+	h5 {
+		color: #333;
+		line-height: 15px;
+	}
 
-	 p {
-		padding-left: 40px;
-		}
+	p {
+	padding-left: 40px;
+	}
 
-	 i {
-	 	margin: 10px 20px 10px 0;
-	 	float: left;
-	 }
+	i {
+		margin: 10px 20px 10px 0;
+		float: left;
+	}
 }
 
 .intro-element {
@@ -1227,7 +1270,7 @@ padding: 15px 120px 25px 10px;		}
 .load-more {
 	text-align: center;
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	margin-top: 20px;
 }
 
@@ -1268,21 +1311,7 @@ padding: 15px 120px 25px 10px;		}
 } 	
 
 
-.experts {
 
-padding: 10px;
- position: absolute;
- background: #fce5a1;
- border-radius: 5px;
- display: block;
- top: 15%;
- right: 0;
-
- span a {
- 	font-size: 13px;
- 	color: #333;
- }
-}
 
 .notice_box {
 	font-family: $font-radar;
@@ -1335,14 +1364,3 @@ padding: 10px;
 	}
 }
 
-.error {
-	color: #323232 !important;
-	font-family: $font-radar;
-	font-size: 13px !important;; 
-	width: auto;
-	padding: 12px;
-	text-align: left;
-	background:#F4DE9C;
-	border-radius: 3px;
-	float: right;
-}
