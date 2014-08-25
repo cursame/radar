@@ -731,23 +731,18 @@ a:visited {
 			text-align:left;
 			float: left;
 			}
+		
 		.copy-script {
 			width: 100%;
-			}
+		}
 
-			p {
-				text-align: left;
-			}
+		p {
+			text-align: left;
+		}
 
-			img {
-				display: none;
-			}
-
-    .btn-copy {
-	    span {
-	   	 margin-bottom: 20px;
-	    }
-  	}
+		img {
+			display: none;
+		}
 	}
 }
 
@@ -1074,9 +1069,6 @@ a:visited {
 	margin: 50px 0 20px 0;
 }
 
-.btn-copy {
-	text-align: center;
-}
 
 .note {
 	clear: right;

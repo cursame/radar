@@ -53,7 +53,7 @@
               <div class="experts">               
                 <span>
                   <% if number_with_precision(index_by_institution_violence(data), :precision => 2).to_i > 40 && data.red_lights.count != 0 %> 
-                  <i class="i i-alert"></i><%= link_to ' Tu institution requiere atención. Contacta un experto aquí', experts_path %>
+                  <i class="i i-alert"></i><%= link_to ' Tu institución requiere atención. Contacta un experto aquí', experts_path %>
                 </span>
                 <%end%>
               </div>  
