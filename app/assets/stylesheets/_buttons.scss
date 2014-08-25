@@ -93,20 +93,25 @@
 
 .btn-embed {
   @include inline-block;
-      input {
-      border-radius: 3px;
-      font-size: 13px;
-      font-weight: lighter;
-      color: $white;
-      padding: 5px 20px;
-      background: #1991C3;
-      border: 1px solid #4280A3;
-      height: 45px;
-    }
+    
+  span {
+    cursor: pointer;
+  }
 
-    :hover {
-      background-color: #0c63c5;
-    }
+  input {
+    border-radius: 3px;
+    padding: 15px 20px;
+    border: 1px solid #4280A3;
+    font-size: 13px;
+    font-weight: lighter;
+    color: $white;
+    background: #1991C3;
+    cursor: pointer;
+  }
+
+  :hover {
+    background-color: #0c63a0;
+  }
 }
 
 .btn-comment {
