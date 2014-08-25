@@ -100,7 +100,9 @@ Rails.application.routes.draw do
     resources :cuestionaries
     get 'statics_views/home'
     get 'statics_views/panel'
-
+    get 'port_acces/:id', :to => 'cuestionaries#view', as: :view_questionary
+    get 'responce', :to => 'cuestionaries#responce', as: :responce_questionary
+    post '/cuestionaries/responce'
   ####### api ########
     get 'api/documentation_methods'
     get 'api/acces_to_red_lights'

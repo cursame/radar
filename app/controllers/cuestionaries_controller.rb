@@ -20,6 +20,7 @@ class CuestionariesController < ApplicationController
   end
 
   def view
+   @port =  Cuestionary.find(params[:id])
   end
 
   def update
@@ -27,8 +28,19 @@ class CuestionariesController < ApplicationController
 
   def index
   end
+
+  def responce
+     params[:opt].each do |optn|
+       puts optn
+       optn.each do |res|
+        @a =  Array(res)
+       end
+     end
+
+    redirect_to :back
+  end
   
   def cuestionary_params
-  	  params.require(:cuestionary).permit(:title, :call_code, :instructions, questions_attributes: [:title, :question_type] )
+  	  params.require(:cuestionary).permit(:title, :call_code, :instructions, questions_attributes: [:title, :question_type, :question_requires] )
   end
 end

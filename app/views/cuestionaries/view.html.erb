@@ -1,0 +1,15 @@
+<% cue = 0 %>
+<%= form_tag('/cuestionaries/responce') do -%>
+	<% @port.questions.each do |p|%> 
+	  <% cue = cue + 1 %> 
+	  <% p.question_type %>
+	   <% case p.question_type %>
+	   <% when 'mULT' %>
+	      <%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
+	   <% when 'sCAL' %>
+	   <% when 'tEXT' %>
+	   <% when 'cAMP' %>
+	   <%end%>
+	<%end%>
+	<%= submit_tag 'Responder' %>
+<%end -%>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
    helper_method :current_user
    helper_method :index_by_institution_violence
    helper_method :action_host
-
+   helper_method :viewver_encode
    def current_user
     @user = User.find(session[:user])
    end
@@ -152,6 +152,11 @@ class ApplicationController < ActionController::Base
       @refact = 0
      end
    end
+
+  def viewver_encode(string)
+     string.to_s.split(',')
+
+  end
 
 
   
