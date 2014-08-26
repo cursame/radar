@@ -5,7 +5,7 @@
     </p>
 
     <div class="data">
-      <%= form_for red_ligth do |f|%>
+      <%= form_for(red_ligth, html: {id: 'victima'})  do |f|%>
       Mail: <%= f.text_field :mail %>
       <%= f.hidden_field :institution_code, value: institution %>
     </div>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="questions-list">  
+<div class="questions-list-1">  
   <label class="question-item">
     Me  han golpeado con la intención de lastimarme en el último mes en la escuela
     <%= f.check_box :question_1,value: false, class:'check-box'%>

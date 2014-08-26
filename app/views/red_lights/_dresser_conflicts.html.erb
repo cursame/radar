@@ -8,18 +8,18 @@
 
 
 <div class="data">
-  <%= form_for red_ligth do |f|%>
+  <%= form_for(red_ligth, html: {id: 'testigo'} ) do |f|%>
   Mail: <%= f.text_field :mail %>
   <%= f.hidden_field :institution_code, value: institution %>
 </div>
 <div class="data">
   Nombre: <%= f.text_field :name %>
-  <%= f.hidden_field :type_denunce, value: 'personal'%>
+  <%= f.hidden_field :type_denunce, value: 'non personal'%>
 </div>
 </div>
 </div>
 
-<div class="questions-list">
+<div class="questions-list-2">
   <label class="question-item">
     He visto como golpean a algún compañero(a) con la intención de lastimarlo y esto sucede muy a menudo <%= f.check_box :question_1,value: false, class:'check-box'%>
   </label>   
