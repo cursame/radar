@@ -1,11 +1,22 @@
-<h1>Instituciones</h1>
-<p> Instituciones que tenemos actualmente </p>
-<% @institution.each do |i| %> 
-	<%=i.name %></br>
-    <%=i.url %></br>
-    <%=i.phone %></br>
-    <%=i.extencion %></br>
+<div class="content-admin">
+  <h1>
+    <i class="i i-title i-inst_title"></i>
+    Instituciones
+  </h1>
+
+    <p> Instituciones que tenemos actualmente </p>
+
+  <div class="element">
+    <% @institution.each do |i| %> 
+  	<h5> <%=i.name %></br></br></h5>
+  <p>
+    Sitio web: <%=i.url %></br>
+    Teléfono: <%=i.phone %></br>
+    Ext. <%=i.extencion %></br></br>
     <%=i.user.name if i.user %></br>
     <%=i.user.email if i.user %></br>
-<%end%>
-<%= will_paginate @institution %>
+  </p>
+    <%end%>
+    <%= will_paginate @institution %>
+  </div>
+</div>

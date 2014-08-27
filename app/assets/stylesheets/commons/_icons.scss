@@ -5,6 +5,10 @@
   vertical-align: middle;
 }
 
+.i-title {
+  margin-right: 10px;
+}
+
 .i-stats {
   width: 16px;
   height: 16px;
@@ -101,4 +105,34 @@
   width: 33px;
   height: 19px;
   background-position: -295px 0;
+}
+
+.i-analytics_title {
+  width: 37px;
+  height: 25px;
+  background-position:  -51px -26px;
+}
+
+.i-solicitudes_title {
+  width: 37px;
+  height: 25px;
+  background-position: -92px -28px;
+}
+
+.i-users_title {
+  width: 37px;
+  height: 30px;
+  background-position: -148px -29px;
+}
+
+.i-inst_title {
+  width: 37px;
+  height: 25px;
+  background-position: -196px -29px;
+}
+
+.i-focos_title {
+  width: 37px;
+  height: 25px;
+  background-position: -248px -27px;
 }

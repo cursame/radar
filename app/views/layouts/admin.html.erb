@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <title>Admin Radar</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.jpg' %>
+  </head>
+  <body>
 
-  <title>Admin Radar</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.jpg' %>
-
-</head>
-<body>
-<div class="admin">
+<div class="all-content-admin">
   <div class="wrapper">
-    <div class="col-12">
+    <div class="cols-12">
+
       <div class="col col-3">
         <div class="col-inner">
-          <%= render partial:'management/parts/layouts/menu' %>    
-        </div>
-      </div>
-
-      <div class="col col-9">
-        <div class="col-inner">
-          <div class="content-sidebar">
-            <%= yield %>  
+          <div >
+            <%= render partial:'management/parts/layouts/menu' %>   
           </div>  
         </div>
       </div>
+      
+      <div class="col col-9">
+        <div class="col-inner">
+          <%= yield  %>  
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
-</body>
+
+
+    <div class="dashboard-footer">
+      <div class="wrapper">
+        <div class="cols-12">
+          <div class="col col-12">
+            <div class="col-inner">
+              <div class="footer-dashboard">
+                <p> <span>Radar</span> ® Derechos Reservados 2014</p>
+                <div class="powered-by">
+                  <%=image_tag('footerlogo.png')%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
