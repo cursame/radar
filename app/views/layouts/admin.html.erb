@@ -10,9 +10,25 @@
 
 </head>
 <body>
-<%= render partial:'management/parts/layouts/menu' %>
+<div class="admin">
+  <div class="wrapper">
+    <div class="col-12">
+      <div class="col col-3">
+        <div class="col-inner">
+          <%= render partial:'management/parts/layouts/menu' %>    
+        </div>
+      </div>
 
-<%= yield %>
+      <div class="col col-9">
+        <div class="col-inner">
+          <div class="content-sidebar">
+            <%= yield %>  
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

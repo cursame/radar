@@ -1,0 +1,57 @@
+.admin {
+  font-family: $font-radar;
+  font-size: 13px;
+  text-align: left;
+  @include clearfix; 
+}
+
+.side_bar  {
+  height: 100%;
+  background-color: #188DC0;
+  z-index: 100;
+  box-shadow: 0px 1px 0 rgba(0,0,0,.06);
+  list-style: none;
+  width: 220px;
+  text-align: left;
+  padding-left: 25px;
+  float: left;
+
+  span {
+    text-align: left;
+    margin-left: 20px;
+  }
+  ul, li {
+    width: 100%;
+    display: block;
+  }
+
+  .logo2 {
+    margin-bottom: 30px;
+  }
+
+  a{
+    display: block;
+    color: $white !important;
+    padding: 15px 0;
+    width: 100%;
+
+    a:visited {
+      color: $white;
+    }
+  }
+  
+  h4 {
+    font-variant: small-caps;
+    color: #c8e5f1;
+    font-size: 12px;
+    margin: 0 0 20px 25px;
+  }
+}
+
+
+.content-sidebar {
+  float: right;
+
+}
+
+

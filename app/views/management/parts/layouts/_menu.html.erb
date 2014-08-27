@@ -1,22 +1,51 @@
-    <div class="header">
-		  <div class="wrapper">
-			  <div class="cols-12">
-          <div class="col col-12">
-              <div class="col-inner">
-		            <ul class="menu">
-			            <li><%= link_to image_tag('radar.png'), admin_path %></li>
-			            <li class="space"><%= link_to 'Analítics', admin_analitics_path%></li>
-									<li class="space"><%= link_to 'solicitudes', admin_path%></li>
-									<li class="space"><%= link_to 'usuarios', admin_users_path%></li>
-									<li class="space"><%= link_to 'focos rojos', admin_hot_spots_path%></li>
-									<li class="space"><%= link_to 'instituciones', admin_institutions_path%></li>
-									<li class="space"><%= link_to 'Regresar Al usuario', user_path(current_user.id)%></li>
-						  	</ul>
-						  	<div class="singin-button">
-                  <%= link_to "Salir →", session_exit_path, class: "login" %>
-                </div>
-				      </div>
-			    </div>
-			  </div>
-		  </div>
-	  </div>
+<ul class="side_bar">
+   <li class="logo2">
+     <%= link_to image_tag('logodashboard.png'), root_path %>
+   </li>
+    <li>
+      <h4>ADMINISTRADOR</h4>
+    </li>
+    <li>
+      <%= link_to admin_analitics_path do %>  
+      <i class="i i-analytics"></i>
+      <span>Analítics</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_path do %>
+      <i class="i i-solicitudes"></i>
+      <span>Solicitudes</span>
+      <% end %>
+    </li>
+    <li>    
+      <%= link_to admin_users_path do %>
+      <i class="i i-users"></i> 
+      <span>Usuarios</span>
+      <% end %>
+    </li>
+    <li>      
+      <%= link_to admin_hot_spots_path do %>
+      <i class="i i-focos"></i> 
+      <span>Focos rojos</span>
+      <% end %>
+    </li>
+    <li>     
+      <%= link_to admin_institutions_path do %>
+      <i class="i i-inst"></i> 
+      <span>Instituciones</span>
+      <% end %>      
+    </li>  
+    <li>
+      <%= link_to user_path(current_user.id) do %>
+      <i class="i i-arrow3"></i>
+      <span>Regresar a usuario</span>
+      <% end %>
+    </li>        
+    <li>
+      <%= link_to session_exit_path do %>
+      <i class="i i-exit"></i> 
+      <span>Salir</span>
+      <% end %>
+    </li>                       
+  </ul>
+

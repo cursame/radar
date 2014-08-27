@@ -1,81 +1,78 @@
-<center>	
-	<div style="width:70%">
+<div>
 		<div style="background:#0489B1; width:200px; height:200px; float:left; padding:10px;">
-		    <h3>Insitituciones</h3></br>
+			<h3>Insitituciones</h3></br>
 			<h1><%= @institutions %></h1>
 		</div>
 		<div style="background:#FF8000; width:200px; height:200px; float:left; padding:10px;">
-		    <h3>Focos Rojos</h3></br>
+			<h3>Focos Rojos</h3></br>
 			<h1><%= @red_lights %></h1>
 		</div>
 		<div style="background:#3ADF00; width:200px; height:200px; float:left; padding:10px;">
-		    <h3>Peligrocidad Moderada</h3>
+			<h3>Peligrocidad Moderada</h3>
 			<h1><%= @moderadas %></h1>
 		</div>
 		<div style="background:#FFFF00; width:200px; height:200px; float:left; padding:10px;">
-		    <h3>Peligrocidad Media</h3>
+			<h3>Peligrocidad Media</h3>
 			<h1><%= @medias %></h1>
 		</div>
 		<div style="background:#DF0101; width:200px; height:200px; float:left; padding:10px;">
-		    <h3>Peligrocidad Grave</h3>
+			<h3>Peligrocidad Grave</h3>
 			<h1><%= @graves %></h1>
 		</div>
 	</div>
-	<div id="types_of_violence" style="width:700px; float:left; padding:10px; margin-left:40px;"></div>
-</center>
+	<div id="types_of_violence" style="width:700px; float:left; padding:10px; margin-left:40px;">   
+	</div>
 
 
 <script>
 $(function () {
-    $('#types_of_violence').highcharts({
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false
-        },
-        title: {
-            text: 'Tipos de violencia',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 70
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: true,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white',
-                        textShadow: '0px 1px 2px black'
-                    }
-                },
-                startAngle: -90,
-                endAngle: 90,
-                center: ['50%', '75%']
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Browser share',
-            innerSize: '50%',
-            data: [
-                ['Físico',   					 <%=@fisico%>],
-                ['Amenaza',  					 <%=@amenaza%>],
-                ['Exclusión', 				 <%=@exclusion%>],
-                ['Indefensión',        <%=@indefencion%>],
-                ['Malestar escolar',   <%=@malestar_escolar%>],
-                ['Violencia verbal',   <%=@violencia_verbal%>],
-                ['Burla',  						 <%=@burla%>],
-                ['Cyber bullying',  	 <%=@cyber_bullying%>],
-                ['Daño a pertenencias',<%=@dano_a_pertenencias%>]
-
-                
-            ]
-        }]
-    });
+	$('#types_of_violence').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: 0,
+			plotShadow: false
+		},
+		title: {
+			text: 'Tipos de violencia',
+			align: 'center',
+			verticalAlign: 'middle',
+			y: 70
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				dataLabels: {
+					enabled: true,
+					distance: -50,
+					style: {
+						fontWeight: 'bold',
+						color: 'white',
+						textShadow: '0px 1px 2px black'
+					}
+				},
+				startAngle: -90,
+				endAngle: 90,
+				center: ['50%', '75%']
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Browser share',
+			innerSize: '50%',
+			data: [
+				['Físico',   					 <%=@fisico%>],
+				['Amenaza',  					 <%=@amenaza%>],
+				['Exclusión', 				 <%=@exclusion%>],
+				['Indefensión',        <%=@indefencion%>],
+				['Malestar escolar',   <%=@malestar_escolar%>],
+				['Violencia verbal',   <%=@violencia_verbal%>],
+				['Burla',  						 <%=@burla%>],
+				['Cyber bullying',  	 <%=@cyber_bullying%>],
+				['Daño a pertenencias',<%=@dano_a_pertenencias%>]
+			]
+		}]
+	});
 });
 </script>
