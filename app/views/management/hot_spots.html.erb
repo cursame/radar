@@ -3,6 +3,7 @@
   <i class="i i-focos i-users_title"></i>
   Alertas 
   </h1>
+  <%= will_paginate @red_lights %>
   <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights }%>
   <%= will_paginate @red_lights %>
 
