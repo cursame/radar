@@ -1,9 +1,18 @@
+
+.admin-wrap {
+  font-family: $font-radar;
+  padding-left: 210px;
+  padding-right: 10px;
+}
+
 .all-content-admin {
   padding: 0;
   margin: 0 auto;
-  font-family: $font-radar;
-  font-size: 13px;
   text-align: left;
+
+    @include max-screen (500px) { 
+      margin-left: 65px;
+    }
 
   h5 {
     color: #323232;
@@ -11,16 +20,35 @@
   }
 }
 
+.admin-sidebar {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 
 .side_bar  {
-  width: 100%;
+  font-size: 13px;
   background:#178DC0;
   list-style: none;
   text-align: left;
-  float: left;
-  z-index: 100;
   box-shadow: 0px 1px 0 rgba(0,0,0,.06);
 
+  @include max-screen (600px) {
+    width: 60px;
+    position: fixed;
+    left: 0;
+
+    li, span, h4 {
+      display: none;
+      padding: 0;
+      margin-left: 0;
+    }
+
+  .logo2 {
+    display: none;
+    }
+  }
 
   span {
     text-align: left;
@@ -28,7 +56,6 @@
   }
   ul, li {
     display: block;
-    float: left;
     width: 100%;
   }
 
@@ -37,7 +64,7 @@
   }
 
   li.bottom {
-    padding-bottom: 100px;
+
   }
 
   .logo2 {
@@ -63,17 +90,13 @@
 }
 
 .content-admin {
+  position: relative;
   margin-top: 15px;
   float: left;
   width: 100%;
 
   & p {
     font-family: sans-serif;
-  }
-
-  .half {
-    width: 35%;
-    float: left;
   }
 }
 
@@ -93,9 +116,43 @@
   }
 }
 
-
 .peligrosidad {
-  width: 100%;
-  float: left;
+  padding: 20px 0 0 0;
+
+  p.total {
+    font-size: 35px;
+    font-weight: bold;
+    float: right;
+    padding: 10px 25px 0 0;
+    color: #999;
+  }
+
+  span {
+    display: block;
+    width: 85%;
+    font-family: $font-radar;
+    margin-left: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+  .grade {
+    height: 5px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    border-radius: 0 0 3px 3px;
+
+  &.grave {
+    background: $red-light-red;
+  }
+
+  &.media {
+    background-color: $red-light-yellow;
+  }
+
+  &.moderada {
+    background-color: $red-light-green;
+  }
 }
 

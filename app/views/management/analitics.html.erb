@@ -1,92 +1,120 @@
-	<div class="content-admin">
-		<h1><i class="i i-title i-analytics_title"></i>Analytics</h1>
-
-				<div class="element half">
-					<h5><i class="i i-title i-inst_title"></i>Insitituciones</h5>
-					<%= @institutions %>
-				</div>
-
-					<div class="element half">
-						<h5><i class="i i-title i-focos_title"></i>Focos Rojos</h5>
-						<%= @red_lights %>
-					</div>
-
-
-			<div class="peligrosidad">
-
+<div class="content-admin">
+	<h1>
+		<i class="i i-title i-analytics_title"></i>
+		Analytics
+	</h1>
+	<div class="cola-12">			
+		<div class="col col-6 alpha">
+			<div class="col-inner">		
 				<div class="element">
-					<h5>Peligrocidad Moderada</h5>
-					<%= @moderadas %>
-				</div>
-
-				<div class="element">
-					<h5>Peligrocidad Media</h5>
-					<%= @medias %>
-				</div>
-
-				<div class="element">
-					<h5>Peligrocidad Grave</h5>
-					<%= @graves %>
+					<p><h5><i class="i i-title i-inst_title"></i>Insitituciones</h5>
+					<%= @institutions %></p>
 				</div>
 			</div>
+		</div>
 
-				
-				<div id="types_of_violence">   <h4>Tipos de Violencia</h4> 
+		<div class="col col-6 omega">
+			<div class="col-inner">	
+				<div class="element">
+					<h5><i class="i i-title i-focos_title"></i>Focos Rojos</h5>
+					<%= @red_lights %>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="cols-12">
+		<div class="col col-4 alpha">
+			<div class="col-inner">
+				<div class="element peligrosidad">
+					<i class="i i-face-green"></i>
+					<p class="total"> <%= @moderadas %></p>
+					<span>Peligrocidad Moderada</span>
+					<div class="grade moderada"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-4">
+			<div class="col-inner">
+				<div class="element peligrosidad">
+					<i class="i i-face-yellow"></i>
+					<p class="total"> <%= @medias %> </p>
+					<span>Peligrocidad Media</span>
+					<div class="grade media"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-4 omega">
+			<div class="col-inner">
+				<div class="element peligrosidad">
+					<i class="i i-face-red"></i>
+					<p class="total"> <%= @medias %> </p>
+					<span>Peligrocidad Grave</span>
+					<div class="grade grave"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+			
+	<div id="types_of_violence">  
+		<h4>Tipos de Violencia</h4> 
+	</div>
 
 	<div class="chart">
 		<script>
-		$(function () {
-			$('#types_of_violence').highcharts({
-				chart: {
-					plotBackgroundColor: null,
-					plotBorderWidth: 0,
-					plotShadow: false
-				},
-				title: {
-					text: '100%',
-					align: 'center',
-					verticalAlign: 'middle',
-					y: 70
-				},
-				tooltip: {
-					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-				},
-				plotOptions: {
-					pie: {
-						dataLabels: {
-							enabled: true,
-							distance: 9,
-							style: {
-								fontWeight: 'bold',
-								color: 'black',
-								textShadow: '0px 1px 2px gray'
-							}
-						},
-						startAngle: -90,
-						endAngle: 90,
-						center: ['50%', '70%']
-					}
-				},
-				series: [{
-					type: 'pie',
-					name: 'Browser share',
-					innerSize: '20%',
-					data: [
-						['Físico',   					 <%=@fisico%>],
-						['Amenaza',  					 <%=@amenaza%>],
-						['Exclusión', 				 <%=@exclusion%>],
-						['Indefensión',        <%=@indefencion%>],
-						['Malestar escolar',   <%=@malestar_escolar%>],
-						['Violencia verbal',   <%=@violencia_verbal%>],
-						['Burla',  						 <%=@burla%>],
-						['Cyber bullying',  	 <%=@cyber_bullying%>],
-						['Daño a pertenencias',<%=@dano_a_pertenencias%>]
-					]
-				}]
+			$(function () {
+				$('#types_of_violence').highcharts({
+					chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: 0,
+						plotShadow: false
+					},
+					title: {
+						text: '100%',
+						align: 'center',
+						verticalAlign: 'middle',
+						y: 70
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					},
+					plotOptions: {
+						pie: {
+							dataLabels: {
+								enabled: true,
+								distance: 9,
+								style: {
+									fontWeight: 'bold',
+									color: 'black',
+									textShadow: '0px 1px 2px gray'
+								}
+							},
+							startAngle: -90,
+							endAngle: 90,
+							center: ['50%', '70%']
+						}
+					},
+					series: [{
+						type: 'pie',
+						name: 'Browser share',
+						innerSize: '20%',
+						data: [
+							['Físico',   					 <%=@fisico%>],
+							['Amenaza',  					 <%=@amenaza%>],
+							['Exclusión', 				 <%=@exclusion%>],
+							['Indefensión',        <%=@indefencion%>],
+							['Malestar escolar',   <%=@malestar_escolar%>],
+							['Violencia verbal',   <%=@violencia_verbal%>],
+							['Burla',  						 <%=@burla%>],
+							['Cyber bullying',  	 <%=@cyber_bullying%>],
+							['Daño a pertenencias',<%=@dano_a_pertenencias%>]
+						]
+					}]
+				});
 			});
-		});
-		</script>
+			</script>
+		</div>
 	</div>
-
 </div>

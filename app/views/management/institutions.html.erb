@@ -6,8 +6,9 @@
 
     <p> Instituciones que tenemos actualmente </p>
 
-  <div class="element">
+
     <% @institution.each do |i| %> 
+      <div class="element">
   	<h5> <%=i.name %></br></br></h5>
   <p>
     Sitio web: <%=i.url %></br>
@@ -16,7 +17,8 @@
     <%=i.user.name if i.user %></br>
     <%=i.user.email if i.user %></br>
   </p>
+    </div>
     <%end%>
     <%= will_paginate @institution %>
-  </div>
+
 </div>
