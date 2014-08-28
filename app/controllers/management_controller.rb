@@ -6,7 +6,7 @@ layout 'admin'
   end
 
   def hot_spots
-  	 @redlight = RedLight.paginate(:page => params[:page], :per_page => 30).order('id DESC')
+  	 @red_lights = RedLight.paginate(:page => params[:page], :per_page => 30).order('id DESC')
   end
 
   def institutions

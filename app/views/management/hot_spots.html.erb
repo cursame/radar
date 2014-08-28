@@ -3,10 +3,7 @@
   <i class="i i-focos i-users_title"></i>
   Alertas 
   </h1>
-<% @redlight.each do |r| %>
-      <%= render :partial => '/red_lights/show', locals: {red_ligth: r }%>
-      En: <%=  r.help_institution[0].name %>
+  <%= render :partial => '/red_lights/show', locals: {red_lights: @red_lights }%>
+  <%= will_paginate @red_lights %>
 
-<%end%>
-<%= will_paginate @redlight %>
 </div>
