@@ -1,7 +1,7 @@
 
 .admin-wrap {
   font-family: $font-radar;
-  padding-left: 210px;
+  padding-left: 185px;
   padding-right: 10px;
 
   @include max-screen (600px) {
@@ -33,6 +33,9 @@
 }
 
 .side_bar  {
+  position: fixed;
+  top: 0;
+  bottom: 0;
   font-size: 13px;
   background:#178DC0;
   list-style: none;
@@ -110,7 +113,7 @@
 .element {
   display: block;
   background: #Fcfcfc;
-  color: #666666;
+  color: #999;
   text-align: left;
   padding: 20px 25px;
   margin: 8px 0;
@@ -119,8 +122,16 @@
   width: auto;
 
   span {
+    font-size: 14px;
     font-family: sans-serif;
+    color: #323232;
   }
+    .total {
+
+      font-size: 30px;
+      font-weight: bold;
+      float: right;
+    }
 }
 
 .peligrosidad {
@@ -141,6 +152,7 @@
     margin-left: 20px;
     padding-bottom: 20px;
   }
+
 }
 
   .grade {
