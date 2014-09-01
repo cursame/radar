@@ -107,5 +107,10 @@ Rails.application.routes.draw do
     get 'api/documentation_methods'
     get 'api/acces_to_red_lights'
     get 'api/register_by_api'
+    post 'api/register_by_api'
+    get 'api/session_loggin'
+    post 'api/session_loggin'
+
+
 
 end
