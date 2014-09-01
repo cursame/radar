@@ -33,8 +33,9 @@ class UsersController < ApplicationController
       @user.salt = rand(235..1234)
       @user.save
       @mailer = InstitutionManagment.create_notification(@user).deliver
-    end
+      flash[:notice] = "Usuario agregado correctamente, le enviarremos un mail con los siguientes pasos."
 
+    end
     redirect_to :back
 	end
 
