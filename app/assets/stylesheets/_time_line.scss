@@ -1,38 +1,35 @@
 // The width depends on the number of intervals. For example 100 / 7 = 14.29% -- then subtract a little bit for room for the borders 
 .graph{
+	position: relative;
 	font-family: sans-serif;
 	font-size: 12px;
 	font-weight: lighter;
-	padding: 30px 0;
 	text-align: left;
-	@include linear-gradient(75deg, #DADADA 0%, #ffffff 100%);
+	background:#f9f9f9;
 
 	h4 {
 	margin-left: 100px;
 	}
 }
 .timeline_radar{
-	width:90%;
-	padding:5%;
-	min-height:300px;
 	@include clearfix;
 
-
 	.line {
-		width: 7px;
-		height: 100%;
+		width: 5px;
 		position: absolute;
 		left: 38%;
-		top: 25%;
-		background:#ccc;
+		top: 0;
+		bottom: 0;
+		background:#ACCFE5;
 		display: inline-block;
 		border-radius: 3px;
+		margin: 25px 0 65px 0;
 	}
 
 	p {
 		font-weight: regular;
 		font-size: 11px;
-		color: $main-blue;
+		color: #244072;
 	}
 
 	& ul.events {
@@ -42,7 +39,7 @@
 	}
 
 	& ul.events li {
-		-webkit-border-radius: 4px;
+			-webkit-border-radius: 4px;
 	    -moz-border-radius:4px;
 	    border-radius: 4px;
 	    background: #42ADDA;
@@ -50,11 +47,14 @@
 	    color: $white;
 	    font-size: 1.2em;
 	    font-weight: bold;
-	    margin-bottom: 6px;
-	    padding: 5px 15px;
+	    margin-bottom: 10px;
+	    padding: 10px 25px;
 	    text-align: left;
 	    position: relative;
 	    left: 40%;
+	    width: 170px;
+	    text-shadow: 1px 1px 1px rgba (0,0,0,0.3)
+
 		}
 
 	& ul.events li em {
@@ -83,5 +83,9 @@
 
 	& ul.intervals li.first {
 	    border-left: 1px solid #ccc;
+	}
+
+		& ul.intervals li.last {
+	    border: none;
 	}
 }
