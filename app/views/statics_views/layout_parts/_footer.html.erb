@@ -1,3 +1,30 @@
+<% if session[:languaje]== 'en' %>
+   <div class="footer">
+    <div class="wrapper">
+      <div class="cols-12">
+        <div class="col col-12">
+          <div class="col-inner">
+            <div class="footer-menu">
+              <%=image_tag('cursame.png')%>
+              <ul class="footermenu">
+                <li class="space">
+                  <%= link_to "Confidential Complaint", foco_rojo_path, class: "nav-bottom" %></li>
+                <li class="space">
+                  <%= link_to "Auto diagnosis", diagnostico_path, class: "nav-bottom" %></li>
+                <li class="btn_primary">
+                  <%= link_to "Who are we?", nosotros_path, class: "nav-bottom" %></li>
+                <li class="btn_primary">
+                  <%= link_to "Updates", actualizaciones_path, class: "nav-bottom" %></li>
+              </ul>
+            </div>
+            <div class="powered-by">
+            <%= link_to image_tag('footerlogo.png'), "http://cursa.me", target: "_blank" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%else%>
    <div class="footer">
     <div class="wrapper">
       <div class="cols-12">
@@ -23,3 +50,5 @@
         </div>
       </div>
     </div>
+
+<%end%>
