@@ -1,3 +1,59 @@
+<% if session[:languaje]== 'en' %>
+<div class="titlebox intro intro-us bg-blue">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="titlebox-content">
+            <h2>US</h2>
+            <p>Anti bullying Resource Analysis Diagnostic and Report  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-7">
+        <div class="col-inner">
+          <div class="info">
+            <h3>Who are we?</h3>
+            <h4>As a result of the bullying problematic the country is facing, Cúrsame launches Radar. </h4>
+            <p>With Radar, students will be able to confidentially denounce bullying and directives will be able to understand the student’s victimization degree, identifying the main forms of violence which are taking place at school. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-5">
+        <div class="col-inner">
+          <div class="paddingtop">
+            <%=image_tag('school.png')%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="us-info intro bg-bluegradient">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="section-title">
+            <h3>Cúrsame in favour of getting along</h3>
+          </div>
+          <p> For Cúrsame to work at its best, it requires that the educational community functions in the best terms of tolerance and respect. Therefore, we find that there is a great need to become involved in actions against school violence. </p>
+          <p> For students to interact with eachother with an educational purpose, we consider that an atmosphere of possitive coexistance is required, allowing a collaborative learning process to take place. </p>
+          <p>  Cúrsame knows that if the conditions previously mentioned are achieved, we will be able to integrate our technological  platform into  the school system as an efficient way to favour  positive place encounters to improve the teaching-learning process. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%else%>
 <div class="titlebox intro intro-us bg-blue">
   <div class="wrapper">
     <div class="cols-12">
@@ -52,3 +108,4 @@
     </div>
   </div>
 </div>
+<%end%>

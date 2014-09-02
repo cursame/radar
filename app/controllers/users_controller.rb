@@ -33,8 +33,9 @@ class UsersController < ApplicationController
       @user.salt = rand(235..1234)
       @user.save
       @mailer = InstitutionManagment.create_notification(@user).deliver
-    end
+      flash[:notice] = "Usuario agregado correctamente, le enviarremos un mail con los siguientes pasos."
 
+    end
     redirect_to :back
 	end
 
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
 
   def adviser_profile
     @user = current_user
-    @red_lights = RedLight.where(adviser: @user.adviser_code).paginate(:page => params[:page], :per_page => 5).order('created_at DESC')
+    @red_lights = RedLight.where(adviser: @user.adviser_code).paginate(:page => params[:page], :per_page => 25).order('created_at DESC')
     if @user.adviser == false 
       redirect_to root_path
     end

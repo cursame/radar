@@ -45,7 +45,10 @@ class StaticsViewsController < ApplicationController
     end
   end
 
-   
+  def lenguaje
+    session[:languaje] = params[:lenguje]
+    redirect_to :back
+  end
 private
   def session_act
     if session[:user] != nil

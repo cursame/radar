@@ -3,7 +3,7 @@ class InstitutionManagment < ActionMailer::Base
 
    def create_notification(user)
      @user = user
-   	 mail(to: @user.email, subject: 'Bienbenido a RADAR')
+   	 mail(to: @user.email, subject: 'Bienvenido a RADAR')
    end
 
    def reset_password(user, link)

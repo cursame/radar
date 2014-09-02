@@ -4,8 +4,13 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="titlebox-content">
+            <% if session[:languaje]== 'en' %>
+            <h2>Auto diagnostic</h2>
+            <p>Auto evaluation inside the institution to prevent school violence</p>
+            <%else%>
             <h2>Autodiagnóstico</h2>
             <p>Diagnostica la situación de violencia en tu institución</p>
+            <%end%>
           </div>
         </div>
       </div>
@@ -19,8 +24,13 @@
       <div class="col col-7">
         <div class="col-inner">
           <div class="info">
+            <% if session[:languaje]== 'en' %>
+            <h3>How does it work?</h3>
+            <p>This process takes place inside the Radar system. Each school has its own address that allows an easy logistic development. School staff must follow an application guide. </p>
+            <%else%>
             <h3>¿Cómo funciona?</h3>
             <p>Este proceso se lleva a cabo dentro del sistema de Radar con una dirección única por escuela que permite su fácil desarrollo logístico. El personal de la institución debe seguir una guía de aplicación de los instrumentos.</p>
+            <%end%>
           </div>
         </div>
       </div>
@@ -41,7 +51,11 @@
       <div class="cols-12">
         <div class="col col-12">
           <div class="col-inner ">
-            <h3>La participación es de todos</h3>
+              <% if session[:languaje]== 'en' %>
+               <h3>Everyone must participate</h3>
+              <%else%>
+               <h3>La participación es de todos</h3>
+              <%end%>
           </div>
         </div>
       </div>
@@ -51,19 +65,31 @@
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('directivo.png')%>
+            <% if session[:languaje]== 'en' %>
+            <h4>Directives</h4><p>responsible for the  </br>school control</p>
+            <%else%>
             <h4>Directivos</h4><p>Responsables del control </br>en la institución</p>
+            <%end%>
           </div>
         </div>
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('profesora.png')%>
+            <% if session[:languaje]== 'en' %>
+            <h4>Teachers</h4><p> Links and </br> bullying identifiers</p>
+            <%else%>
             <h4>Profesores</h4><p>Vínculo e </br>identificador de bullying</p>
+            <%end%>
           </div> 
         </div>
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('alumnos.png')%>
+            <% if session[:languaje]== 'en' %>
+            <h4>Students</h4><p>Victims or witnesses </br> of school bullying</p>
+            <%else%>
             <h4>Alumnos</h4><p>Víctimas o testigos </br>de bullying en su escuela</p>
+            <%end%>
           </div> 
         </div>
       </div>
@@ -78,7 +104,11 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="section-title">
+            <% if session[:languaje]== 'en' %>
+            <h3>Auto-diagnostic function</h3>
+            <%else%>
             <h3>Función del auto diagnóstico</h3>
+            <%end%>
           </div>
         </div>
       </div>
@@ -87,19 +117,31 @@
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img1.png')%>
+          <% if session[:languaje]== 'en' %>
+          <p>A result of the school violence situation is given and information is handed to the institution.</p>
+          <%else%>
           <p>Se arroja un resultado acerca de la situación de violencia escolar  a manera de semáforo y entrega información a la institución</p>
+          <%end%>
         </div>
       </div>
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img2.png')%>
+          <% if session[:languaje]== 'en' %>
+          <p>General forms of violence are analysed from a multi varied focus that includes different indicators.</p>
+          <%else%>
           <p>Se analizan las formas generales de violencia desde un enfoque multivariado que incluye distintos indicadores </p>
+          <%end%>
         </div>
       </div>
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img3.png')%>
+          <% if session[:languaje]== 'en' %>
+          <p>Relevant information about bullying and specialized institutions is offered, providing help to the necessary cases.</p>
+          <%else%>
           <p>Se ofrece Información relevante acerca del bullying e instituciones especializadas que pueden otorgar ayuda en caso de ser necesario.</p>
+          <%end%>
         </div>
       </div>
     </div>
@@ -113,6 +155,21 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="section-title">
+          <% if session[:languaje]== 'en' %>
+          <h3>Do you want to monitor your institution?</h3>
+          </div>
+          <p>Register and we will send you your auto-diagnosis</p>
+          <div class="suscribe">
+            <%= form_tag('/statics_views/subscriber', class: 'validate') do -%>
+            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail", required: true%>
+          
+          <div class="send">
+            <span class="btn btn-suscribe">
+              <%= submit_tag 'Send'%>
+              <%end%>
+            </span>
+          </div>
+          <%else%>
             <h3>¿Quieres monitorear tu institución?</h3>
           </div>
           <p>Regístrate y te notificaremos cuando autodiagnóstico esté listo.</p>
@@ -126,6 +183,7 @@
               <%end%>
             </span>
           </div>
+          <%end%>
         </div>
       </div>
     </div>

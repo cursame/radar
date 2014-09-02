@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
    helper_method :index_by_institution_violence
    helper_method :action_host
    helper_method :viewver_encode
+   before_filter :lenaguaje_filter
    def current_user
     @user = User.find(session[:user])
    end
@@ -17,6 +18,12 @@ class ApplicationController < ActionController::Base
          'http://www.radarescolar.com'
        when 'development'
          'http://localhost:3000'
+    end
+   end
+
+   def lenaguaje_filter
+    if session[:languaje] == nil
+       session[:languaje] = 'es'
     end
    end
 

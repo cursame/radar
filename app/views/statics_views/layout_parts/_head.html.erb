@@ -1,6 +1,68 @@
+
+<% if session[:languaje]== 'en' %>
 <div class="header">
 	<div class="wrapper">
 		<div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+           <div class="logo">
+            <%= link_to image_tag('radar.png'), root_path %>
+          </div>
+        <div class="menu-home">
+         <ul class="menu-main nav-top">
+           <li>
+             <%= link_to "Confidential Complaint", foco_rojo_path, class: "nav-top" %>
+            </li>
+           <li>
+             <%= link_to "Auto diagnosis", diagnostico_path, class: "nav-top" %>
+            </li>
+           <li>
+             <%= link_to "Contact", contacto_path, class: "nav-top" %>
+           </li>
+         </ul>
+       </div>
+
+        <div class="menu-mobile totarget" data-target="menu-imobile">
+         <ul>
+           <li><i class="i i-menu " ></i></li>
+         </ul>
+        </div>
+          <div class="login">
+            <ul class="singin-button">
+              <li>        
+                <div class="btn btn-register">
+                  <%= link_to "Register", register_path  %>
+                 </div>
+              </li>
+              <li>
+                <div>
+                  <%= link_to "Log-in", login_path, class: "login"  %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="menu-imobile">
+  <ul>
+    <li><%= link_to "Confidential Complaint", foco_rojo_path %></li>
+    <li><%= link_to "Auto diagnosis", diagnostico_path %></li>
+    <li><%= link_to "Who are we?", nosotros_path %></li>
+    <li><%= link_to "Contact", contacto_path %></li>
+    <li class="btn_menu_mobile"><%= link_to "Log-in", login_path %></li>
+    <li class="btn_menu_mobile"><%= link_to "Register", register_path %> </li>
+    </ul>
+</div>
+<%else%>
+<div class="header">
+  <div class="wrapper">
+    <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
            <div class="logo">
@@ -57,4 +119,5 @@
     <li class="btn_menu_mobile"><%= link_to "Regístrate", register_path %> </li>
     </ul>
 </div>
+<%end%>
 

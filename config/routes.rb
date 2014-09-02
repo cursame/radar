@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
     get 'contacto', :to => 'statics_views#contacto', :as => :contacto
     get 'actualizaciones', :to => 'statics_views#actualizaciones', :as => :actualizaciones
-
+    get 'lenguaje', :to => 'statics_views#lenguaje', :as => :lenguaje 
   ########### mail de contacto #########
     get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
     post '/statics_views/mail_to_contact'
@@ -107,5 +107,10 @@ Rails.application.routes.draw do
     get 'api/documentation_methods'
     get 'api/acces_to_red_lights'
     get 'api/register_by_api'
+    post 'api/register_by_api'
+    get 'api/session_loggin'
+    post 'api/session_loggin'
+
+
 
 end

@@ -4,8 +4,13 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="titlebox-content">
+            <% if session[:languaje]== 'en' %>
+            <h2>Confidential Complaint</h2>
+            <p>Report bullying in a confidential way.</p>
+            <%else%>
             <h2>Denuncia confidencial</h2>
             <p>Reporta casos de bullying de manera confidencial</p>
+            <%end%>
           </div>
         </div>
       </div>
@@ -19,8 +24,13 @@
       <div class="col col-7">
         <div class="col-inner">
           <div class="info">
+            <% if session[:languaje]== 'en' %>
+            <h3>How does it work?</h3>
+            <p>Radar provides an online questionnaire that can be integrated into the school’s website, Cúrsame platform, or into an email address where the corresponding school authorities can receive notifications of cases where bullying is taking place.</p>
+            <%else%>
             <h3>¿Cómo funciona?</h3>
             <p>Radar provee un formulario online que puede integrarse en el sitio web de la escuela, su plataforma Cúrsame así como desde una dirección electrónica y las notificaciones de los casos llegan al  conocimiento de las autoridades correspondientes.</p>
+            <%end%>
           </div>
         </div>
       </div>
@@ -41,7 +51,11 @@
       <div class="cols-12">
         <div class="col col-12">
           <div class="col-inner ">
+            <% if session[:languaje]== 'en' %>
+            <h3>Bullying Detention</h3>
+            <%else%>
             <h3>Detección de casos de bullying</h3>
+            <%end%>
           </div>
         </div>
       </div>
@@ -51,13 +65,21 @@
         <div class="col col-6">
           <div class="col-inner">
             <%=image_tag('victima.png')%>
+            <% if session[:languaje]== 'en' %>
+            <p>Through the complains of </br> students who find themselves as <span>victims</span> </br> at school</p>
+            <%else%>
             <p>Mediante la denuncia de los propios<br/>alumnos(as) que son <span>víctimas</span><br/> en la escuela</p>
+            <%end%>
           </div>
         </div>
         <div class="col col-6">
           <div class="col-inner">
             <%=image_tag('testigos.png')%>
+            <% if session[:languaje]== 'en' %>
+            <p>Through the complains of students </br> that witness school bullying</p>
+            <%else%>
             <p>Mediante la denuncia<br/> de alumnos(as) <span>testigos</span><br/> de casos de bullying en la escuela</p>
+            <%end%>
           </div> 
         </div>
       </div>
@@ -73,9 +95,17 @@
         <div class="col col-12">
           <div class="col-inner">
             <div class="section-title">
+              <% if session[:languaje]== 'en' %>
+              <h3>How to identify a bully victim</h3>
+              <%else%>
               <h3>Identificación del grado de victimización</h3>
+              <%end%>
             </div> 
+            <% if session[:languaje]== 'en' %>
+            <p>It is possible to detect the severity of each case through different indicators:</p>
+            <%else%>
             <p>A manera de semáforo es posible detectar la severidad de cada caso mediante los diferentes indicadores:</p>
+            <%end%>
           </div>
         </div>
       </div>
@@ -84,7 +114,32 @@
         <div class="col col-12">
           <div class="col-inner ">
               <div class="bulying-types">
-       
+                <% if session[:languaje]== 'en' %>
+                <div class="b-tipe">
+                  <%= label_tag('Mockery')%>
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Exclusion')%>               
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Cyberbullying')%>                
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Verbal aggression')%>                
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Damage of belongings')%>               
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Psychological bullying')%>               
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Threat')%>               
+                </div>
+                <div class="b-tipe">
+                  <%= label_tag('Physical violence')%>
+                </div>
+                <%else%>
                 <div class="b-tipe">
                   <%= label_tag('Burlas')%>
                 </div>
@@ -109,7 +164,7 @@
                 <div class="b-tipe">
                   <%= label_tag('Violencia física')%>
                 </div>
-
+                <%end%>
               </div>
 
                 <div class="big">
@@ -131,6 +186,15 @@
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
+          <% if session[:languaje]== 'en' %>
+          <div class="section-title">
+            <h3>Do you want to monitor your institution?</h3>
+          </div>
+          <p>It’s quick, safe, efficient and confidential. You are only one step away to stop bullying.</p>
+          <span>
+            <%= link_to "¡Register now!", register_path, class: "nav-btn btn btn-call" %>
+          </span>
+          <%else%>
           <div class="section-title">
             <h3>¿Quieres monitorear tu institución?</h3>
           </div>
@@ -138,6 +202,7 @@
           <span>
             <%= link_to "¡Regístrate ahora!", register_path, class: "nav-btn btn btn-call" %>
           </span>
+          <%end%>
         </div>
       </div>
     </div>

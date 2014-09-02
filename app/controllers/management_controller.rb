@@ -100,7 +100,6 @@ layout 'admin'
     @moderadas = moderadas
     @medias = medias
     @graves = graves   
-
     @fisico = fisico
     @amenaza = amenaza 
     @exclusion = exclusion 
