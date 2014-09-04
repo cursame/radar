@@ -155,12 +155,12 @@
 
 }
 
-  .grade {
-    height: 5px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    border-radius: 0 0 3px 3px;
+.grade {
+  height: 5px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  border-radius: 0 0 3px 3px;
 
   &.grave {
     background: $red-light-red;
