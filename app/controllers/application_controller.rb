@@ -24,6 +24,13 @@ class ApplicationController < ActionController::Base
    def lenaguaje_filter
     if session[:languaje] == nil
        session[:languaje] = 'es'
+       else
+       case session[:languaje] 
+         when 'es'
+         I18n.locale = :es
+         when 'en'
+         I18n.locale = :en
+       end
     end
    end
 

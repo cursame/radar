@@ -1,0 +1,38 @@
+--- 
+es: 
+  home: 
+    descript: "Recurso Antibullying de </br> Diagnóstico, Análisis y Reporte"
+    actions: "Identifica, prevé y atiende casos de violencia escolar y se parte de la solución en tu comunidad educativa."
+    auto_diagnotic: Autodiagnóstico
+    auto_diagnotic_text: "Autoevaluación dentro de la institución <br/>para prevenir la violencia escolar"
+    complain: "Denuncia Confidencial"
+    des_complain: "Denuncia al reportar casos <br/>de bullying de manera confidencial."
+    more_info: "Más Información → "
+  menu: 
+    auto_diagnotic: Autodiagnóstico
+    complain: "Denuncia Confidencial"
+    contact: Contacto
+    log_in: "Iniciar sesión"
+    register: Registro
+    who: Nosotros
+  au_d:
+    auto_diagnotic: Autodiagnóstico
+    part: "Diagnostica la situación de violencia en tu institución"
+    works: "¿Cómo funciona?"
+    process: "Este proceso se lleva a cabo dentro del sistema de Radar con una dirección única por escuela que permite su fácil desarrollo logístico. El personal de la institución debe seguir una guía de aplicación de los instrumentos."
+    participate: "La participación es de todos"
+    directives: "<h4>Directivos</h4><p>Responsables del control </br>en la institución</p>"
+    teachers: "<h4>Profesores</h4><p>Vínculo e </br>identificador de bullying</p>"
+    students: "<h4>Alumnos</h4><p>Víctimas o testigos </br>de bullying en su escuela</p>"
+    function: "<h3>Función del auto diagnóstico</h3>"
+    function_a: "<p>Se arroja un resultado acerca de la situación de violencia escolar  a manera de semáforo y entrega información a la institución</p>"
+    function_b: "<p>Se analizan las formas generales de violencia desde un enfoque multivariado que incluye distintos indicadores </p>"
+    function_c: "<p>Se ofrece Información relevante acerca del bullying e instituciones especializadas que pueden otorgar ayuda en caso de ser necesario.</p>"
+    monitor: "<h3>¿Quieres monitorear tu institución?</h3>"
+    register: " <p>Regístrate y te notificaremos cuando autodiagnóstico esté listo.</p>"
+    mail: "tu@email"
+    send: "Enviar"
+
+
+
+
