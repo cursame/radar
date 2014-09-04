@@ -1,11 +1,11 @@
 // The width depends on the number of intervals. For example 100 / 7 = 14.29% -- then subtract a little bit for room for the borders 
 .graph{
+	font-family: $font-radar;
 	position: relative;
-	font-family: sans-serif;
-	font-size: 12px;
-	font-weight: lighter;
+	font-size: 11px;
 	text-align: left;
 	background:#f9f9f9;
+	padding-top: 35px;
 
 	h4 {
 	margin-left: 100px;
@@ -14,22 +14,24 @@
 .timeline_radar{
 	@include clearfix;
 
+
 	.line {
-		width: 5px;
+		width: 6px;
 		position: absolute;
-		left: 38%;
+		left: 37%;
 		top: 0;
 		bottom: 0;
-		background:#ACCFE5;
+		background:#CCCCCC;
 		display: inline-block;
 		border-radius: 3px;
-		margin: 25px 0 65px 0;
+		margin: 45px 0 105px 0;
 	}
 
 	p {
-		font-weight: regular;
+		font-family: sans-serif;
+		font-weight: lighter;
 		font-size: 11px;
-		color: #244072;
+		color: #224d87;
 	}
 
 	& ul.events {
@@ -39,23 +41,30 @@
 	}
 
 	& ul.events li {
-			-webkit-border-radius: 4px;
-	    -moz-border-radius:4px;
-	    border-radius: 4px;
-	    background: #42ADDA;
-	    border-bottom: 1px solid rgba(0,0,0,0.1);
+			-webkit-border-radius: 3px;
+	    -moz-border-radius: 3px;
+	    border-radius: 3px;
+	    border-bottom: 2px solid rgba(0,0,0,0.1);
 	    color: $white;
 	    font-size: 1.2em;
 	    font-weight: bold;
-	    margin-bottom: 10px;
-	    padding: 10px 25px;
+	    margin-bottom: 15px;
+	    padding: 15px 20px;
 	    text-align: left;
 	    position: relative;
 	    left: 40%;
-	    width: 170px;
-	    text-shadow: 1px 1px 1px rgba (0,0,0,0.3)
+	    width: 140px;
+	    box-shadow: 3px 1px 1px rgba (0,0,0,0.9)
+	    }
 
-		}
+	    .blue {
+	    	background: #42ADDA;	    	 
+	    } 
+
+	    .green {
+	    	background: #7dc043;
+	    } 
+
 
 	& ul.events li em {
 	    color: #666;
@@ -75,10 +84,10 @@
 	    color: #999;
 	    float: left;
 	    font-size: 1.2em;
-	    margin: 0;
-	    padding: 15px 0;
+	    margin: 20px 0 30px 0;
+	    padding: 10px 0;
 	    text-align: center;
-	    width: 8.17%;
+	    width: 8%;
 	}
 
 	& ul.intervals li.first {
@@ -87,5 +96,18 @@
 
 		& ul.intervals li.last {
 	    border: none;
+	}
+		@include max-screen (900px) {
+		margin-top: 90px;
+
+		.line {
+			margin: 100px 0 115px 0;
+			left: 10%;
+
+		}
+
+		ul.events li { 
+			left: 18%;
+		}
 	}
 }
