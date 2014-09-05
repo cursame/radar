@@ -75,7 +75,7 @@ a:visited {
 	position: relative;
 	top: 0;
 	z-index: 50;
-	height: 60px;
+	height: 75px;
 	width: 100%;
 	margin: auto;
 	background-color: $white;
@@ -169,6 +169,9 @@ a:visited {
 }
 .bg-blue{
 	background-color: #21386a;
+}
+.bg-gray {
+	background:#ececec;
 }
 .bg-redgradient{
 	@include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
