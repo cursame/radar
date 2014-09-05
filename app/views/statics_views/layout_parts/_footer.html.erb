@@ -14,8 +14,8 @@
                 <li class="btn_primary">
                   <%= link_to "Who are we?", nosotros_path, class: "nav-bottom" %></li>
                 <li class="btn_primary"><%= link_to "Updates", actualizaciones_path, class: "nav-bottom" %></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'es') do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'en') do %><span> En</span> <i class="i i-EN"></i><%end%></li>
+                <li class="language"><%= link_to(locale: "es")  do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
+                <li class="language"><%= link_to(locale: "en" ) do %><span> En</span> <i class="i i-EN"></i><%end%></li>
               </ul>
             </div>
             <div class="powered-by">
@@ -42,8 +42,8 @@
                   <%= link_to "Nosotros", nosotros_path, class: "nav-bottom" %></li>
                 <li class="btn_primary">
                   <%= link_to "Actualizaciones", actualizaciones_path, class: "nav-bottom" %></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'es') do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'en') do %><span> En</span> <i class="i i-EN"></i><%end%></li>
+                <li class="language"><%= link_to(locale: "es") do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
+                <li class="language"><%= link_to(locale: "en") do %><span> En</span> <i class="i i-EN"></i><%end%></li>
               </ul>
             </div>
             <div class="powered-by">

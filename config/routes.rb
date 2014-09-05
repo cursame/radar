@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  
-  ############ home ###########
-    root 'statics_views#home'
-
-  ############ statics ###########
-    get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
-    get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
-    get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
-    get 'contacto', :to => 'statics_views#contacto', :as => :contacto
-    get 'actualizaciones', :to => 'statics_views#actualizaciones', :as => :actualizaciones
-    get 'lenguaje', :to => 'statics_views#lenguaje', :as => :lenguaje 
+  scope "/:locale" do
+      ############ home ###########
+        root 'statics_views#home'
+      ############ statics ###########
+        get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
+        get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
+        get 'nosotros', :to => 'statics_views#nosotros', :as => :nosotros
+        get 'contacto', :to => 'statics_views#contacto', :as => :contacto
+        get 'actualizaciones', :to => 'statics_views#actualizaciones', :as => :actualizaciones
+        get 'lenguaje', :to => 'statics_views#lenguaje', :as => :lenguaje 
+   end
+   get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+   get '', to: redirect("/#{I18n.default_locale}")
   ########### mail de contacto #########
     get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
     post '/statics_views/mail_to_contact'
