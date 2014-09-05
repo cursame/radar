@@ -1,23 +1,36 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+--- 
+en: 
+  home: 
+    actions: "Identify, anticipate and address school violence to become a part of the educational community solution."
+    descript: "Anti bullying Resource<br/>Analysis Diagnostic and Report"
+    complain: "Confidential Complaint"
+    des_complain: "Report bullying in a confidential way"
+    more_info: "More information → "
+    auto_diagnotic: "Auto diagnostic"
+    auto_diagnotic_text: "Auto evaluation inside the institution to prevent school violence"
+  menu:
+    complain: "Confidential Complaint"
+    auto_diagnotic: "Auto diagnostic"
+    contact: "Contact"
+    register: "Register"
+    log_in: "Log-in"
+    who: "Who we are?"
+  au_d:
+    auto_diagnotic: "Auto diagnostic"
+    part: "Auto evaluation inside the institution to prevent school violence"
+    works: "How does it work?"
+    process: "This process takes place inside the Radar system. Each school has its own address that </br> allows an easy logistic development. School staff must follow an application guide."
+    participate: "Everyone must participate"
+    directives: "<h4>Directives</h4><p>responsible for the  </br>school control</p>"
+    teachers: "<h4>Teachers</h4><p> Links and </br> bullying identifiers</p>"
+    students: "<h4>Students</h4><p>Victims or witnesses </br> of school bullying</p>"
+    function: "<h3>Auto-diagnostic function</h3>"
+    function_a: "<p>A result of the school violence situation is given and information is handed to the institution.</p>"
+    function_b: "<p>General forms of violence are analysed from a multi varied focus that includes different indicators.</p>"
+    function_c: "<p>Relevant information about bullying and specialized institutions is offered, providing help to the necessary cases.</p>"
+    monitor: "<h3>Do you want to monitor your institution?</h3>"
+    register: "<p>Register and we will send you your auto-diagnosis</p>"
+    mail: "your@email"
+    send: "send"
 
-en:
-  hello: "Hello world"
+

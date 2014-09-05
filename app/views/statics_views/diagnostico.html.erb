@@ -4,33 +4,22 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="titlebox-content">
-            <% if session[:languaje]== 'en' %>
-            <h2>Auto diagnostic</h2>
-            <p>Auto evaluation inside the institution to prevent school violence</p>
-            <%else%>
-            <h2>Autodiagnóstico</h2>
-            <p>Diagnostica la situación de violencia en tu institución</p>
-            <%end%>
+            <h2><%= t('au_d.auto_diagnotic')%></h2>
+            <p><%= t('au_d.part')%></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="about">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-7">
         <div class="col-inner">
           <div class="info">
-            <% if session[:languaje]== 'en' %>
-            <h3>How does it work?</h3>
-            <p>This process takes place inside the Radar system. Each school has its own address that allows an easy logistic development. School staff must follow an application guide. </p>
-            <%else%>
-            <h3>¿Cómo funciona?</h3>
-            <p>Este proceso se lleva a cabo dentro del sistema de Radar con una dirección única por escuela que permite su fácil desarrollo logístico. El personal de la institución debe seguir una guía de aplicación de los instrumentos.</p>
-            <%end%>
+            <h3><%= t('au_d.works')%></h3>
+             <p><%= t('au_d.process').html_safe%></p>
           </div>
         </div>
       </div>
@@ -44,18 +33,13 @@
     </div>
   </div>
 </div>
-
 <div class="bullying-detection intro bg_diagnostico bg_blue">
   <div class="wrapper">
 
       <div class="cols-12">
         <div class="col col-12">
           <div class="col-inner ">
-              <% if session[:languaje]== 'en' %>
-               <h3>Everyone must participate</h3>
-              <%else%>
-               <h3>La participación es de todos</h3>
-              <%end%>
+               <h3><%= t('au_d.participate')%></h3>
           </div>
         </div>
       </div>
@@ -65,50 +49,32 @@
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('directivo.png')%>
-            <% if session[:languaje]== 'en' %>
-            <h4>Directives</h4><p>responsible for the  </br>school control</p>
-            <%else%>
-            <h4>Directivos</h4><p>Responsables del control </br>en la institución</p>
-            <%end%>
+            <%= t('au_d.directives').html_safe%>
           </div>
         </div>
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('profesora.png')%>
-            <% if session[:languaje]== 'en' %>
-            <h4>Teachers</h4><p> Links and </br> bullying identifiers</p>
-            <%else%>
-            <h4>Profesores</h4><p>Vínculo e </br>identificador de bullying</p>
-            <%end%>
+            <%= t('au_d.teachers').html_safe%>
           </div> 
         </div>
         <div class="col col-4">
           <div class="col-inner">
             <%=image_tag('alumnos.png')%>
-            <% if session[:languaje]== 'en' %>
-            <h4>Students</h4><p>Victims or witnesses </br> of school bullying</p>
-            <%else%>
-            <h4>Alumnos</h4><p>Víctimas o testigos </br>de bullying en su escuela</p>
-            <%end%>
+            <%= t('au_d.students').html_safe%>
           </div> 
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 <div class="funcion">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
           <div class="section-title">
-            <% if session[:languaje]== 'en' %>
-            <h3>Auto-diagnostic function</h3>
-            <%else%>
-            <h3>Función del auto diagnóstico</h3>
-            <%end%>
+            <%= t('au_d.function').html_safe%>
           </div>
         </div>
       </div>
@@ -117,73 +83,44 @@
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img1.png')%>
-          <% if session[:languaje]== 'en' %>
-          <p>A result of the school violence situation is given and information is handed to the institution.</p>
-          <%else%>
-          <p>Se arroja un resultado acerca de la situación de violencia escolar  a manera de semáforo y entrega información a la institución</p>
-          <%end%>
+          <%= t('au_d.function_a').html_safe%>         
         </div>
       </div>
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img2.png')%>
-          <% if session[:languaje]== 'en' %>
-          <p>General forms of violence are analysed from a multi varied focus that includes different indicators.</p>
-          <%else%>
-          <p>Se analizan las formas generales de violencia desde un enfoque multivariado que incluye distintos indicadores </p>
-          <%end%>
+          <%= t('au_d.function_b').html_safe%>         
         </div>
       </div>
       <div class="col col-4">
         <div class="col-inner">
           <%=image_tag('d_img3.png')%>
-          <% if session[:languaje]== 'en' %>
-          <p>Relevant information about bullying and specialized institutions is offered, providing help to the necessary cases.</p>
-          <%else%>
-          <p>Se ofrece Información relevante acerca del bullying e instituciones especializadas que pueden otorgar ayuda en caso de ser necesario.</p>
-          <%end%>
+          <%= t('au_d.function_c').html_safe%>         
         </div>
       </div>
     </div>
 
   </div>
 </div>
-
 <div class="call intro bg-greengradient">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
           <div class="section-title">
-          <% if session[:languaje]== 'en' %>
-          <h3>Do you want to monitor your institution?</h3>
+            <%= t('au_d.monitor').html_safe%> 
           </div>
-          <p>Register and we will send you your auto-diagnosis</p>
+            <%= t('au_d.register').html_safe%> 
           <div class="suscribe">
             <%= form_tag('/statics_views/subscriber', class: 'validate') do -%>
-            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail", required: true%>
+            <%= text_field_tag 'email','', :placeholder =>  t('au_d.mail'), class:"suscribe-field mail", required: true%>
           
           <div class="send">
             <span class="btn btn-suscribe">
-              <%= submit_tag 'Send'%>
+              <%= submit_tag t('au_d.send')%>
               <%end%>
             </span>
           </div>
-          <%else%>
-            <h3>¿Quieres monitorear tu institución?</h3>
-          </div>
-          <p>Regístrate y te notificaremos cuando autodiagnóstico esté listo.</p>
-          <div class="suscribe">
-            <%= form_tag('/statics_views/subscriber', class: 'validate') do -%>
-            <%= text_field_tag 'email','', :placeholder =>  'tu@correo.com', class:"suscribe-field mail", required: true%>
-          
-          <div class="send">
-            <span class="btn btn-suscribe">
-              <%= submit_tag 'Enviar'%>
-              <%end%>
-            </span>
-          </div>
-          <%end%>
         </div>
       </div>
     </div>

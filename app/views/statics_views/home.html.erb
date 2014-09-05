@@ -5,13 +5,8 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="center-content">
-            <% if session[:languaje]== 'en' %>
-            <h1 class="home">Anti bullying Resource<br/>Analysis Diagnostic and Report</h1>
-            <h6>Identify, anticipate and address school violence to become a part of the educational community solution.</h6>
-            <%else%>
-            <h1 class="home">Recurso Antibullying de<br/>Diagnóstico, Análisis y Reporte</h1>
-            <h6>Identifica, prevé y atiende casos de violencia escolar y se parte</br>de la solución en tu comunidad educativa.</h6>
-            <%end%>
+            <h1 class="home"><%= t('home.descript').html_safe %></h1>
+            <h6><%= t('home.actions').html_safe %></h6>
           </div>
         </div>
       </div>
@@ -22,21 +17,12 @@
         <div class="col-inner">
           <div class="block bg-orange">
             <div class="block-content">
-              <% if session[:languaje]== 'en' %>
-              <h3>Confidential Complaint</h3>
-              <p>Report bullying in a confidential way</p>
-                <%= link_to "More information → ", foco_rojo_path, class: "nav-btn btn btn-outline" %>
+              <h3><%= t('home.complain').html_safe %></h3>
+              <p> <%= t('home.des_complain').html_safe %> </p>
+                <%= link_to t('home.more_info'), foco_rojo_path, class: "nav-btn btn btn-outline" %>
               <div class="img-block">
                 <%=image_tag('img_block1.png')%>
               </div>
-              <%else%>
-              <h3>Denuncia Confidencial</h3>
-              <p>Denuncia al reportar casos <br/>de bullying de manera confidencial.</p>
-                <%= link_to "Más información → ", foco_rojo_path, class: "nav-btn btn btn-outline" %>
-              <div class="img-block">
-                <%=image_tag('img_block1.png')%>
-              </div>
-              <%end%>
             </div>
           </div>
         </div>
@@ -45,21 +31,12 @@
         <div class="col-inner">
           <div class="block bg-green">
             <div class="block-content">
-              <% if session[:languaje]== 'en' %>
-              <h3>Auto diagnostic</h3>
-              <p>Auto evaluation inside the institution to prevent school violence</p>
-              <%= link_to "More information → ", diagnostico_path, class: "nav-btn btn btn-outline" %>
+              <h3><%= t('home.auto_diagnotic').html_safe %></h3>
+              <p> <%= t('home.auto_diagnotic_text').html_safe %> </p>
+              <%= link_to  t('home.more_info'), diagnostico_path, class: "nav-btn btn btn-outline" %>
               <div class="img-block">
                 <%=image_tag('img_block2.png')%>
               </div>
-              <%else%>
-              <h3>Autodiagnóstico</h3>
-              <p>Autoevaluación dentro de la institución <br/>para prevenir la violencia escolar</p>
-              <%= link_to "Más información → ", diagnostico_path, class: "nav-btn btn btn-outline" %>
-              <div class="img-block">
-                <%=image_tag('img_block2.png')%>
-              </div>
-              <%end%>
             </div>
           </div>
         </div>
