@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
    helper_method :viewver_encode
    before_filter :lenaguaje_filter
    before_filter :set_locale
+   before_filter :default_url_options
 
    def current_user
     @user = User.find(session[:user])
@@ -186,6 +187,9 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || session[:languaje]
+  end
+  def default_url_options(options = {})
+    {locale: I18n.locale}
   end
 
   
