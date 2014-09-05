@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "/:locale" do
+  scope "/:locale", locale: /es|en/ do
       ############ home ###########
         root 'statics_views#home'
       ############ statics ###########
