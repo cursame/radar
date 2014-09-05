@@ -1,12 +1,11 @@
-<% if session[:languaje]== 'en' %>
 <div class="titlebox intro intro-us bg-blue">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
           <div class="titlebox-content">
-            <h2>US</h2>
-            <p>Anti bullying Resource Analysis Diagnostic and Report  </p>
+            <h2><%=t('us.title')%></h2>
+            <p><%=t('us.part')%> </p>
           </div>
         </div>
       </div>
@@ -20,9 +19,9 @@
       <div class="col col-7">
         <div class="col-inner">
           <div class="info">
-            <h3>Who are we?</h3>
-            <h4>As a result of the bullying problematic the country is facing, Cúrsame launches Radar. </h4>
-            <p>With Radar, students will be able to confidentially denounce bullying and directives will be able to understand the student’s victimization degree, identifying the main forms of violence which are taking place at school. </p>
+            <h3><%=t('us.second_title')%></h3>
+            <h4><%=t('us.second_sub_head')%> </h4>
+            <p> <%=t('us.second_part')%> </p>
           </div>
         </div>
       </div>
@@ -43,69 +42,11 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="section-title">
-            <h3>Cúrsame in favour of getting along</h3>
+            <h3> <%=t('us.about_cursame').html_safe %> </h3>
           </div>
-          <p> For Cúrsame to work at its best, it requires that the educational community functions in the best terms of tolerance and respect. Therefore, we find that there is a great need to become involved in actions against school violence. </p>
-          <p> For students to interact with eachother with an educational purpose, we consider that an atmosphere of possitive coexistance is required, allowing a collaborative learning process to take place. </p>
-          <p>  Cúrsame knows that if the conditions previously mentioned are achieved, we will be able to integrate our technological  platform into  the school system as an efficient way to favour  positive place encounters to improve the teaching-learning process. </p>
+           <%=t('us.content_abount_con').html_safe %>
         </div>
       </div>
     </div>
   </div>
 </div>
-<%else%>
-<div class="titlebox intro intro-us bg-blue">
-  <div class="wrapper">
-    <div class="cols-12">
-      <div class="col col-12">
-        <div class="col-inner">
-          <div class="titlebox-content">
-            <h2>Nosotros</h2>
-            <p>Recurso Anti bullyng de Diagnóstico, Análisis y Reporte </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="about">
-  <div class="wrapper">
-    <div class="cols-12">
-      <div class="col col-7">
-        <div class="col-inner">
-          <div class="info">
-            <h3>¿Quiénes somos?</h3>
-            <h4>Ante la problemática en el País sobre violencia escolar, Cúrsame lanza Radar</h4>
-            <p>Con Radar los alumnos y alumnas pueden denunciar de manera confidencial casos de bullying y los directivos conocer el grado de victimización del alumno (a) e identificar las principales formas de violencia con las que se está llevando a cabo el bullying en su escuela.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col col-5">
-        <div class="col-inner">
-          <div class="paddingtop">
-            <%=image_tag('school.png')%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="us-info intro bg-bluegradient">
-  <div class="wrapper">
-    <div class="cols-12">
-      <div class="col col-12">
-        <div class="col-inner">
-          <div class="section-title">
-            <h3>Cúrsame a favor de la convivencia</h3>
-          </div>
-          <p> Encontramos una gran necesidad de participar en acciones contra la violencia escolar ya que Cúrsame requiere para poder funcionar adecuadamente que la comunidad educativa de las instituciones se encuentren en las mejores condiciones de convivencia, tolerancia y respeto.</p>
-          <p> Consideramos que para que los alumnos interactúen con otros con un fin educativo se requiere un ambiente de convivencia positiva para que se pueda dar el proceso de aprendizaje colaborativo de la manera más integral posible.</p>
-          <p>  En Cúrsame sabemos que si las condiciones antes mencionadas son adecuadas cumpliremos el objetivo de integrar nuestra herramienta tecnológica al ámbito escolar como una forma eficaz de favorecer los espacios de encuentro efectivo y positivo para mejorar el proceso de enseñanza-aprendizaje.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<%end%>

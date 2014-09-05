@@ -6,8 +6,12 @@ class ApplicationController < ActionController::Base
    helper_method :current_user
    helper_method :index_by_institution_violence
    helper_method :action_host
+   before_filter :session_route
    helper_method :viewver_encode
    before_filter :lenaguaje_filter
+   before_filter :set_locale
+   before_filter :default_url_options
+
    def current_user
     @user = User.find(session[:user])
    end
@@ -33,6 +37,14 @@ class ApplicationController < ActionController::Base
        end
     end
    end
+
+   def session_route
+    get_uri = request.env['PATH_INFO']
+    session[:route] = get_uri.split('/').last
+    puts "**************** #{session[:route]} *****************"
+   end
+
+  
 
 
    ############# intepreta los cuestionarios de foco rojo #############
@@ -169,9 +181,16 @@ class ApplicationController < ActionController::Base
 
   def viewver_encode(string)
      string.to_s.split(',')
-
   end
 
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || session[:languaje]
+  end
+  def default_url_options(options = {})
+    {locale: I18n.locale}
+  end
 
   
 end

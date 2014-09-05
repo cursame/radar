@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   
   ############ home ###########
     root 'statics_views#home'
-
   ############ statics ###########
     get 'diagnostico', :to => 'statics_views#diagnostico', :as => :diagnostico
     get 'foco_rojo', :to => 'statics_views#foco_rojo', :as => :foco_rojo
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
     get 'contacto', :to => 'statics_views#contacto', :as => :contacto
     get 'actualizaciones', :to => 'statics_views#actualizaciones', :as => :actualizaciones
     get 'lenguaje', :to => 'statics_views#lenguaje', :as => :lenguaje 
+
   ########### mail de contacto #########
     get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
     post '/statics_views/mail_to_contact'
@@ -111,6 +111,7 @@ Rails.application.routes.draw do
     get 'api/session_loggin'
     post 'api/session_loggin'
 
-
+   get '*path', to: redirect("/%{path}?locale=#{I18n.default_locale}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+   get '', to: redirect("?locale=#{I18n.default_locale}")
 
 end

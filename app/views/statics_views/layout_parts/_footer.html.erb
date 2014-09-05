@@ -1,58 +1,28 @@
-<% if session[:languaje]== 'en' %>
-   <div class="footer">
-    <div class="wrapper">
-      <div class="cols-12">
-        <div class="col col-12">
-          <div class="col-inner">
-            <div class="footer-menu">
-              <%=image_tag('cursame.png')%>
-              <ul class="footermenu">
-                <li class="space">
-                  <%= link_to "Confidential Complaint", foco_rojo_path, class: "nav-bottom" %></li>
-                <li class="space">
-                  <%= link_to "Auto diagnosis", diagnostico_path, class: "nav-bottom" %></li>
-                <li class="btn_primary">
-                  <%= link_to "Who are we?", nosotros_path, class: "nav-bottom" %></li>
-                <li class="btn_primary"><%= link_to "Updates", actualizaciones_path, class: "nav-bottom" %></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'es') do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'en') do %><span> En</span> <i class="i i-EN"></i><%end%></li>
-              </ul>
-            </div>
-            <div class="powered-by">
+<div class="footer">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="footer-menu">
+            <%=image_tag('cursame.png')%>
+            <ul class="footermenu">
+              <li class="space">
+              <%= link_to t('footer.menu_a'), foco_rojo_path, class: "nav-bottom" %></li>
+              <li class="space">
+              <%= link_to t('footer.menu_b'), diagnostico_path, class: "nav-bottom" %></li>
+              <li class="btn_primary">
+              <%= link_to t('footer.menu_c'), nosotros_path, class: "nav-bottom" %></li>
+              <li class="btn_primary">
+              <%= link_to t('footer.menu_d'), actualizaciones_path, class: "nav-bottom" %></li>
+              <li class="language"><%= link_to(locale: "es") do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
+              <li class="language"><%= link_to(locale: "en") do %><span> En</span> <i class="i i-EN"></i><%end%></li>
+            </ul>
+          </div>
+          <div class="powered-by">
             <%= link_to image_tag('footerlogo.png'), "http://cursa.me", target: "_blank" %>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <%else%>
-   <div class="footer">
-    <div class="wrapper">
-      <div class="cols-12">
-        <div class="col col-12">
-          <div class="col-inner">
-            <div class="footer-menu">
-              <%=image_tag('cursame.png')%>
-              <ul class="footermenu">
-                <li class="space">
-                  <%= link_to "Denuncia confidencial", foco_rojo_path, class: "nav-bottom" %></li>
-                <li class="space">
-                  <%= link_to "Autodiagnóstico", diagnostico_path, class: "nav-bottom" %></li>
-                <li class="btn_primary">
-                  <%= link_to "Nosotros", nosotros_path, class: "nav-bottom" %></li>
-                <li class="btn_primary">
-                  <%= link_to "Actualizaciones", actualizaciones_path, class: "nav-bottom" %></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'es') do %><span> Es</span> <i class="i i-ES"></i><%end%></li>
-                <li class="language"><%= link_to lenguaje_path(lenguje: 'en') do %><span> En</span> <i class="i i-EN"></i><%end%></li>
-              </ul>
-            </div>
-            <div class="powered-by">
-            <%= link_to image_tag('footerlogo.png'), "http://cursa.me", target: "_blank" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<%end%>
+  </div>
 

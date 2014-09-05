@@ -47,6 +47,7 @@ class StaticsViewsController < ApplicationController
 
   def lenguaje
     session[:languaje] = params[:lenguje]
+    
     redirect_to :back
   end
 private

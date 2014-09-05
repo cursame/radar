@@ -32,6 +32,58 @@ es:
     register: " <p>Regístrate y te notificaremos cuando autodiagnóstico esté listo.</p>"
     mail: "tu@email"
     send: "Enviar"
+  conf_co:
+    complain: "Denuncia confidencial"
+    part: "Reporta casos de bullying de manera confidencial"
+    works: "¿Cómo funciona?"
+    process: "Radar provee un formulario online que puede integrarse en el sitio web de la escuela, su plataforma Cúrsame así como desde una dirección electrónica y las notificaciones de los casos llegan al  conocimiento de las autoridades correspondientes."
+    bullying: "Detección de casos de bullying"
+    victim: "<p>Mediante la denuncia de los propios<br/>alumnos(as) que son <span>víctimas</span><br/> en la escuela</p>"
+    testify: "<p>Mediante la denuncia<br/> de alumnos(as) <span>testigos</span><br/> de casos de bullying en la escuela</p>"
+    identify: "<h3>Identificación del grado de victimización</h3>"
+    indicators: "<p>A manera de semáforo es posible detectar la severidad de cada caso mediante los diferentes indicadores:</p>"
+    indicator_a: "Burlas"
+    indicator_b: "Exclusión"
+    indicator_c: "Cyberbullying"
+    indicator_d: "Agresión verbal"
+    indicator_e: "Daño a pertenencias"
+    indicator_f: "Bullying psicológico"
+    indicator_g: "Amenaza"
+    indicator_h: "Violencia física"
+    monitoring: "<h3>¿Quieres monitorear tu institución?</h3>"
+    legend_monitoring: "<p>Rápido, seguro, eficaz y confidencial. Estás a un paso de frenar el bullying</p>"
+    register_now: "¡Regístrate ahora!"
+  contact_form: 
+    part: "Estamos cerca de tí para aclarar tus dudas"
+    title: Contacto
+    email: "Email *"
+    ext: "Extensión *"
+    name: "Nombre *"
+    position: "Cargo *"
+    school: "Institución *"
+    subject: "Tema *"
+    telephone: "Teléfono *"
+    send: "Contactar"
+    holder_a: "tu@email"
+    holder_b: Nombre
+    holder_c: Institución
+    holder_d: Cargo
+    holder_e: Teléfono
+    holder_f: 'Numero de extención'
+    holder_g: Tema
+  us:
+    title: "Nosotros"
+    part: "Recurso Anti bullyng de Diagnóstico, Análisis y Reporte"
+    second_title: "¿Quiénes somos?"
+    second_sub_head: "Ante la problemática en el País sobre violencia escolar, Cúrsame lanza Radar "
+    second_part: "Con Radar los alumnos y alumnas pueden denunciar de manera confidencial casos de bullying y los directivos conocer el grado de victimización del alumno (a) e identificar las principales formas de violencia con las que se está llevando a cabo el bullying en su escuela."
+    about_cursame: "Cúrsame a favor de la convivencia"
+    content_abount_con: "<p> Encontramos una gran necesidad de participar en acciones contra la violencia escolar ya que Cúrsame requiere para poder funcionar adecuadamente que la comunidad educativa de las instituciones se encuentren en las mejores condiciones de convivencia, tolerancia y respeto.</p> <p> Consideramos que para que los alumnos interactúen con otros con un fin educativo se requiere un ambiente de convivencia positiva para que se pueda dar el proceso de aprendizaje colaborativo de la manera más integral posible.</p><p>  En Cúrsame sabemos que si las condiciones antes mencionadas son adecuadas cumpliremos el objetivo de integrar nuestra herramienta tecnológica al ámbito escolar como una forma eficaz de favorecer los espacios de encuentro efectivo y positivo para mejorar el proceso de enseñanza-aprendizaje.</p>"
+  footer:
+    menu_a: "Denuncia confidencial"
+    menu_b: "Autodiagnóstico"
+    menu_c: "Nosotros"
+    menu_d: "Actualizaciones"
 
 
 

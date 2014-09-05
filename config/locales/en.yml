@@ -1,36 +1,97 @@
 --- 
 en: 
-  home: 
-    actions: "Identify, anticipate and address school violence to become a part of the educational community solution."
-    descript: "Anti bullying Resource<br/>Analysis Diagnostic and Report"
-    complain: "Confidential Complaint"
-    des_complain: "Report bullying in a confidential way"
-    more_info: "More information → "
+  au_d: 
     auto_diagnotic: "Auto diagnostic"
-    auto_diagnotic_text: "Auto evaluation inside the institution to prevent school violence"
-  menu:
-    complain: "Confidential Complaint"
-    auto_diagnotic: "Auto diagnostic"
-    contact: "Contact"
-    register: "Register"
-    log_in: "Log-in"
-    who: "Who we are?"
-  au_d:
-    auto_diagnotic: "Auto diagnostic"
-    part: "Auto evaluation inside the institution to prevent school violence"
-    works: "How does it work?"
-    process: "This process takes place inside the Radar system. Each school has its own address that </br> allows an easy logistic development. School staff must follow an application guide."
-    participate: "Everyone must participate"
     directives: "<h4>Directives</h4><p>responsible for the  </br>school control</p>"
-    teachers: "<h4>Teachers</h4><p> Links and </br> bullying identifiers</p>"
-    students: "<h4>Students</h4><p>Victims or witnesses </br> of school bullying</p>"
     function: "<h3>Auto-diagnostic function</h3>"
     function_a: "<p>A result of the school violence situation is given and information is handed to the institution.</p>"
     function_b: "<p>General forms of violence are analysed from a multi varied focus that includes different indicators.</p>"
     function_c: "<p>Relevant information about bullying and specialized institutions is offered, providing help to the necessary cases.</p>"
+    mail: your@email
     monitor: "<h3>Do you want to monitor your institution?</h3>"
+    part: "Auto evaluation inside the institution to prevent school violence"
+    participate: "Everyone must participate"
+    process: "This process takes place inside the Radar system. Each school has its own address that </br> allows an easy logistic development. School staff must follow an application guide."
     register: "<p>Register and we will send you your auto-diagnosis</p>"
-    mail: "your@email"
-    send: "send"
+    send: send
+    students: "<h4>Students</h4><p>Victims or witnesses </br> of school bullying</p>"
+    teachers: "<h4>Teachers</h4><p> Links and </br> bullying identifiers</p>"
+    works: "How does it work?"
+  conf_co: 
+    bullying: "Bullying Detention"
+    complain: "Confidential Complaint"
+    identify: "<h3>How to identify a bully victim</h3>"
+    indicator_a: Mockery
+    indicator_b: Exclusion
+    indicator_c: Cyberbullying
+    indicator_d: "Verbal aggression"
+    indicator_e: "Damage of belongings"
+    indicator_f: "Psychological bullying"
+    indicator_g: Threat
+    indicator_h: "Physical violence"
+    indicators: "<p>It is possible to detect the severity of each case through different indicators:</p>"
+    legend_monitoring: "<p>It’s quick, safe, efficient and confidential. You are only one step away to stop bullying.</p>"
+    monitoring: "<h3>Do you want to monitor your institution?</h3>"
+    part: "Report bullying in a confidential way."
+    process: "Radar provides an online questionnaire that can be integrated into the school’s website, Cúrsame platform, or into an email address where the corresponding school authorities can receive notifications of cases where bullying is taking place."
+    register_now: "¡Register now!"
+    testify: "<p>Through the complains of students </br> that witness school bullying</p>"
+    victim: "<p>Through the complains of </br> students who find themselves as <span>victims</span> </br> at school</p>"
+    works: "How does it work?"
+  contact_form: 
+    contact: Contact
+    part: "We are here to answer any questions"
+    title: Contact
+    email: "Email *"
+    ext: "Number extension *"
+    name: "Name *"
+    position: "Position *"
+    school: "School *"
+    subject: "Subject *"
+    telephone: "Telephone *"
+    send: "Contact Us"
+    holder_a: "your@email"
+    holder_b: Name
+    holder_c: School
+    holder_d: Position
+    holder_e: Telephone
+    holder_f: 'Number extension'
+    holder_g: Subject
+  home: 
+    actions: "Identify, anticipate and address school violence to become a part of the educational community solution."
+    auto_diagnotic: "Auto diagnostic"
+    auto_diagnotic_text: "Auto evaluation inside the institution to prevent school violence"
+    complain: "Confidential Complaint"
+    des_complain: "Report bullying in a confidential way"
+    descript: "Anti bullying Resource<br/>Analysis Diagnostic and Report"
+    more_info: "More information → "
+  menu: 
+    auto_diagnotic: "Auto diagnostic"
+    complain: "Confidential Complaint"
+    contact: Contact
+    log_in: Log-in
+    register: Register
+    who: "Who we are?"
+    contact: Contact
+  us:
+    title: US
+    part: "Anti bullying Resource Analysis Diagnostic and Report "
+    second_title: "Who are we?"
+    second_sub_head: "As a result of the bullying problematic the country is facing, Cúrsame launches Radar. "
+    second_part: "With Radar, students will be able to confidentially denounce bullying and directives will be able to understand the student’s victimization degree, identifying the main forms of violence which are taking place at school. "
+    about_cursame: "Cúrsame in favour of getting along"
+    content_abount_con: "<p> For Cúrsame to work at its best, it requires that the educational community functions in the best terms of tolerance and respect. Therefore, we find that there is a great need to become involved in actions against school violence. </p><p> For students to interact with eachother with an educational purpose, we consider that an atmosphere of possitive coexistance is required, allowing a collaborative learning process to take place. </p><p>  Cúrsame knows that if the conditions previously mentioned are achieved, we will be able to integrate our technological  platform into  the school system as an efficient way to favour  positive place encounters to improve the teaching-learning process. </p>"
+  footer:
+    menu_a: "Confidential Complaint"
+    menu_b: "Auto diagnosis"
+    menu_c: "Who are we?"
+    menu_d: "Updates"
+
+  
+
+
+
+
+
 
 
