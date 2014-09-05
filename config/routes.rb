@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "/:locale", locale: /es|en/ do
+scope "/:locale", locale: /es|en/ do
       ############ home ###########
         root 'statics_views#home'
       ############ statics ###########
@@ -9,9 +9,7 @@ Rails.application.routes.draw do
         get 'contacto', :to => 'statics_views#contacto', :as => :contacto
         get 'actualizaciones', :to => 'statics_views#actualizaciones', :as => :actualizaciones
         get 'lenguaje', :to => 'statics_views#lenguaje', :as => :lenguaje 
-   end
-   get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-   get '', to: redirect("/#{I18n.default_locale}")
+
   ########### mail de contacto #########
     get 'mail_to_contact', :to => 'statics_views#mail_to_contact', :as => :mail_to_contact
     post '/statics_views/mail_to_contact'
@@ -113,6 +111,8 @@ Rails.application.routes.draw do
     get 'api/session_loggin'
     post 'api/session_loggin'
 
-
+end
+   get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+   get '', to: redirect("/#{I18n.default_locale}")
 
 end
