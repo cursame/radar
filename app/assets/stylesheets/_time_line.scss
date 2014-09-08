@@ -225,7 +225,9 @@ Main components
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-family: $font-radar;
+
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
