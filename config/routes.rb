@@ -104,7 +104,7 @@ Rails.application.routes.draw do
     get 'responce', :to => 'cuestionaries#responce', as: :responce_questionary
     post '/cuestionaries/responce'
   ####### api ########
-    get 'api/documentation_methods'
+    get 'api/documentation_methods', as: :document_api
     get 'api/acces_to_red_lights'
     get 'api/register_by_api'
     post 'api/register_by_api'

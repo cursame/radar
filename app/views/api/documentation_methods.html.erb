@@ -1,2 +1,32 @@
-<h1>Api#documentation_methods</h1>
-<p>Find me in app/views/api/documentation_methods.html.erb</p>
+
+<h1>Documentación del API</h1>
+<p>El API de RADAR escolar esta diseñada para desarrolladores de grupos escolares o insituciones que quieran integrar RADAR de una forma mucho más dinámica.</p>
+
+<h3>Generación de usuario por API</h3>
+<p> La lista de parámetros requeridos para generar el usuario son: </p>
+<ul>
+	<li>Nombre => Parámetro "name" </li>
+    <li>Email => Parámetro "email" </li>
+	<li>Charge => Parámetro "charge" </li>
+	<li>Password => Parámetro "password" </li>
+	<li>Institution => Parámetro "institution" </li>
+	<li>Url => Parámetro "url" </li>
+	<li>Phone => Parámetro "phone" </li>
+</ul>
+
+<p>Regresa la información  propia de el usuario</p>
+
+<p>Estos métodos deben de ser enviados a http://www.radarescolar.com/api/register_by_api </p>
+
+<h3>Loggin por API</h3>
+<p>El métdodo del api requerido para poder ingresar es http://www.radarescolar.com/api/session_loggin y su lista de parametros</p>
+<ul>
+	<li>Email => Parámetro "email" </li>
+	<li>Password => Parámetro "password" </li>
+</ul>
+<p>Regresa el método de usuario</p>
+
+<h3>Acceso a focos rojos por API</h3>
+<p> Para poder accesar a los métodos del foco rojo deben mandar la petición por este parámetro </p>
+<p> http://www.radarescolar.com/api/acces_to_red_lights?email=email&&token=tokenspecialviews </p>
+<p>Regresa focos rojos por usuario e institución</p>
