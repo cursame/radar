@@ -1,0 +1,8 @@
+<% c = 0 %>
+(pregunta de campo)
+<div style="margin-left:20px; width:80%">
+	<% viewver_encode(p.question_requires).each do |vx| %>
+	<% c = c + 1 %>
+	<div ><%= vx %> <%=radio_button_tag "opt[#{cue}]", c %></div></br>
+	<%end%>
+</div>
