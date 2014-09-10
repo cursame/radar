@@ -1,32 +1,61 @@
+<div class="api-header bg-blue-gradient2">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="title-api">
+            <h5>Documentación del API</h5>
+            <p>El API de RADAR escolar esta diseñada para desarrolladores de grupos escolares o insituciones que quieran integrar RADAR de una forma mucho más dinámica.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Documentación del API</h1>
-<p>El API de RADAR escolar esta diseñada para desarrolladores de grupos escolares o insituciones que quieran integrar RADAR de una forma mucho más dinámica.</p>
+<div class="api_content">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="api-element">
+            <h4>Generación de usuario por API</h4>
+            <p> La lista de parámetros requeridos para generar el usuario son: </p>
+            <ul class="parameter">
+              <li><span>Nombre =></span> Parámetro "name" </li>
+              <li><span>Email =></span> Parámetro "email" </li>
+              <li><span>Charge =></span> Parámetro "charge" </li>
+              <li><span>Password =></span> Parámetro "password" </li>
+              <li><span>Institution =></span> Parámetro "institution" </li>
+              <li><span>Url =></span> Parámetro "url" </li>
+              <li><span>Phone =></span> Parámetro "phone" </li>
+            </ul>
 
-<h3>Generación de usuario por API</h3>
-<p> La lista de parámetros requeridos para generar el usuario son: </p>
-<ul>
-	<li>Nombre => Parámetro "name" </li>
-    <li>Email => Parámetro "email" </li>
-	<li>Charge => Parámetro "charge" </li>
-	<li>Password => Parámetro "password" </li>
-	<li>Institution => Parámetro "institution" </li>
-	<li>Url => Parámetro "url" </li>
-	<li>Phone => Parámetro "phone" </li>
-</ul>
+            <p>Regresa la información  propia de el usuario</p>
 
-<p>Regresa la información  propia de el usuario</p>
+            <p>Estos métodos deben de ser enviados a <span>http://www.radarescolar.com/api/register_by_api</span> </p>
+          </div>
+          
+          <div class="api-element">
+            <h4>Loggin por API</h4>
+            <p>El métdodo del api requerido para poder ingresar es <span>http://www.radarescolar.com/api/session_loggin y su lista de parametros</span></p>
+            <ul class="parameter">
+              <li><span>Email => </span> Parámetro "email" </li>
+              <li><span>Password => </span> Parámetro "password" </li>
+            </ul>
+            <p>Regresa el método de usuario</p>
+          </div>
+          
+          <div class="api-element">
+            <h4>Acceso a focos rojos por API</h4>
+            <p> Para poder accesar a los métodos del foco rojo deben mandar la petición por este parámetro </p>
+            <p> <span>http://www.radarescolar.com/api/acces_to_red_lights?email=email&&token=tokenspecialviews</span></p>
+            <p>Regresa focos rojos por usuario e institución</p>
+          </div>
 
-<p>Estos métodos deben de ser enviados a http://www.radarescolar.com/api/register_by_api </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h3>Loggin por API</h3>
-<p>El métdodo del api requerido para poder ingresar es http://www.radarescolar.com/api/session_loggin y su lista de parametros</p>
-<ul>
-	<li>Email => Parámetro "email" </li>
-	<li>Password => Parámetro "password" </li>
-</ul>
-<p>Regresa el método de usuario</p>
-
-<h3>Acceso a focos rojos por API</h3>
-<p> Para poder accesar a los métodos del foco rojo deben mandar la petición por este parámetro </p>
-<p> http://www.radarescolar.com/api/acces_to_red_lights?email=email&token=tokenspecialviews </p>
-<p>Regresa focos rojos por usuario e institución</p>
