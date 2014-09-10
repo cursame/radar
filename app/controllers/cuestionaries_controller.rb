@@ -1,7 +1,7 @@
 class CuestionariesController < ApplicationController
   def create  
   	@cuestionary = Cuestionary.create(cuestionary_params)
-    redirect_to :back
+    redirect_to view_questionary_path(@cuestionary.id)
   end
 
   def edit
