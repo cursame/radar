@@ -596,8 +596,6 @@ a:visited {
 		.suscribe-field {
 			width: 50%;
 		}
-
-
 	}
 }
 
@@ -976,17 +974,18 @@ a:visited {
 	}
 
 	.experts {
-		padding: 10px;
 		position: absolute;
-		background: #fce5a1;
 		border-radius: 5px;
 		display: block;
 		top: 15%;
-		right: 0;
+		right: 0;		
+		background: #fce5a1;
 
-		span a {
+		span, a {
+			padding: 10px;
 			font-size: 13px;
 			color: #333;
+			background: #fce5a1;
 		}
 	}
 

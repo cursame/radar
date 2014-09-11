@@ -18,7 +18,7 @@
                 <%= label_tag 'password' %>
                 <%= password_field_tag 'password', '' , placeholder: 'Contraseña', required: true %>
                 <div>
-                  <span class="btn btn-input btn-outline "><%= submit_tag 'Iniciar' %></span>
+                  <%= submit_tag 'Iniciar', class: "btn btn-outline login" %>
                 </div>
                 <% end -%>
               </div>

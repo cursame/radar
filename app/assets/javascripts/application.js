@@ -57,4 +57,14 @@ function Generate_Question_TYPES_by_Dinamic_USES(option, getNextId){
     }
 }
 
+function WidthScaleDIV(div_1, div_2){
+ var w1 =  $('#'+div_1);
+ var w2 =  $('#'+div_2);
+
+ console.log(w1);
+}
+
+
+
+
 

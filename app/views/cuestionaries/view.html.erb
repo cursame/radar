@@ -1,22 +1,51 @@
-<% cue = 0 %>
-<%= form_tag('/cuestionaries/responce') do -%>
-	<% @port.questions.each do |p|%> 
-	  <div style="width:100%;">
-	  <div style="float:left;" > <%= p.title %></div>
-	  <% cue = cue + 1 %> 
-	  <% p.question_type %>
-	   <% case p.question_type %>
-	   <% when 'mULT' %>
-	      <%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
-	   <% when 'sCAL' %>
-	      <%= render partial: '/cuestionaries/type_quest_viewver/scale', locals: {p: p, cue: cue, type: p.question_type }%>
-	   <% when 'tEXT' %>
-	   	      <%= render partial: '/cuestionaries/type_quest_viewver/text', locals: {p: p, cue: cue, type: p.question_type }%>
+<div class="wrapper">
+	<div class="cols-12">
+		<div class="col col-12">
+			<div class="inner">
+				<% cue = 0 %>
+				<%= form_tag('/cuestionaries/responce') do -%>
+					<% @port.questions.each do |p|%> 
+					  <div class="quiz-content ">
 
-	   <% when 'cAMP' %>
-	   	      <%= render partial: '/cuestionaries/type_quest_viewver/camp', locals: {p: p, cue: cue, type: p.question_type }%>
-	   <%end%>
-	   </div></br></br>
-	<%end%>
-	<%= submit_tag 'Responder' %>
-<%end -%>
+						  <div class="question-element"> 
+							  <div class="question">
+							  	<span><%= p.title %></span>
+							  </div>	<br/><br/>
+							  <% cue = cue + 1 %> 
+							  <% p.question_type %>
+							</div>
+
+									<% case p.question_type %>
+									<% when 'mULT' %>
+										<div class="type-multi">
+											<%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
+										</div>
+										
+										<% when 'sCAL' %>
+										<div class="type-scale">
+											<%= render partial: '/cuestionaries/type_quest_viewver/scale', locals: {p: p, cue: cue, type: p.question_type }%>
+										</div>
+
+										<% when 'tEXT' %>
+										<div class="type-text">
+											<%= render partial: '/cuestionaries/type_quest_viewver/text', locals: {p: p, cue: cue, type: p.question_type }%>
+										</div>
+
+										<% when 'cAMP' %>
+										<div class="type-multi">
+											<%= render partial: '/cuestionaries/type_quest_viewver/camp', locals: {p: p, cue: cue, type: p.question_type }%>
+										</div>
+										<%end%>
+									</div>
+						   </br></br>
+							<%end%>
+						
+							<span id="copy_jquery" class="btn btn-embed">
+							<%= submit_tag 'Enviar respuesta' %>
+							</span>
+						<%end -%>
+					
+			</div>
+		</div>
+	</div>
+</div>

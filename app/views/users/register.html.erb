@@ -43,9 +43,7 @@
             <div class="terminos">
               <%=  f.label :acepto_los_términos_y_condiciones_del_sitio%>
               <%= f.check_box :terms_of_service, required: true%></br>  </br>
-              <span class="btn btn-input btn-outline">
-                <%= f.submit 'Crear Usuario' %>
-              </span>
+              <%= f.submit 'Crear Usuario', class: "btn btn-outline login" %>
               <%end%>
             </div>
               
