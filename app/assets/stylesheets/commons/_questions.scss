@@ -1,0 +1,46 @@
+.quiz-content {
+  width: 100%;
+}
+
+.question-element {
+  width: 100%;
+  float: left;
+  text-align: left;
+  padding: 0 0 15px 10px;
+  border-bottom: 1px solid #ececec;
+
+  .question {
+    font-size: 15px;
+    font-family: $font-radar;
+  }
+}
+
+.type-text {
+  textarea {
+    width: 100%;
+  }
+}
+
+.type-multi {
+  width: 100%;
+}
+
+.type-scale {
+  width: 100%;
+  background:#fcfcfc;
+  
+  table tr {
+      float: left;
+      display: block;
+      height: 52px;
+      border: 1px #ececec solid;
+
+      td {
+        padding: 15px;
+      }
+    }
+}
+
+.type-checkbox {
+  float: left;
+}
