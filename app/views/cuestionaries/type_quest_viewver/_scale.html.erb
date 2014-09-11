@@ -1,26 +1,23 @@
 <div class="type-scale">
   <% c = 1 %>
-  <% viewver_encode(p.question_requires).each do |vx| %>
-  <% c = c + 1 %>
-  <div style="border-top: 1px #ececec solid; border-bottom: 1px #ececec solid; min-width:150px; " >
-    <div style="border-left: 1px solid #ececec; border-right: 1px solid #ececec; float:left; padding:20px;" id="div_1_<%=cue%>_<%=c%>">
-      <div style="float:left;"> 
-        <%= vx %>
-      </div>
-    </div>
-    <%end%>
-      <div style="clear:both;"></div>
     <% viewver_encode(p.question_requires).each do |vx| %>
     <% c = c + 1 %>
+        <div  style="border-left: 1px solid #ececec; border-right: 1px solid #ececec; float:left; padding:20px;" >
+          <div style="float:left; min-width:20px;" id="div_1_<%=cue%>_<%=c%>" class="scalex" data-target="div_1_<%=cue%>_<%=c%>_responsive"> 
+          <%= vx %>
+          </div>
+        </div>
+    <%end%>
+    <div style="clear:both;"></div>
+   <% d = 1 %>
+    <% viewver_encode(p.question_requires).each do |vx| %>
+    <% d = d + 1 %>
+
     <div style="width:100%;">
-      <div style="border: solid 1px #000 !important ; float:left; background:#eee; min-width:50px; "> <div  id="div_2_<%=cue%>_<%=c%>" style="float:left;  padding:13px; " ><%=radio_button_tag "opt[#{cue}]", c %> </div>
+      <div style="border-left: 1px solid #ececec; border-right: 1px solid #ececec; float:left; padding:20px;"   >
+       <div  style="float:left; "  id="div_1_<%=cue%>_<%=d%>_responsive"  ><%=radio_button_tag "opt[#{cue}]", d %> 
+       </div>
     </div>
-
-    <script type="text/javascript">
-     $(document).ready(function(){
-        WidthScaleDIV("div_1_<%=cue%>_<%=c%>", "div_2_<%=cue%>_<%=c%>");
-     });
-    </script>
-
-  <% end%>
+    <% end%>
 </div>
+

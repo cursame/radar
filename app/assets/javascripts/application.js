@@ -25,6 +25,9 @@ $(document).ready(function(){
    var to_div = $(this).data('target');
    $('#'+to_div).toggle('blind', 400);
   });
+
+  WidthScaleDIV('scalex');
+
 });
 
 function remove_fields(link) {
@@ -57,11 +60,15 @@ function Generate_Question_TYPES_by_Dinamic_USES(option, getNextId){
     }
 }
 
-function WidthScaleDIV(div_1, div_2){
- var w1 =  $('#'+div_1);
- var w2 =  $('#'+div_2);
-
- console.log(w1);
+function WidthScaleDIV(div){
+ var action =  $('.'+div);
+  $.each( action, function( i, l ){
+    var act = $(l);
+    var actual_width = $(act).width();
+    var secont_id =  act.attr('id') + '_responsive'
+    var rest = act.data('target') ;
+    var seft = $('#'+rest).width(actual_width);
+  });
 }
 
 
