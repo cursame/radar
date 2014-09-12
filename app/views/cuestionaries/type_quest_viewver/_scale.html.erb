@@ -1,23 +1,14 @@
 <div class="type-scale">
-  <% c = 1 %>
-    <% viewver_encode(p.question_requires).each do |vx| %>
-    <% c = c + 1 %>
-        <div  style="border-left: 1px solid #ececec; border-right: 1px solid #ececec; float:left; padding:20px;" >
-          <div style="float:left; min-width:20px;" id="div_1_<%=cue%>_<%=c%>" class="scalex" data-target="div_1_<%=cue%>_<%=c%>_responsive"> 
-          <%= vx %>
-          </div>
-        </div>
-    <%end%>
-    <div style="clear:both;"></div>
-   <% d = 1 %>
-    <% viewver_encode(p.question_requires).each do |vx| %>
-    <% d = d + 1 %>
-
-    <div style="width:100%;">
-      <div style="border-left: 1px solid #ececec; border-right: 1px solid #ececec; float:left; padding:20px;"   >
-       <div  style="float:left; "  id="div_1_<%=cue%>_<%=d%>_responsive"  ><%=radio_button_tag "opt[#{cue}]", d %> 
-       </div>
-    </div>
-    <% end%>
+  <table>
+    <tr>
+      <% viewver_encode(p.question_requires).each_with_index do |question, index| %>
+        <td class="abajo">
+          <label>
+            <%= question %>
+            <span><%=radio_button_tag "opt[#{cue}]", index + 1 %></span>
+          </label>
+        </td>
+      <% end %>
+    </tr>
+  </table>
 </div>
-
