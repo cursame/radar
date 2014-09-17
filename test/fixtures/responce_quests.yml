@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code_responce: MyString
+  cuestionary_id: 1
+  opt: 1
+  responce: MyText
+
+two:
+  code_responce: MyString
+  cuestionary_id: 1
+  opt: 1
+  responce: MyText

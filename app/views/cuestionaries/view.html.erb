@@ -4,6 +4,8 @@
 			<div class="inner">
 				<% cue = 0 %>
 				<%= form_tag('/cuestionaries/responce') do -%>
+			  		<%= hidden_field_tag 'cuestionary', @port.id %>
+
 					<% @port.questions.each do |p|%> 
 					  <div class="quiz-content ">
 
@@ -14,7 +16,6 @@
 							  <% cue = cue + 1 %> 
 							  <% p.question_type %>
 							
-
 									<% case p.question_type %>
 									<% when 'mULT' %>
 										<div class="type-multi">
