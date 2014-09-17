@@ -1,13 +1,16 @@
-<fieldset>
- <%= content_tag(:p, "Ingresa tu pregunta")%>
- <%= f.text_field :title %>
- <%= link_to_function "remove", "remove_fields(this)" %>
- <%= f.select :question_type ,[['Multiple', 'mULT'], ['Escalas', 'sCAL'], ['Texto', 'tEXT'], ['Campo', 'cAMP']] %>
- <div id="puts_answers_<%=rand(5..2000)%>">
- </div>
- <div>
- <%= f.text_area :question_requires, value: "Opción 1, Opción 2, Opción 3",  rows: 4%>
- </div>
 
+<fieldset class="question-area">
+  <%= content_tag(:p, "Ingresa tu pregunta")%>
+  <%= f.text_field :title %>
+  <div class="select-type">
+    Tipo de pregunta: <%= f.select :question_type ,[['Multiple', 'mULT'], ['Escalas', 'sCAL'], ['Texto', 'tEXT'], ['Campo', 'cAMP']] %>
+  </div>
+  <div id="puts_answers_<%=rand(5..2000)%>"></div>
+  <div class="select-type">
+    Escribe las opciones de respuesta a continuación separadas por una coma (,) como en el ejemplo: <%= f.text_area :question_requires, value: "Opción 1, Opción 2, Opción 3",  rows: 3%>
+  </div>
 
+  <div class="remove">
+    <%= link_to_function "Remover", "remove_fields(this)" %>
+  </div>
 </fieldset>

@@ -1,31 +1,23 @@
-
-
 <%= form_for @cuestionary do |f|%>
+	<div class="instrucciones">
+		<%= content_tag(:p, "Título")%>
+		<%= f.text_field :title%>
+		<%= content_tag(:p, "Instrucciones")%>
+		<%= f.text_area :instructions%></br>
+	</div>
+	<%= content_tag(:h4, "Preguntas")%>      
 
-			<%= content_tag(:p, "Título")%>
-			<%= f.text_field :title%>
-			<%= content_tag(:p, "Instrucciones")%>
-			<%= f.text_area :instructions%></br>
-			<%= content_tag(:h4, "Preguntas")%>      
+	<div id="questions_container" class="questions_container">
+    <%= f.fields_for :questions do |builder|%>
+    <%= render  'question_fields', f: builder %>
+    <%end%>
+	</div>
 
-
-		<div id="questions_container" class="questions_container">
-	        <%= f.fields_for :questions do |builder|%>
-	        <%= render  'question_fields', f: builder %>
-	        <%end%>
-	  </div>
-
-
-
-			<div class="add">
-
-			 <span id="copy_jquery" >
-      	<%= link_to_add_fields "Agregar pregunta", f, :questions, '#questions_container' %>
-      </span>
-      		</div>
-				<div class="crearcuestionario">
-				<span class="btn btn-embed ">
-						   <%= f.submit %>
-				</span>
-			</div>
+	<div class="add">
+		<%= link_to_add_fields "Agregar otra pregunta", f, :questions, '#questions_container' %>
+	</div>
+	
+	<span class="btn btn-embed ">
+			   <%= f.submit %>
+	</span>
 <%end%>

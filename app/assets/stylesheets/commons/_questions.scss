@@ -1,10 +1,56 @@
 .cuestionaries-create {
   text-align: left;
-  margin: 45px 0;
+  margin: 25px 0;
+}
+
+.titlebox {
+  margin-top: 35px ;
+}
+
+.instrucciones {
+  background:#e8eef3;
+  padding:30px 25px 15px 25px;
+  margin-bottom: 50px;
+  border-radius: 5px;
 }
 
 .questions_container {
-  margin-top: 35px;
+  margin-top: 10px;
+}
+
+.question-area {
+
+  border-bottom: 1px dotted #ccc;
+  margin: 20px 0;
+  padding-top: 25px 
+}
+
+.select-type {
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.remove {
+
+  margin-bottom: 25px;
+
+  a {
+    color: #666;
+    width: 90px;
+    display: block;
+    background: #ececec;
+    padding: 7px 17px;
+    border-radius: 3px;
+    border: 1px solid #acacac;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  :hover {
+    background:#f9f9f9;
+    color: #333;
+  }
 }
 
 .quiz-content {
@@ -47,8 +93,22 @@ text-align: left;
 
 
 .add {
-  margin-bottom: 20px;
-} 
+  margin-bottom: 25px;
+
+  a {
+    color: #333;
+    padding: 7px 17px;
+    border-radius: 3px;
+    border: 1px solid #acacac;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  :hover {
+    color: #555;
+  }
+}
 
 .abajo {
   text-align: center;
