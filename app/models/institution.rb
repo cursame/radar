@@ -14,4 +14,5 @@ class Institution < ActiveRecord::Base
 	def red_lights
 		@red_lights = RedLight.where(:institution_code => self.tokenspecialforms)
 	end
+
 end

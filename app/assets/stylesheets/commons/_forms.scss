@@ -1,6 +1,5 @@
 .all-tabs {
   background:#f1f1f1;
-
 }
 
 .form-sheet {
@@ -166,4 +165,8 @@ label.error {
     position: relative;
     top: -20px;
   }
+}
+
+textarea {
+  resize: none;
 }

@@ -14,7 +14,6 @@
 							  <% cue = cue + 1 %> 
 							  <% p.question_type %>
 							
-
 									<% case p.question_type %>
 									<% when 'mULT' %>
 										<div class="type-multi">
@@ -42,9 +41,11 @@
 
 						</div>
 						
+						<div class="add">
 							<span id="copy_jquery" class="btn btn-embed">
 							<%= submit_tag 'Enviar respuesta' %>
 							</span>
+						</div>
 						<%end -%>
 					
 			</div>

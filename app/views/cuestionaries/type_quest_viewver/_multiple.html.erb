@@ -1,8 +1,17 @@
-<div class="checkbox">
-
+<div class="multi"> 
   <% c = 0 %>
   <% viewver_encode(p.question_requires).each do |vw| %>
   <% c = c + 1 %>
-  <%= check_box_tag "opt[#{cue}][#{c}]"%> <%= vw %> 
+<div>
+      <label class="type-multi element">
+        <span>
+          <%= vw %>
+        </span>   
+
+        <span class="check-box">
+          <%= check_box_tag "opt[#{cue}][#{c}]"%> 
+        </span>
+      </label>
+</div>
   <%end%>
 </div>
