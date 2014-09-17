@@ -1,23 +1,24 @@
-<div class="wrapper">
-	<div class="cols-12">
-		<div class="col col-12">
-			<div class="inner">
-				<% cue = 0 %>
-				<%= form_tag('/cuestionaries/responce') do -%>
-			  		<%= hidden_field_tag 'cuestionary', @port.id %>
+<div class="all-tabs">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">    
+          <div class="form-sheet">      	       
+						<% cue = 0 %>
+						<%= form_tag('/cuestionaries/responce') do -%>
+					  	<%= hidden_field_tag 'cuestionary', @port.id %>
 
-					<% @port.questions.each do |p|%> 
-					  <div class="quiz-content ">
+							<% @port.questions.each do |p|%> 
+							  <div class="quiz-content ">
 
-						  <div class="question-element"> 
-							  <div class="question">
-							  	<span><%= p.title %></span>
-							  </div>	<br/><br/>
-							  <% cue = cue + 1 %> 
-							  <% p.question_type %>
-							
-									<% case p.question_type %>
-									<% when 'mULT' %>
+								  <div class="question-element"> 
+									  <div class="question">
+									  	<span><%= p.title %></span>
+									  </div>	<br/><br/>
+									  <% cue = cue + 1 %> 
+									  <% p.question_type %>
+									  <% case p.question_type %>
+										<% when 'mULT' %>
 										<div class="type-multi">
 											<%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
 										</div>
@@ -38,19 +39,24 @@
 										</div>
 										<%end%>
 									</div>
-						   </br></br>
-							<%end%>
-
-						</div>
-						
-						<div class="add">
-							<span id="copy_jquery" class="btn btn-embed">
-							<%= submit_tag 'Enviar respuesta' %>
-							</span>
-						</div>
-						<%end -%>
-					
+									<%end%>
+								</div>
+								<div class="add">
+									<span id="copy_jquery" class="btn btn-embed">
+									<%= submit_tag 'Enviar respuesta' %>
+									</span>
+								</div>
+								<%end -%>
+								<div class="logo-form">
+		              <p><b>Radar</b> ® Derechos Reservados 2014</p>
+		           	 <div class="powered-by">
+		              <%=image_tag('footerlogo.png')%>
+		            	</div>
+		        	  </div>
+						</div>		
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+		</div>
 </div>
