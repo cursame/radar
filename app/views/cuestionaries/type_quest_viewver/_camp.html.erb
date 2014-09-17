@@ -1,7 +1,7 @@
 <% c = 0 %>
-<div>
+<div style="checkbox">
 	<% viewver_encode(p.question_requires).each do |vx| %>
 	<% c = c + 1 %>
-	<div ><%=radio_button_tag "opt[#{cue}]", c %><%= vx %> </div></br>
+	<div style="checkbox"><%=radio_button_tag "opt[#{cue}]", c %><%= vx %> </div></br>
 	<%end%>
 </div>

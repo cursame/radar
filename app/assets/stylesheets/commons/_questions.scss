@@ -1,13 +1,22 @@
+.cuestionaries-create {
+  text-align: left;
+  margin: 45px 0;
+}
+
+.questions_container {
+  margin-top: 35px;
+}
+
 .quiz-content {
   width: 100%;
 }
 
 .question-element {
   width: 100%;
-  float: left;
   text-align: left;
-  padding: 0 0 15px 10px;
+  padding: 0 0 25px 10px;
   border-bottom: 1px solid #ececec;
+  margin-top: 20px;
 
   .question {
     font-size: 15px;
@@ -16,31 +25,36 @@
 }
 
 .type-text {
-  textarea {
-    width: 100%;
-  }
+text-align: left;
 }
 
 .type-multi {
-  width: 100%;
+
 }
 
 .type-scale {
-  width: 100%;
   background:#fcfcfc;
   
-  table tr {
-      float: left;
-      display: block;
-      height: 52px;
-      border: 1px #ececec solid;
-
-      td {
-        padding: 15px;
-      }
-    }
+  table, td {
+    border: 1px #ececec solid;
+    padding: 25px;
+  }
 }
 
 .type-checkbox {
-  float: left;
+  margin-right: 25px;
+}
+
+
+.add {
+  margin-bottom: 20px;
+} 
+
+.abajo {
+  text-align: center;
+
+  span {
+    display: block;
+    margin: 5px 0px;
+  }
 }

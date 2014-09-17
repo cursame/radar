@@ -226,3 +226,25 @@
     background:rgba(0,182,135,0.8);
   }
 }
+
+.btn-remove {
+    @include inline-block;
+    
+  span {
+    cursor: pointer;
+  }
+
+  input a {
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #ececec;
+    font-size: 13px;
+    font-weight: lighter;
+    color: $white;
+    background: #666;
+    cursor: pointer;
+  }
+  :hover {
+    background:rgba(0,0,0,0.1);
+  }
+}
