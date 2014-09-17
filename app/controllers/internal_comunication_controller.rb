@@ -7,9 +7,14 @@ class InternalComunicationController < ApplicationController
            puts "************>#{@r.help_institution}"
            @i = @r.help_institution
            puts "************>#{@i.id}"
-           @u = @i.user
            puts "************>#{@u.id}"
+           @u = @i.user
+           if current_user.id == @u.id
+           @u_x = User.find(@r.adviser)
+           @mail = InstitutionManagment.comment_to_problem( @u_x, @i, @r.id).deliver
+           else
            @mail = InstitutionManagment.comment_to_problem( @u, @i, @r.id).deliver
+           end
            puts @mail 
            @cf = true
         else
