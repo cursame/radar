@@ -9,7 +9,7 @@ class InternalComunicationController < ApplicationController
            puts "************>#{@i.id}"
            @u = @i.user
            puts "************>#{@u.id}"
-           @mail = InstitutionManagment.comment_to_problem( @u , @i, @r.id)
+           @mail = InstitutionManagment.comment_to_problem( @u, @i, @r.id).deliver
            puts @mail 
            @cf = true
         else
