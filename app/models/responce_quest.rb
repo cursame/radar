@@ -1,3 +1,3 @@
 class ResponceQuest < ActiveRecord::Base
-	balong_to :cuestionary
+	belongs_to :cuestionary
 end

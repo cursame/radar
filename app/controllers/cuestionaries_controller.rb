@@ -1,4 +1,5 @@
 class CuestionariesController < ApplicationController
+  layout 'responce_forms', only: [:view]
   def create  
   	@cuestionary = Cuestionary.create(cuestionary_params)
     redirect_to view_questionary_path(@cuestionary.id)
@@ -23,6 +24,9 @@ class CuestionariesController < ApplicationController
    @port =  Cuestionary.find(params[:id])
   end
 
+  def view_responce
+  end
+
   def update
   end
 
@@ -34,7 +38,7 @@ class CuestionariesController < ApplicationController
      puts @rand
      params[:opt].each do |index,optn|
        puts optn
-       @responce = Cuestionay.create(opt: index, cuestionary_id: params[:cuestionary], responce: optn)
+       @responce = ResponceQuest.create(opt: index, cuestionary_id: params[:cuestionary], responce: optn.to_s, code_responce: @rand)
        puts @responce
        #optn.each do |res|
         #@a =  Array(res)
