@@ -1,5 +1,9 @@
 <div class="comment-new">
-  <h4>Agrega un comentario</h4>
+  <% if current_user.adviser %>
+   <h4>Contacta al personal de la intitución encargado de esta alerta. </h4>
+  <% else %>
+   <h4>En esta sección puedes contactar a un experto en violencia escolar y recibir orientación. </h4>
+  <% end %>
   <div class="tex-area-comment"> 
     <%= form_tag('/internal_comunication/create_comment', remote: true) do -%>
     <%= hidden_field_tag 'to_red_light', red_ligth.id%>
