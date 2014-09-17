@@ -6,7 +6,7 @@ class InternalComunicationController < ApplicationController
            @r = @comment.red_light
            @i = @r.help_institution
            @u = @i.user
-           @u_x = User.find(@r.adviser)
+           @u_x = User.find_by_adviser_code(@r.adviser)
              if current_user.id == @u.id
                @mail = InstitutionManagment.comment_to_problem( @u_x, @i, @r.id).deliver
              else
