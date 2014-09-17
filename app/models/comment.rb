@@ -5,4 +5,5 @@ class Comment < ActiveRecord::Base
 	validates_presence_of :content
 	validates_presence_of :red_light
 	validates_presence_of :user
+    
 end

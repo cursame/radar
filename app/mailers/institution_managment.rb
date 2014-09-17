@@ -36,4 +36,11 @@ class InstitutionManagment < ActionMailer::Base
      @description = description
      mail(to: @i_t.email , subject: 'Solicitud de ayuda de para una intitución con problemas de bullying')
    end
+
+   def comment_to_problem(user, institution_to, id)
+     @user = user
+     @institution = institution_to
+     @id = id
+     mail(to: @user.email , subject: 'Se ha comentado una solicitud de ayuda')
+   end
 end
