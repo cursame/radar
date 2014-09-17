@@ -4,6 +4,8 @@
 			<div class="inner">
 				<% cue = 0 %>
 				<%= form_tag('/cuestionaries/responce') do -%>
+			  		<%= hidden_field_tag 'cuestionary', @port.id %>
+
 					<% @port.questions.each do |p|%> 
 					  <div class="quiz-content ">
 

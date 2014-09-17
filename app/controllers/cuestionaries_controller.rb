@@ -30,11 +30,15 @@ class CuestionariesController < ApplicationController
   end
 
   def responce
-     params[:opt].each do |optn|
+     @rand = SecureRandom.hex(7)
+     puts @rand
+     params[:opt].each do |index,optn|
        puts optn
-       optn.each do |res|
-        @a =  Array(res)
-       end
+       @responce = Cuestionay.create(opt: index, cuestionary_id: params[:cuestionary], responce: optn)
+       puts @responce
+       #optn.each do |res|
+        #@a =  Array(res)
+       #end
      end
 
     redirect_to :back
