@@ -104,6 +104,7 @@ Rails.application.routes.draw do
     get 'port_access/:id', :to => 'cuestionaries#view', as: :view_questionary
     get 'responce', :to => 'cuestionaries#responce', as: :responce_questionary
     post '/cuestionaries/responce'
+    get '/view_responces/:responce_quest', :to => 'cuestionaries#view_responces', as: :view_responces
   ####### api ########
     get 'api/documentation_methods', as: :document_api
     get 'api/acces_to_red_lights'

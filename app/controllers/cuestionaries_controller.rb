@@ -45,7 +45,10 @@ class CuestionariesController < ApplicationController
        #end
      end
 
-    redirect_to :back
+    redirect_to view_responces_path(@responce.code_responce)
+  end
+
+  def view_responces
   end
   
   def cuestionary_params
