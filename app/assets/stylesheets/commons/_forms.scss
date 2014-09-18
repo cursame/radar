@@ -1,5 +1,20 @@
+textarea {
+  resize: none;
+}
+
+
+
+.check-box-position {
+  position: absolute;
+  right: 5px;
+  vertical-align: middle; 
+}
+
+
+/* Cuestionarios de victimización */
+
 .all-tabs {
-  background:#f1f1f1;
+  background:#f3f3f3;
 }
 
 .form-sheet {
@@ -60,7 +75,7 @@
       color: $white;
     }
 
-    p{
+    p {
       font-size: 15px;
       line-height: 19px;
       color: $white;
@@ -107,11 +122,6 @@
   }
 }
 
-.check-box {
-  position: absolute;
-  right: 5px;
-  vertical-align: middle; 
-}
 
 
 .history, .agresores {
@@ -135,11 +145,10 @@
   padding: 35px;
   text-align: left; 
 }
+/* END Cuestionarios de victimización */
 
-.reports-btn {
-  float: left;
-  margin: 0 0 30px 40px;
-}
+
+/* ERROR LLENAR CAMPOS CORRECTOS*/
 
 label.error {
   color: $white !important;
@@ -149,7 +158,7 @@ label.error {
   text-align: left;
   background:rgba(0,0,0,0.5);
   border-radius: 0 0 3px 3px;
-  padding: 5px 0;
+  padding: 4px 0;
   float: left;
   text-align: center;
 
@@ -161,12 +170,10 @@ label.error {
 
 .column {
 
-    label.error {
+  label.error {
     position: relative;
     top: -20px;
   }
 }
 
-textarea {
-  resize: none;
-}
+

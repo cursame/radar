@@ -110,6 +110,21 @@ text-align: left;
     border: 1px #ececec solid;
     padding: 25px;
   }
+
+  @include max-screen (670px) {
+
+    table, td {
+      text-align: left;
+      width: 100%;
+      float: left;
+      border: 1px #ececec solid;
+    padding: 5px 10px;
+    }
+  }
+
+  .radiobutton-position {
+
+  }
 }
 
 
@@ -134,8 +149,15 @@ text-align: left;
 .abajo {
   text-align: center;
 
+  tr td {
+    float: left;
+  }
+
   span {
     display: block;
     margin: 5px 0px;
   }
 }
+
+
+
