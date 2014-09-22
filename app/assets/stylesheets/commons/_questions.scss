@@ -75,7 +75,8 @@
 }
 
 .type-text {
-text-align: left;
+  width: 100%;
+  text-align: left;
 }
 
 .type-multi {
@@ -123,10 +124,10 @@ text-align: left;
   }
 
   .radiobutton-position {
-
+    position: absolute;
+    right: 0;
   }
 }
-
 
 .add {
   margin-bottom: 25px;
@@ -160,4 +161,7 @@ text-align: left;
 }
 
 
-
+.campo {
+  display: block;
+  background:#ccc;
+}

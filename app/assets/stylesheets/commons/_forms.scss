@@ -2,14 +2,41 @@ textarea {
   resize: none;
 }
 
-
-
 .check-box-position {
   position: absolute;
   right: 5px;
   vertical-align: middle; 
 }
 
+.check-box-one {
+  display: block;
+  width: 100%;
+  float: left;
+  font-size: 10px;
+}
+
+
+select {
+    padding: 5px;
+    margin: 5px 0 0 10px;
+    border-radius: none;
+    box-shadow: 0 1px 0 #ccc;
+    background: #1991C3;
+    color: $white;
+    border:none;
+    outline:none;
+    display: inline-block;
+    appearance:none;
+    cursor:pointer;
+    font-size: 14px;
+    height: 28px;
+    width: auto;
+
+  @include max-screen (500px) {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
 
 /* Cuestionarios de victimización */
 
@@ -122,8 +149,6 @@ textarea {
   }
 }
 
-
-
 .history, .agresores {
   margin: 30px 20px 20px 20px;
   padding: 20px;
@@ -145,6 +170,7 @@ textarea {
   padding: 35px;
   text-align: left; 
 }
+
 /* END Cuestionarios de victimización */
 
 
