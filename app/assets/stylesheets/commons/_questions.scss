@@ -160,8 +160,43 @@
   }
 }
 
-
 .campo {
   display: block;
   background:#ccc;
+}
+
+
+.answer-title {
+  padding: 30px;
+
+  h5 {
+  color: #fff !important;
+  }
+}
+
+
+.answers {
+  padding: 0 35px;
+  text-align: left;
+}
+
+.answer {
+padding: 30px 0;
+
+  .ask {
+    color: red;
+  }
+}
+
+
+
+.title_responce_quest {
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+  padding-bottom: 7px;
+}
+
+.responce {
+  color: #666;
 }

@@ -1,10 +1,41 @@
-<h1>Respuesta cuestionario</h1>
-<% if !@content.nil? %>
-<% @responces.each do |res|%>
-	<% find_responce_in_question(res.cuestionary, res.opt, res.responce).each do |result|%>
-	 <%= result.html_safe %>
-	<%end%>
-<%end%>
-<%else%>
-  <%= @content %>
-<%end%>
+<div class="intro bg_diagnostico">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner"> 
+          <div class="answer-title"> 
+            <h5>Respuestas de cuestionario</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner"> 
+          <div class="form-sheet"> 
+            <% if !@content.nil? %>
+              <div class="answers">
+                <% @responces.each do |res|%>
+                <div class="answer">
+                  <% find_responce_in_question(res.cuestionary, res.opt, res.responce).each do |result|%>
+                  <%= result.html_safe %>
+                  <%end%>
+                  <%end%>
+                <%else%>
+                  <%= @content %>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
