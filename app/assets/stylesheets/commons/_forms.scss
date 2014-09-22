@@ -15,10 +15,13 @@ textarea {
   font-size: 10px;
 }
 
+input[type=checkbox] {
+  visibility: hidden;
+}
 
 select {
     padding: 5px;
-    margin: 5px 0 0 10px;
+    margin: 0 0 0 10px;
     border-radius: none;
     box-shadow: 0 1px 0 #ccc;
     background: #1991C3;
