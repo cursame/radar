@@ -1,10 +1,12 @@
 <div style="type-text">
-	<div>
     <%#= text_area_tag "opt[#{cue}]", '', placeholder: 'ingesa la respuesta' %>
+
+    <span style="selector"> 
      <% array_x = [] %>
       <% viewver_encode(p.question_requires).each do |vw| %>
         <% array_x.push(vw) %>
       <%end%>
-    <%= select_tag "opt[#{cue}]", options_for_select(array_x)%>
-  </div></br></br>
+
+      <%= select_tag "opt[#{cue}]", options_for_select(array_x) %>
+      </span>
 </div>

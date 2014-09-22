@@ -75,7 +75,8 @@
 }
 
 .type-text {
-text-align: left;
+  width: 100%;
+  text-align: left;
 }
 
 .type-multi {
@@ -110,8 +111,23 @@ text-align: left;
     border: 1px #ececec solid;
     padding: 25px;
   }
-}
 
+  @include max-screen (670px) {
+
+    table, td {
+      text-align: left;
+      width: 100%;
+      float: left;
+      border: 1px #ececec solid;
+    padding: 5px 10px;
+    }
+  }
+
+  .radiobutton-position {
+    position: absolute;
+    right: 0;
+  }
+}
 
 .add {
   margin-bottom: 25px;
@@ -134,8 +150,18 @@ text-align: left;
 .abajo {
   text-align: center;
 
+  tr td {
+    float: left;
+  }
+
   span {
     display: block;
     margin: 5px 0px;
   }
+}
+
+
+.campo {
+  display: block;
+  background:#ccc;
 }

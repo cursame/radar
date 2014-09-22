@@ -1,5 +1,47 @@
+textarea {
+  resize: none;
+}
+
+.check-box-position {
+  position: absolute;
+  right: 5px;
+  vertical-align: middle; 
+}
+
+.check-box-one {
+  display: block;
+  width: 100%;
+  float: left;
+  font-size: 10px;
+}
+
+
+select {
+    padding: 5px;
+    margin: 5px 0 0 10px;
+    border-radius: none;
+    box-shadow: 0 1px 0 #ccc;
+    background: #1991C3;
+    color: $white;
+    border:none;
+    outline:none;
+    display: inline-block;
+    appearance:none;
+    cursor:pointer;
+    font-size: 14px;
+    height: 28px;
+    width: auto;
+
+  @include max-screen (500px) {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Cuestionarios de victimización */
+
 .all-tabs {
-  background:#f1f1f1;
+  background:#f3f3f3;
 }
 
 .form-sheet {
@@ -60,7 +102,7 @@
       color: $white;
     }
 
-    p{
+    p {
       font-size: 15px;
       line-height: 19px;
       color: $white;
@@ -107,13 +149,6 @@
   }
 }
 
-.check-box {
-  position: absolute;
-  right: 5px;
-  vertical-align: middle; 
-}
-
-
 .history, .agresores {
   margin: 30px 20px 20px 20px;
   padding: 20px;
@@ -136,10 +171,10 @@
   text-align: left; 
 }
 
-.reports-btn {
-  float: left;
-  margin: 0 0 30px 40px;
-}
+/* END Cuestionarios de victimización */
+
+
+/* ERROR LLENAR CAMPOS CORRECTOS*/
 
 label.error {
   color: $white !important;
@@ -149,7 +184,7 @@ label.error {
   text-align: left;
   background:rgba(0,0,0,0.5);
   border-radius: 0 0 3px 3px;
-  padding: 5px 0;
+  padding: 4px 0;
   float: left;
   text-align: center;
 
@@ -161,12 +196,10 @@ label.error {
 
 .column {
 
-    label.error {
+  label.error {
     position: relative;
     top: -20px;
   }
 }
 
-textarea {
-  resize: none;
-}
+

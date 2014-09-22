@@ -2,7 +2,7 @@
   <%= content_tag(:p, "Ingresa tu pregunta")%>
   <%= f.text_field :title %>
   <div class="select-type">
-    Tipo de pregunta: <%= f.select :question_type ,[['Multiple', 'mULT'], ['Escalas', 'sCAL'], ['Texto', 'tEXT'], ['Campo', 'cAMP']] %>
+    Tipo de pregunta: <%= f.select :question_type ,[['Selección múltiple', 'mULT'], ['Escalas', 'sCAL'], ['Opciones', 'tEXT'], ['Campo', 'cAMP']] %>
   </div>
   <div id="puts_answers_<%=rand(5..2000)%>"></div>
   <div class="select-type">
