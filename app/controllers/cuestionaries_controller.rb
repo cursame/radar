@@ -36,16 +36,25 @@ class CuestionariesController < ApplicationController
   def responce
      @rand = SecureRandom.hex(7)
      puts @rand
+     
      params[:opt].each do |index,optn|
        puts optn
        @responce = ResponceQuest.create(opt: index, cuestionary_id: params[:cuestionary], responce: optn.to_s, code_responce: @rand)
-       puts @responce
-       #optn.each do |res|
-        #@a =  Array(res)
-       #end
      end
 
-    redirect_to :back
+    redirect_to view_responces_path(@responce.code_responce)
+  end
+
+  def view_responces
+     if params[:responce_quest] != nil
+     @responces = ResponceQuest.where(code_responce: params[:responce_quest])
+     @content = ''
+     else
+     @active = 'Necesitas un codigo de respuesta para visualizar'
+     end
+     respond_to do |format|
+      format.html
+     end
   end
   
   def cuestionary_params

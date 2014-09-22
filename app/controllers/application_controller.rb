@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
    helper_method :current_user
    helper_method :index_by_institution_violence
    helper_method :action_host
+   helper_method :find_responce_in_question
    before_filter :session_route
    helper_method :viewver_encode
    before_filter :lenaguaje_filter
@@ -181,6 +182,56 @@ class ApplicationController < ActionController::Base
 
   def viewver_encode(string)
      string.to_s.split(',')
+  end
+
+  def find_responce_in_question(cuestionary, opt, responce)
+    if responce.include? ('{')
+    de = eval(responce)
+    de = de.to_a
+    many_responces = true
+    else
+    de = responce
+    many_responces = false
+    end
+    #puts de
+
+    array_for_responce = []
+    array_result = []
+    count = 0
+    quest_count = 0
+    ######## cuestionarios preguntas ###########
+    cuestionary.questions.each do |questions|
+      
+      count = count + 1
+      if opt == count 
+      array_result.push("<div class='title_responce_quest'>#{questions.title}</div>")
+      array_for_responce.push(questions.title)
+      @a = viewver_encode(questions.question_requires).to_a
+      ################ preguntas #################
+      @a.each do | a|
+
+        quest_count = quest_count + 1
+        ############### compara respuestas ##############
+        if many_responces
+           puts "****************** Muchas respuestas ****************"
+           de.each do |res|
+            if res[0].to_i == quest_count
+              array_result.push("<div class='responce'>#{a}</div>")
+             puts res[0].to_i
+            end
+           end
+        else
+           puts "******************* Una respuesta ********************"
+           if de.to_i == quest_count || a  == de 
+              array_result.push("<div class='responce'>#{a}</div>")
+            puts de
+           end
+        end
+      end
+      end
+    end
+    puts array_for_responce
+    array_result
   end
 
   private
