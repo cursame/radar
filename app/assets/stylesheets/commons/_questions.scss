@@ -165,7 +165,6 @@
   background:#ccc;
 }
 
-
 .answer-title {
   padding: 30px;
 
@@ -174,29 +173,27 @@
   }
 }
 
-
 .answers {
-  padding: 0 35px;
+  padding: 20px 45px;
   text-align: left;
 }
 
 .answer {
-padding: 30px 0;
-
-  .ask {
-    color: red;
-  }
+  padding: 35px 0;
+  border-bottom: 1px dotted #cecece;
 }
 
-
-
 .title_responce_quest {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   color: black;
   padding-bottom: 7px;
+  color: $main-blue;
+  font-family: $font-radar;
 }
 
 .responce {
-  color: #666;
+  font-size: 15px ;
+  color: #323232;
+  margin-left: 2px;
 }

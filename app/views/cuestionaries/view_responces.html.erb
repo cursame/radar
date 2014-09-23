@@ -23,14 +23,14 @@
               <div class="answers">
                 <% @responces.each do |res|%>
                 <div class="answer">
-                  <% find_responce_in_question(res.cuestionary, res.opt, res.responce).each do |result|%>
+                  <% find_responce_in_question(res.cuestionary, res.opt, res.responce).each do |result|%> 
                   <%= result.html_safe %>
                   <%end%>
+                </div>
                   <%end%>
                 <%else%>
                   <%= @content %>
                 <%end%>
-              </div>
             </div>
           </div>
         </div>
