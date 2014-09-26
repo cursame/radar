@@ -101,6 +101,18 @@
     &:hover {
       background: rgba(0,0,0,.06);
     }
+    
+    &.active {
+      background: #02CCDA;
+
+      span {
+        color: $white;
+      }
+    }
+
+    .no-show {
+      display: none;
+    }
   }
 }
 
