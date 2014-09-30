@@ -1,10 +1,11 @@
-<div class="intro bg_diagnostico">
+
+<div class="intro bg-blue-gradient2">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner"> 
           <div class="answer-title"> 
-            <h5>Respuestas de cuestionario</h5>
+            <h3>Respuestas</h3> <h5>(Autodiagnóstico)</h5>
           </div>
         </div>
       </div>
@@ -12,19 +13,18 @@
   </div>
 </div>
 
-
 <div class="">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner"> 
-          <div class="form-sheet"> 
+          <div class=" list"> 
             <% if !@content.nil? %>
               <div class="answers">
                 <% @responces.each do |res|%>
-                <div class="answer">
+                <div class="list-item">
                   <% find_responce_in_question(res.cuestionary, res.opt, res.responce).each do |result|%> 
-                  <%= result.html_safe %>
+                  <%= ("#{result}" ).html_safe%>
                   <%end%>
                 </div>
                   <%end%>

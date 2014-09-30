@@ -173,17 +173,20 @@ a:visited {
 .bg-gray {
 	background:#ececec;
 }
-.bg-redgradient{
+.bg-redgradient {
 	@include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
 }
-.bg-greengradient{
+.bg-greengradient {
 	@include linear-gradient(75deg, #4f8805 0%, #6cb012 100%);
 }
-.bg-bluegradient{
+.bg-greengradient2 {
+	@include linear-gradient(75deg, #306d1b 0%, #68ae29 100%);
+} 
+.bg-bluegradient {
 	@include linear-gradient(135deg, #1B4251 0%, #296D7F 100%);
 }
 .bg-blue-gradient2 {
-	@include linear-gradient(135deg, #2C9BC4 0%, #2BAFD6 100%);
+	@include linear-gradient(135deg, #1A4568 0%, #196295 100%);
 }
 
 .block{
