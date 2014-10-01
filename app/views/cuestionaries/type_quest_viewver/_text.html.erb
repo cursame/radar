@@ -4,7 +4,10 @@
     <span style="selector"> 
      <% array_x = [] %>
       <% viewver_encode(p.question_requires).each do |vw| %>
-        <% array_x.push(vw) %>
+        <div class="third-quarter">
+        <div class="left">
+         <% array_x.push(vw) %></div>
+        </div>
       <%end%>
 
       <%= select_tag "opt[#{cue}]", options_for_select(array_x) %>
