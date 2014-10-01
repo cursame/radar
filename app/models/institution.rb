@@ -1,6 +1,6 @@
 class Institution < ActiveRecord::Base
 	belongs_to :user, dependent: :destroy
-
+    has_many :responce_quests
 	validates_presence_of :name
 	validates_presence_of :url
 	validates_presence_of :phone
