@@ -354,9 +354,14 @@ a:visited {
 	background-image: image-url('bg_login.png');
 	}
 
+	&.bg_test {
+		background-image: image-url('header_test.png');
+	}
+
 	&.comments {
 		background:#1A4859;
 	}
+
 	
 	@include max-screen (900px) {
 		margin-top: 55px;

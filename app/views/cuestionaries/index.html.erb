@@ -1,10 +1,39 @@
-<h1>Cuestionarios</h1>
-<%= form_tag '/cuestionaries/filter_repsonces' do -%>
-   <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name")%>
-   <% @i = current_user.institutions.last%>
-   <%#= hidden_field_tag 'instituciones', @i.id%>
-   <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title")%>
+<div class="titlebox intro bg_test bg-blue-gradient2">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="inner">
+          <div class="content">
+            <h4>Cuestionarios</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-   <%= submit_tag "Filtrar"%>
-<%end%>
-<%= link_to 'Nuevo curestionario',new_cuestionary_path%>
+
+<div class="wrapper">
+  <div class="cols-12">
+    <div class="col col-12">
+      <div class="inner">
+        <div class="content">
+          <%= form_tag '/cuestionaries/filter_repsonces' do -%>
+             <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name")%>
+             <% @i = current_user.institutions.last%>
+             <%#= hidden_field_tag 'instituciones', @i.id%>
+              <div class="buttons">
+                <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title")%>
+                <span class="btn btn-embed">    
+                  <%= submit_tag "Filtrar"%>     
+                </span>
+               <%end%>
+                <div class="add">
+                  <%= link_to 'Nuevo curestionario',new_cuestionary_path%>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

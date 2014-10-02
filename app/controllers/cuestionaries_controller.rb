@@ -32,7 +32,7 @@ class CuestionariesController < ApplicationController
 
   def index
     @institutions = Institution.all
-    @questionaries = Cuestionary.all
+    @questionaries = Cuestionary.last 10
 
   end
 

@@ -22,7 +22,7 @@ select {
     cursor:pointer;
     font-size: 14px;
     height: 35px;
-    width: 100%;
+    width: auto;
 
   @include max-screen (500px) {
     width: 100%;
