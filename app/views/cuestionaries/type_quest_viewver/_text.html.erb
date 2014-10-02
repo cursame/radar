@@ -9,7 +9,6 @@
          <% array_x.push(vw) %></div>
         </div>
       <%end%>
-
-      <%= select_tag "opt[#{cue}]", options_for_select(array_x) %>
+      <%= select_tag "opt[#{cue}]", options_for_select(array_x.map {|v,i| [v,array_x.index(v)+1] }) %>
       </span>
 </div>

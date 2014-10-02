@@ -184,7 +184,7 @@ class ApplicationController < ActionController::Base
      string.to_s.split(',')
   end
 
-  def find_responce_in_question(cuestionary, opt, responce)
+  def find_responce_in_question(cuestionary, opt, responce, countextual=true)
     if responce.include? ('{')
     de = eval(responce)
     de = de.to_a

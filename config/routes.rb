@@ -104,6 +104,8 @@ Rails.application.routes.draw do
     get 'port_access/:id', :to => 'cuestionaries#view', as: :view_questionary
     get 'port_access', :to => 'cuestionaries#index', as: :school_questionary
     get 'responce', :to => 'cuestionaries#responce', as: :responce_questionary
+    get  '/cuestionaries/filter_repsonces'
+    post '/cuestionaries/filter_repsonces'
     post '/cuestionaries/responce'
     get '/view_responces/:responce_quest', :to => 'cuestionaries#view_responces', as: :view_responces
   ####### api ########

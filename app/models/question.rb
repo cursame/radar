@@ -7,4 +7,5 @@ class Question < ActiveRecord::Base
     accepts_nested_attributes_for :close_answer, allow_destroy: true
 
 
+
 end

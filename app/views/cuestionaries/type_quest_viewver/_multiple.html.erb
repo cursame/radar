@@ -1,3 +1,5 @@
+<%= text_field_tag "cuest[#{cue}]", p.id %>
+
 <div class="multi"> 
   <% c = 0 %>
   <% viewver_encode(p.question_requires).each do |vw| %>
@@ -7,8 +9,14 @@
         <span>
           <%= vw %>
         </span>   
+<<<<<<< HEAD
         <span class="check-box-position no-show">
           <%= check_box_tag "opt[#{cue}][#{c}]" %> 
+=======
+        <span class="check-box-position">
+
+          <%= check_box_tag "opt[#{cue}][#{c}]"%> 
+>>>>>>> c2345f5e8219f09b25a96bff41d861d6ddacbfea
         </span>
       </label>
 </div>
