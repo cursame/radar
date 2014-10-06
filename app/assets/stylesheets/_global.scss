@@ -233,11 +233,11 @@ a:visited {
 
 		.block-content {
 			padding: 15px;
-		}º
+		}
 
 	.img-block {
 		position: absolute;
-		right: 0;
+		right: -17px;
 	}
 
 		img {
@@ -619,6 +619,10 @@ a:visited {
 	color: $white;
 	@include text-size-medium;
 	margin-bottom: 50px;}
+}
+
+.content {
+	text-align: left;
 }
 
 .loginbox{

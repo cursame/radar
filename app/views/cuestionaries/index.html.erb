@@ -1,4 +1,4 @@
-<div class="titlebox intro bg_test bg-blue-gradient2">
+<div class="titlebox intro bg_test bg-bluegradient">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
@@ -12,25 +12,28 @@
   </div>
 </div>
 
-
 <div class="wrapper">
   <div class="cols-12">
     <div class="col col-12">
       <div class="inner">
         <div class="content">
+
           <%= form_tag '/cuestionaries/filter_repsonces' do -%>
-             <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name")%>
+         <p> Institución </p>
+             <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name"), class:"full"%>
+             <br/><br/>
+         <p> Título del cuestionario</p>
              <% @i = current_user.institutions.last%>
              <%#= hidden_field_tag 'instituciones', @i.id%>
-              <div class="buttons">
-                <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title")%>
-                <span class="btn btn-embed">    
-                  <%= submit_tag "Filtrar"%>     
-                </span>
-               <%end%>
-                <div class="add">
-                  <%= link_to 'Nuevo curestionario',new_cuestionary_path%>
+              <div class="buttons">  
+                <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title", class:"third-quarter")%>
+                <div class="btn btn-embed">    
+                  <%= submit_tag "Descargar"%>     
                 </div>
+               <%end%>
+              </div>
+            <div class="btn-add">
+              <%= link_to 'Crear nuevo curestionario',new_cuestionary_path, class:"add-question"%>
             </div>
           </div>
         </div>

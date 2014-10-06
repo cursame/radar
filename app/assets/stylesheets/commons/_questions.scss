@@ -197,6 +197,10 @@ label.error {
 .select-type {
   margin-bottom: 15px;
   font-size: 14px;
+
+  select {
+    width: 100%;
+  }
 }
 
 .remove {
@@ -205,15 +209,13 @@ label.error {
   top: 0;
 
   a {
-    color: #666;
+    color: #333;
     width: auto;
     display: block;
-    background: #f1f1f1;
+    background: none;
     padding: 4px 6px;
-    border-radius: 100%;
-    border: 1px solid #acacac;
     text-align: center;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: lighter;
   }
 
@@ -314,21 +316,22 @@ label.error {
   }
 }
 
-.add {
-  margin-bottom: 25px;
+.btn-add {
+  margin: 25px 0;
 
-  a {
-    color: #333;
+  & a {
+    color: #227091;
     padding: 7px 17px;
     border-radius: 3px;
-    border: 1px solid #acacac;
+    border: 1px solid #323232;
     text-align: center;
     font-size: 13px;
     font-weight: bold;
+    background:none;
   }
 
   :hover {
-    color: #999;
+    color: #323232;
   }
 }
 
@@ -397,7 +400,7 @@ label.error {
 }
 
 
-  .lheight {
+.lheight {
   line-height: 13px;
   padding: 5px 0;
 
