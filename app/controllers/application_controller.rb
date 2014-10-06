@@ -216,14 +216,14 @@ class ApplicationController < ActionController::Base
            puts "****************** Muchas respuestas ****************"
            de.each do |res|
             if res[0].to_i == quest_count
-              array_result.push("<div class='responce'>#{a}</div>")
+              array_result.push("<div class='responce lheight'> <span>&#8227;</span> #{a}</div>")
              puts res[0].to_i
             end
            end
         else
            puts "******************* Una respuesta ********************"
            if de.to_i == quest_count || a  == de 
-              array_result.push("<div class='responce'>#{a}</div>")
+              array_result.push("<div class='responce'> #{a}</div>")
             puts de
            end
         end

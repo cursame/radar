@@ -1,17 +1,42 @@
-  <%#= javascript_include_tag :defaults, :cache => true %>
-<div class="cuestionario">
-  <div class="wrapper">
-    <div class="cols-12">
-      <div class="col col-12">
-        <div class="inner">
-          <div class="titlebox">
-            <h5>Crea tu cuestionario</h5>
-          </div>
-          <div class="cuestionaries-create">
-            <%= render partial: 'form'%>
+<%#= javascript_include_tag :defaults, :cache => true %>
+<%= form_for @cuestionary do |f|%>
+  <div class="bg-bluegradient">
+    <div class="wrapper">
+      <div class="cols-12">
+        <div class="col col-12">
+          <div class="inner">
+            <div class="cuestionario">
+              <div class="cuestionario-head">
+                <div class="titlebox ">
+                  <h4>Crear cuestionario</h4>
+                </div>
+              </div>
+              <div class="l4col-r8col">
+                <div class="left">
+                  <%= content_tag(:p, "Título")%>
+                  <%= f.text_field :title, placeholder: 'Título del cuestionario' %>
+                </div>
+                <div class="right">
+                  <%= content_tag(:p, "Instrucciones")%>
+                  <%= f.text_area :instructions, placeholder: 'Escribe las indicaciones correspondientes' %>
+                </div>  
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="cuestionaries-create">
+    <div class="wrapper">
+      <div class="cols-12">
+        <div class="col col-12">
+          <div class="inner">           
+            <%= render partial: 'form', locals:{f: f}%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

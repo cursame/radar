@@ -1,10 +1,179 @@
+
+
+/* Cuestionarios de victimización */
+
+.all-tabs {
+  background:#f3f3f3;
+}
+
+.form-sheet {
+  display: block;
+  background: #fff;
+  margin: 60px 0;
+  box-shadow: 0px -1px 5px #999;
+
+  @include max-screen(600px) {
+    background:$white;
+    padding: 0;
+    margin: 20px 0;
+  }
+}
+
+.tabs-place{
+  font-family: $font-radar;
+}
+
+.tabs {
+  text-align: center;
+  display: block;
+  border: none;
+
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  width: 50%;
+  padding:10px 0;
+  @include clearfix;
+  float: left;
+
+  &.personal {
+    background:#1E4D5C;
+    float: left;
+  }
+
+  &.witness {
+    background:#66A80F;
+    float: left;
+  }
+}
+
+.tabs-main-content {
+  text-align: left;
+  padding: 0px;
+  @include clearfix;
+
+  .text-box {
+    float: left;
+    margin-bottom: 30px;
+    padding: 20px 40px;
+
+    .data {
+      float: left;
+      width: 45%;
+      margin: 30px 5% 0 0;
+      color: $white;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 19px;
+      color: $white;
+      padding-top: 20px;
+    }
+
+    h4,label {
+      color: $white;
+    }
+
+    @include max-screen (500px) {
+      .text-box {
+      float: left;
+      text-align: left;
+      } 
+
+      .data {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.question-list {
+  font-family: $font-radar;
+}
+
+.question-item  {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  background: #Fcfcfc;
+  color: #666666;
+  position: relative;
+  text-align: left;
+  padding: 8px 30px 8px 15px;
+  margin: 8px 35px;
+  border: #ccc solid 1px;
+  border-radius: 5px;
+  font-size: 15px;
+
+  &:hover {
+    background: rgba(0,0,0,.06);
+  }
+}
+
+.history, .agresores {
+  margin: 30px 20px 20px 20px;
+  padding: 20px;
+  text-align: left;
+  @include clearfix;
+
+  p {
+    font-weight: bold;
+  }
+
+  .options {
+    float: left;
+  }
+}
+
+.logo-form {
+  background:#fafafa;
+  border-top: 1px #efefef solid;
+  padding: 35px;
+  text-align: left; 
+}
+
+/* END Cuestionarios de victimización */
+
+
+/* ERROR LLENAR CAMPOS CORRECTOS*/
+
+label.error {
+  color: $white !important;
+  font-family: sans-serif !important;
+  font-size: 13px !important;
+  width: 100%;
+  text-align: left;
+  background:rgba(0,0,0,0.5);
+  border-radius: 0 0 3px 3px;
+  padding: 4px 0;
+  float: left;
+  text-align: center;
+
+  label {
+    position: relative;
+    top: -25px;
+  }
+}
+
+.column {
+
+  label.error {
+    position: relative;
+    top: -20px;
+  }
+}
+/* END ERROR LLENAR CAMPOS CORRECTOS*/
+
 .cuestionaries-create {
   text-align: left;
-  margin: 25px 0;
+  margin: 40px 0;
 }
 
 .titlebox {
-  margin-top: 35px;
+  padding: 50px 0;
+  border-bottom: dashed 1px #486C78;
+  margin-bottom: 25px;
 }
 
 .instrucciones {
@@ -19,35 +188,39 @@
 }
 
 .question-area {
-  border-bottom: 1px dotted #ccc;
+  position: relative;
+  background:#f8f8f8;
   margin: 20px 0;
-  padding-top: 25px 
+  padding: 25px; 
 }
 
 .select-type {
   margin-bottom: 15px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .remove {
-  margin-bottom: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   a {
     color: #666;
-    width: 90px;
+    width: auto;
     display: block;
-    background: #ececec;
-    padding: 7px 17px;
-    border-radius: 3px;
+    background: #f1f1f1;
+    padding: 4px 6px;
+    border-radius: 100%;
     border: 1px solid #acacac;
     text-align: center;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 10px;
+    font-weight: lighter;
   }
 
   :hover {
-    background:#f9f9f9;
-    color: #333;
+    background: rgba(255,0,0,.7);
+    color: $white;
+    font-weight: bold;
   }
 }
 
@@ -100,6 +273,18 @@
 
     &:hover {
       background: rgba(0,0,0,.06);
+    }
+    
+    &.active {
+      background: #02CCDA;
+
+      span {
+        color: $white;
+      }
+    }
+
+    .no-show {
+      display: none;
     }
   }
 }
@@ -166,28 +351,40 @@
 }
 
 .answer-title {
-  padding: 30px;
+  padding: 45px 0;
+  text-align: left;
 
   h5 {
   color: #fff !important;
   }
 }
 
+
+.cuestionario {
+  text-align: left;
+  margin-bottom: 35px;
+
+  p {
+    color: $white;
+  }
+}
+
+
 .answers {
-  padding: 20px 45px;
+  padding-top: 20px;
   text-align: left;
 }
 
 .answer {
-  padding: 35px 0;
+  margin: 15px 30px ;
   border-bottom: 1px dotted #cecece;
+  border-radius: 3px;
+  color: $main-blue;
 }
 
 .title_responce_quest {
   font-size: 14px;
   font-weight: bold;
-  color: black;
-  padding-bottom: 7px;
   color: $main-blue;
   font-family: $font-radar;
 }
@@ -195,5 +392,18 @@
 .responce {
   font-size: 15px ;
   color: #323232;
-  margin-left: 2px;
+  font-weight: lighter;
+  font-family: sans-serif;
 }
+
+
+  .lheight {
+  line-height: 13px;
+  padding: 5px 0;
+
+  span {
+    color: $main-blue;
+  }
+}
+
+
