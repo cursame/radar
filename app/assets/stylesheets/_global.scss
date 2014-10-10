@@ -170,6 +170,9 @@ a:visited {
 .bg-blue{
 	background-color: #21386a;
 }
+.bg_gray {
+	background: #E2E5E7 !important;
+}
 .bg-gray {
 	background:#ececec;
 }
@@ -625,6 +628,7 @@ a:visited {
 	text-align: left;
 }
 
+
 .loginbox{
 	text-align: left;
 	margin: 100px auto;
@@ -645,7 +649,6 @@ a:visited {
 		margin: 30px auto;
 	}
 
-
 	.column {
 		padding: 5px 10px 0 10px;
 	}
@@ -653,7 +656,6 @@ a:visited {
 	form,label,textarea{
 		color: $white;
 		font-size: 14px;
-		
 	}
 
 	.title-sign {
@@ -698,8 +700,16 @@ a:visited {
 }
 
 
-
-
+.form-box {
+	text-align: left;
+	margin: 80px auto;
+	width: 75%;
+	height: auto;
+	color: #a4a4a4;
+	border-radius: 3px;
+	padding: 35px 7% ; 
+	@include clearfix;
+}
 
 .form-email {
 	text-align: center;
@@ -736,7 +746,6 @@ a:visited {
 		background:#f1f1f1;
 	}
 }
-
 
 .contenido {
 	text-align: center;

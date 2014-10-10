@@ -1,5 +1,8 @@
 class CuestionariesController < ApplicationController
-  layout 'responce_forms', only: [:view]
+  before_filter :filter_to_options, only: [:index, ]
+  layout 'responce_forms', only: [:view, :create]
+  layout 'admin', only: [:index, :new]
+
   def create  
   	@cuestionary = Cuestionary.create(cuestionary_params)
     redirect_to view_questionary_path(@cuestionary.id)
@@ -135,13 +138,25 @@ class CuestionariesController < ApplicationController
   end
 
   def csv_act(questionary, institution)
-     require 'csv'
-
-     
-      
+     require 'csv'     
   end
-  
   def cuestionary_params
   	  params.require(:cuestionary).permit(:title, :call_code, :instructions, questions_attributes: [:title, :question_type, :question_requires] )
   end
+  
+private
+  
+  def filter_to_options
+     if session[:user] == nil
+       redirect_to root_path
+      else
+        if current_user.admin_attributes
+
+        else
+          redirect_to root_path
+        end
+     end
+  end
+
+
 end

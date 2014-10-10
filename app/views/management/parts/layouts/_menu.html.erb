@@ -6,37 +6,43 @@
       <li>
         <h4>ADMINISTRADOR</h4>
       </li>
-      <li class="border">
+      <li>
         <%= link_to admin_analitics_path do %>  
         <i class="i i-analytics"></i>
         <span>Analítics</span>
         <% end %>
       </li>
-      <li class="border">
+      <li>
         <%= link_to admin_path do %>
         <i class="i i-solicitudes"></i>
         <span>Solicitudes</span>
         <% end %>
       </li>
-      <li class="border">    
+      <li>    
         <%= link_to admin_users_path do %>
         <i class="i i-users"></i> 
         <span>Usuarios</span>
         <% end %>
       </li>
-      <li class="border">      
+      <li>      
         <%= link_to admin_hot_spots_path do %>
         <i class="i i-focos"></i> 
         <span>Focos rojos</span>
         <% end %>
       </li>
-      <li class="border">     
+      <li>
+        <%= link_to school_questionary_path do %>
+        <i class="i i-test"></i> 
+        <span>Cuestionarios </span>
+        <% end %>
+      </li>
+      <li>     
         <%= link_to admin_institutions_path do %>
         <i class="i i-inst"></i> 
         <span>Instituciones</span>
         <% end %>      
       </li>  
-      <li class="border">
+      <li>
         <%= link_to user_path(current_user.id) do %>
         <i class="i i-arrow3"></i>
         <span>Regresar </span>
