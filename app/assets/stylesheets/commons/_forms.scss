@@ -2,6 +2,7 @@
 
 textarea {
   resize: none;
+  padding: 15px 10px;
 }
 
 .check-box-position {
@@ -109,7 +110,7 @@ select {
 
 .thirds {
 
-    .left  {
+  .left  {
     width: 32%;
     float: left;
 
@@ -121,6 +122,12 @@ select {
   .center {
     width: 32%;
     margin: 0 1%;
+    float: right;
+    float: left;
+   
+    @include max-screen(800px) {
+      width: 100% !important;
+    }
   }
 
   .right {

@@ -4,14 +4,14 @@
       <div class="col col-12">
         <div class="col-inner">    
           <div class="form-sheet">
-	          <div class="titlebox bg-blue-gradient2"> 
+	          <div class="titlebox"> 
 	            <h4><%= @port.title %></h4>
 	            <p>
 	            	<%= @port.instructions %>
 	            </p>  	       
     	      </div>
-						<% cue = 0 %>
-						<%= form_tag('/cuestionaries/responce') do -%>
+							<% cue = 0 %>
+							<%= form_tag('/cuestionaries/responce') do -%>
 					  	<%= hidden_field_tag 'cuestionary', @port.id %>
 
 							<% @port.questions.each do |p|%> 

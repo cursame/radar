@@ -110,6 +110,12 @@
   & p {
     font-family: sans-serif;
   }
+
+  @include max-screen (500px) {
+    h1 {
+      font-size: 1.8em;
+    }
+  }
 }
 
 .element {
@@ -173,5 +179,14 @@
 
   &.moderada {
     background-color: $red-light-green;
+  }
+}
+
+.header-questions {
+  width: 100%;
+  padding: 0 12% 10px 12%;
+
+  & p {
+    padding-top: 40px;
   }
 }

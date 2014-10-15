@@ -1,40 +1,41 @@
-<div class="content-admin intro">
- 
-  <h1>
-    <i class="i i-title i-test_title"></i>
-    Cuestionarios
-  </h1>
-  <div class="btn btn-input btn-new">
-    <%= link_to 'Nuevo curestionario',new_cuestionary_path%>
+<div class="content-admin header-questions l8col-r4col ">
+<div class="title-box">
+  <div class="left">
+    <h1>
+      <i class="i i-title i-test_title"></i>
+      Cuestionarios
+    </h1>
   </div>
-
-
-<div class=" ">
+  <div class="right">
+    <div class="btn btn-input btn-new">
+      <%= link_to 'Nuevo curestionario',new_cuestionary_path%>
+    </div>
+  </div>
+</div>
   <p>
-Consulta los cuestionarios que has realizado, sólo selecciona la institución y el título del cuestionario para
-descergarlo. O bien, crea un nuevo cuestionario.
+    Consulta los cuestionarios realizados, sólo selecciona la institución y el título del cuestionario para descargarlo. O bien, crea un nuevo cuestionario.
   </p>
-<div class="form-box bg_gray">
-  <%= form_tag '/cuestionaries/filter_repsonces' do -%>
-  <p> Institución </p>
-  <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name"), class:"full white"%>  
+</div>
 
-  <p> Título del cuestionario</p>
-  <% @i = current_user.institutions.last%>
-  <%#= hidden_field_tag 'instituciones', @i.id%>
-<div class="buttons">  
-  <div class="full">
-    <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title"), class:"full white"%>
+<div class="content-admin">
+  <div class="form-box bg_gray">
+    <%= form_tag '/cuestionaries/filter_repsonces' do -%>
+    <p>Institución </p>
+    <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name"), class:"full white"%>  
+    <p> Título del cuestionario</p>
+    <% @i = current_user.institutions.last%>
+    <%#= hidden_field_tag 'instituciones', @i.id%>
+    <div class="buttons">  
+      <div class="full">
+        <%= select_tag 'cuestionarios', options_from_collection_for_select(@questionaries, "id", "title"), class:"full white"%>
+      </div>
+      <div class="btn btn-embed full total-filtro">    
+        <%= submit_tag "Descargar", class:"full"%>     
+      </div>
+      <%end%>
+    </div>
   </div>
-  <div class="btn btn-embed full total-filtro">    
-    <%= submit_tag "Descargar", class:"full"%>     
-  </div>
- <%end%>
-</div>
 </div>
 
-</div>
-
-</div>
 
 
