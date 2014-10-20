@@ -1,56 +1,43 @@
-<div class="cols-12">     
-  <div class="col col-12">
-    <div class="col-inner">   
-          
-<%#= javascript_include_tag :defaults, :cache => true %>
-<%= form_for @cuestionary do |f|%>
-<div class="content-admin">
-   <div class="uno">
-    <h1>
-      <i class="i i-title i-test_title"></i>
-      Nuevo cuestionario
-    </h1>
-  </div>
-
-<div class="form-box2 bg_gray">
-  <div class="full">
-      <%= content_tag(:p, "Título")%>
-      <%= f.text_field :title, placeholder: 'Título del cuestionario' %>
-      <%= content_tag(:p, "Instrucciones")%>
-      <%= f.text_area :instructions, placeholder: 'Escribe las indicaciones correspondientes' %>
-  </div>
-</div>
-
-<%= render partial: 'form', locals:{f: f}%>
-
-
-</div>
-
-
 <div class="cols-12">
-    <div class="col col-8">
-
-        <div class="btn-add right">
-          <%= link_to_add_fields "Agregar otra pregunta", f, :questions, '#questions_container'%>
+  <div class="col col-12">
+    <div class="col-inner">
+      
+      <%#= javascript_include_tag :defaults, :cache => true %>
+      <%= form_for @cuestionary do |f|%>
+      <div class="content-admin">
+        <div class="uno">
+          <h1>
+          <i class="i i-title i-test_title"></i>
+          Nuevo cuestionario
+          </h1>
         </div>
-
-    </div>
-    <div class="col col-2">
-
-        <div class="btn-cancel">
-          <%= link_to_function "Cancelar", "remove_fields(this)" %>
+        <div class="form-box2 bg_gray">
+          <div class="full">
+            <%= content_tag(:p, "Título")%>
+            <%= f.text_field :title, placeholder: 'Título del cuestionario' %>
+            <%= content_tag(:p, "Instrucciones")%>
+            <%= f.text_area :instructions, placeholder: 'Escribe las indicaciones correspondientes' %>
+          </div>
         </div>
-
+        <%= render partial: 'form', locals:{f: f}%>
       </div>
-
-    <div class="col col-2">
-
+      <div class="cols-12">
+        <div class="col col-8">
+          <div class="btn-add right">
+            <%= link_to_add_fields "Agregar otra pregunta", f, :questions, 'questions_container'%>
+          </div>
+        </div>
+        <div class="col col-2">
+          <div class="btn-cancel">
+            <%= link_to_function "Cancelar", "remove_fields(this)" %>
+          </div>
+        </div>
+        <div class="col col-2">
           <div class="btn btn-input btn-new">
             <span class="btn btn-input btn-new">
-              <%= f.submit %>
+            <%= f.submit %>
             </span>
           </div>
-
-    </div>
-    </div>
-<% end %>
+        </div>
+      </div>
+      <% end %>

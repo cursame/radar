@@ -30,16 +30,20 @@ $(document).ready(function(){
 
 });
 
-function remove_fields(link) {
-  $(link).prev("input[type=hidden]").val("1");
-  $(link).closest(".fields").hide();
+function remove_fields(object) {
+  console.log(object);
+  $(object).remove();
 }
 
 function add_fields(link, association, content, id_recive) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
-  var execute = $(link).before(content.replace(regexp, new_id));
-  //console.log(execute);
+  console.log(link);
+  replace = content.replace(regexp, new_id)
+  console.log(replace);
+  $('#'+id_recive).append(replace);
+  //var execute = $(link).append("#"+id_recive);
+  //content.replace(regexp, new_id)
   event.preventDefault()
 }
 

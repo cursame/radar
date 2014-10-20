@@ -1,7 +1,7 @@
 <div class="title">
   <%= content_tag(:h4, "Preguntas")%>      
 </div>
-<div id="" class="questions_container">
+<div id="questions_container" class="questions_container">
   <%= f.fields_for :questions do |builder|%>
   <%= render  'question_fields', f: builder %>
   <%end%>
