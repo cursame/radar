@@ -1,4 +1,4 @@
-<fieldset class="question-area">
+<fieldset  class="question-area">
   <div class="l8col-r4col">
     <div class="left">
       <%= content_tag(:p, "Ingresa tu pregunta")%>
@@ -11,7 +11,6 @@
       </div>
     </div>
   </div>
-<div id="puts_answers_<%=rand(5..2000)%>"></div>
 
 <div class="">
 <div class="">
@@ -21,7 +20,7 @@
 </div>
 
   <div class="remove">
-    <%= link_to_function "X", "remove_fields(this)" %>
+    <%= link_to_function "X", "remove_fields($(this).parents('fieldset'))" %>
   </div>
 
 </fieldset>

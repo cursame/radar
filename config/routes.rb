@@ -91,6 +91,8 @@ Rails.application.routes.draw do
     get 'management/institutions', :as => :admin_institutions
     get 'management/users', :as => :admin_users
     get 'management/analitics', :as => :admin_analitics
+    get 'management', to: 'management#applications'
+    get 'admin', to: 'management#applications'
 
   ############ cuestionaries #########
     get 'questions/create'
