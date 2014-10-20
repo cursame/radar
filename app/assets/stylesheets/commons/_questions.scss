@@ -1,3 +1,4 @@
+
 /* Cuestionarios de victimización */
 
 .all-tabs {
@@ -130,12 +131,9 @@
   padding: 35px;
   text-align: left; 
 }
-
 /* END Cuestionarios de victimización */
 
-
 /* ERROR LLENAR CAMPOS CORRECTOS*/
-
 label.error {
   color: $white !important;
   font-family: sans-serif !important;
@@ -270,7 +268,6 @@ label.error {
     border-radius: 5px;
     font-size: 15px;
 
-
     &:hover {
       background: rgba(0,0,0,.06);
     }
@@ -323,7 +320,6 @@ label.error {
   }
 }
 
-
 .answers {
   padding-top: 20px;
   text-align: left;
@@ -349,7 +345,6 @@ label.error {
   font-weight: lighter;
   font-family: sans-serif;
 }
-
 
 .lheight {
   line-height: 13px;

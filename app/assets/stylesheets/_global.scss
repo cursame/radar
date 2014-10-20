@@ -1230,13 +1230,13 @@ padding: 15px 120px 25px 10px;		}
 
 .notice_box {
 	font-family: $font-radar;
-	background:rgba(252,229,161,.95);
+	background:rgba(0,0,0,0.75);
   z-index: 100;
 	position: absolute;
 	top: 0;
 	width: 100%;
 	padding: 15px 25px;
-	color: #323232;
+	color: $white;
 }
 
 #menu-imobile {
