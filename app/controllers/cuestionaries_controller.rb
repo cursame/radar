@@ -99,7 +99,7 @@ class CuestionariesController < ApplicationController
                 @a1 = Array(@indentifier )
                 @a2 = Array( @responce )
                 @a3 = @a1 + @a2
-
+                
                 context.push(  @a3 )
                 count_hethers = count_hethers + 1
 
