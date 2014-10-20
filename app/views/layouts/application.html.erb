@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+    <%= link_to "Regresar al admin", "#{session[:back_to]}", class: 'return_to_admin' if session[:admin_button]%>
     <% unless flash[:notice].blank? %>
       <div id="notice" class="notice_box"> <%= flash[:notice] %></div>
     <%end%>

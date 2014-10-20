@@ -1,6 +1,8 @@
 class ManagementController < ApplicationController
 layout 'admin'
   before_filter :filter_session
+  before_filter :put_admin_button 
+  after_filter :path_to_return
   def applications
   	 @users = User.where(confirmation: false).paginate(:page => params[:page], :per_page => 30)
   end
@@ -120,5 +122,14 @@ private
           redirect_to user_path(current_user.id)
         end
     end
+  end
+
+  def put_admin_button
+    session[:admin_button] = true
+  end
+
+  def path_to_return
+     session[:back_to] = request.original_url
+     puts "*************** #{request.original_url}"
   end
 end

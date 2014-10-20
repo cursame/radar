@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :session_filter, :only => [:show, :configurate, :edit, :adviser_profile, :expert]
   before_filter :adviser_filter, :only => [:show, :configurate, :edit]
   before_filter :confirmation, :only => [:show]
+  before_filter :put_admin_button
   def new
       @user = User.new
   end
@@ -189,6 +190,10 @@ private
          session[:user] = nil
          redirect_to root_path
      end
+  end
+
+  def put_admin_button
+    session[:admin_button] = false
   end
 
 protected
