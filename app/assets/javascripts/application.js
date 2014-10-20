@@ -31,16 +31,17 @@ $(document).ready(function(){
 });
 
 function remove_fields(object) {
-  console.log(object);
-  $(object).remove();
+  $(object).slideToggle(2000);
+  setTimeout(function(){
+    $(object).remove();
+  }, 2000);
+
 }
 
 function add_fields(link, association, content, id_recive) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
-  console.log(link);
-  replace = content.replace(regexp, new_id)
-  console.log(replace);
+  replace = content.replace(regexp, new_id);
   $('#'+id_recive).append(replace);
   //var execute = $(link).append("#"+id_recive);
   //content.replace(regexp, new_id)
