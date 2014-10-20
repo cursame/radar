@@ -1,4 +1,4 @@
-<div class="intro bg_login">
+<div class="intro intro_login">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
@@ -31,10 +31,9 @@
                 <%= builder.text_field :name, placeholder: 'Institución que lo solicita', required: true%></br>
                 <%= builder.label :url_de_la_institución %></br>
                 <%= builder.text_field :url, placeholder: 'Sitio web de la institución', required: true%></br>
-                <%= builder.label :teléfono %></br>
-                <%= builder.number_field :phone, placeholder: '', required: true%></br>
-                <%= builder.label :extensión %></br>
-                <%= builder.number_field :extencion%></br>
+                <%= builder.label :teléfono_extensión %></br>
+                <%= builder.number_field :phone, placeholder: '', required: true, class:"third-quarter"%>
+                <%= builder.number_field :extencion, class:"one-quarter"%></br>
                 <%end%>                                
               </div>
             </div>
@@ -51,10 +50,8 @@
               <span class="a-sign">
                 <%= link_to "¿Olvidaste tu contraseña?", mail_to_reconfirm_password_path%>
               </span>
-            </div>
-            
+            </div> 
           </div>
-
         </div>
       </div>
     </div>

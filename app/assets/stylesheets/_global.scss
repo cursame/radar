@@ -160,35 +160,6 @@ a:visited {
 	}
 }
 
-
-.bg-orange{
-	background-color: #f36506;
-}
-.bg-green{
-	background-color: #63a30f;
-}
-.bg-blue{
-	background-color: #21386a;
-}
-.bg-gray {
-	background:#ececec;
-}
-.bg-redgradient {
-	@include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
-}
-.bg-greengradient {
-	@include linear-gradient(75deg, #4f8805 0%, #6cb012 100%);
-}
-.bg-greengradient2 {
-	@include linear-gradient(75deg, #306d1b 0%, #68ae29 100%);
-} 
-.bg-bluegradient {
-	@include linear-gradient(135deg, #1B4251 0%, #296D7F 100%);
-}
-.bg-blue-gradient2 {
-	@include linear-gradient(135deg, #0E5083 0%, #145889 100%);
-}
-
 .block{
 	opacity: 0.9;
 	height: 220px;
@@ -233,11 +204,11 @@ a:visited {
 
 		.block-content {
 			padding: 15px;
-		}º
+		}
 
 	.img-block {
 		position: absolute;
-		right: 0;
+		right: -17px;
 	}
 
 		img {
@@ -304,74 +275,6 @@ a:visited {
 	}
 }
 
-
-.intro {
-	background-position: center center;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	color: white;
-	
-	&.home-intro {
-		background-image: image-url('bg_home.png');
-	}
-
-	&.intro-foco {
-		background-image: image-url('headaer_denuncia.png');
-	}
-
-	&.intro-diagnostico {
-		background-image: image-url('headaer_diagnostico.png');
-	}
-
-	&.intro-us {
-		background-image: image-url('headaer_us.png');
-	}
-
-	&.intro-contact {
-		background-image: image-url('header_contact.png');
-	}
-
-	&.intro-panel {
-		background-image: image-url('bg_panel.png');
-	}
-
-	&.intro-expert {
-		background-image: image-url('bg_experto.png');	
-	}
-
-	&.bg_foco1{
-		background-image: image-url('bg_foco1.png');
-	}
-
-	&.bg_diagnostico{
-		background-image: image-url('bg_diagnostico.png');
-	}
-
-	&.bg_login{
-	background-image: image-url('bg_login.png');
-	}
-
-	&.bg_test {
-		background-image: image-url('header_test.png');
-	}
-
-	&.comments {
-		background:#1A4859;
-	}
-
-	
-	@include max-screen (900px) {
-		margin-top: 55px;
-		padding-top: 15px;
-		
-		&.home-intro, &.intro-panel, &.bg-bluegradient, {
-			margin: 0;
-		}
-	}
-}
 
 .center-content {
 	text-align: center;
@@ -563,7 +466,6 @@ a:visited {
 	}
 }
 
-
 .call{
 	text-align: center;
 	padding: 80px 0 100px 0;
@@ -621,18 +523,23 @@ a:visited {
 	margin-bottom: 50px;}
 }
 
+.content {
+	text-align: left;
+	padding: 0 40px;
+}
+
+
 .loginbox{
 	text-align: left;
-	margin: 100px auto;
+	margin: 100px 20%;
 	background:rgba(255,255,255, 0.2);
-	width: 500px;
+	width: auto;
 	height: auto;
 	color: #a4a4a4;
 	border-radius: 3px;
 	@include clearfix;
 
 	.content {
-		width: 75%;
 		padding: 0 12%;
 	}
 
@@ -641,15 +548,13 @@ a:visited {
 		margin: 30px auto;
 	}
 
-
 	.column {
-		padding: 5px 10px 0 10px;
+		padding: 5px 12px 0 12px;
 	}
 
 	form,label,textarea{
 		color: $white;
 		font-size: 14px;
-		
 	}
 
 	.title-sign {
@@ -692,11 +597,6 @@ a:visited {
 		padding-bottom: 20px;
 	}
 }
-
-
-
-
-
 .form-email {
 	text-align: center;
 	width: 700px;
@@ -732,7 +632,6 @@ a:visited {
 		background:#f1f1f1;
 	}
 }
-
 
 .contenido {
 	text-align: center;
@@ -1327,10 +1226,7 @@ padding: 15px 120px 25px 10px;		}
 			margin-bottom: 45px;
 			padding-left: 35px;
 		}
-} 	
-
-
-
+}
 
 .notice_box {
 	font-family: $font-radar;

@@ -4,14 +4,14 @@
       <div class="col col-12">
         <div class="col-inner">    
           <div class="form-sheet">
-	          <div class="titlebox bg-blue-gradient2"> 
-	            <h4><%= @port.title %> </h4>
+	          <div class="content"> 
+	            <h4><%= @port.title %></h4>
 	            <p>
 	            	<%= @port.instructions %>
 	            </p>  	       
     	      </div>
-						<% cue = 0 %>
-						<%= form_tag('/cuestionaries/responce') do -%>
+							<% cue = 0 %>
+							<%= form_tag('/cuestionaries/responce') do -%>
 					  	<%= hidden_field_tag 'cuestionary', @port.id %>
 
 							<% @port.questions.each do |p|%> 
@@ -46,14 +46,14 @@
 								</div>
 								<div class="add">
 									<span id="copy_jquery" class="btn btn-embed">
-									<%= submit_tag 'Enviar respuesta' %>
+										<%= submit_tag 'Enviar respuesta' %>
 									</span>
 								</div>
 								<%end -%>
 								<div class="logo-form">
 		              <p><b>Radar</b> ® Derechos Reservados 2014</p>
 		           	 <div class="powered-by">
-		              <%=image_tag('footerlogo.png')%>
+		              	<%=image_tag('footerlogo.png')%>
 		            	</div>
 		        	  </div>
 						</div>		

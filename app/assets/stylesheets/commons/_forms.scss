@@ -2,6 +2,7 @@
 
 textarea {
   resize: none;
+  padding: 15px 10px;
 }
 
 .check-box-position {
@@ -32,10 +33,13 @@ select {
 /*FORMS - Columns*/
 .full {
   width: 100%;
-  float: left;
 }
 
 .half {
+  width: 50%;
+}
+
+input.half {
   width: 50%;
 }
 
@@ -43,8 +47,16 @@ select {
   width: 25%;
 }
 
+input.one-quarter {
+  width: 25%;
+}
+
 .third-quarter {
   width: 75%;
+}
+
+input.third-quarter {
+  width: 72%;
 }
 
 .half-half {
@@ -110,7 +122,7 @@ select {
 
 .thirds {
 
-    .left  {
+  .left  {
     width: 32%;
     float: left;
 
@@ -122,6 +134,12 @@ select {
   .center {
     width: 32%;
     margin: 0 1%;
+    float: right;
+    float: left;
+   
+    @include max-screen(800px) {
+      width: 100% !important;
+    }
   }
 
   .right {

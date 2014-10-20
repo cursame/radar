@@ -93,14 +93,14 @@
 
 
   @include max-screen(500px) {
-    .dashboard-menu {
-     float: left;
-    }
+  .dashboard-menu {
+    float: left;
+  }
 
   .button-help { 
     display: none;
     }
- } 
+  } 
 }
 
 

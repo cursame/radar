@@ -10,7 +10,8 @@
 
 </head>
 <body>
-    <% if !flash.empty? %>
+    <%= flash %>
+    <% unless flash[:notice].blank? %>
       <div id="notice" class="notice_box"> <%= flash[:notice] %></div>
     <%end%>
     <% if session[:user] == nil %>

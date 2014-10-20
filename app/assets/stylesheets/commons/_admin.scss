@@ -1,12 +1,11 @@
 
 .admin-wrap {
   font-family: $font-radar;
-  padding-left: 185px;
-  padding-right: 10px;
+  padding-left: 200px;
+  padding-right: 0px;
 
   @include max-screen (600px) {
-
-      padding-left: 67px;
+      padding-left: 55px;
   }
 }
 
@@ -26,7 +25,7 @@
 }
 
 .admin-sidebar {
-  width: 200px;
+
   position: fixed;
   left: 0;
   top: 0;
@@ -41,6 +40,7 @@
   list-style: none;
   text-align: left;
   box-shadow: 0px 1px 0 rgba(0,0,0,.06);
+  width: 200px;
 
     @include max-screen (600px) {
     width: 55px;
@@ -68,17 +68,19 @@
     text-align: left;
     margin-left: 5px;
   }
+  
   ul, li {
     display: block;
     width: 100%;
   }
 
-  li.border {
+  li {
     border-top: #1382B0 1px solid;
   }
 
   .logo2 {
     margin-bottom: 30px;
+    border: none;
   }
 
   a {
@@ -107,6 +109,12 @@
 
   & p {
     font-family: sans-serif;
+  }
+
+  @include max-screen (500px) {
+    h1 {
+      font-size: 1.8em;
+    }
   }
 }
 
@@ -152,7 +160,6 @@
     margin-left: 20px;
     padding-bottom: 20px;
   }
-
 }
 
 .grade {
@@ -172,5 +179,14 @@
 
   &.moderada {
     background-color: $red-light-green;
+  }
+}
+
+.header-questions {
+  width: 100%;
+  padding: 0 12% 10px 12%;
+
+  & p {
+    padding-top: 40px;
   }
 }
