@@ -4,12 +4,9 @@
 <%end%>
 
 <% @user.institutions.each do |i|%>
-  <% if i.red_lights.count != 0%>
-  <%= render partial: 'users/red_lights', locals: {data: i}%> 
+  <% if i.red_lights.count == 0%>
+    <%= render partial: 'users/red_lights', locals: {data: i}%> 
   <%else%>
-   <p> Aún no tienes ninguna alerta en tu panel te invitamos a que configures tu panel <%= link_to 'aquí', configurate_path%></p>
+    <%= render partial: 'users/red_lights0', locals: {data: i}%> 
   <%end%>
 <%end%>
-
-
-    

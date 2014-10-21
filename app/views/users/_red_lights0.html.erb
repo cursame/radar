@@ -1,0 +1,71 @@
+<div class="intro bg-bluegradient intro-panel">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="contenido">
+          <div class="title-dashboard">
+            <div class="school-name">
+              <h2>Estado Actual de Peligrosidad</h2>
+              <i class="i i-school"></i>
+            </div>
+            <h4><%= data.name %></h4>
+          </div>
+          <div class="current-stat-grade">
+            <div class="speech" style="left: 0">
+              <h3> <%= number_with_precision(index_by_institution_violence(data), :precision => 2) %> % </h3> 
+              <span>Violencia registrada</span>
+              <span class="tip"></span>
+            </div>
+            <div class="grades">
+              <div class="lights-imgages light-green">
+                
+                <p>peligrosidad moderada</p>
+              </div>
+              <div class="lights-imgages light-yellow">
+
+                <p>peligrosidad media</p>
+              </div>
+              <div class="lights-imgages light-red">
+
+                <p>peligrosidad grave</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="total-filtro">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="filter-line">
+            <span class="tip2"></span>
+              <div class="total">
+                <h4>Denuncias <span>0</span></h4>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="wrapper">
+      <div class="cols-12">
+        <div class="col col-12">
+          <div class="col-inner">
+            <div class="about lista-denuncias info">
+
+                <p>Aún no tienes ninguna alerta en tu panel, por favor configuralo
+                <%= link_to 'aquí', configurate_path, class:"api-element"%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
