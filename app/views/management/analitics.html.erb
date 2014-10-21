@@ -61,13 +61,25 @@
 		</div>
 	</div>
 			
-	<div id="types_of_violence">  
-		<h3>Tipos de Violencia</h3> 
-	</div>
+	<div id="types_of_violence"></div>
 
 	<div class="chart">
 		<script>
 			$(function () {
+				// Make monochrome colors and set them as default for all pies
+		    Highcharts.getOptions().plotOptions.pie.colors = (function () {
+		        var colors = [],
+		            base = Highcharts.getOptions().colors[4],
+		            i;
+
+		        for (i = 0; i < 9.5; i += 1) {
+		            // Start out with a darkened base color (negative brighten), and end
+		            // up with a much brighter color
+		            colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
+		        }
+		        return colors;
+		    }());
+
 				$('#types_of_violence').highcharts({
 					chart: {
 						plotBackgroundColor: null,
@@ -78,7 +90,8 @@
 						text: '100%',
 						align: 'center',
 						verticalAlign: 'middle',
-						y: 70
+						//y: 70
+						y: 5
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -87,22 +100,22 @@
 						pie: {
 							dataLabels: {
 								enabled: true,
-								distance: 9,
-								style: {
-									fontWeight: 'bold',
-									color: 'black',
-									textShadow: '0px 1px 2px gray'
-								}
+								distance: 35,
+								//style: {
+									//fontWeight: 'bold',
+									//color: 'black',
+									//textShadow: '0px 1px 2px gray'
+								//}
 							},
-							startAngle: -90,
-							endAngle: 90,
-							center: ['50%', '70%']
+							//startAngle: -90,
+							//endAngle: 90,
+							//center: ['50%', '70%']
 						}
 					},
 					series: [{
 						type: 'pie',
-						name: 'Browser share',
-						innerSize: '20%',
+						name: 'Violencia',
+						innerSize: '40%',
 						data: [
 							['Físico',   					 <%=@fisico%>],
 							['Amenaza',  					 <%=@amenaza%>],

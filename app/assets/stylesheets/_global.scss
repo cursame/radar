@@ -220,7 +220,8 @@ a:visited {
 .footer{
 	text-align: left;
 	width: 100%;
-	position: relative;
+	position: fixed;
+	bottom: 0;
 	padding: 20px 0;
 	background-color: $white;
 	vertical-align: middle;

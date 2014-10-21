@@ -31,7 +31,7 @@ $(document).ready(function(){
 });
 
 function remove_fields(object) {
-  $(object).slideToggle(2000);
+  $(object).slideToggle(200);
   setTimeout(function(){
     $(object).remove();
   }, 2000);
