@@ -1,5 +1,7 @@
 class CuestionariesController < ApplicationController
-  before_filter :filter_to_options, only: [:index, ]
+
+  before_filter :filter_to_options, only: [:index, :new ]
+  before_filter :active_session, only: [:auto_diagnostico]
   layout 'responce_forms', only: [:view, :create]
   layout 'admin', only: [:index, :new]
 
@@ -68,7 +70,9 @@ class CuestionariesController < ApplicationController
     require 'csv'
     require 'render_csv'
      column_names = []
-
+     responce_lenght = []
+     questions_act = []
+     modifier_colum_names = []
      @c = Cuestionary.find(params[:cuestionarios])
      @i = Institution.find(params[:instituciones])
 
@@ -76,6 +80,10 @@ class CuestionariesController < ApplicationController
 
       @c.questions.each do |q|
          column_names.push(q.title)
+         @act = viewver_encode(q.question_requires).to_a
+         @to_actxc = viewver_encode(q.question_requires)
+         responce_lenght.push(@act.length)
+         questions_act.push(@to_actxc)
       end
       
       @counterx = @c.questions.count 
@@ -96,10 +104,38 @@ class CuestionariesController < ApplicationController
                 @c1 = @c1 + 1
                 @indentifier = column_names[count_hethers]
                 #puts @indentifier
-                @a1 = Array(@indentifier )
+                if @responce.include? ('{')
+                  puts @indentifier
+                  hashchange = eval(@responce)
+                  hashchange = hashchange.to_a
+                  puts "***>#{hashchange}"
+                  responce_lenght
+                  @quest_countxx = 0
+                  questions_act[count_hethers].each do  |c|
+                    hashchange.each do |hc|
+                      @quest_countxx  = @quest_countxx  + 1
+                      if hc[0].to_i ==  @quest_countxx.to_i
+
+                         puts "#{1} == #{hc[0]} == #{@quest_countxx}"
+                         else
+                         puts "#{0} == #{hc[0]} == #{@quest_countxx}"
+                      end
+                      if @quest_countxx == responce_lenght
+                        @quest_countxx = 0
+                      end
+
+                    end
+                  end
+                  #column_names[count_hethers]
+
+                  modifier_colum_names
+                else
+                @a1 = Array(@indentifier)
                 @a2 = Array( @responce )
                 @a3 = @a1 + @a2
-                
+                end
+                puts @a3
+                puts @responce
                 context.push(  @a3 )
                 count_hethers = count_hethers + 1
 
@@ -143,6 +179,10 @@ class CuestionariesController < ApplicationController
   def cuestionary_params
   	  params.require(:cuestionary).permit(:title, :call_code, :instructions, questions_attributes: [:title, :question_type, :question_requires] )
   end
+
+
+  def auto_diagnostico
+  end
   
 private
   
@@ -157,6 +197,8 @@ private
         end
      end
   end
+
+  
 
 
 end

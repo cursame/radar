@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924174155) do
+ActiveRecord::Schema.define(version: 20141021180258) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20140924174155) do
     t.boolean  "adviser"
     t.integer  "adviser_code"
     t.integer  "help_institution_id"
+    t.string   "diagnostic_code"
   end
 
 end
