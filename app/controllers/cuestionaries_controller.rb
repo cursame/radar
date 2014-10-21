@@ -183,6 +183,13 @@ class CuestionariesController < ApplicationController
 
   def auto_diagnostico
   end
+
+  def active_session
+     if session[:user] == nil
+       redirect_to root_path
+     end
+   end
+
   
 private
   
