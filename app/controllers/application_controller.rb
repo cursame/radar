@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
    before_filter :lenaguaje_filter
    before_filter :set_locale
    before_filter :default_url_options
+   before_filter :active_session
 
    def current_user
     @user = User.find(session[:user])
@@ -43,6 +44,12 @@ class ApplicationController < ActionController::Base
     get_uri = request.env['PATH_INFO']
     session[:route] = get_uri.split('/').last
     puts "**************** #{session[:route]} *****************"
+   end
+
+   def active_session
+     if session[:user] == nil
+       redirect_to root_path
+     end
    end
 
   

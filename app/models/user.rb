@@ -39,4 +39,15 @@ class User < ActiveRecord::Base
            false
         end
     end
+    ########## crea las validaciones para el auto diagnostico #####
+    def validates_diagnostic
+       if self.diagnostic_code == nil
+
+          self.diagnostic_code = SecureRandom.hex(5)
+          self.save
+
+          else
+          self.diagnostic_code
+       end
+    end
 end

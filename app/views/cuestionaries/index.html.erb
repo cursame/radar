@@ -23,7 +23,7 @@
     <p>Institución </p>
     <%= select_tag 'instituciones', options_from_collection_for_select(@institutions, "id", "name"), class:"full white"%>  
     <p> Título del cuestionario</p>
-    <% @i = current_user.institutions.last%>
+    <%# @i = current_user.institutions.last%>
     <%#= hidden_field_tag 'instituciones', @i.id%>
     <div class="buttons">  
       <div class="full">
