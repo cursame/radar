@@ -1,0 +1,4 @@
+<%= form_tag('cuestionaries/filter_to_acces_responce', class: 'validate') do -%>
+	<%= text_field_tag 'code', '', placeholder: 'Ingresa el Código de tu institución', required: true%>
+    <%= submit_tag 'Ingresar' %>
+<%end%>
