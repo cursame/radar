@@ -111,6 +111,10 @@ Rails.application.routes.draw do
     post '/cuestionaries/responce'
     get '/view_responces/:responce_quest', :to => 'cuestionaries#view_responces', as: :view_responces
     get 'auto_diagnostico', :to => 'cuestionaries#auto_diagnostico', as: :auto_diagnostico
+    get 'cuestionaries/filter_to_acces_responce'
+    post 'cuestionaries/filter_to_acces_responce'
+    get 'code_filter', :to => 'cuestionaries#code_filter', as: :code_filter
+
   ####### api ########
     get 'api/documentation_methods', as: :document_api
     get 'api/acces_to_red_lights'

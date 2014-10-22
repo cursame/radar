@@ -21,12 +21,39 @@ class CuestionariesController < ApplicationController
 
   end
 
+  def filter_to_acces_responce
+    if session[:user] == nil
+      @user = User.find_by_diagnostic_code(params[:code])
+      if @user != nil
+      session[:diagnostic_acces] = @user.id
+      redirect_to "#{session[:sup_route]}"
+      else
+      redirect_to :back
+      end
+      else
+      session[:diagnostic_acces] = current_user.id
+      redirect_to "#{session[:sup_route]}"
+    end
+  end
 
+  def code_filter
+    if session[:user] != nil
+      session[:diagnostic_acces] = current_user.id
+      redirect_to "#{session[:sup_route]}"
+    end
+  end
   def delete
   end
 
   def view
-   @port =  Cuestionary.find(params[:id])
+    puts "<<<<<<<<<<<<<<<<<<#{session[:diagnostic_acces]}"
+    if session[:diagnostic_acces] == nil
+     session[:sup_route] = request.original_url
+     puts "****************************>>>>>>#{session[:sup_route]}<<<<<<<<<***********************"
+     redirect_to code_filter_path
+    else
+     @port =  Cuestionary.find(params[:id])
+    end
   end
 
   def view_responce
@@ -44,12 +71,15 @@ class CuestionariesController < ApplicationController
   def responce
      @rand = SecureRandom.hex(7)
      puts @rand
-     @institution = current_user.institutions.first
+     @user = User.find(session[:diagnostic_acces])
+     @institution =  @user.institutions.first
      params[:opt].each do |index,optn|
        puts optn
        @responce = ResponceQuest.create(opt: index, cuestionary_id: params[:cuestionary], responce: optn.to_s, code_responce: @rand, institution_id: @institution.id)
      end
-
+      if session[:user] == nil
+        session[:diagnostic_acces] = nil
+      end
     redirect_to view_responces_path(@responce.code_responce)
   end
 
