@@ -4,7 +4,7 @@
 <%end%>
 
 <% @user.institutions.each do |i|%>
-  <% if i.red_lights.count == 0%>
+  <% if i.red_lights.count != 0%>
     <%= render partial: 'users/red_lights', locals: {data: i}%> 
   <%else%>
     <%= render partial: 'users/red_lights0', locals: {data: i}%> 
