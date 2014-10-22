@@ -1,3 +1,35 @@
-<h1> Autodiagnóstico </h1>
-<p> Esté código es el que debes entregar a tus estudiantes para que puedan accesar al auto diagnóstico te tu escuela</p>
-<h1> <%= current_user.validates_diagnostic %> </h1>
+<div class="intro bg-bluegradient">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="contenido">
+            <div class="title-config">
+              <h2>Autodiagnóstico en tu institución</h2>
+              <%= image_tag ('autod.png'), class:"hide" %>
+
+              <h6>Evalúa y previene el aumento de violencia escolar</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="contenido">
+            <p> Entrega a tus estudiantes el siguiente código para que puedan accesar al autodiagnóstico te tu escuela</p>
+            <div class="code-box">
+              <h4><%= current_user.validates_diagnostic%></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

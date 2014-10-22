@@ -133,7 +133,6 @@
        line-height: 16px;
     }
   }
-
 }
 
 .dashboard-footer {
@@ -141,6 +140,7 @@
   text-align: left;
   width: 100%;
   position: relative;
+  bottom: 0;
   padding-top: 30px;
   background-color: $white;
   @include clearfix;
@@ -184,5 +184,4 @@
       padding-bottom: 30px;
     }
   }
-
 }
