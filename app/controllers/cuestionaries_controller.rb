@@ -212,6 +212,7 @@ class CuestionariesController < ApplicationController
 
 
   def auto_diagnostico
+     @questionaries = Cuestionary.last 10
   end
 
   def active_session
