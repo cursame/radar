@@ -38,10 +38,14 @@
             <p> Si por el contrario, si tu institución tiene una página web sólo copia el siguiente código e intégralo. </br> 
               <textarea id="jquery" class="copy-script" style="display:none;">
                 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/&subdomain=www", function(data){$('body').append(data)});</script>
+                <script type="text/javascript">
+                  var pathname = window.location.pathname;
+                  $.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});</script>
               </textarea>
               <textarea id="red_acces" class="copy-script">
-                <script type="text/javascript">$.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&pathx=/&subdomain=www", function(data) {$('body').append(data)});
+                <script type="text/javascript">
+                  var pathname = window.location.pathname;
+                  $.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});
                 </script> 
               </textarea>
 
