@@ -47,8 +47,10 @@
   background-image: image-url('bg_login.png');
   }
 
-  &.intro_demo {
-    background-image: image-url('bg_demo.png');
+  &.intro_code {
+    background-image: image-url('bg_code.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
   }
 
   &.comments {
@@ -81,9 +83,11 @@
 .bg_gray {
   background: #E2E5E7 !important;
 }
-.bg-gray {
-  background:#ececec;
+
+.bg_transparent {
+  background: rgba(0,0,0,0.3) !important;
 }
+
 .bg-redgradient {
   @include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
 }

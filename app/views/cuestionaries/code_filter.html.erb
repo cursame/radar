@@ -1,4 +1,30 @@
-<%= form_tag('cuestionaries/filter_to_acces_responce', class: 'validate') do -%>
-	<%= text_field_tag 'code', '', placeholder: 'Ingresa el Código de tu institución', required: true%>
-    <%= submit_tag 'Ingresar' %>
-<%end%>
+<div class="intro bg-blue-gradient2 intro_code">
+  <div class="wrapper">
+    <div class="cols-12">
+      <div class="col col-12">
+        <div class="col-inner">
+          <div class="loginbox bg_transparent">
+            <div class="title-sign">
+              <%= link_to image_tag('radar.png'), root_path %>
+              </div>
+              <div class="content">
+                <div class="column">  
+                 <p>Ingresa el código correspondiente para accesar al autodiagnóstco. En caso de no contar con él, solicítalo a tu maestro.</p>
+                  <%= form_tag('cuestionaries/filter_to_acces_responce', class: 'validate') do -%>
+                  <%= text_field_tag 'code', '', placeholder: 'Ingresa el Código de tu institución', required: true%>
+                <div>
+                  <%= submit_tag 'INGRESAR', class:"btn btn-outline btn-input full" %>
+                </div>
+                <% end -%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

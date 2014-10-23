@@ -1,6 +1,7 @@
 .btn {
   font-family: $font-radar;
   border-radius: 3px;
+  text-align: center;
 
   &.btn-input {
     @include inline-block;

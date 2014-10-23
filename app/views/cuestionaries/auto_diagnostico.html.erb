@@ -33,3 +33,10 @@
     </div>
   </div>
 </div>
+<div>
+  <h2>Lista de cuestionarios</h2>
+  <% @questionaries.each do |c| %>
+  <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank' %></br>
+  <%end%>
+</div>
+
