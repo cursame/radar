@@ -2,8 +2,9 @@ class CuestionariesController < ApplicationController
 
   before_filter :filter_to_options, only: [:index, :new ]
   before_filter :active_session, only: [:auto_diagnostico]
-  layout 'responce_forms', only: [:view, :create]
   layout 'admin', only: [:index, :new]
+
+  layout 'responce_forms', only: [:view, :create, :code_filter]
 
   def create  
   	@cuestionary = Cuestionary.create(cuestionary_params)

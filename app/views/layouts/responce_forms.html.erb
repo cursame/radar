@@ -13,17 +13,7 @@
     <% unless flash[:notice].blank? %>
       <div id="notice" class="notice_box"> <%= flash[:notice] %></div>
     <%end%>
-    <% if session[:user] == nil %>
-      <%#= render partial: '/statics_views/layout_parts/head'%>
-    <% else %>
-      <%#= render partial: '/shared/dashboard/dashboard_header' %>
-    <% end %>
      <%= yield %>
-    <% if session[:user] == nil %>
-      <%#= render partial: '/statics_views/layout_parts/footer' %>
-    <% else %>
-      <%#= render partial: '/shared/dashboard/dashboard_footer' %>
-    <% end %>
 </body>
 </html>
 

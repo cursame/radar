@@ -27,7 +27,7 @@ $(document).ready(function(){
   });
 
   WidthScaleDIV('scalex');
-
+  ResizeHeigthDiv('intro_code');  
 });
 
 function remove_fields(object) {
@@ -74,6 +74,11 @@ function WidthScaleDIV(div){
     var rest = act.data('target') ;
     var seft = $('#'+rest).width(actual_width);
   });
+}
+
+function ResizeHeigthDiv(div){
+  var div_height = $( window ).height();
+  $('.'+div).height(div_height); 
 }
 
 

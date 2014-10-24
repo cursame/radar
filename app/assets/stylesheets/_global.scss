@@ -256,9 +256,8 @@ a:visited {
 	}
 
 	.language {
-
-  font-size: 11px;
-  margin-right: 20px;
+	  font-size: 11px;
+	  margin-right: 20px;
 	}
 
 	.powered-by {
@@ -267,7 +266,6 @@ a:visited {
 	}
 
 	@include max-screen(500px) {
-
 		height: 50px;
 
 		.footermenu {
@@ -542,9 +540,8 @@ a:visited {
 
 	& p {
 		float: left;
-		color: #333;
+		color: #123557;
 		font-size: 14px;
-		color: $white;
 		text-align: justify;
 		line-height: 16px;
 		margin-bottom: 25px;
