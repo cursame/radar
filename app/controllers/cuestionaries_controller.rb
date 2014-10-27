@@ -1,10 +1,9 @@
 class CuestionariesController < ApplicationController
-
   before_filter :filter_to_options, only: [:index, :new ]
   before_filter :active_session, only: [:auto_diagnostico]
-  layout 'admin', only: [:index, :new]
-
   layout 'responce_forms', only: [:view, :create, :code_filter]
+
+ 
 
   def create  
   	@cuestionary = Cuestionary.create(cuestionary_params)
@@ -17,8 +16,8 @@ class CuestionariesController < ApplicationController
   def new
     @cuestionary = Cuestionary.new
     @question = Question.new
-    
     questions = @cuestionary.questions.build
+    render layout: "admin"
 
   end
 
@@ -66,6 +65,7 @@ class CuestionariesController < ApplicationController
   def index
     @institutions = Institution.all
     @questionaries = Cuestionary.last 10
+    render layout: "admin"
 
   end
 
