@@ -33,10 +33,31 @@
     </div>
   </div>
 </div>
-<div>
-  <h2>Lista de cuestionarios</h2>
-  <% @questionaries.each do |c| %>
-  <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank' %></br>
-  <%end%>
-</div>
+<div class="wrapper">
+  <div class="cols-12">
 
+    <div class="col col-6">
+      <div class="col-inner">
+        <div class="contenido bg_gray">
+          <div class="title-box">
+            <h4>Instrucciones</h4>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col col-6">
+      <div class="col-inner">
+        <div class="contenido  bg_gray">
+        <div class="title-box">
+            <h4>Lista de cuestionarios</h4>
+          </div>
+            <% @questionaries.each do |c| %>
+            <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank' %></br>
+            <%end%>
+          </div>
+        </div>
+      </div>
+
+</div>
+</div>
