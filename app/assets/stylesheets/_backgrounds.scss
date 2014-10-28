@@ -42,6 +42,10 @@
   &.intro_diagnostico{
     background-image: image-url('bg_diagnostico.png');
   }
+  &.intro_autod{
+  background-image: image-url('bg_autod.png');
+  background-position: top center;
+  }
 
   &.intro_login{
   background-image: image-url('bg_login.png');
@@ -99,6 +103,9 @@
 } 
 .bg-bluegradient {
   @include linear-gradient(135deg, #1B4251 0%, #296D7F 100%);
+  p {
+  color: $white;
+  }
 }
 .bg-blue-gradient2 {
   @include linear-gradient(135deg, #0E5083 0%, #145889 100%);

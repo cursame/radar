@@ -1,4 +1,4 @@
-<div class="intro bg-bluegradient">
+<div class="intro bg-bluegradient intro_autod">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
@@ -6,9 +6,20 @@
           <div class="contenido">
             <div class="title-config">
               <h2>Autodiagnóstico en tu institución</h2>
-              <%= image_tag ('autod.png'), class:"hide" %>
+              <p> Entrega a tus estudiantes el siguiente código para que puedan accesar al autodiagnóstico te tu escuela</p>
+              <div class="code-box">
+                <h2><%= current_user.validates_diagnostic%></h2>
+              </div>
+            </div>
 
-              <h6>Evalúa y previene el aumento de violencia escolar</h6>
+            <div class="bg_transparent full steps">
+              <ul class="">
+                <li>· At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque </li>
+                <li>· Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat  usto odio dignissimos ducimus qui blanditiis</li>
+                <li>· Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</li>
+                <li>· Nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat  usto odio</li>
+                <li>· Paso final</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -17,47 +28,23 @@
   </div>
 </div>
 
-<div class="">
+
+
+<div class="intro">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
           <div class="contenido">
-            <p> Entrega a tus estudiantes el siguiente código para que puedan accesar al autodiagnóstico te tu escuela</p>
-            <div class="code-box">
-              <h4><%= current_user.validates_diagnostic%></h4>
-            </div>
+
+            <h5>Lista de cuestionarios</h5>
+            <% @questionaries.each do |c| %>
+            <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank', class:'element' %></br>
+            <%end%>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="wrapper">
-  <div class="cols-12">
-
-    <div class="col col-6">
-      <div class="col-inner">
-        <div class="contenido bg_gray">
-          <div class="title-box">
-            <h4>Instrucciones</h4>
-          </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="col col-6">
-      <div class="col-inner">
-        <div class="contenido  bg_gray">
-        <div class="title-box">
-            <h4>Lista de cuestionarios</h4>
-          </div>
-            <% @questionaries.each do |c| %>
-            <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank' %></br>
-            <%end%>
-          </div>
-        </div>
-      </div>
-
-</div>
 </div>
