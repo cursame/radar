@@ -6,21 +6,37 @@
           <div class="contenido">
             <div class="title-config">
               <h2>Autodiagnóstico en tu institución</h2>
-              <p> Entrega a tus estudiantes el siguiente código para que puedan accesar al autodiagnóstico te tu escuela</p>
+              <p class="">1. Entrega a tus estudiantes el siguiente código para que puedan accesar al autodiagnóstico te tu escuela</p>
               <div class="code-box">
                 <h2><%= current_user.validates_diagnostic%></h2>
               </div>
             </div>
 
-            <div class="bg_transparent full steps">
-              <ul class="">
-                <li>· At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque </li>
-                <li>· Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat  usto odio dignissimos ducimus qui blanditiis</li>
-                <li>· Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</li>
-                <li>· Nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat  usto odio</li>
-                <li>· Paso final</li>
-              </ul>
+            <div class="cols-12">
+              <div class="col col-12">
+
+
+
+
+
+              <div class="full">
+                <button class=" show_hide  right actions">
+                Mostrar / Ocultar
+                </button>
+                </div>
+                <div class="full steps">
+                  <ol start="2" class="left steps">
+                    <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque </li>
+                    <li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime</li>
+                    <li>Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</li>
+                    <li>Nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat  usto odio et quas molestias excepturi sint occaecati </li>
+                    <li>Paso final</li>
+                  </ol> 
+                </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -28,20 +44,18 @@
   </div>
 </div>
 
-
-
 <div class="intro">
   <div class="wrapper">
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-          <div class="contenido">
-
-            <h5>Lista de cuestionarios</h5>
+          <div class="contenido ">
+            <div class="title-space">            
+              <h5>Lista de cuestionarios</h5>
+            </div>
             <% @questionaries.each do |c| %>
-            <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank', class:'element' %></br>
+              <%= link_to "#{c.title}", view_questionary_path(c.id), target: '_blank', class:'element' %></br>
             <%end%>
-
           </div>
         </div>
       </div>

@@ -33,6 +33,14 @@ select {
 /*FORMS - Columns*/
 .full {
   width: 100%;
+
+  .right {
+    text-align: right;
+  }
+
+  .left {
+    text-align: left;
+  }
 }
 
 .half {

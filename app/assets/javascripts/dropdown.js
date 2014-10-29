@@ -28,3 +28,9 @@ $(document).ready(function() {
    }
  });
 });
+
+$(document).ready(function(){
+  $('button').click(function(){
+    $('ol').toggle( 600 );
+  });
+});

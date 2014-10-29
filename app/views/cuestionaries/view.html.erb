@@ -3,59 +3,57 @@
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">    
-          <div class="form-sheet">
+          <div class="form-sheet title-space">
 	          <div class="content "> 
-	            <h4><%= @port.title %></h4>
-	            <p>
-	            	<%= @port.instructions %>
-	            </p>  	       
+	            <h5><%= @port.title %></h5>
+	            <p><%= @port.instructions %> </p>  	       
     	      </div>
-							<% cue = 0 %>
-							<%= form_tag('/cuestionaries/responce') do -%>
-					  	<%= hidden_field_tag 'cuestionary', @port.id %>
+						<% cue = 0 %>
+						<%= form_tag('/cuestionaries/responce') do -%>
+				  	<%= hidden_field_tag 'cuestionary', @port.id %>
 
-							<% @port.questions.each do |p|%> 
-							  <div class="quiz-content ">
-                
-								  <div class="question-element"> 
-									  <div class="question">
-									  	<span><%= p.title %></span>
-									  </div>	<br/><br/>
-									  <% cue = cue + 1 %> 
-									  <% p.question_type %>
-									  <% case p.question_type %>
-										<% when 'mULT' %>
-										<div class="type-multi">
-											<%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
-										</div>										
-										<% when 'sCAL' %>
-										<div class="type-scale">
-											<%= render partial: '/cuestionaries/type_quest_viewver/scale', locals: {p: p, cue: cue, type: p.question_type }%>
-										</div>
-										<% when 'tEXT' %>
-										<div class="type-text">
-											<%= render partial: '/cuestionaries/type_quest_viewver/text', locals: {p: p, cue: cue, type: p.question_type }%>
-										</div>
-										<% when 'cAMP' %>
-										<div class="type-multi">
-											<%= render partial: '/cuestionaries/type_quest_viewver/camp', locals: {p: p, cue: cue, type: p.question_type }%>
-										</div>
-										<%end%>
+						<% @port.questions.each do |p|%> 
+						  <div class="quiz-content ">
+              
+							  <div class="question-element"> 
+								  <div class="question">
+								  	<span><%= p.title %></span>
+								  </div>	<br/><br/>
+								  <% cue = cue + 1 %> 
+								  <% p.question_type %>
+								  <% case p.question_type %>
+									<% when 'mULT' %>
+									<div class="type-multi">
+										<%= render partial: '/cuestionaries/type_quest_viewver/multiple', locals: {p: p, cue: cue, type: p.question_type }%>
+									</div>										
+									<% when 'sCAL' %>
+									<div class="type-scale">
+										<%= render partial: '/cuestionaries/type_quest_viewver/scale', locals: {p: p, cue: cue, type: p.question_type }%>
+									</div>
+									<% when 'tEXT' %>
+									<div class="type-text">
+										<%= render partial: '/cuestionaries/type_quest_viewver/text', locals: {p: p, cue: cue, type: p.question_type }%>
+									</div>
+									<% when 'cAMP' %>
+									<div class="type-multi">
+										<%= render partial: '/cuestionaries/type_quest_viewver/camp', locals: {p: p, cue: cue, type: p.question_type }%>
 									</div>
 									<%end%>
 								</div>
-								<div class="add">
-									<span id="copy_jquery" class="btn btn-embed">
-										<%= submit_tag 'Enviar respuesta' %>
-									</span>
-								</div>
-								<%end -%>
-								<div class="logo-form">
-		              <p><b>Radar</b> ® Derechos Reservados 2014</p>
-		           	 <div class="powered-by">
-		              	<%=image_tag('footerlogo.png')%>
-		            	</div>
-		        	  </div>
+								<%end%>
+							</div>
+							<div class="add">
+								<span id="copy_jquery" class="btn btn-embed">
+									<%= submit_tag 'Enviar respuesta' %>
+								</span>
+							</div>
+							<%end -%>
+							<div class="logo-form">
+	              <p><b>Radar</b> ® Derechos Reservados 2014</p>
+	           	 <div class="powered-by">
+	              	<%=image_tag('footerlogo.png')%>
+	            	</div>
+	        	  </div>
 						</div>		
 					</div>
 				</div>

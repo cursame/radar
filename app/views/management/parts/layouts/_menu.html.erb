@@ -6,6 +6,13 @@
       <li>
         <h4>ADMINISTRADOR</h4>
       </li>
+
+      <li>
+        <%= link_to user_path(current_user.id) do %>
+        <i class="i i-arrow3"></i>
+        <span>Regresar </span>
+        <% end %>
+      </li> 
       <li>
         <%= link_to admin_analitics_path do %>  
         <i class="i i-analytics"></i>
@@ -42,12 +49,7 @@
         <span>Instituciones</span>
         <% end %>      
       </li>  
-      <li>
-        <%= link_to user_path(current_user.id) do %>
-        <i class="i i-arrow3"></i>
-        <span>Regresar </span>
-        <% end %>
-      </li>        
+       
       <li class="border bottom">
         <%= link_to session_exit_path do %>
         <i class="i i-exit"></i> 

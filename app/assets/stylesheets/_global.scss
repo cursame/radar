@@ -1358,15 +1358,15 @@ padding: 15px 120px 25px 10px;		}
 	text-align: center;
 	display: block;
 	border-radius: 2px;
-	background:#D5E6E8;
+	background:#FCFCFC;
 	padding: 15px;
 	margin: 40px 25%;
 
 	h2 {
-		color: #276677;
+		color: #65D238;
+
 	}
 }
-
 
 .code-img {
 	z-index: 0;
@@ -1377,16 +1377,31 @@ padding: 15px 120px 25px 10px;		}
 	right: 0;
 }
 
-.steps {
+
+
+.title-space {
+padding: 25px 0;
+}
+
+.show_hide{
+	position: relative;
+	top: 0px;
+	background:none;
+	border-bottom: 1px dashed #666;
+
+	.steps {
+	position: relative;
+	top: 0px;
+	width: 100%;
+
+ol   {
 	border-radius: 5px;
 	text-align: justify;
-	font-size: 15px;
-	padding: 35px 80px;
-	margin-bottom: 50px;
+	padding: 5px 80px;
 
-
-	ul li {
-		list-style-type: none;
+	li {
 		line-height: 30px;
 	}
 }
+}
+} 
