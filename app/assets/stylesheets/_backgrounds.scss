@@ -1,11 +1,8 @@
 .intro {
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   color: white;
+  @include cover-background(cover);
   
   &.home-intro {
     background-image: image-url('bg_home.png');
@@ -52,9 +49,11 @@
   }
 
   &.intro_code {
+    height: 100%;
     background-image: image-url('bg_code.png');
     background-position: bottom;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    @include cover-background(initial);
   }
 
   &.comments {
@@ -88,10 +87,12 @@
   background: #E2E5E7 !important;
 }
 
-.bg_transparent {
-  background: rgba(255,255,255,0.1) !important;
+.white_transparent {
+  background: rgba(255,255,255,0.2) !important;
 }
-
+.black_transparent {
+  background: rgba(5,31,52,0.7) !important;
+}
 .bg-redgradient {
   @include linear-gradient(75deg, #c74331 0%, #ec531e 100%);
 }

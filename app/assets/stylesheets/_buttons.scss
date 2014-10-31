@@ -99,6 +99,7 @@
 
 .btn-embed {
   @include inline-block;
+  margin-bottom: 20px;
     
   span {
     cursor: pointer;
@@ -107,16 +108,16 @@
   input {
     border-radius: 3px;
     padding: 15px 20px;
-    border: 1px solid #4280A3;
+    border: 1px solid #0F892C;
     font-size: 13px;
     font-weight: lighter;
     color: $white;
-    background: #1991C3;
     cursor: pointer;
+    background:#5FC12A;
   }
 
   :hover {
-    background-color: #0c63a0;
+    background-color: #5FC12A;
   }
 }
 

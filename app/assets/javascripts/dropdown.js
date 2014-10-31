@@ -27,10 +27,11 @@ $(document).ready(function() {
      holder.find('.activity-counter').hide();
    }
  });
+ 
+  $('.show_hide').click(function(){
+    $('.hide_hide').slideToggle( 250 );
+  });
+
 });
 
-$(document).ready(function(){
-  $('button').click(function(){
-    $('ol').toggle( 600 );
-  });
-});
+ 
