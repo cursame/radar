@@ -1,0 +1,9 @@
+<h4>Creador de supervisores</h4>
+<div style="background:#000; padding:10px;">
+<%= form_tag('/management/create_supervisor', class: 'validate') do -%>
+	<%= text_field_tag 'name', '', placeholder: 'Nombre del supervisor'%>
+    <%= text_field_tag 'email', '', placeholder: 'Email'%>
+	<%= select_tag "institution_id", options_from_collection_for_select(HelpInstitution.all, "id", "name") %>
+    <%= submit_tag 'Crear supervisor', class: "btn btn-outline login" %>
+<%end%>
+</div>

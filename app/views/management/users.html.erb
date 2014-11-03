@@ -3,5 +3,7 @@
     <i class="i i-title i-users_title"></i>
     Usuarios
   </h1>
+    <%= render partial: '/management/parts/components/create_and_filter_users' %>
+
     <%= render partial: '/management/parts/components/users', locals: {users: @users} %>
 </div>

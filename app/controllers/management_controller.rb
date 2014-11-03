@@ -112,6 +112,12 @@ layout 'admin'
     @cyber_bullying = cyber_bullying
     @dano_a_pertenencias = dano_a_pertenencias   
   end
+
+  def create_supervisor
+    @user = User.create(name: params[:name], email: params[:email], charge: 'Supervisor', password: Digest::SHA2.hexdigest('supervisor1234'), password_confirmation: Digest::SHA2.hexdigest('supervisor1234') , salt:  rand(235..1234),  terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: params[:institution_id])
+    flash[:notice] = 'El usuario supervisor ha sido agregado correctamente'
+    redirect_to :back
+  end
 private
   ########### filtro de acceso al administrador #############
   def filter_session
