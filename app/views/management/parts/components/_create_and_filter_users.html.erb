@@ -1,5 +1,13 @@
 <h4>Creador de supervisores</h4>
 <div style="background:#000; padding:10px;">
+<%= form_tag('/management/create_institution', class: 'validate') do -%>
+	<%= text_field_tag 'name', '', placeholder: 'Nombre de la organización'%>
+    <%= text_field_tag 'phone', '', placeholder: 'Teléfono'%>
+    <%= text_field_tag 'ext', '', placeholder: 'Exteción'%>
+    <%= text_area_tag 'addres', '', placeholder: 'Exteción'%>
+
+    <%= submit_tag 'Crear Organización de supervisión', class: "btn btn-outline login" %>
+<%end%>
 <%= form_tag('/management/create_supervisor', class: 'validate') do -%>
 	<%= text_field_tag 'name', '', placeholder: 'Nombre del supervisor'%>
     <%= text_field_tag 'email', '', placeholder: 'Email'%>

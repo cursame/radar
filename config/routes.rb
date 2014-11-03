@@ -95,6 +95,8 @@ Rails.application.routes.draw do
     get 'admin', to: 'management#applications'
     get 'management/create_supervisor'
     post 'management/create_supervisor'
+    get 'management/create_institution'
+    post 'management/create_institution'
 
   ############ cuestionaries #########
     get 'questions/create'

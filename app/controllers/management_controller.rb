@@ -118,6 +118,12 @@ layout 'admin'
     flash[:notice] = 'El usuario supervisor ha sido agregado correctamente'
     redirect_to :back
   end
+
+  def create_institution
+      @in = HelpInstitution.create( name: params[:name], identifier: rand(3..5000), addres: params[:addres], phone: params[:phone],  ext: params[:ext])
+      flash[:notice] = 'Se ha agregado correctamente la organización para prevención'
+      redirect_to :back
+  end
 private
   ########### filtro de acceso al administrador #############
   def filter_session
