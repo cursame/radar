@@ -26,8 +26,7 @@ $(document).ready(function(){
    $('#'+to_div).toggle('blind', 400);
   });
 
-  WidthScaleDIV('scalex');
-  ResizeHeigthDiv('intro_code');  
+  WidthScaleDIV('scalex'); 
 });
 
 function remove_fields(object) {
@@ -76,10 +75,6 @@ function WidthScaleDIV(div){
   });
 }
 
-function ResizeHeigthDiv(div){
-  var div_height = $( window ).height();
-  $('.'+div).height(div_height); 
-}
 
 
 

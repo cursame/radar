@@ -3,16 +3,17 @@
     <div class="cols-12">
       <div class="col col-12">
         <div class="col-inner">
-          <div class="loginbox ">
+          <div class="loginbox black_transparent">
             <div class="title-sign">
               <%= link_to image_tag('radar.png'), root_path %>
               </div>
               <div class="content">
                 <div class="column">  
-                 <p>Ingresa el código correspondiente para accesar al autodiagnóstco. En caso de no contar con él, solicítalo a tu maestro.</p>
+                 <p>Ingresa el código correspondiente para accesar al autodiagnóstco.
+                 En caso de no contar con él, solicítalo a tu maestro.</p>
                   <%= form_tag('cuestionaries/filter_to_acces_responce', class: 'validate') do -%>
                   <%= text_field_tag 'code', '', placeholder: 'Ingresa el Código de tu institución', required: true%>
-                <div class="btn btn-embed full total-filtro">
+                <div class="btn btn-embed full">
                   <%= submit_tag 'INGRESAR', class:'full'%>
                 </div>
                 <% end -%>
