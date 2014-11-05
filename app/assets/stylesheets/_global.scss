@@ -1409,4 +1409,14 @@ padding: 25px 0 10px 0;
 	margin: 0 5px;
 	border-radius: 3px;
 	float: left;
+
+	select {
+		width: 100%;
+		margin-bottom: 14px;
+	}
+	
+	&.alpha {
+		margin-left: 0 !important;
+	}
+
 }

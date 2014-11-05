@@ -1,21 +1,31 @@
 
-<div class="col col-6 ">
+<div class="col col-6">
   <div class="smallbox bg_gray"> 
-  <%= form_tag('/management/create_institution', class: 'validate') do -%>
-  	<%= text_field_tag 'name', '', placeholder: 'Nombre de la organización'%>
+    <h5>Crear organización de supervisión</h5>
+    <br/>
+    <%= form_tag('/management/create_institution', class: 'validate') do -%>
+    <%= text_field_tag 'name', '', placeholder: 'Nombre de la organización'%>
     <%= text_field_tag 'phone', '', placeholder: 'Teléfono'%>
     <%= text_field_tag 'ext', '', placeholder: 'Exteción'%>
-    <%= submit_tag 'Crear Organización de supervisión', class: "btn btn-outline btn-embed login full" %>
-  <%end%>
+    <div class="btn btn-submit_green full">
+      <%= submit_tag 'Crear Organización de supervisión', class: "full" %>
+    </div>
+    <%end%>
   </div>
 </div>
+
 <div class="col col-6 ">
-  <div class="smallbox  bg_gray ">
+  <div class="smallbox bg_gray ">
+  <h5>Crear supervisor</h5>
+<br/>
     <%= form_tag('/management/create_supervisor', class: 'validate') do -%>
     <%= text_field_tag 'name', '', placeholder: 'Nombre del supervisor'%>
     <%= text_field_tag 'email', '', placeholder: 'Email'%>
-    <%= select_tag "institution_id", options_from_collection_for_select(HelpInstitution.all, "id", "name", class:"full") %>
-    <%= submit_tag 'Crear supervisor', class: "btn btn-outline btn-embed login full" %>
+    <%= select_tag "institution_id", options_from_collection_for_select(HelpInstitution.all, "id", "name") %>
+   <div class="btn btn-submit_green full">
+    <%= submit_tag 'Crear supervisor', class: "full" %>
+  </div>
     <%end%>
   </div>
+</div>
 </div>
