@@ -1,4 +1,4 @@
-
+<div class="col col-12"> 
 <% users.reverse.each do |u| %>
   <div class="element">
     <h5>  <%= u.name%></br></h5>
@@ -13,10 +13,11 @@
     <% end %>
 
     <% if !u.confirmation %>
-      	<%= link_to 'Aceptar al usuario', accept_in_radar_path(u.id), class:'btn-embed' %>
+      <%= link_to 'Aceptar al usuario', accept_in_radar_path(u.id), class:'btn-embed' %>
     <% end %>
   </div>
 <% end %> 
 
 <%= will_paginate users %>
 
+</div>
