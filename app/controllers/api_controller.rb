@@ -8,12 +8,19 @@ class ApiController < ApplicationController
   def register_by_api
     puts "*****************<<<<<ingresando al api>>>>>"
     @user = User.find_by_email(params[:email])
+    user_a_responce = []
     if @user == nil
       @user_a = create_user_for_api(params[:name], params[:email], params[:charge], params[:password].to_s, params[:password].to_s , false, true, params[:institution], params[:url], params[:phone].to_i)
-
+      user_a_responce.push(
+      name: @user_a.name,
+      email: @user_a.email,
+      notice: "Usuario creado correctamente")
+      @user_a = user_a_responce
     else
       @user_a = 'The user already exists (there is a registered user with this email)'
     end
+
+
 
     render :json => @user_a.to_json
 
@@ -42,8 +49,16 @@ class ApiController < ApplicationController
         if @password  == @user.password
            @user_petition = @user
            session[:user] = @user.id
-           methods.push(@user) 
-           methods.push(@user.institutions) 
+            @user.institutions.each do |ins|
+              methods.push(
+              email: @user.email,
+              institution_name: ins.name,
+              institution_url: ins.url,
+              tokenspecialforms: ins.tokenspecialforms,
+              tokenspecialviews: ins.tokenspecialviews
+              )
+            end
+
            @user_petition = methods
         else
            @user_petition = "Su contraseña no es valida"
