@@ -20,7 +20,7 @@
       <div class="col col-12">
         <div class="col-inner">
           <div class="contenido">
-            <p> Si tu institución no tiene página web, copia la siguiente dirección y envíala a tus alumnos para que denuncien: </br><br/>
+            <p> Si tu institución no tiene página web, copia la siguiente dirección y envíala a tus alumnos para que denuncien: </p>
                 <span class="btn btn-go_to">
                   <%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%>
                 </span>
@@ -28,26 +28,26 @@
                 <br/><br/>También puedes visitar el cuestionario directamente en el botón.
 
                 <span class="btn btn-go_to">
-
                   <a href="<%=action_host%>/alert_point?institution=<%=data.tokenspecialforms%>" target="_blank" >
                   Cuestionario de violencia escolar
                   </a>
-
                 </span>
-            </p>
-            <p> Si por el contrario, si tu institución tiene una página web sólo copia el siguiente código e intégralo. </br> 
-              <textarea id="jquery" class="copy-script" style="display:none;">
-                <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-                <script type="text/javascript">
-                  var pathname = window.location.pathname;
-                  $.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});</script>
+
+            <p> Si por el contrario, si tu institución tiene una página web sólo copia el siguiente código e intégralo. </br> </br> 
+
+            <textarea id="jquery" class="copy-script" style="display:none;">              
+               <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+              <script type="text/javascript">
+              var pathname = window.location.pathname;
+              $.get("http://localhost:3000/app/red_lights_js?institution=3959926cf502b63a&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});</script>
               </textarea>
+
               <textarea id="red_acces" class="copy-script">
                 <script type="text/javascript">
-                  var pathname = window.location.pathname;
-                  $.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});
-                </script> 
-              </textarea>
+                var pathname = window.location.pathname;
+                $.get("<%=action_host%>/app/red_lights_js?institution=<%=data.tokenspecialforms%>&"+pathname+"=/&subdomain=www", function(data){$('body').append(data)});
+              </script> 
+            </textarea>
 
             <div class="buttons">
               <span id="copy_jquery" class="btn btn-embed" data-target="jquery">
@@ -56,13 +56,14 @@
               <span id="copy_red_acces" class="btn btn-embed" data-target="red_acces">
                 <%= submit_tag 'Copiar Código Embed' %>
               </span> 
-          </div>
+            </div>
+
             <div class="note">
               <p><span>nota:</span>
               El sistema de radar esta validado para utilizar jquery,
               en caso de no tenerlo instalado, es necesario que 
               pegue el código de jquery, en caso de ya tenerlo sólo el embed code.</p>
-            </div>
+            </div>           
           </div>
         </div>
       </div>

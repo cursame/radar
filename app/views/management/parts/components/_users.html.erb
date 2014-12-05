@@ -1,22 +1,21 @@
+<div class="col col-12"> 
+  <% users.reverse.each do |u| %>
+    <div class="element">
+      <h5>  <%= u.name%></br></h5>
+      <%= u.charge%></br>
 
-<% users.reverse.each do |u| %>
-  <div class="element">
-    <h5>  <%= u.name%></br></h5>
-    <%= u.charge%></br>
+      <% u.institutions.each do |i|%></br>
+        <span>Institución: <%= i.name %></br>
+        Url: <%= i.url %></br>
+        Teléfono: <%= i.phone %></br>
+        Extención : <%= i.extencion %></br>
+        </span>
+      <% end %>
 
-    <% u.institutions.each do |i|%></br>
-      <span>Institución: <%= i.name %></br>
-      Url: <%= i.url %></br>
-      Teléfono: <%= i.phone %></br>
-      Extención : <%= i.extencion %></br>
-      </span>
-    <% end %>
-
-    <% if !u.confirmation %>
-      	<%= link_to 'Aceptar al usuario', accept_in_radar_path(u.id), class:'btn-embed' %>
-    <% end %>
+      <% if !u.confirmation %>
+        <%= link_to 'Aceptar al usuario', accept_in_radar_path(u.id), class:'btn-embed' %>
+      <% end %>
+    </div>
+  <% end %> 
   </div>
-<% end %> 
-
-<%= will_paginate users %>
-
+  <%= will_paginate users %>

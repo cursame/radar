@@ -100,7 +100,7 @@
 .btn-embed {
   @include inline-block;
   margin-bottom: 20px;
-    
+ 
   span {
     cursor: pointer;
   }
@@ -120,6 +120,30 @@
     background-color: #5FC12A;
   }
 }
+
+.btn-submit_green {
+  @include inline-block;
+ 
+  span {
+    cursor: pointer;
+  }
+
+  input {
+    border-radius: 3px;
+    padding: 10px;
+    border: none;
+    font-size: 13px;
+    font-weight: lighter;
+    color: $white;
+    cursor: pointer;
+    background:#5FC12A;
+  }
+
+  :hover {
+    background-color: #5EA935;
+  }
+}
+
 
 .btn-comment {
   @include inline-block;
