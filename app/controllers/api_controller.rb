@@ -8,13 +8,14 @@ class ApiController < ApplicationController
   def register_by_api
     puts "*****************<<<<<ingresando al api>>>>>"
     @user = User.find_by_email(params[:email])
-    user_a_responce = []
+    
     if @user == nil
       @user_a = create_user_for_api(params[:name], params[:email], params[:charge], params[:password].to_s, params[:password].to_s , false, true, params[:institution], params[:url], params[:phone].to_i)
-      user_a_responce.push(
+      user_a_responce = {
       name: @user_a.name,
       email: @user_a.email,
-      notice: "Usuario creado correctamente")
+      notice: "Usuario creado correctamente"
+      }
       @user_a = user_a_responce
     else
       @user_a = 'The user already exists (there is a registered user with this email)'
@@ -50,13 +51,13 @@ class ApiController < ApplicationController
            @user_petition = @user
            session[:user] = @user.id
             @user.institutions.each do |ins|
-              methods.push(
+              methods = {
               email: @user.email,
               institution_name: ins.name,
               institution_url: ins.url,
               tokenspecialforms: ins.tokenspecialforms,
               tokenspecialviews: ins.tokenspecialviews
-              )
+              }
             end
 
            @user_petition = methods
