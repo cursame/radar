@@ -18,7 +18,8 @@ class RedLightsController < ApplicationController
     else
       flash[:notice] = "Por alguna razón no hemos podido agregar el cuestionario."
     end
-    redirect_to :back
+    @host = session[:enterhost]
+    redirect_to @host
   end
 
   def new
@@ -42,6 +43,8 @@ class RedLightsController < ApplicationController
     @red_ligth = RedLight.new
     @i = Institution.find_by_tokenspecialforms(params[:institution])
     @url = @i.url
+    @host =  request.host_with_port
+    session[:enterhost] =  @host
   end
 
   def index
