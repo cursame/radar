@@ -43,7 +43,7 @@ class RedLightsController < ApplicationController
     @red_ligth = RedLight.new
     @i = Institution.find_by_tokenspecialforms(params[:institution])
     @url = @i.url
-    @host =  request.host_with_port
+    @host =  request.referrer
     session[:enterhost] =  @host
   end
 
