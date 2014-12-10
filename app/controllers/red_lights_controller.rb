@@ -86,7 +86,7 @@ class RedLightsController < ApplicationController
       nounderline:link;
       text-decoration:none;   
       color:#fff;'
-      href=#{url_link} target='_blank'>
+      href=#{url_link} >
         <img src='#{action_host}/images/i_alert.png'/>
          Denuncia casos de violencia escolar
       </a>"
