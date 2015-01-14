@@ -8,12 +8,16 @@ class ApiController < ApplicationController
   def register_by_api
     puts "*****************<<<<<ingresando al api>>>>>"
     @user = User.find_by_email(params[:email])
-    
+      
     if @user == nil
-      @user_a = create_user_for_api(params[:name], params[:email], params[:charge], params[:password].to_s, params[:password].to_s , false, true, params[:institution], params[:url], params[:phone].to_i)
+      @name =params[:name]
+      puts "#{@name.to_s}"
+      @xname = "#{@name.to_s}"
+      @user_a = create_user_for_api(@xname, params[:email], params[:charge], params[:password].to_s, params[:password].to_s , false, true, params[:institution], params[:url], params[:phone].to_i)
+      @user = User.find(session[:digesteduserbyapi])
       user_a_responce = {
-      name: @user_a.name,
-      email: @user_a.email,
+      name:  @user.name,
+      email: @user.email,
       notice: "Usuario creado correctamente"
       }
       @user_a = user_a_responce
@@ -35,6 +39,7 @@ class ApiController < ApplicationController
      digest = Digest::SHA2.hexdigest(@u.password)
      @u.update_attributes(password: digest)
      methods.push(user: @u)
+     session[:digesteduserbyapi] = @u.id
      @intitution = Institution.create(name: institution, url: url, user_id: @u.id, phone: phone)
      methods.push(institutions: @intitution)
      methods
