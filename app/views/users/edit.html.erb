@@ -40,10 +40,14 @@
             <div class="school-detail">
             <div id="institution_show_<%=i.id%>" class="edit-info">
             <p>
-            <%= i.name %><br/>
-            <%= i.url %><br/>
-            <%= i.phone %><br/>
-            <%= i.extencion %><br/>
+            <% if !i.name.nil? %>
+            Nombre: <%= i.name %><br/>
+            Url: <%= i.url %><br/>
+            Teléfono: <%= i.phone %><br/>
+            Ext: <%= i.extencion %><br/>
+            Dirección: <%= i.address %><br/>
+            Escolaridad: <%= i.grade_label %><br/>
+            <%end%>
             </p>
             </div>
             <%= link_to 'Editar Institución', edit_institution_path(:id => i.id), remote: true if Institution.exists?(i.id)%>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021180258) do
+ActiveRecord::Schema.define(version: 20150119182811) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20141021180258) do
     t.datetime "updated_at"
     t.string   "phone"
     t.string   "extencion"
+    t.text     "address"
+    t.string   "grade_label"
   end
 
   create_table "open_answers", force: true do |t|

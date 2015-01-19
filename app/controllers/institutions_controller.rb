@@ -5,6 +5,7 @@ class InstitutionsController < ApplicationController
      @institution.url = params[:url]
      @institution.phone = params[:phone]
      @institution.extencion = params[:extencion]
+     @institution.address = params[:address]
      @institution.save
      if @institution.save
        flash[:notice] = ' Se han guardado correctamente los cambios'

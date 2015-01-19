@@ -3,6 +3,8 @@
 	<%= text_field_tag 'url', institution.url, placeholder: 'Sitio web (URL)', required: true%>
 	<%= text_field_tag 'phone', institution.phone, placeholder: 'Número Telefónico', required: true%>
 	<%= text_field_tag 'extencion', institution.extencion, placeholder: 'Extensión' %>
+	<%= text_field_tag 'address', institution.address, placeholder: 'dirección' %>
+
 	<span class="btn btn-embed"><%= submit_tag 'Guardar'%></span>
 	<span class="cancel-link"><%= link_to 'Cancelar', cancel_institution_path(id: institution.id), remote: true%></span>
 <%end%>

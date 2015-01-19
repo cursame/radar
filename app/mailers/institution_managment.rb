@@ -43,4 +43,15 @@ class InstitutionManagment < ActionMailer::Base
      @id = id
      mail(to: @user.email , subject: 'Se ha comentado una solicitud de ayuda')
    end
+
+   def mail_to_supervisor(user, password)
+     @user = user
+     @password = password
+     mail(to: @user.email, subject: 'Bienvenido asesor experto')
+   end
+
+   def red_alert_to_supervisor(owner)
+     @user = owner
+     mail(to: @user.email, subject: 'Hay una urgencia de bullying en una escuela')
+   end
 end

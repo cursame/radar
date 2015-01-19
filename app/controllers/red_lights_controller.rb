@@ -5,7 +5,7 @@ class RedLightsController < ApplicationController
   def create
     @red_ligth = RedLight.create(red_ligth_params)
     if @red_ligth.operator == "Peligrosidad Grave"
-      @user = User.where(:adviser => true).order("RANDOM()").first
+      @user = User.where(:adviser => true).order("RANDOM()").last
       @red_ligth.adviser = @user.adviser_code
       @red_ligth.save
     else
@@ -15,11 +15,16 @@ class RedLightsController < ApplicationController
       flash[:notice] = 'Cuestionario agregado correctamente un especialista atenderá tu caso'
       @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
       @mailer = InstitutionManagment.red_alert(@institution.user).deliver
+      @mailer = InstitutionManagment.red_alert_to_supervisor(@user).deliver
     else
       flash[:notice] = "Por alguna razón no hemos podido agregar el cuestionario."
     end
     @host = session[:enterhost]
+    if @host == nil
+    redirect_to :back
+    else
     redirect_to @host
+    end
   end
 
   def new

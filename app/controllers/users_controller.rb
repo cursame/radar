@@ -103,7 +103,7 @@ class UsersController < ApplicationController
 
 	############ define user params #############
 	def user_params
-    	 params.require(:user).permit(:name, :email, :charge, :password, :password_confirmation, :terms_of_service, institutions_attributes: [:name, :url, :phone, :extencion])
+    	 params.require(:user).permit(:name, :email, :charge, :password, :password_confirmation, :terms_of_service, institutions_attributes: [:name, :url, :phone, :extencion, :address, :grade_label])
   end
   ########### methods to reconfirm password ########
 
