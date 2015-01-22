@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	 has_many :institutions
-     has_many :comments
+     has_many :comments, dependent: :destroy
      
      ####### validates ###############
      validates_presence_of :password
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
      ######### atributes to nested ###############
 
-     accepts_nested_attributes_for :institutions, allow_destroy: true
+     accepts_nested_attributes_for :institutions #, allow_destroy: true
 
      ####### codification ##########
     def encripted_codification

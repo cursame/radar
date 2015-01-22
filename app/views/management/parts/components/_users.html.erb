@@ -3,7 +3,7 @@
     <div class="element">
       <h5>  <%= u.name%></br></h5>
       <%= u.charge%></br>
-
+       <%= link_to 'Eliminar Supervisor', destroy_supervisor_path(id: u.id) if u.adviser == true %>
       <% u.institutions.each do |i|%></br>
         <span>Institución: <%= i.name %></br>
         Url: <%= i.url %></br>

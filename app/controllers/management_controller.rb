@@ -121,6 +121,12 @@ layout 'admin'
     redirect_to :back
   end
 
+  def destroy_supervisor
+    @user =  User.find(params[:id])
+    @user.destroy
+    redirect_to :back
+  end
+
   def create_institution
       @in = HelpInstitution.create( name: params[:name], identifier: rand(3..5000), addres: params[:addres], phone: params[:phone],  ext: params[:ext])
       flash[:notice] = 'Se ha agregado correctamente la organización para prevención'
