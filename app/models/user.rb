@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
      ######### atributes to nested ###############
 
-     accepts_nested_attributes_for :institutions #, allow_destroy: true
+     accepts_nested_attributes_for :institutions , allow_destroy: true
 
      ####### codification ##########
     def encripted_codification

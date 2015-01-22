@@ -115,7 +115,7 @@ layout 'admin'
 
   def create_supervisor
     @password = SecureRandom.hex(5)
-    @user = User.create(name: params[:name], email: params[:email], charge: 'Supervisor', password: Digest::SHA2.hexdigest(@password.to_s), password_confirmation: Digest::SHA2.hexdigest('supervisor1234') , salt:  rand(235..1234),  terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: params[:institution_id])
+    @user = User.create(name: params[:name], email: params[:email], charge: 'Supervisor', password: Digest::SHA2.hexdigest(@password.to_s), password_confirmation: Digest::SHA2.hexdigest(@password.to_s) , salt:  rand(235..1234),  terms_of_service: true, confirmation: true, admin_attributes: false, adviser: true, adviser_code: rand(5000..909090), help_institution_id: params[:institution_id])
     @mail = InstitutionManagment.mail_to_supervisor(@user, @password).deliver
     flash[:notice] = 'El usuario supervisor ha sido agregado correctamente'
     redirect_to :back
