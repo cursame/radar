@@ -60,7 +60,11 @@
               <% if !@red_ligth.name.empty?  %>
                  
                   <% if @red_ligth.deliver  %>
-                      <h5>Victima</h5>
+                        <% if @red_ligth.type_denunce == 'personal'%>
+                           <h5>Victima</h5>
+                          <%else%>
+                           <h5>Testigo</h5>
+                        <%end%>
                       Nombre: <%= @red_ligth.name %></br>
                       Email: <%= @red_ligth.mail %></br>
                      <%else%>
