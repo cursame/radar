@@ -9,6 +9,8 @@ group :production do
 	gem 'rails_12factor'
 end
 
+gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
+
 group :development, :test do
   gem "sqlite3-ruby", :require => "sqlite3"
 end
