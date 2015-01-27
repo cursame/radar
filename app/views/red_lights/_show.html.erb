@@ -2,7 +2,7 @@
   <div class="list">
     <% peligrosidad = red_ligth.operator.to_s.downcase.gsub!(/\s+/, '-') %>
     <%= link_to red_light_path(red_ligth.id) do %>
-    <div class="list-item">
+    <div class="list-item"  style="<%= 'background:#E8E7E7;' if red_ligth.alert_view != true %>">
       <div class="list-item-grade <%= peligrosidad %>">
       </div>
       <h5> <span class="case-id"><%= red_ligth.id %> · </span><span><%= red_ligth.operator %> </h5>

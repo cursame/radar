@@ -33,6 +33,8 @@ class RedLightsController < ApplicationController
 
   def show
     @red_ligth = RedLight.find(params[:id])
+    @red_ligth.update_attributes(:alert_view => true)
+
   end
 
   def dresser_attacks

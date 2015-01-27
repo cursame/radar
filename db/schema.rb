@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119182811) do
+ActiveRecord::Schema.define(version: 20150127190306) do
 
   create_table "close_answers", force: true do |t|
     t.string   "value"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150119182811) do
     t.boolean  "question_20",      default: false
     t.integer  "adviser"
     t.boolean  "deliver",          default: false
+    t.boolean  "alert_view",       default: false
   end
 
   create_table "responce_quests", force: true do |t|
