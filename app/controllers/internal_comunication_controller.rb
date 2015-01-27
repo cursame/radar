@@ -5,15 +5,18 @@ class InternalComunicationController < ApplicationController
         if @comment.save
            @r = @comment.red_light
            @i = @r.help_institution
+           puts @i
            @u = @i.user
+           puts @u
            @u_x = User.find_by_adviser_code(@r.adviser)
+           if @u_x != nil
              if current_user.id == @u.id
                @mail = InstitutionManagment.comment_to_problem( @u_x, @i, @r.id).deliver
              else
-              @mail = InstitutionManagment.comment_to_problem( @u, @i, @r.id).deliver
+               @mail = InstitutionManagment.comment_to_problem( @u, @i, @r.id).deliver
              end
              puts @mail 
-
+           end
            @cf = true
         else
            @cf = false
@@ -43,6 +46,28 @@ class InternalComunicationController < ApplicationController
     	respond_to do |format|
           format.js
         end
+    end
+
+    def detect_new_coment
+      @red_light = RedLight.find(params[:id])
+      if params[:counter].to_i  ==  @red_light.comments.count
+        @responce = 0
+        puts @responce 
+      else
+        @r =  @red_light.comments.last
+        @responce = @r.id
+      end 
+
+      render :json => @responce.to_json
+
+    end
+
+
+    def render_comment_asincronus
+      @comment = Comment.find(params[:id])
+      respond_to do |format|
+          format.js
+      end
     end
 
     def clear_notices
