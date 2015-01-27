@@ -11,6 +11,11 @@ class Institution < ActiveRecord::Base
 		self.save
 	end
 
+	after_destroy do
+		puts "**************************** eliminando alertas rojas *************************"
+		@red_lights = RedLight.destroy_all(:institution_code => self.tokenspecialforms)
+	end
+
 	def red_lights
 		@red_lights = RedLight.where(:institution_code => self.tokenspecialforms)
 	end

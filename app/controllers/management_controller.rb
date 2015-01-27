@@ -132,6 +132,8 @@ layout 'admin'
       flash[:notice] = 'Se ha agregado correctamente la organización para prevención'
       redirect_to :back
   end
+
+  
 private
   ########### filtro de acceso al administrador #############
   def filter_session

@@ -46,6 +46,13 @@ class InstitutionsController < ApplicationController
     end
   end
 
+  def destroy_institution
+    @institution = Institution.find(params[:id])
+    @institution.destroy
+    flash[:notice] = 'Insitución eliminada correctamente'
+    redirect_to :back
+  end
+
   
 
 end

@@ -67,7 +67,8 @@ Rails.application.routes.draw do
     get 'institutions/edit', :as => :edit_institution
     get 'institutions/cancel', :as => :cancel_institution
     get 'institutions/help_intitution_contact'
-
+    get 'institutions/destroy_institution', :as => :destroy_institution
+    post 'institutions/destroy_institution'
     ####### metodos de comunicacion interna ##########
     get 'internal_comunication/create_comment'
     post 'internal_comunication/create_comment'
@@ -80,6 +81,7 @@ Rails.application.routes.draw do
     get 'internal_comunication/detect_new_coment'
     post 'internal_comunication/detect_new_coment'
     get 'internal_comunication/render_comment_asincronus'
+
 
     ####### clear notices #########
     get 'internal_comunication/clear_notices'

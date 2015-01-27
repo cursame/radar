@@ -15,7 +15,9 @@ class RedLightsController < ApplicationController
       flash[:notice] = 'Cuestionario agregado correctamente un especialista atenderá tu caso'
       @institution = Institution.find_by_tokenspecialforms(@red_ligth.institution_code)
       @mailer = InstitutionManagment.red_alert(@institution.user).deliver
-      @mailer = InstitutionManagment.red_alert_to_supervisor(@user).deliver
+      if @red_ligth.operator == "Peligrosidad Grave"
+         @mailer = InstitutionManagment.red_alert_to_supervisor(@user).deliver
+      end
     else
       flash[:notice] = "Por alguna razón no hemos podido agregar el cuestionario."
     end

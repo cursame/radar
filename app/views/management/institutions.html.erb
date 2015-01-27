@@ -16,6 +16,7 @@
     Ext. <%=i.extencion %></br></br>
     <%=i.user.name if i.user %></br>
     <%=i.user.email if i.user %></br>
+    <%= link_to 'Eliminar institucuión', destroy_institution_path(id: i.id) %>
   </p>
     </div>
     <%end%>
