@@ -1,6 +1,8 @@
 var $myDiv = $('#comment_content_<%= @comment.id %>');
 if ($myDiv.length == 0){
   $('#new_comment').prepend('<%= escape_javascript(render(partial: '/internal_comunication/comment_show', locals: {comment: @comment}))%>');
+  var snd = new Audio("/alerts/alertsonar.mp3");
+      snd.play();
 }else{
   
 }
