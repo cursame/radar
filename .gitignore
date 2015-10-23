@@ -18,3 +18,6 @@
 
 # Ignore file rbenv ruby version
 .ruby-version
+
+# simplecov
+/coverage
