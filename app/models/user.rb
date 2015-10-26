@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum gender: { male: 0, female: 1, prefer_not_to_disclose: 2 }
+
+  belongs_to :institution
 end
