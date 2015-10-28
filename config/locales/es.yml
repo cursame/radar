@@ -1,2 +1,61 @@
 es:
   all_rights_reserved: "® Derechos Reservados 2015"
+  flash:
+    notice:
+      user:
+        create: "El usuario se creó exitosamente."
+        update: "Se ha actualizado el usuario exitosamente."
+        destroy: "El usuario fue borrado exitosamente."
+        update_password: "Se ha actualizado la contraseña exitosamente."
+        update_role: "Se ha actualizado el rol del usuario."
+    alert:
+      user:
+        create: "Ocurrió un error al crear el usuario."
+        update: "Ocurrió un error al actualizar el usuario."
+        update_password: "Ocurrió un error al actualizar la contraseña."
+    error:
+      user:
+        record_not_found: "Ocurrió un error, no se encontró la información."
+  users:
+    shared:
+      form:
+        name: 'Nombre: '
+        placeholder_name: 'Juan Perez'
+        email: 'Correo Electrónico: '
+        placeholder_email: email@example.com
+        institution: 'Escuela: '
+        edit_password: Editar Contraseña
+        edit_role: Editar rol
+        cancel: Cancelar
+        save: Guardar
+      select_role:
+        role: 'Rol: '
+    edit:
+      edit_user: Editar Usuario
+    edit_password:
+      edit_password: Editar Contraseña
+      password: Contraseña
+      password_confirmation: Confirmar contraseña
+      cancel: Cancelar
+      save: Guardar
+    edit_role:
+      edit_role: Editar Rol
+      cancel: Cancelar
+      save: Guardar
+    index:
+      users: Usuarios
+      name: Nombre
+      role: Rol
+      email: 'Correo Electrónico'
+      institution: Escuela
+      created_at: Creado
+      updated_at: Actualizado
+      last_sign_in_at: 'Último sign in'
+      actions: Acciones
+      no_role: Sin Rol
+      no_sign_in: No ha ingresado
+      edit: Editar
+      confirm_delete_user: "¿Estas seguro de eliminar a %{user_name}?"
+      delete: Borrar
+    new:
+      new_user: Nuevo Usuario
