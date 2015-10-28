@@ -1,0 +1,10 @@
+es:
+  flash:
+    notice:
+      user:
+        create: "El usuario se creó exitosamente."
+        update: "Se ha actualizado el usuario exitosamente."
+    alert:
+      user:
+        create: "Ocurrió un error al crear el usuario."
+        update: "Ocurrió un error al actualizar el usuario."
