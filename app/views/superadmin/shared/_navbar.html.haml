@@ -32,13 +32,9 @@
             = t('.users')
             %span.caret
           %ul.dropdown-menu
-            %li
-              %a{:href => "#"} 
-                = t('.add_user')
+            %li= link_to t('.add_user'), new_user_path
             %li.divider{:role => "separator"}
-            %li
-              %a{:href => "#"}
-                = t('.show_users')
+            %li= link_to t('.show_users'), users_path
         %li
           %a{:href => "#"}
             = t('.complaints')

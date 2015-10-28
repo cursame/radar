@@ -1,0 +1,8 @@
+.container
+  .card
+    %h3.title= t('.edit_role')
+    = form_for(@user, url: update_role_user_path(@user), method: :put) do |f|
+      = render 'users/shared/select_role'
+      .form-group
+        = link_to t('.cancel'), users_path, class: 'btn btn-primary'
+        = f.button t('.save'), type: 'submit', class: 'btn btn-primary'

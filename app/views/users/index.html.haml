@@ -1,0 +1,35 @@
+.container
+  .card
+    %h3.title= t('.users')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.name')
+        %th= t('.role')
+        %th= t('.email')
+        %th= t('.institution')
+        %th= t('.created_at')
+        %th= t('.updated_at')
+        %th= t('.last_sign_in_at')
+        %th= t('.actions')
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.roles.blank? ? t('.no_role') : user.roles.first.name
+          %td= user.email
+          %td= user.institution.try(:title)
+          %td= user.created_at.strftime("%d %B %Y")
+          %td= user.updated_at.strftime("%d %B %Y")
+          %td
+            - if user.last_sign_in_at.present?
+              = user.last_sign_in_at.strftime("%d %B %Y")
+            - else
+              %em= t('.no_sign_in')
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{:id => "user_#{user.id}", :type => 'button', 'data-toggle' => 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden' =>'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.edit'), edit_user_path(user), id: "edit_user_#{user.id}"
+                %li= link_to t('.delete'), user_path(user), method: :delete, data: { confirm: t('.confirm_delete_user', user_name: user.name) }, id: "delete_user_#{user.id}"

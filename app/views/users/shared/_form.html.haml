@@ -1,0 +1,17 @@
+= form_for(@user) do |f|
+  .form-group
+    = f.label :name, t('.name')
+    = f.text_field :name, placeholder: t('.placeholder_name'), required: true, autocomplete: 'off', class: 'form-control'
+  .form-group
+    = f.label :email, t('.email')
+    = f.text_field :email, placeholder: t('.placeholder_email'), required: true, autocomplete: 'off', class: 'form-control'
+  .form-group
+    = f.label :institution, t('.institution')
+    = f.select :institution_id, options_for_institutions_select, { include_blank: true }, { class: 'form-control' }
+  = render 'users/shared/select_role' if @user.new_record?
+  .form-group
+    - unless @user.new_record?
+      = link_to t('.edit_password'), edit_password_user_path(@user), class: 'btn btn-primary'
+      = link_to t('.edit_role'), edit_role_user_path(@user), class: 'btn btn-primary'
+    = link_to t('.cancel'), users_path, class: 'btn btn-primary'
+    = f.button t('.save'), type: 'submit', class: 'btn btn-primary'
