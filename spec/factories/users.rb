@@ -21,5 +21,13 @@ FactoryGirl.define do
     trait :unaccepted_terms do
       accepted_terms false
     end
+
+    factory :superadmin do
+      after(:create) { |user| user.add_role :superadmin }
+    end
+
+    factory :admin do
+      after(:create) { |user| user.add_role :admin }
+    end
   end
 end
