@@ -25,6 +25,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 gem 'faker'
+gem 'bourbon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
