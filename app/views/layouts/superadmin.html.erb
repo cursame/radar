@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Superadmin Radar</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.png' %>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <%= render partial:'superadmin/shared/menu' %>   
+    <div class="all-content-admin">
+        <div class="cols-12">
+          <div class="col col-12">
+            <div class="col-inner">
+              <%= yield  %>  
+
+              <div class="dashboard-footer">
+                <div class="footer-dashboard">
+                  <p> <span>Radar</span> ® Derechos Reservados 2015</p>
+                  <div class="powered-by">
+                    <%=image_tag('footerlogo.png')%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
