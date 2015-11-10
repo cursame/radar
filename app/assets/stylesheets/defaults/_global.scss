@@ -1,0 +1,64 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body{
+  position:absolute;
+  width:100%;
+  height:100%;
+  margin:auto;
+  text-align:center;
+  border-collapse:collapse;
+  font-family: sans-serif;
+  font-weight: regular;
+}
+
+p{
+  font-size: 15px;
+  line-height: 22px;
+  color: #4a4a4a;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: $font-radar;
+}
+
+h1{
+  font-size: 36px;
+  line-height: 54px;
+  color: #323232;
+}
+
+h1.home {
+  font-size: 58px;
+  line-height: 64px;
+  margin-bottom: 30px;
+  padding-top: 80px;
+  text-shadow: 1px 2px #204E62;
+  color: white;
+  font-weight: bold;
+}
+
+.logo {
+  float: left;
+  position: relative;
+  top:10px;
+  margin-right: 30px;
+
+  @include max-screen(900px) {
+    position: absolute;
+    left: 10px;
+    right: 0;
+     
+     img {
+      width: 120px;
+    }
+  }
+}
+
+.logo2 {
+  float: left;
+  position: relative;
+  top:10px;
+  margin-right: 30px;
+ }

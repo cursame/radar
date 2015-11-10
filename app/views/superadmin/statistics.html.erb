@@ -1,0 +1,75 @@
+<div class="content-admin">
+  <h1>
+    <i class="i i-title i-analytics_title"></i>
+    Estadisticas
+  </h1>
+  <div class="cols-12">     
+    <div class="col col-6 alpha">
+      <div class="col-inner">   
+        <div class="element">
+        <span class="total"><%= @institutions %></span>
+          <i class="i i-title i-inst_title"></i>
+          <h5>Insitituciones</h5>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-6 omega">
+      <div class="col-inner"> 
+        <div class="element">
+        <span class="total"><%= @red_lights %></span>
+          <i class="i i-title i-focos_title"></i>
+          <h5>Denuncias</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols-12">
+    <div class="col col-6 alpha">
+      <div class="col-inner"> 
+        <div class="element">
+        <span class="total"><%= @users %></span>
+          <i class="i i-title i-users_title"></i>
+          <h5>Usuarios</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols-12">
+    <div class="col col-4 alpha">
+      <div class="col-inner">
+        <div class="element peligrosidad">
+          <i class="i i-face-green"></i>
+          <p class="total"> <%= @moderadas %></p>
+          <span>Peligrocidad Moderada</span>
+          <div class="grade moderada"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-4">
+      <div class="col-inner">
+        <div class="element peligrosidad">
+          <i class="i i-face-yellow"></i>
+          <p class="total"> <%= @medias %> </p>
+          <span>Peligrocidad Media</span>
+          <div class="grade media"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-4 omega">
+      <div class="col-inner">
+        <div class="element peligrosidad">
+          <i class="i i-face-red"></i>
+          <p class="total"> <%= @medias %> </p>
+          <span>Peligrocidad Grave</span>
+          <div class="grade grave"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+.i {
+  background: image-url('pack.png');
+  background-repeat: no-repeat;
+  @include inline-block;
+  vertical-align: middle;
+}
+
+.i-title {
+  margin-right: 10px;
+}
+
+.i-analytics {
+  width: 33px;
+  height: 21px;
+  background-position: -92px 0;
+}
+
+.i-users {
+  width: 33px;
+  height: 15px;
+  background-position: -160px 0;
+}
+
+.i-inst {
+  width: 33px;
+  height: 10px;
+  background-position: -195px 0;
+}
+
+.i-focos {
+  width: 33px;
+  height: 14px;
+  background-position: -227px 0;
+}
+
+.i-solicitudes {
+  width: 33px;
+  height: 17px;
+  background-position: -127px 0;
+}
+
+.i-exit {
+  width: 33px;
+  height: 19px;
+  background-position: -295px 0;
+}
+
+.i-analytics_title {
+  width: 37px;
+  height: 25px;
+  background-position:  -51px -26px;
+}
+
+.i-users_title {
+  width: 37px;
+  height: 30px;
+  background-position: -148px -29px;
+}
+
+.i-inst_title {
+  width: 37px;
+  height: 25px;
+  background-position: -196px -29px;
+}
+
+.i-focos_title {
+  width: 37px;
+  height: 25px;
+  background-position: -248px -27px;
+}
+
+.i-test_title {
+  width: 37px;
+  height: 25px;
+  background-position: -281px -27px;
+}
+
+.i-face-green {
+  width: 35px;
+  height: 35px;
+  background-position: -52px -60px;
+  margin:0 0 20px 20px;
+}
+
+.i-face-yellow {
+  width: 35px;
+  height: 35px;
+  background-position: -107px -60px;
+  margin:0 0 20px 20px;
+}
+
+.i-face-red {
+  width: 35px;
+  height: 35px;
+  background-position: -162px -60px;
+  margin:0 0 20px 20px;
+}
+
+.i-test {
+  width: 20px;
+  height: 18px;
+  background-position: -296px -58px;
+}

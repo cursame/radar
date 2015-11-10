@@ -1,0 +1,53 @@
+<div class="admin-sidebar">
+  <ul class="side_bar">
+     <li class="logo2">
+       <%= link_to image_tag('logodashboard.png'), superadmin_statistics_path %>
+     </li>
+      <li>
+        <h4>ADMINISTRADOR</h4>
+      </li>
+      <li>
+        <%= link_to superadmin_statistics_path do %>  
+        <i class="i i-analytics"></i>
+        <span>Estadisticas</span>
+        <% end %>
+      </li>
+      <li>     
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-inst"></i> 
+        <span>Instituciones</span>
+        <% end %>      
+      </li> 
+      <li>    
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-users"></i> 
+        <span>Usuarios</span>
+        <% end %>
+      </li>
+      <li>      
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-focos"></i> 
+        <span>Denuncias</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-test"></i> 
+        <span>Cuestionarios </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-solicitudes"></i>
+        <span>Editar Perfil</span>
+        <% end %>
+      </li>
+
+      <li class="border bottom">
+        <%= link_to superadmin_statistics_path do %>
+        <i class="i i-exit"></i> 
+        <span>Cerrar Sesión</span>
+        <% end %>
+      </li>                       
+    </ul>
+</div>
