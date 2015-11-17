@@ -1,0 +1,15 @@
+es:
+  superadmin:
+    shared:
+      navbar:
+        statistics: Estadisticas
+        institutions: Instituciones
+        add_institution: Agregar Institución
+        show_institutions: Ver Instituciones
+        users: Usuarios
+        add_user: Agregar Usuario
+        show_users: Ver Usuarios
+        complaints: Denuncias
+        test: Cuestionarios
+        edit_profile: Editar Perfil
+        logout: Cerrar Sesión
