@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Super Admin Radar
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render partial: 'superadmin/shared/navbar'
+    .all-content-admin
+      .cols-12
+        .col.col-12
+          .col-inner
+            = yield
+            .footer
+              %p
+                %span Radar
+                = t('all_rights_reserved')
+                / ® Derechos Reservados 2015
+              .powered-by
+                = image_tag('footerlogo.png')
