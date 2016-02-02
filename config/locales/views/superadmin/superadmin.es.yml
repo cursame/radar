@@ -1,0 +1,10 @@
+es:
+  superadmin:
+    statistics:
+      title: Estadisticas
+      institutions: Instituciones
+      users: Usuarios
+      complaints: Denuncias
+      low_danger_complaints: Denuncias de bajo peligro
+      middle_danger_complaints: Denuncias de peligro medio
+      high_danger_complaints: Denuncias de alto peligro

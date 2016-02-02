@@ -1,0 +1,55 @@
+.i {
+  background: image-url('pack.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.i-title {
+  margin-right: 10px;
+}
+
+.i-statistics_title {
+  width: 37px;
+  height: 25px;
+  background-position:  -51px -26px;
+}
+
+.i-institution_title {
+  width: 37px;
+  height: 25px;
+  background-position: -196px -29px;
+}
+
+.i-complaints_title {
+  width: 37px;
+  height: 25px;
+  background-position: -248px -27px;
+}
+
+.i-users_title {
+  width: 37px;
+  height: 25px;
+  background-position: -148px -29px;
+}
+
+.i-face-green {
+  width: 35px;
+  height: 35px;
+  background-position: -52px -60px;
+  margin:0 0 20px 20px;
+}
+
+.i-face-yellow {
+  width: 35px;
+  height: 35px;
+  background-position: -107px -60px;
+  margin:0 0 20px 20px;
+}
+
+.i-face-red {
+  width: 35px;
+  height: 35px;
+  background-position: -162px -60px;
+  margin:0 0 20px 20px;
+}  

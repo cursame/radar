@@ -1,0 +1,54 @@
+.content-admin
+  %h1
+    %i.i.i-title.i-statistics_title
+    = t('.title')
+  .cols-12
+    .col.col-4.alpha
+      .col-inner
+        .element
+          %span.total= @institutions
+          %i.i.i-title.i-institution_title
+          %h5
+            = t('.institutions')
+    .col.col-4
+      .col-inner
+        .element
+          %span.total= @users
+          %i.i.i-title.i-users_title
+          %h5 
+            = t('.users')
+    .col.col-4.omega
+      .col-inner
+        .element
+          %span.total= @complaints
+          %i.i.i-title.i-complaints_title
+          %h5
+            = t('.complaints')
+  .cols-12
+    .col.col-4.alpha
+      .col-inner
+        .element.danger
+          %i.i.i-face-green
+          %p.total
+            = @low_danger_complaints
+          %span
+            = t('.low_danger_complaints')
+          .grade.low
+    .col.col-4
+      .col-inner
+        .element.danger
+          %i.i.i-face-yellow
+          %p.total
+            = @middle_danger_complaints
+          %span
+            = t('.middle_danger_complaints')
+          .grade.middle
+    .col.col-4.omega
+      .col-inner
+        .element.danger
+          %i.i.i-face-red
+          %p.total
+            = @high_danger_complaints
+          %span
+            = t('.high_danger_complaints')
+          .grade.high

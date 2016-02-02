@@ -27,6 +27,7 @@ gem 'rolify'
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
+gem 'haml'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
