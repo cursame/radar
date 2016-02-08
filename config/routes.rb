@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path_prefix: 'my'
 
   get '/superadmin/statistics', to: 'superadmin#statistics', as: 'superadmin_statistics'
+
+  resources :users do
+    member do
+      get 'edit_password'
+      put 'update_password'
+      get 'edit_role'
+      put 'update_role'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
