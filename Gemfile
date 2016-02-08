@@ -41,6 +41,7 @@ gem 'haml'
 group :test do
   gem 'simplecov', require: false
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
