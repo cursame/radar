@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
-    superadmin_statistics_path if current_user.has_role? :superadmin
+    if current_user.has_role? :superadmin
+      manage_root_path
+    else
+      manage_users_path
+    end
   end
 end

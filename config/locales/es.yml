@@ -16,46 +16,45 @@ es:
     error:
       user:
         record_not_found: "Ocurrió un error, no se encontró la información."
-  users:
-    shared:
-      form:
-        name: 'Nombre: '
-        placeholder_name: 'Juan Perez'
-        email: 'Correo Electrónico: '
-        placeholder_email: email@example.com
-        institution: 'Escuela: '
+  manage:
+    users:
+      shared:
+        form:
+          name: 'Nombre: '
+          placeholder_name: 'Juan Perez'
+          email: 'Correo Electrónico: '
+          placeholder_email: email@example.com
+          institution: 'Escuela: '
+          edit_password: Editar Contraseña
+          cancel: Cancelar
+          save: Guardar
+      edit:
+        edit_user: Editar Usuario
+      edit_password:
         edit_password: Editar Contraseña
-        edit_role: Editar rol
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
         cancel: Cancelar
         save: Guardar
-      select_role:
-        role: 'Rol: '
-    edit:
-      edit_user: Editar Usuario
-    edit_password:
-      edit_password: Editar Contraseña
-      password: Contraseña
-      password_confirmation: Confirmar contraseña
-      cancel: Cancelar
-      save: Guardar
-    edit_role:
-      edit_role: Editar Rol
-      cancel: Cancelar
-      save: Guardar
-    index:
-      users: Usuarios
-      name: Nombre
-      role: Rol
-      email: 'Correo Electrónico'
-      institution: Escuela
-      created_at: Creado
-      updated_at: Actualizado
-      last_sign_in_at: 'Último sign in'
-      actions: Acciones
-      no_role: Sin Rol
-      no_sign_in: No ha ingresado
-      edit: Editar
-      confirm_delete_user: "¿Estas seguro de eliminar a %{user_name}?"
-      delete: Borrar
-    new:
-      new_user: Nuevo Usuario
+      index:
+        users: Usuarios
+        name: Nombre
+        role: Permisos
+        grant_superadmin_role: Convertir en Super Administrador
+        remove_superadmin_role: Quitar permisos de Super Administrador
+        grant_admin_role: Convertir en Administrador
+        remove_admin_role: Quitar permisos de Administrador
+        confirm_update_rol: "¿Estas seguro de cambiar los permisos de %{user_name}?"
+        email: 'Correo Electrónico'
+        institution: Escuela
+        created_at: Creado
+        updated_at: Actualizado
+        last_sign_in_at: 'Último sign in'
+        actions: Acciones
+        no_role: Sin Rol
+        no_sign_in: No ha ingresado
+        edit: Editar
+        confirm_delete_user: "¿Estas seguro de eliminar a %{user_name}?"
+        delete: Borrar
+      new:
+        new_user: Nuevo Usuario
