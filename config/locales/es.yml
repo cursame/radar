@@ -8,11 +8,18 @@ es:
         destroy: "El usuario fue borrado exitosamente."
         update_password: "Se ha actualizado la contraseña exitosamente."
         update_role: "Se ha actualizado el rol del usuario."
+      institution:
+        create: "La institución se creó exitosamente."
+        update: "Se ha actualizado la institución exitosamente."
+        destroy: "La institución fue borrado exitosamente."
     alert:
       user:
         create: "Ocurrió un error al crear el usuario."
         update: "Ocurrió un error al actualizar el usuario."
         update_password: "Ocurrió un error al actualizar la contraseña."
+      institution:
+        create: Ocurrió un error al crear la institución."
+        update: "Ocurrió un error al actualizar la institución."
     error:
       user:
         record_not_found: "Ocurrió un error, no se encontró la información."
