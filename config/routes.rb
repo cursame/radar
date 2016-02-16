@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users, path_prefix: 'my'
+  devise_for :users
 
-  get '/superadmin/statistics', to: 'superadmin#statistics', as: 'superadmin_statistics'
+  namespace :manage do
+    get '/', to: 'base#index', as: 'root'
 
-  resources :users do
-    member do
-      get 'edit_password'
-      put 'update_password'
-      get 'edit_role'
-      put 'update_role'
+    resources :users do
+      member do
+        get 'edit_password'
+        put 'update_password'
+        put 'grant_superadmin_role'
+        put 'remove_superadmin_role'
+        put 'grant_admin_role'
+        put 'remove_admin_role'
+      end
     end
   end
 

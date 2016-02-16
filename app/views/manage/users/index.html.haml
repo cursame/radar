@@ -1,0 +1,63 @@
+.container
+  .card
+    %h3.title= t('.users')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.name')
+        %th= t('.role')
+        %th= t('.email')
+        - if current_user.has_role? :superadmin
+          %th= t('.institution')
+        %th= t('.created_at')
+        %th= t('.updated_at')
+        %th= t('.last_sign_in_at')
+        %th= t('.actions')
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{:type => 'button', 'data-toggle' => 'dropdown'}
+                = !user.roles.blank? ? user.roles.first.name : 'Estudiante'
+                %span.caret
+              %ul.dropdown-menu.dropdown-menu-right
+                - if current_user.has_role? :superadmin
+                  %li= link_to t('.grant_superadmin_role'),
+                    grant_superadmin_role_manage_user_path(user),
+                    method: :put, data: { confirm: t('.confirm_update_rol', user_name: user.name) },
+                    id: "grant_superadmin_role_#{user.id}" unless user.has_role?(:superadmin)
+                  %li= link_to t('.remove_superadmin_role'),
+                    remove_superadmin_role_manage_user_path(user),
+                    method: :put, data: { confirm: t('.confirm_update_rol', user_name: user.name) },
+                    id: "remove_superadmin_role_#{user.id}" if user.has_role?(:superadmin)
+                - unless user.has_role? :superadmin
+                  %li= link_to t('.grant_admin_role'),
+                    grant_admin_role_manage_user_path(user),
+                    method: :put, data: { confirm: t('.confirm_update_rol', user_name: user.name) },
+                    id: "grant_admin_role_#{user.id}" unless user.has_role?(:admin)
+                  %li= link_to t('.remove_admin_role'),
+                    remove_admin_role_manage_user_path(user),
+                    method: :put, data: { confirm: t('.confirm_update_rol', user_name: user.name) },
+                    id: "remove_admin_role_#{user.id}" if user.has_role?(:admin)
+          %td= user.email
+          - if current_user.has_role? :superadmin
+            %td= user.institution.try(:title)
+          %td= user.created_at.strftime("%d %B %Y")
+          %td= user.updated_at.strftime("%d %B %Y")
+          %td
+            - if user.last_sign_in_at.present?
+              = user.last_sign_in_at.strftime("%d %B %Y")
+            - else
+              %em= t('.no_sign_in')
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{:id => "user_#{user.id}", :type => 'button', 'data-toggle' => 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden' =>'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.edit'), edit_manage_user_path(user), id: "edit_user_#{user.id}"
+                %li= link_to t('.delete'),
+                  manage_user_path(user),
+                  method: :delete, data: { confirm: t('.confirm_delete_user', user_name: user.name) },
+                  id: "delete_user_#{user.id}"

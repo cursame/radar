@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe Manage::UsersController, type: :controller do
   let(:superadmin) { create(:superadmin) }
 
   before :each do
-  sign_in superadmin
+    sign_in superadmin
   end
 
   describe 'GET #index' do
@@ -42,7 +42,6 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST #create' do
     before :each do
-      role = Role.find_by_name('superadmin')
       @email = Faker::Internet.email
       @institution = create(
         :institution,
@@ -54,7 +53,7 @@ RSpec.describe UsersController, type: :controller do
         email: @email,
         gender: :male,
         institution_id: @institution.id
-      }, role_id: role.id
+      }
     end
 
     it 'should create a new user' do
@@ -67,13 +66,13 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'redirects to root_path' do
-      expect(response).to redirect_to(users_path)
+      expect(response).to redirect_to(manage_users_path)
     end
   end
 
   describe 'GET #edit' do
     before :each do
-      user = FactoryGirl.create(:user)
+      user = create(:user)
       get :edit, id: user.id
     end
 
@@ -88,7 +87,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'PATCH #update' do
     before :each do
-      @user = FactoryGirl.create(:user, :female)
+      @user = create(:user, :female)
       @new_name = Faker::Name.name
       @new_email = Faker::Internet.email
       @new_gender = 0
@@ -126,7 +125,7 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it 'redirects to users_path' do
-        expect(response).to redirect_to(users_path)
+        expect(response).to redirect_to(manage_users_path)
       end
     end
   end
@@ -147,7 +146,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'redirects to users_path' do
-      expect(response).to redirect_to(users_path)
+      expect(response).to redirect_to(manage_users_path)
     end
   end
 
@@ -170,7 +169,10 @@ RSpec.describe UsersController, type: :controller do
     before :each do
       @password = Faker::Internet.password
       @user = create(:user)
-      put :update_password, id: @user.id, user: { password: @password, password_confirmation: @password }
+      put :update_password, id: @user.id, user: {
+        password: @password,
+        password_confirmation: @password
+      }
     end
 
     it 'should update user\'s password' do
@@ -183,43 +185,83 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'redirects to users_path' do
-      expect(response).to redirect_to(users_path)
+      expect(response).to redirect_to(manage_users_path)
     end
   end
 
-  describe 'GET #edit_role' do
+  describe 'PUT grant_superadmin_role' do
     before :each do
-      user = create(:user)
-      get :edit_role, id: user.id
+      @user = create(:user)
+      put :grant_superadmin_role, id: @user.id
     end
 
-    it 'has 200 status' do
-      expect(response.status).to eq(200)
-    end
-
-    it 'renders the edit_password template' do
-      expect(response).to render_template('edit_role')
-    end
-  end
-
-  describe 'PUT #update_role' do
-    before :each do
-      @user = create(:admin)
-      superadmin_role = Role.find_by_name('superadmin')
-      put :update_role, id: @user.id, role_id: superadmin_role.id
-    end
-
-    it 'should update user\'s role' do
-      expect(@user.roles.count).to eq(1)
-      expect(@user.has_role? :superadmin).to be true
+    it 'should grant superadmin role to an user' do
+      expect(@user.has_role?(:superadmin)).to be true
     end
 
     it 'has 302 status' do
       expect(response.status).to eq(302)
     end
 
-    it 'redirects to users_path' do
-      expect(response).to redirect_to(users_path)
+    it 'redirects to manage_users_path' do
+      expect(response).to redirect_to(manage_users_path)
+    end
+  end
+
+  describe 'PUT remove_superadmin_role' do
+    before :each do
+      @user = create(:superadmin)
+      put :remove_superadmin_role, id: @user.id
+    end
+
+    it 'should remove superadmin role to an user' do
+      expect(@user.has_role?(:superadmin)).to be false
+    end
+
+    it 'has 302 status' do
+      expect(response.status).to eq(302)
+    end
+
+    it 'redirects to manage_users_path' do
+      expect(response).to redirect_to(manage_users_path)
+    end
+  end
+
+  describe 'PUT grant_admin_role' do
+    before :each do
+      @user = create(:user)
+      put :grant_admin_role, id: @user.id
+    end
+
+    it 'should grant admin role to an user' do
+      expect(@user.has_role?(:admin)).to be true
+    end
+
+    it 'has 302 status' do
+      expect(response.status).to eq(302)
+    end
+
+    it 'redirects to manage_users_path' do
+      expect(response).to redirect_to(manage_users_path)
+    end
+  end
+
+  describe 'PUT remove_admin_role' do
+    before :each do
+      @user = create(:admin)
+      put :remove_admin_role, id: @user.id
+    end
+
+    it 'should remove admin role to an user' do
+      expect(@user.has_role?(:admin)).to be false
+    end
+
+    it 'has 302 status' do
+      expect(response.status).to eq(302)
+    end
+
+    it 'redirects to manage_users_path' do
+      expect(response).to redirect_to(manage_users_path)
     end
   end
 end

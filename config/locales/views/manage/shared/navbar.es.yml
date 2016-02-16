@@ -1,11 +1,12 @@
 es:
-  superadmin:
+  manage:
     shared:
       navbar:
-        statistics: Estadisticas
         institutions: Instituciones
+        institution: Institución
         add_institution: Agregar Institución
         show_institutions: Ver Instituciones
+        edit_institution: Edita tu Institución
         users: Usuarios
         add_user: Agregar Usuario
         show_users: Ver Usuarios
