@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
     if current_user.has_role? :superadmin
       manage_root_path
     else
-      manage_users_path
+      manage_institution_path(current_institution)
     end
+  end
+
+  def current_institution
+    current_user && current_user.institution
   end
 end

@@ -1,0 +1,28 @@
+.container
+  .card
+    %h3.title= t('.institutions')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.title')
+        %th= t('.subdomain')
+        %th= t('.created_at')
+        %th= t('.updated_at')
+        %th= t('.actions')
+    %tbody
+      - @institutions.each do |institution|
+        %tr
+          %td= institution.title
+          %td= institution.subdomain
+          %td= institution.created_at.strftime("%d %B %Y")
+          %td= institution.updated_at.strftime("%d %B %Y")
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{id: "institution_#{institution.id}", type: 'button', 'data-toggle': 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden': 'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.edit'), edit_manage_institution_path(institution.id), id: "edit_institution_#{institution.id}"
+                %li= link_to t('.delete'),
+                  manage_institution_path(institution.id),
+                  method: :delete, data: { confirm: t('.confirm_delete_institution', institution_title: institution.title) },
+                  id: "delete_institution_#{institution.id}"

@@ -65,3 +65,30 @@ es:
         delete: Borrar
       new:
         new_user: Nuevo Usuario
+    institutions:
+      shared:
+        form:
+          title: Título
+          placeholder_title: Instituto Gran Unión
+          subdomain: Subdominio
+          placeholder_subdomain: igunion
+          cancel: Cancelar
+          save: Guardar
+      edit:
+        edit_institution: Editar Institución
+      index:
+        institutions: Instituciones
+        title: Título
+        subdomain: Subdominio
+        created_at: Creada
+        updated_at: Actualizada
+        actions: Acciones
+        edit: Editar
+        confirm_delete_institution: "¿Estas seguro de eliminar la institución: %{institution_title}?"
+        delete: Borrar
+      new:
+        new_institution: Nueva Institución
+      show:
+        show_institution: Institución
+        title: 'Título: '
+        subdomain: 'Subdominio: '
