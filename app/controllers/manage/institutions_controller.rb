@@ -1,6 +1,9 @@
 module Manage
   # Institution controller for managers
   class InstitutionsController < Manage::BaseController
+    load_and_authorize_resource
+    skip_authorize_resource only: :show
+
     def index
       @institutions = Institution.all
     end
