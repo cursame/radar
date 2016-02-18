@@ -17,17 +17,11 @@
             %span.caret
           %ul.dropdown-menu
             - if current_user.has_role? :superadmin
-              %li
-                %a{:href => "#"}
-                  = t('.add_institution')
+              %li= link_to t('.add_institution'), new_manage_institution_path
               %li.divider{:role => "separator"}
-              %li
-                %a{:href => "#"}
-                  = t('.show_institutions')
+              %li= link_to t('.show_institutions'), manage_institutions_path
             - else
-              %li
-                %a{:href => "#"}
-                  = t('.edit_institution')
+              %li= link_to t('.edit_institution'), edit_manage_institution_path(current_user.institution.id)
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             = t('.users')

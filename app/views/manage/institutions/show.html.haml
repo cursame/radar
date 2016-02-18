@@ -1,0 +1,9 @@
+.container
+  .card
+    %h3.title= t('.show_institution')
+    .form-group
+      = label :title, t('.title')
+      = @institution.title
+    .form-group
+      = label :subdomain, t('.subdomain')
+      = @institution.subdomain

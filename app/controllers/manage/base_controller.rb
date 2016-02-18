@@ -20,6 +20,6 @@ class Manage::BaseController < ApplicationController
   end
 
   def current_user_is_manager?
-    current_user.has_role?(:superadmin) or current_user.has_role?(:admin)
+    current_user.has_role?(:superadmin) || current_user.has_role?(:admin)
   end
 end

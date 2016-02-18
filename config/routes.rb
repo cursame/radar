@@ -14,6 +14,8 @@ Rails.application.routes.draw do
         put 'remove_admin_role'
       end
     end
+
+    resources :institutions
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

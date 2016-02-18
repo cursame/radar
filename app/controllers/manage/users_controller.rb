@@ -1,6 +1,8 @@
 module Manage
   # User controller for managers
   class UsersController < Manage::BaseController
+    load_and_authorize_resource
+
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def index
