@@ -12,6 +12,8 @@ es:
         create: "La institución se creó exitosamente."
         update: "Se ha actualizado la institución exitosamente."
         destroy: "La institución fue borrado exitosamente."
+      user_survey:
+        create: La denuncia se ha creado exitosamente.
     alert:
       user:
         create: "Ocurrió un error al crear el usuario."
@@ -20,6 +22,8 @@ es:
       institution:
         create: Ocurrió un error al crear la institución."
         update: "Ocurrió un error al actualizar la institución."
+      user_survey:
+        create: Ocurrió un error al crear la denuncia.
     error:
       user:
         record_not_found: "Ocurrió un error, no se encontró la información."
@@ -92,3 +96,33 @@ es:
         show_institution: Institución
         title: 'Título: '
         subdomain: 'Subdominio: '
+  home:
+    index:
+      welcome_message: Bienvenido a Radar Escolar
+      surveys: Cuestionarios
+      instructions: Elige alguno de los cuestionarios a tu disposición para generar tu denuncia.
+      type_survey: Tipo
+      description: Descripción
+      actions: Acciones
+      new: Crear
+  user_surveys:
+    new:
+      title: Nueva Denuncia
+    shared:
+      form:
+        victim_instructions: Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros(as) de la escuela.
+                      Recuerda que esta denuncia es totalmente confidencial y el objetivo es que si alguna situación está sucediendo en tu escuela
+                      la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes,
+                      creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera. Estamos contigo y te apoyamos hoy y siempre.
+        witness_instructions: Por favor indícanos si has presenciado alguna de las siguientes situaciones relacionada con tus compañeros de escuela, tu apoyo es muy importante.
+          Recuerda que esta denuncia es totalmente confidencial y el objetivo es que si alguna situación está sucediendo la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera.
+        cancel: Cancelar
+        save: Guardar
+      user_form:
+        name: 'Nombre: '
+        placeholder_name: Juan Perez
+        description: 'Descripcion: '
+        placeholder_description: 'Informacion adicional'
+  shared:
+    navbar:
+      logout: Cerrar Sesión

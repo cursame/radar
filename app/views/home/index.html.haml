@@ -1,0 +1,24 @@
+.page-header
+  %h1.title= t('.welcome_message')
+.panel.panel-default
+  .panel-heading
+    %h4.title= t('.surveys')
+  .panel-body
+    %p= t('.instructions')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.type_survey')
+        %th= t('.description')
+        %th= t('.actions')
+    %tbody
+      - @surveys.each do |survey|
+        %tr
+          %td= survey.type_survey.capitalize
+          %td= survey.description.capitalize
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{id: "survey_#{survey.id}", type: 'button', 'data-toggle': 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden': 'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.new'), new_user_survey_path(survey_id: survey.id), id: "new_user_survey_#{survey.id}"

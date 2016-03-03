@@ -6,8 +6,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user.has_role? :superadmin
       manage_root_path
-    else
+    elsif current_user.has_role? :superadmin
       manage_institution_path(current_institution)
+    else
+      root_path
     end
   end
 
