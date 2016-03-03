@@ -1,0 +1,6 @@
+.form-group
+  = f.label :name, t('.name')
+  = f.text_field :name, placeholder: t('.placeholder_name'), required: false, autocomplete: 'off', class: 'form-control'
+.form-group
+  = f.label :description, t('.description')
+  = f.text_field :description, placeholder: t('.placeholder_description'), required: false, autocomplete: 'off', class: 'form-control'

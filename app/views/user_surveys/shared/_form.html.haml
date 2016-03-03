@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel-heading
+    %h3.title= @survey.type_survey.capitalize
+  .panel-body
+    %p= @survey.type_survey == 'testigo' ? t('.witness_instructions') : t('.victim_instructions')
+  = form_for(@user_survey) do |f|
+    = f.hidden_field :survey_id, value: @survey.id
+    = f.hidden_field :user_id, value: current_user.id
+    %ul.list-group
+      - @survey.questions.each do |question|
+        %li.list-group-item
+          = check_box_tag 'question_ids[]', question.id
+          = question.text.capitalize
+    = f.fields_for :aggressor do |aggressor|
+      = render 'user_surveys/shared/aggressor', f: aggressor
+    - if @survey.type_survey == 'testigo'
+      = f.fields_for :victim do |victim|
+        = render 'user_surveys/shared/victim', f: victim
+    .form-group
+      = link_to t('.cancel'), :back, class: 'btn btn-primary'
+      = f.button t('.save'), type: 'submit', class: 'btn btn-primary'
