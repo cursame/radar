@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   enum gender: { male: 0, female: 1, prefer_not_to_disclose: 2 }
 
   belongs_to :institution
+
+  has_many :user_surveys
 end

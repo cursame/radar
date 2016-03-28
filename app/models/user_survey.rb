@@ -1,5 +1,7 @@
 class UserSurvey < ActiveRecord::Base
   belongs_to :survey
+  belongs_to :user
+  belongs_to :institution
 
   has_many :user_answers, dependent: :destroy
   has_one :aggressor
@@ -21,6 +23,16 @@ class UserSurvey < ActiveRecord::Base
 
     event :set_high_danger do
       transition [:low, :middle] => :high
+    end
+  end
+
+  def name_state
+    if state == 'low'
+      'baja'
+    elsif state == 'middle'
+      'media'
+    else
+      'alta'
     end
   end
 
