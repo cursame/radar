@@ -96,6 +96,26 @@ es:
         show_institution: Institución
         title: 'Título: '
         subdomain: 'Subdominio: '
+    user_surveys:
+      index:
+        user_surveys: Denuncias
+        user: Usuario
+        state: Peligrosidad
+        type_survey: Tipo de Cuestionario
+        created_at: Creada
+        actions: Acciones
+        show: ver
+      show:
+        type_survey: 'Tipo de cuestionario: '
+        user: 'Usuario: '
+        show_user_survey: Denuncia
+        state: 'Nivel de Peligrosidad: '
+        victim: Víctima
+        aggressor: Agresor
+        name: 'Nombre: '
+        description: 'Descripcion: '
+        answers: Respuestas
+        type_violence: Tipo de violencia
   home:
     index:
       welcome_message: Bienvenido a Radar Escolar

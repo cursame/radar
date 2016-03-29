@@ -16,10 +16,11 @@ Rails.application.routes.draw do
     end
 
     resources :institutions
+    resources :user_surveys, only: [:index, :show]
   end
 
   root to: 'home#index'
-  resources :user_surveys
+  resources :user_surveys, except: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

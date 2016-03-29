@@ -1,0 +1,44 @@
+.container
+  .card
+    %h3.title= t('.show_user_survey')
+    .form-group
+      = label :title, t('.type_survey')
+      = @user_survey.survey.type_survey
+    .form-group
+      = label :title, t('.user')
+      = @user_survey.user.name
+    .form-group
+      = label :title, t('.state')
+      = @user_survey.name_state
+    - unless @user_survey.victim.nil?
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title= t('.victim')
+        .panel-body
+          .form-group
+            = label :title, t('.name')
+            = @user_survey.victim.name
+          .form-group
+            = label :title, t('.description')
+            = @user_survey.victim.description
+    - unless @user_survey.aggressor.nil?
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title= t('.aggressor')
+        .panel-body
+          .form-group
+            = label :title, t('.name')
+            = @user_survey.aggressor.name
+          .form-group
+            = label :title, t('.description')
+            = @user_survey.aggressor.description
+    %table.table.table-condensed.table-bordered.table-striped
+      %thead
+        %tr
+          %th= t('.answers')
+          %th= t('.type_violence')
+      %tbody
+        - @user_survey.user_answers.each do |answer|
+          %tr
+            %td= answer.question.text
+            %td= answer.question.type_violence

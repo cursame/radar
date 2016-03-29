@@ -1,0 +1,25 @@
+.container
+  .card
+    %h3.title= t('.user_surveys')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.user')
+        %th= t('.type_survey')
+        %th= t('.state')
+        %th= t('.created_at')
+        %th= t('.actions')
+    %tbody
+      - @user_surveys.each do |user_survey|
+        %tr
+          %td= user_survey.user.name
+          %td= user_survey.survey.type_survey
+          %td= user_survey.name_state
+          %td= user_survey.created_at.strftime("%d %B %Y")
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{id: "user_survey_#{user_survey.id}", type: 'button', 'data-toggle': 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden': 'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.show'), manage_user_survey_path(user_survey.id), id: "show_user_survey_#{user_survey.id}"
+                -# %li= link_to t('.delete')
