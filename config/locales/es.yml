@@ -110,6 +110,7 @@ es:
         user: 'Usuario: '
         show_user_survey: Denuncia
         state: 'Nivel de Peligrosidad: '
+        violence_types: 'Tipos de violencia: '
         victim: Víctima
         aggressor: Agresor
         name: 'Nombre: '

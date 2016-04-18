@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :question do
     text { Faker::Lorem.sentence }
-    type_violence { Faker::Lorem.word }
+    violence_type
   end
 end
