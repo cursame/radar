@@ -10,6 +10,10 @@
     .form-group
       = label :title, t('.state')
       = @user_survey.name_state
+    .form-group
+      = label :title, t('.violence_types')
+      - @user_survey.violence_types_array.each do |violence_type|
+        = violence_type
     - unless @user_survey.victim.nil?
       .panel.panel-default
         .panel-heading

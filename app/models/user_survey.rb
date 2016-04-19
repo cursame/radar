@@ -10,6 +10,7 @@ class UserSurvey < ActiveRecord::Base
   accepts_nested_attributes_for :aggressor
   accepts_nested_attributes_for :victim
 
+  before_save :evaluate_violence_types
   after_save :evaluate_danger
 
   state_machine initial: :low do
@@ -43,5 +44,17 @@ class UserSurvey < ActiveRecord::Base
     total_answers = user_answers.count
     set_middle_danger if total_answers > (total_questions * 0.2)
     set_high_danger if total_answers > (total_questions * 0.5)
+  end
+
+  def evaluate_violence_types
+    violence_types = []
+    ViolenceType.all.each do |violence_type|
+      count = 0
+      user_answers.each do |user_answer|
+        count += 1 if user_answer.question.violence_type == violence_type
+      end
+      violence_types << violence_type.name if 1 < count
+    end
+    self.violence_types_array = violence_types
   end
 end

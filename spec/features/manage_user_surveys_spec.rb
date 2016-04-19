@@ -28,6 +28,7 @@ feature 'Manage UserSurveys:' do
     click_on "show_user_survey_#{@user_survey1.id}"
 
     expect(page).to have_text @user_survey1.user.name
+    expect(page).to have_text @user_survey1.violence_types_array.first
     expect(page).to have_text @user_survey1.user_answers.first.question.text
     expect(page).to have_text @user_survey1.user_answers.second.question.text
   end

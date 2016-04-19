@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317193026) do
+ActiveRecord::Schema.define(version: 20160414181404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,11 +44,13 @@ ActiveRecord::Schema.define(version: 20160317193026) do
     t.text     "text"
     t.string   "type_violence"
     t.integer  "survey_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "violence_type_id"
   end
 
   add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+  add_index "questions", ["violence_type_id"], name: "index_questions_on_violence_type_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -81,10 +83,11 @@ ActiveRecord::Schema.define(version: 20160317193026) do
   create_table "user_surveys", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "survey_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "state"
     t.integer  "institution_id"
+    t.string   "violence_types_array", default: [],              array: true
   end
 
   add_index "user_surveys", ["institution_id"], name: "index_user_surveys_on_institution_id", using: :btree
@@ -131,5 +134,11 @@ ActiveRecord::Schema.define(version: 20160317193026) do
   end
 
   add_index "victims", ["user_survey_id"], name: "index_victims_on_user_survey_id", using: :btree
+
+  create_table "violence_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
