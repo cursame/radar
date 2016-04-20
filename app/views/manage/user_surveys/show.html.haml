@@ -45,4 +45,4 @@
         - @user_survey.user_answers.each do |answer|
           %tr
             %td= answer.question.text
-            %td= answer.question.type_violence
+            %td= answer.question.violence_type.name
