@@ -16,8 +16,8 @@ feature 'Manage UserSurveys:' do
     expect(page).to have_link(I18n.t('manage.shared.navbar.complaints'))
     click_on(I18n.t('manage.shared.navbar.complaints'))
 
-    expect(page).to have_text @user_survey1.user.name
-    expect(page).to have_text @user_survey2.user.name
+    expect(page).to have_text @user_survey1.name_state
+    expect(page).to have_text @user_survey2.name_state
     expect(current_path).to eq(manage_user_surveys_path)
   end
 
@@ -27,7 +27,7 @@ feature 'Manage UserSurveys:' do
     expect(page).to have_css("#user_survey_#{@user_survey1.id}")
     click_on "show_user_survey_#{@user_survey1.id}"
 
-    expect(page).to have_text @user_survey1.user.name
+    expect(page).to have_text @user_survey1.name_state
     expect(page).to have_text @user_survey1.violence_types_array.first
     expect(page).to have_text @user_survey1.user_answers.first.question.text
     expect(page).to have_text @user_survey1.user_answers.second.question.text

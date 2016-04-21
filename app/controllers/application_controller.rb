@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_institution
-    current_user && current_user.institution
+    current_user ? current_user.institution : subdomain_intitution
+  end
+
+  def subdomain_intitution
+    Institution.find_by_subdomain(request.subdomain)
   end
 end
