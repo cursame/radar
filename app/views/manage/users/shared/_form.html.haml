@@ -1,10 +1,10 @@
-= form_for([:manage, @user]) do |f|
+= form_for([:manage, @user], html: { class: 'form', id: 'user-form' }) do |f|
   .form-group
     = f.label :name, t('.name')
     = f.text_field :name, placeholder: t('.placeholder_name'), required: true, autocomplete: 'off', class: 'form-control'
   .form-group
     = f.label :email, t('.email')
-    = f.text_field :email, placeholder: t('.placeholder_email'), required: true, autocomplete: 'off', class: 'form-control'
+    = f.email_field :email, placeholder: t('.placeholder_email'), required: true, autocomplete: 'off', class: 'form-control'
   .form-group
     = f.label :institution, t('.institution')
     - if current_user.has_role? :superadmin
