@@ -1,6 +1,4 @@
 class UserSurveysController < ApplicationController
-  before_action :authenticate_user!
-
   def new
     @user_survey = UserSurvey.new
     @user_survey.build_aggressor
@@ -31,7 +29,6 @@ class UserSurveysController < ApplicationController
 
   def user_survey_params
     params.require(:user_survey).permit(
-      :user_id,
       :survey_id,
       aggressor_attributes: [:name, :description],
       victim_attributes: [:name, :description]

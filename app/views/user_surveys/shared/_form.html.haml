@@ -5,7 +5,6 @@
     %p= @survey.type_survey == 'testigo' ? t('.witness_instructions') : t('.victim_instructions')
   = form_for(@user_survey) do |f|
     = f.hidden_field :survey_id, value: @survey.id
-    = f.hidden_field :user_id, value: current_user.id
     %ul.list-group
       - @survey.questions.each do |question|
         %li.list-group-item

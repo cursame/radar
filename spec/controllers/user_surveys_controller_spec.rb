@@ -28,7 +28,6 @@ RSpec.describe UserSurveysController, type: :controller do
       @victim_attributes = attributes_for(:victim)
       ids = @survey.questions.map { |question| question.id }
       post :create, user_survey: {
-        user_id: user.id,
         survey_id: @survey.id,
         aggressor_attributes: @aggressor_attributes,
         victim_attributes: @victim_attributes
@@ -37,7 +36,7 @@ RSpec.describe UserSurveysController, type: :controller do
     end
 
     it 'should create a new user_survey' do
-      user_survey_create = UserSurvey.find_by_user_id(user.id)
+      user_survey_create = UserSurvey.find_by_survey_id(@survey.id)
       expect(user_survey_create).not_to be_nil
     end
 
