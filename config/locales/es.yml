@@ -2,6 +2,7 @@ es:
   faker:
     name:
       institution_grade: [Primero, Segundo, Tercero, Cuarto, Quinto, Sexto]
+      grade_group: [A, B, C, D, E]
   all_rights_reserved: "® Derechos Reservados 2015"
   flash:
     notice:
