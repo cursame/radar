@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'simplecov'
 require 'rspec/rails'
+require 'faker'
 
 SimpleCov.start
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -55,4 +56,5 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Features::HelperMethods, type: :feature
+  Faker::Config.locale = :es
 end
