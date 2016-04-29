@@ -21,9 +21,30 @@ feature 'User answers survey:' do
     find(:css, "#question_ids_[value='#{@survey.questions.first.id}']").set(true)
     fill_in('user_survey_aggressor_attributes_name', with: @aggressor_attributes[:name])
     fill_in('user_survey_aggressor_attributes_description', with: @aggressor_attributes[:description])
+    fill_denouncer_attributes
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
     expect(current_path).to eq(root_path)
+  end
+
+  def fill_denouncer_attributes
+    @denouncer_attributes = attributes_for(:denouncer)
+    fill_in(
+      'user_survey_denouncer_attributes_name',
+      with: @denouncer_attributes[:name]
+    )
+    fill_in(
+      'user_survey_denouncer_attributes_phone_number',
+      with: @denouncer_attributes[:phone_number]
+    )
+    fill_in(
+      'user_survey_denouncer_attributes_email',
+      with: @denouncer_attributes[:email]
+    )
+    select(
+      I18n.t('user_genders.male'),
+      from: 'user_survey_denouncer_attributes_gender'
+    )
   end
 end

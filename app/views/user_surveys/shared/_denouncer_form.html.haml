@@ -1,0 +1,12 @@
+.form-group.name
+  = f.label :name, t('.name')
+  = f.text_field :name, placeholder: t('.placeholder_name'), required: false, autocomplete: 'off', class: 'form-control'
+.form-group.phone_number
+  = f.label :phone_number, t('.phone_number')
+  = f.text_field :phone_number, placeholder: t('.placeholder_phone_number'), required: false, autocomplete: 'off', class: 'form-control'
+.form-group
+  = f.label :email, t('.email')
+  = f.email_field :email, placeholder: t('.placeholder_email'), required: true, autocomplete: 'off', class: 'form-control'
+.form-group
+  = f.label :gender, t('.gender')
+  = f.select :gender, options_for_denouncer_gender_select, { class: 'form-control' }

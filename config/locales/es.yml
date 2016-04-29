@@ -3,6 +3,10 @@ es:
     name:
       institution_grade: [Primero, Segundo, Tercero, Cuarto, Quinto, Sexto]
       grade_group: [A, B, C, D, E]
+  user_genders:
+    male: Hombre
+    female: Mujer
+    prefer_not_to_disclose: Prefiero no revelar
   all_rights_reserved: "® Derechos Reservados 2015"
   flash:
     notice:
@@ -200,6 +204,8 @@ es:
                       creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera. Estamos contigo y te apoyamos hoy y siempre.
         witness_instructions: Por favor indícanos si has presenciado alguna de las siguientes situaciones relacionada con tus compañeros de escuela, tu apoyo es muy importante.
           Recuerda que esta denuncia es totalmente confidencial y el objetivo es que si alguna situación está sucediendo la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera.
+        info_denouncer: Datos del denunciante
+        private: Quieres que tu denuncia sea anónima?
         cancel: Cancelar
         save: Guardar
       user_form:
@@ -207,6 +213,14 @@ es:
         placeholder_name: Juan Perez
         description: 'Descripcion: '
         placeholder_description: 'Informacion adicional'
+      denouncer_form:
+        name: 'Nombre: '
+        placeholder_name: Juan Perez
+        email: 'Email: '
+        placeholder_email: 'example@correo.com'
+        phone_number: 'Telefono: '
+        placeholder_phone_number: '(55)56908519'
+        gender: 'Genero: '
   shared:
     navbar:
       logout: Cerrar Sesión
