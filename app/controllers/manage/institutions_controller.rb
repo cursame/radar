@@ -2,7 +2,7 @@ module Manage
   # Institution controller for managers
   class InstitutionsController < Manage::BaseController
     load_and_authorize_resource
-    skip_authorize_resource only: :show
+    skip_authorize_resource only: [:show, :grades]
 
     def index
       @institutions = Institution.all
@@ -46,10 +46,19 @@ module Manage
       redirect_to manage_institutions_path
     end
 
+    def grades
+      @institution = Institution.find_by_id(params[:id])
+      @grades = @institution.grades unless @institution.nil?
+    end
+
     private
 
     def institution_params
-      params.require(:institution).permit(:title, :subdomain)
+      params.require(:institution).permit(
+        :title,
+        :subdomain,
+        grade_attributes: [:title]
+      )
     end
   end
 end

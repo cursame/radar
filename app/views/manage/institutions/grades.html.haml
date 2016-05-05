@@ -1,0 +1,30 @@
+.container
+  .card
+    %h3.title= t('.institution_title', institution_title: @institution.title)
+  .card
+    %h3.title= t('.grades')
+  .col-md-5
+    %table.table.table-condensed.table-bordered.table-striped
+      %thead
+        %tr
+          %th= t('.title')
+          %th= t('.actions')
+      %tbody
+        - @grades.each do |grade|
+          %tr
+            %td.col-md-3= grade.title
+            %td.col-md-2
+              .dropdown
+                %button.btn.btn-default.block.dropdown-toggle{id: "grade_#{grade.id}", type: 'button', 'data-toggle': 'dropdown'}
+                  %span.glyphicon.glyphicon-chevron-down{'aria-hidden': 'true'}
+                %ul.dropdown-menu.dropdown-menu-right
+                  %li= link_to t('.edit'), edit_manage_institution_grade_path(institution_id: @institution.id, id: grade.id), id: "edit_grade_#{grade.id}"
+                  %li= link_to t('.edit_groups'), manage_institution_grade_groups_path(institution_id: @institution.id, grade_id: grade.id), id: "edit_groups_grade_#{grade.id}"
+                  %li= link_to t('.delete'),
+                    manage_institution_grade_path(institution_id: @institution.id, id: grade.id),
+                    method: :delete, data: { confirm: t('.confirm_delete_grade', grade_title: grade.title) },
+                    id: "delete_grade_#{grade.id}"
+  .col-md-12
+    .form-group
+      = link_to t('.cancel'), edit_manage_institution_path(@institution.id), class: 'btn btn-primary'
+      = link_to t('.add_grade'), new_manage_institution_grade_path(@institution.id), class: 'btn btn-primary'
