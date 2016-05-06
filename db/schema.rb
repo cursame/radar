@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419202442) do
+ActiveRecord::Schema.define(version: 20160429190138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,37 @@ ActiveRecord::Schema.define(version: 20160419202442) do
   end
 
   add_index "aggressors", ["user_survey_id"], name: "index_aggressors_on_user_survey_id", using: :btree
+
+  create_table "denouncers", force: :cascade do |t|
+    t.string   "email",          default: "", null: false
+    t.integer  "gender",         default: 2,  null: false
+    t.string   "name"
+    t.string   "phone_number"
+    t.integer  "user_survey_id",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "denouncers", ["gender"], name: "index_denouncers_on_gender", using: :btree
+  add_index "denouncers", ["user_survey_id"], name: "index_denouncers_on_user_survey_id", using: :btree
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "title",          null: false
+    t.integer  "institution_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "grades", ["institution_id"], name: "index_grades_on_institution_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.integer  "grade_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["grade_id"], name: "index_groups_on_grade_id", using: :btree
 
   create_table "institutions", force: :cascade do |t|
     t.string   "title",                        null: false

@@ -1,4 +1,8 @@
 es:
+  faker:
+    name:
+      institution_grade: [Primero, Segundo, Tercero, Cuarto, Quinto, Sexto]
+      grade_group: [A, B, C, D, E]
   all_rights_reserved: "® Derechos Reservados 2015"
   flash:
     notice:
@@ -14,6 +18,14 @@ es:
         destroy: "La institución fue borrado exitosamente."
       user_survey:
         create: La denuncia se ha creado exitosamente.
+      grade:
+        create: "El grado se creó exitosamente."
+        update: "Se ha actualizado el grado exitosamente."
+        destroy: "El grado fue borrado exitosamente."
+      group:
+        create: "El grupo se creó exitosamente."
+        update: "Se ha actualizado el grupo exitosamente."
+        destroy: "El grupo fue borrado exitosamente."
     alert:
       user:
         create: "Ocurrió un error al crear el usuario."
@@ -24,6 +36,12 @@ es:
         update: "Ocurrió un error al actualizar la institución."
       user_survey:
         create: Ocurrió un error al crear la denuncia.
+      grade:
+        create: "Ocurrió un error al crear el grado."
+        update: "Ocurrió un error al actualizar el grado."
+      group:
+        create: "Ocurrió un error al crear el grupo."
+        update: "Ocurrió un error al actualizar el grupo."
     error:
       user:
         record_not_found: "Ocurrió un error, no se encontró la información."
@@ -76,6 +94,7 @@ es:
           placeholder_title: Instituto Gran Unión
           subdomain: Subdominio
           placeholder_subdomain: igunion
+          edit_grades: Editar Grados
           cancel: Cancelar
           save: Guardar
       edit:
@@ -96,6 +115,17 @@ es:
         show_institution: Institución
         title: 'Título: '
         subdomain: 'Subdominio: '
+      grades:
+        institution_title: "Institución: %{institution_title}"
+        grades: Grados
+        title: Título
+        actions: Acciones
+        edit: Editar Grado
+        edit_groups: Editar Grupos
+        confirm_delete_grade: "¿Estas seguro de eliminar el grado: %{grade_title}?"
+        delete: Borrar
+        cancel: Cancelar
+        add_grade: Agregar Grado
     user_surveys:
       index:
         user_surveys: Denuncias
@@ -117,6 +147,39 @@ es:
         description: 'Descripcion: '
         answers: Respuestas
         type_violence: Tipo de violencia
+    grades:
+      new:
+        new_grade: Nuevo Grado
+      edit:
+        edit_grade: Editar Grado
+      shared:
+        form:
+          title: 'Título: '
+          placeholder_title: Primero
+          cancel: Cancelar
+          save: Guardar
+      groups:
+        institution_title: "Institución: %{institution_title}"
+        grade_title: "Grado:  %{grade_title}"
+        groups: Grupos
+        title: Título
+        actions: Acciones
+        edit: Editar Grupo
+        delete: Borrar
+        confirm_delete_group: "¿Estas seguro de eliminar el grupo: %{group_title}?"
+        cancel: Cancelar
+        add_group: Agregar Grupo
+    groups:
+      new:
+        new_group: Nuevo Grupo
+      edit:
+        edit_group: Editar Grupo
+      shared:
+        form:
+          title: "Título: "
+          placeholder_title: A
+          ancel: Cancelar
+          save: Guardar
   home:
     index:
       welcome_message: Bienvenido a Radar Escolar

@@ -15,7 +15,15 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :institutions
+    resources :institutions do
+      member do
+        get 'grades'
+      end
+      resources :grades do
+        get 'groups'
+        resources :groups
+      end
+    end
     resources :user_surveys, only: [:index, :show]
   end
 
