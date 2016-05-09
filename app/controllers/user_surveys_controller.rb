@@ -3,6 +3,7 @@ class UserSurveysController < ApplicationController
     @user_survey = UserSurvey.new
     @user_survey.build_aggressor
     @user_survey.build_victim
+    @user_survey.build_denouncer
     @survey = Survey.find_by_id(params[:survey_id])
   end
 
@@ -31,7 +32,8 @@ class UserSurveysController < ApplicationController
     params.require(:user_survey).permit(
       :survey_id,
       aggressor_attributes: [:name, :description],
-      victim_attributes: [:name, :description]
+      victim_attributes: [:name, :description],
+      denouncer_attributes: [:name, :phone_number, :email, :gender]
     )
   end
 end

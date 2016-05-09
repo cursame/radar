@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :user_survey do
+    survey
+
     after(:create) do |user_survey|
       survey = user_survey.survey
       answers = []
