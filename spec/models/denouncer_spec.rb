@@ -16,5 +16,10 @@ RSpec.describe Denouncer, type: :model do
     it 'has a gender default attribute set to prefer_not_to_disclose' do
       expect(denouncer.gender).to eq('prefer_not_to_disclose')
     end
+
+    it 'should not be valid without group' do
+      denouncer.group_id = nil
+      expect(denouncer).not_to be_valid
+    end
   end
 end
