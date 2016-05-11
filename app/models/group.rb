@@ -3,4 +3,6 @@ class Group < ActiveRecord::Base
 
   belongs_to :grade
   validates_associated :grade
+
+  has_many :denouncers
 end

@@ -4,6 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     phone_number { Faker::PhoneNumber.phone_number }
     user_survey
+    group
 
     trait :male do
       gender 0

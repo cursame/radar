@@ -33,7 +33,7 @@ class UserSurveysController < ApplicationController
       :survey_id,
       aggressor_attributes: [:name, :description],
       victim_attributes: [:name, :description],
-      denouncer_attributes: [:name, :phone_number, :email, :gender]
+      denouncer_attributes: [:name, :phone_number, :email, :gender, :group_id]
     )
   end
 end

@@ -221,6 +221,7 @@ es:
         phone_number: 'Telefono: '
         placeholder_phone_number: '(55)56908519'
         gender: 'Genero: '
+        group: 'Grupo: '
   shared:
     navbar:
       logout: Cerrar Sesión

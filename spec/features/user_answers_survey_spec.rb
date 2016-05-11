@@ -14,6 +14,9 @@ feature 'User answers survey:' do
   end
 
   scenario 'can create an new user_survey' do
+    @institution = @user.institution
+    @grade = create(:grade, institution_id: @institution.id)
+    @group = create(:group, grade_id: @grade.id)
     @aggressor_attributes = attributes_for(:aggressor)
     expect(page).to have_css("#survey_#{@survey.id}")
     click_on "new_user_survey_#{@survey.id}"
@@ -45,6 +48,10 @@ feature 'User answers survey:' do
     select(
       I18n.t('user_genders.male'),
       from: 'user_survey_denouncer_attributes_gender'
+    )
+    select(
+      @group.title,
+      from: 'user_survey_denouncer_attributes_group_id'
     )
   end
 end
