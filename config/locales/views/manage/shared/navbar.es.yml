@@ -10,6 +10,9 @@ es:
         users: Usuarios
         add_user: Agregar Usuario
         show_users: Ver Usuarios
+        students: Alumnos
+        add_student: Agregar Alumno
+        show_students: Ver Alumnos
         complaints: Denuncias
         test: Cuestionarios
         edit_profile: Editar Perfil

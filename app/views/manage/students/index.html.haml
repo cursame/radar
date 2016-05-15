@@ -1,0 +1,29 @@
+.container
+  .card
+    %h3.title= t('.institution_title', institution_title: @institution.title)
+    %h3.title= t('.students')
+  %table.table.table-condensed.table-bordered.table-striped
+    %thead
+      %tr
+        %th= t('.name')
+        %th= t('.created_at')
+        %th= t('.updated_at')
+        %th= t('.actions')
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td= student.name
+          %td= student.created_at.strftime("%d %B %Y")
+          %td= student.updated_at.strftime("%d %B %Y")
+          %td
+            .dropdown
+              %button.btn.btn-default.block.dropdown-toggle{:id => "student_#{student.id}", :type => 'button', 'data-toggle' => 'dropdown'}
+                %span.glyphicon.glyphicon-chevron-down{'aria-hidden' =>'true'}
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('.edit'), edit_manage_institution_student_path(institution_id: @institution.id, id: student.id), id: "edit_student_#{student.id}"
+                %li= link_to t('.delete'),
+                  manage_institution_student_path(institution_id: @institution.id, id: student.id),
+                  method: :delete, data: { confirm: t('.confirm_delete_student', student_name: student.name) },
+                  id: "delete_student_#{student.id}"
+  .form-group
+    = link_to t('.add_student'), new_manage_institution_student_path(institution_id: @institution.id), class: 'btn btn-primary', id: 'add_student'

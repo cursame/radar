@@ -30,6 +30,10 @@ es:
         create: "El grupo se creó exitosamente."
         update: "Se ha actualizado el grupo exitosamente."
         destroy: "El grupo fue borrado exitosamente."
+      student:
+        create: "El alumno se creó exitosamente."
+        update: "Se ha actualizado el alumno exitosamente."
+        destroy: "El alumno fue borrado exitosamente."
     alert:
       user:
         create: "Ocurrió un error al crear el usuario."
@@ -46,6 +50,10 @@ es:
       group:
         create: "Ocurrió un error al crear el grupo."
         update: "Ocurrió un error al actualizar el grupo."
+      student:
+        create: "Ocurrió un error al crear el alumno."
+        update: "Ocurrió un error al actualizar el alumno."
+        access_denied: Solo puedes administrar alumnos de tu institución.
     error:
       user:
         record_not_found: "Ocurrió un error, no se encontró la información."
@@ -111,6 +119,7 @@ es:
         updated_at: Actualizada
         actions: Acciones
         edit: Editar
+        show_students: Ver Alumnos
         confirm_delete_institution: "¿Estas seguro de eliminar la institución: %{institution_title}?"
         delete: Borrar
       new:
@@ -182,7 +191,30 @@ es:
         form:
           title: "Título: "
           placeholder_title: A
-          ancel: Cancelar
+          cancel: Cancelar
+          save: Guardar
+    students:
+      index:
+        institution_title: "Institución: %{institution_title}"
+        students: Alumnos
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+        actions: Acciones
+        edit: Editar
+        confirm_delete_student: "¿Estas seguro de eliminar a %{student_name}?"
+        delete: Borrar
+        add_student: Agregar Alumno
+      new:
+        new_student: Nuevo Alumno
+      edit:
+        edit_student: Editar Alumno
+      shared:
+        form:
+          name: "Nombre: "
+          placeholder_name: Roberto Pérez
+          institution: "Institución: "
+          cancel: Cancelar
           save: Guardar
   home:
     index:

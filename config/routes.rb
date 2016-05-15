@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         get 'groups'
         resources :groups
       end
+      resources :students
     end
     resources :user_surveys, only: [:index, :show]
   end
