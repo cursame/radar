@@ -22,17 +22,6 @@
           .form-group
             = label :title, t('.description')
             = @user_survey.victim.description
-    - unless @user_survey.aggressor.nil?
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title= t('.aggressor')
-        .panel-body
-          .form-group
-            = label :title, t('.name')
-            = @user_survey.aggressor.name
-          .form-group
-            = label :title, t('.description')
-            = @user_survey.aggressor.description
     %table.table.table-condensed.table-bordered.table-striped
       %thead
         %tr

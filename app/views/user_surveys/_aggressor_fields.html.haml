@@ -1,0 +1,14 @@
+.nested-fields
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= t('.info_aggressor')
+    .panel-body
+      .col-md-5
+        .form-group
+          = f.label :name, t('.name')
+          = f.text_field :name, placeholder: t('.placeholder_name'), required: true, autocomplete: 'off', class: 'form-control'
+        .form-group
+          = f.label :group, t('.group')
+          = f.select :group_id, options_for_groups_select, class: 'form-control'
+        .form-group
+          = link_to_remove_association t('.remove_aggressor'), f, class: 'btn btn-primary'

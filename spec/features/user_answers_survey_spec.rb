@@ -22,9 +22,9 @@ feature 'User answers survey:' do
     click_on "new_user_survey_#{@survey.id}"
 
     find(:css, "#question_ids_[value='#{@survey.questions.first.id}']").set(true)
-    fill_in('user_survey_aggressor_attributes_name', with: @aggressor_attributes[:name])
-    fill_in('user_survey_aggressor_attributes_description', with: @aggressor_attributes[:description])
     fill_denouncer_attributes
+    fill_in('user_survey_aggressors_attributes_0_name', with: @aggressor_attributes[:name])
+    select(@group.title, from: 'user_survey_aggressors_attributes_0_group_id')
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))

@@ -228,6 +228,12 @@ es:
   user_surveys:
     new:
       title: Nueva Denuncia
+    aggressor_fields:
+      info_aggressor: Datos de Agresor
+      name: 'Nombre: '
+      placeholder_name: Juan Perez
+      group: 'Grupo: '
+      remove_aggressor: Borrar
     shared:
       form:
         victim_instructions: Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros(as) de la escuela.
@@ -238,6 +244,7 @@ es:
           Recuerda que esta denuncia es totalmente confidencial y el objetivo es que si alguna situación está sucediendo la podamos detener y solucionar con personas expertas en el tema que se interesan por mejorar la convivencia en la escuela y apoyar a todos los estudiantes, creemos que cualquier forma de violencia en la escuela debe ser detenida y que ningún alumno debe sentirse mal de ninguna manera.
         info_denouncer: Datos del denunciante
         private: Quieres que tu denuncia sea anónima?
+        add_aggressor: Agregar Agresor
         cancel: Cancelar
         save: Guardar
       user_form:
