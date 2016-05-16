@@ -16,4 +16,5 @@
 //= require jquery.validate.additional-methods
 //= require jquery/validate
 //= require bootstrap-sprockets
+//= require cocoon
 //= require_tree .

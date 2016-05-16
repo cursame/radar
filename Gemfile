@@ -31,6 +31,7 @@ gem 'haml'
 gem 'state_machines-activerecord'
 gem 'jquery-validation-rails'
 gem 'has_scope'
+gem 'cocoon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
