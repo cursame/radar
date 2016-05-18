@@ -57,4 +57,6 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include Features::HelperMethods, type: :feature
   Faker::Config.locale = :es
+  Capybara.app_host = 'http://instmexico.lvh.me'
+  Capybara.always_include_port = true
 end
