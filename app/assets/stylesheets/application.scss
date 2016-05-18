@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "jquery.ui.all";
+
 // Defaults
 @import 'defaults/vars';
 @import 'defaults/mixins';
