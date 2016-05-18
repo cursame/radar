@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :user_surveys, except: [:index, :show]
 
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      get '/students/search' => 'students#search'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
