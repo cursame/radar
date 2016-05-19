@@ -7,5 +7,6 @@ class Ability
     can :update, Institution if user.has_role? :admin
     can :manage, Grade if (user.has_role? :admin) || (user.has_role? :superadmin)
     can :manage, Group if (user.has_role? :admin) || (user.has_role? :superadmin)
+    can :manage, Student if (user.has_role? :admin) || (user.has_role? :superadmin)
   end
 end

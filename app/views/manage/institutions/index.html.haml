@@ -22,6 +22,7 @@
                 %span.glyphicon.glyphicon-chevron-down{'aria-hidden': 'true'}
               %ul.dropdown-menu.dropdown-menu-right
                 %li= link_to t('.edit'), edit_manage_institution_path(institution.id), id: "edit_institution_#{institution.id}"
+                %li= link_to t('.show_students'), manage_institution_students_path(institution_id: institution.id), id: "show_students_institution_#{institution.id}"
                 %li= link_to t('.delete'),
                   manage_institution_path(institution.id),
                   method: :delete, data: { confirm: t('.confirm_delete_institution', institution_title: institution.title) },
