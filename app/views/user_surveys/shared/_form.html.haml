@@ -22,8 +22,11 @@
         %li.list-group-item
           = check_box_tag 'question_ids[]', question.id
           = question.text.capitalize
-    = f.fields_for :aggressor do |aggressor|
-      = render 'user_surveys/shared/aggressor', f: aggressor
+    .aggressors
+      = f.fields_for :aggressors do |aggressor|
+        = render 'aggressor_fields', f: aggressor
+      .form-group
+        = link_to_add_association t('.add_aggressor'), f, :aggressors, class: 'btn btn-primary'
     - if @survey.type_survey == 'testigo'
       = f.fields_for :victim do |victim|
         = render 'user_surveys/shared/victim', f: victim

@@ -5,4 +5,5 @@ class Group < ActiveRecord::Base
   validates_associated :grade
 
   has_many :denouncers
+  has_many :aggressors
 end

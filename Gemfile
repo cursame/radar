@@ -31,6 +31,8 @@ gem 'haml'
 gem 'state_machines-activerecord'
 gem 'jquery-validation-rails'
 gem 'has_scope'
+gem 'cocoon'
+gem 'jquery-ui-sass-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,6 +46,7 @@ gem 'has_scope'
 group :test do
   gem 'simplecov', require: false
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
@@ -51,6 +54,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
 end
 
 group :development do
