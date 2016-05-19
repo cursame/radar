@@ -89,6 +89,9 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    has_scope (0.7.0)
+      actionpack (>= 4.1, < 5.1)
+      activesupport (>= 4.1, < 5.1)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -244,6 +247,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   haml
+  has_scope
   jbuilder (~> 2.0)
   jquery-rails
   jquery-validation-rails
