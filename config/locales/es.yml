@@ -261,6 +261,11 @@ es:
         placeholder_phone_number: '(55)56908519'
         gender: 'Genero: '
         group: 'Grupo: '
+      victim:
+        info_victim: Datos de la victima
+        name: 'Nombre: '
+        placeholder_name: Juan Perez
+        group: 'Grupo: '
   shared:
     navbar:
       logout: Cerrar Sesión

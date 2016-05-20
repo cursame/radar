@@ -1,5 +1,11 @@
-.cols-12
-  .col.col-4
-    .col-inner
-      %h4 ¿Quieres decirnos el nombre de la victima?
-      = render 'user_surveys/shared/user_form', f: f
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title= t('.info_victim')
+  .panel-body
+    .col-sm-5
+      .form-group
+        = f.label :name, t('.name')
+        = f.text_field :name, placeholder: t('.placeholder_name'), required: true, autocomplete: 'off', class: 'form-control students'
+      .form-group
+        = f.label :group, t('.group')
+        = f.select :group_id, options_for_groups_select, class: 'form-control'

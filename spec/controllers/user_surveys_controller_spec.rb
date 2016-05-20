@@ -24,12 +24,17 @@ RSpec.describe UserSurveysController, type: :controller do
   describe 'POST #create' do
     before :each do
       @survey = create(:survey_with_questions)
+      @institution = create(:institution)
+      @grade = create(:grade, institution_id: @institution.id)
+      @group = create(:group, grade_id: @grade.id)
       @aggressor_attributes = attributes_for(:aggressor)
       @victim_attributes = attributes_for(:victim)
-      ids = @survey.questions.map { |question| question.id }
+      @aggressor_attributes[:group_id] = @group.id
+      @victim_attributes[:group_id] = @group.id
+      ids = @survey.questions.map(&:id)
       post :create, user_survey: {
         survey_id: @survey.id,
-        aggressor_attributes: @aggressor_attributes,
+        aggressors_attributes: [@aggressor_attributes],
         victim_attributes: @victim_attributes
       },
       question_ids: ids

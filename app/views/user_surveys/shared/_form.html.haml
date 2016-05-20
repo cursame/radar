@@ -17,6 +17,10 @@
 
     = f.hidden_field :survey_id, value: @survey.id
 
+    - if @survey.type_survey == 'testigo'
+      = f.fields_for :victim do |victim|
+        = render 'user_surveys/shared/victim', f: victim
+
     %ul.list-group
       - @survey.questions.each do |question|
         %li.list-group-item
@@ -27,9 +31,6 @@
         = render 'aggressor_fields', f: aggressor
       .form-group
         = link_to_add_association t('.add_aggressor'), f, :aggressors, class: 'btn btn-primary'
-    - if @survey.type_survey == 'testigo'
-      = f.fields_for :victim do |victim|
-        = render 'user_surveys/shared/victim', f: victim
 
     .form-group
       = link_to t('.cancel'), :back, class: 'btn btn-primary'
