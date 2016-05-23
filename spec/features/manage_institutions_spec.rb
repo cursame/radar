@@ -30,6 +30,28 @@ feature 'Manage institutions:' do
     expect(current_path).to eq(manage_institutions_path)
   end
 
+  scenario 'can`t create a new institution with subdomain taken' do
+    @institution = create(:institution)
+    click_on(I18n.t('manage.shared.navbar.add_institution'))
+
+    fill_in('institution_title', with: Faker::Name.name)
+    fill_in('institution_subdomain', with: @institution.subdomain)
+    click_on(I18n.t('manage.institutions.shared.form.save'))
+
+    sees_warning_message(I18n.t('activerecord.errors.models.institution.attributes.subdomain.taken'))
+  end
+
+  scenario 'can`t create a new institution with an invalid subdomain' do
+    invalid_subdomain = 'prueba v1'
+    click_on(I18n.t('manage.shared.navbar.add_institution'))
+
+    fill_in('institution_title', with: Faker::Name.name)
+    fill_in('institution_subdomain', with: invalid_subdomain)
+    click_on(I18n.t('manage.institutions.shared.form.save'))
+
+    sees_warning_message(I18n.t('activerecord.errors.models.institution.attributes.subdomain.invalid'))
+  end
+
   scenario 'can edit an institution' do
     institution = create(:institution)
     institution_title = Faker::Name.name

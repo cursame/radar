@@ -6,4 +6,5 @@ class Group < ActiveRecord::Base
 
   has_many :denouncers
   has_many :aggressors
+  has_many :victims
 end

@@ -8,7 +8,13 @@ module Features
     end
 
     def sees_success_message(message)
-      within(".alert") do
+      within(".alert-info") do
+        expect(page).to have_text(message)
+      end
+    end
+
+    def sees_warning_message(message)
+      within(".alert-warning") do
         expect(page).to have_text(message)
       end
     end
