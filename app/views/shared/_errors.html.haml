@@ -1,0 +1,5 @@
+.card
+  - errors.messages.each do |_, messages|
+    - messages.each do |message|
+      .alert.alert-warning
+        = message

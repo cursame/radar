@@ -1,4 +1,6 @@
 .container
+  - if @institution.errors.any?
+    = render 'shared/errors', errors: @institution.errors
   .card
     %h3.title= t('.new_institution')
     = render 'manage/institutions/shared/form'

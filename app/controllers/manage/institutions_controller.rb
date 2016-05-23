@@ -17,12 +17,13 @@ module Manage
     end
 
     def create
-      if Institution.create(institution_params)
-        flash[:notice] = I18n.t('flash.notice.institution.create')
+      @institution = Institution.create(institution_params)
+      if @institution.errors.any?
+        render :new
       else
-        flash[:alert] = I18n.t('flash.alert.institution.create')
+        flash[:notice] = I18n.t('flash.notice.institution.create')
+        redirect_to manage_institutions_path
       end
-      redirect_to manage_institutions_path
     end
 
     def edit
