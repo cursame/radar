@@ -9,4 +9,10 @@ $(document).ready(function() {
       source: nameStudentsListSource
     });
   });
+
+  $(".witnesses").on('cocoon:before-insert', function(e, added_witness) {
+    added_witness.find(".students").autocomplete({
+      source: nameStudentsListSource
+    });
+  });
 });

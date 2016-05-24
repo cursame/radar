@@ -31,6 +31,15 @@
         = render 'aggressor_fields', f: aggressor
       .form-group
         = link_to_add_association t('.add_aggressor'), f, :aggressors, class: 'btn btn-primary'
+    .witnesses
+      .panel.panel-default
+        .panel-heading
+          %h4.title= t('.witnesses')
+        .panel-body
+          = f.fields_for :witnesses do |witness|
+            = render 'witness_fields', f: witness
+          .form-group
+            = link_to_add_association t('.add_witness'), f, :witnesses, class: 'btn btn-primary'
 
     .form-group
       = link_to t('.cancel'), :back, class: 'btn btn-primary'

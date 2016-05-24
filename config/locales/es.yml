@@ -242,6 +242,12 @@ es:
       placeholder_name: Juan Perez
       group: 'Grupo: '
       remove_aggressor: Borrar
+    witness_fields:
+      info_witness: Datos del Testigo
+      name: 'Nombre: '
+      placeholder_name: Raul Lopez
+      group: 'Grupo: '
+      remove_witness: Borrar
     shared:
       form:
         victim_instructions: Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros(as) de la escuela.
@@ -253,6 +259,8 @@ es:
         info_denouncer: Datos del denunciante
         private: Quieres que tu denuncia sea anónima?
         add_aggressor: Agregar Agresor
+        witnesses: Testigos
+        add_witness: Agregar Testigo
         cancel: Cancelar
         save: Guardar
       user_form:
