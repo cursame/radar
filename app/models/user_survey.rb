@@ -5,11 +5,13 @@ class UserSurvey < ActiveRecord::Base
 
   has_many :user_answers, dependent: :destroy
   has_many :aggressors
+  has_many :witnesses
   has_one :victim
   has_one :denouncer, dependent: :destroy
   validates_associated :denouncer
 
   accepts_nested_attributes_for :aggressors, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :witnesses, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :victim
   accepts_nested_attributes_for :denouncer
 
