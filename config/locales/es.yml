@@ -248,6 +248,9 @@ es:
       placeholder_name: Raul Lopez
       group: 'Grupo: '
       remove_witness: Borrar
+    evidence_link_fields:
+      evidence_link: 'Puedes agregar una url con evidencia de la denuncia: '
+      remove_evidence_link: borrar url
     shared:
       form:
         victim_instructions: Por favor indícanos si te ha pasado algo de lo que a continuación indicamos en la lista relacionado con tus compañeros(as) de la escuela.
@@ -263,6 +266,7 @@ es:
         add_witness: Agregar Testigo
         evidence: Pruebas de la denuncia (opcional)
         files: Puedes subir imagenes y videos.
+        add_evidence_link: Agregar url
         cancel: Cancelar
         save: Guardar
       user_form:

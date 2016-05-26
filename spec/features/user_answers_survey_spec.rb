@@ -23,6 +23,7 @@ feature 'User answers survey:' do
     fill_aggressor_attributes
     fill_witness_attributes
     upload_file
+    fill_evidence_link
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -43,6 +44,7 @@ feature 'User answers survey:' do
     fill_aggressor_attributes
     fill_witness_attributes
     upload_file
+    fill_evidence_link
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -111,6 +113,13 @@ feature 'User answers survey:' do
 
   def upload_file
     attach_file('user_survey_evidence', File.join(Rails.root, '/spec/support/files/video.mov'))
+  end
+
+  def fill_evidence_link
+    fill_in(
+      'user_survey_evidence_links_attributes_0_url',
+      with: Faker::Internet.url
+    )
   end
 
   def fill_autocomplete(field, options = {})
