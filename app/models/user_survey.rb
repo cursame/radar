@@ -18,6 +18,8 @@ class UserSurvey < ActiveRecord::Base
   before_save :evaluate_violence_types
   after_save :evaluate_danger
 
+  mount_uploaders :evidence, EvidenceUploader
+
   state_machine initial: :low do
     state :low
     state :middle

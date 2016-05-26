@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524165644) do
+ActiveRecord::Schema.define(version: 20160525155826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20160524165644) do
     t.string   "state"
     t.integer  "institution_id"
     t.string   "violence_types_array", default: [],              array: true
+    t.json     "evidence"
   end
 
   add_index "user_surveys", ["institution_id"], name: "index_user_surveys_on_institution_id", using: :btree

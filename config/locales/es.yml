@@ -261,6 +261,8 @@ es:
         add_aggressor: Agregar Agresor
         witnesses: Testigos
         add_witness: Agregar Testigo
+        evidence: Pruebas de la denuncia (opcional)
+        files: Puedes subir imagenes y videos.
         cancel: Cancelar
         save: Guardar
       user_form:

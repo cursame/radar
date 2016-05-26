@@ -35,7 +35,8 @@ class UserSurveysController < ApplicationController
       aggressors_attributes: [:id, :name, :group_id, :_destroy],
       witnesses_attributes: [:id, :name, :group_id, :_destroy],
       victim_attributes: [:name, :group_id],
-      denouncer_attributes: [:name, :phone_number, :email, :gender, :group_id]
+      denouncer_attributes: [:name, :phone_number, :email, :gender, :group_id],
+      evidence: []
     )
   end
 end

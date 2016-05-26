@@ -22,6 +22,7 @@ feature 'User answers survey:' do
     answer_questions
     fill_aggressor_attributes
     fill_witness_attributes
+    upload_file
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -41,6 +42,7 @@ feature 'User answers survey:' do
     answer_questions
     fill_aggressor_attributes
     fill_witness_attributes
+    upload_file
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -105,6 +107,10 @@ feature 'User answers survey:' do
   def fill_witness_attributes
     fill_autocomplete('user_survey_witnesses_attributes_0_name', with: @student.name)
     select(@group.title, from: 'user_survey_witnesses_attributes_0_group_id')
+  end
+
+  def upload_file
+    attach_file('user_survey_evidence', File.join(Rails.root, '/spec/support/files/video.mov'))
   end
 
   def fill_autocomplete(field, options = {})
