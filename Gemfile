@@ -33,6 +33,7 @@ gem 'jquery-validation-rails'
 gem 'has_scope'
 gem 'cocoon'
 gem 'jquery-ui-sass-rails'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
