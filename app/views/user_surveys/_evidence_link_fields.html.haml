@@ -1,0 +1,7 @@
+.nested-fields
+  .form-inline
+    .form-group
+      = f.label :url, t('.evidence_link')
+      = f.url_field :url, class: 'form-control'
+    .form-group
+      = link_to_remove_association t('.remove_evidence_link'), f, class: 'btn btn-primary'

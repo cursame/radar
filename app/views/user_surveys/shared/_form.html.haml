@@ -40,7 +40,19 @@
             = render 'witness_fields', f: witness
           .form-group
             = link_to_add_association t('.add_witness'), f, :witnesses, class: 'btn btn-primary'
-
+    .evidence
+      .panel.panel-default
+        .panel-heading
+          %h4.title= t('.evidence')
+        .panel-body
+          .form-group
+            = f.label :evidence, t('.files')
+            = f.file_field :evidence, multiple: true
+          .form-group
+            = f.fields_for :evidence_links do |evidence_link|
+              = render 'evidence_link_fields', f: evidence_link
+          .form-group
+            = link_to_add_association t('.add_evidence_link'), f, :evidence_links, class: 'btn btn-primary'
     .form-group
       = link_to t('.cancel'), :back, class: 'btn btn-primary'
       = f.button t('.save'), type: 'submit', class: 'btn btn-primary'
