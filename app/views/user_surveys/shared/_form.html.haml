@@ -53,6 +53,10 @@
               = render 'evidence_link_fields', f: evidence_link
           .form-group
             = link_to_add_association t('.add_evidence_link'), f, :evidence_links, class: 'btn btn-primary'
+    .comment
+      .form-group
+        = label :comment, t('.comment')
+        = f.text_area :comment, class: 'form-control'
     .form-group
       = link_to t('.cancel'), :back, class: 'btn btn-primary'
       = f.button t('.save'), type: 'submit', class: 'btn btn-primary'

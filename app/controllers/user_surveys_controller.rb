@@ -33,6 +33,7 @@ class UserSurveysController < ApplicationController
   def user_survey_params
     params.require(:user_survey).permit(
       :survey_id,
+      :comment,
       aggressors_attributes: [:id, :name, :group_id, :_destroy],
       witnesses_attributes: [:id, :name, :group_id, :_destroy],
       victim_attributes: [:name, :group_id],
