@@ -267,6 +267,7 @@ es:
         evidence: Pruebas de la denuncia (opcional)
         files: Puedes subir imagenes y videos.
         add_evidence_link: Agregar url
+        comment: Comentario Extra (opcional)
         cancel: Cancelar
         save: Guardar
       user_form:

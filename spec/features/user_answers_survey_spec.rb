@@ -24,6 +24,7 @@ feature 'User answers survey:' do
     fill_witness_attributes
     upload_file
     fill_evidence_link
+    fill_comment
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -45,6 +46,7 @@ feature 'User answers survey:' do
     fill_witness_attributes
     upload_file
     fill_evidence_link
+    fill_comment
     click_on(I18n.t('user_surveys.shared.form.save'))
 
     sees_success_message(I18n.t('flash.notice.user_survey.create'))
@@ -120,6 +122,10 @@ feature 'User answers survey:' do
       'user_survey_evidence_links_attributes_0_url',
       with: Faker::Internet.url
     )
+  end
+
+  def fill_comment
+    fill_in('user_survey_comment', with: Faker::Lorem.paragraph)
   end
 
   def fill_autocomplete(field, options = {})
