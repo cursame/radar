@@ -21,6 +21,7 @@ class UserSurveysController < ApplicationController
     user_survey.user_answers = user_answers
     user_survey.institution = current_institution
     if user_survey.save
+      UserSurveyMailer.denouncer_mail(user_survey.id).deliver_later
       flash[:notice] = I18n.t('flash.notice.user_survey.create')
     else
       flash[:alert] = I18n.t('flash.alert.user_survey.create')

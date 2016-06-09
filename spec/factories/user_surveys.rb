@@ -23,6 +23,8 @@ FactoryGirl.define do
       end
       user_survey.user_answers = answers
       user_survey.save
+
+      create(:denouncer, user_survey: user_survey)
     end
   end
 end
