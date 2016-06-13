@@ -34,6 +34,7 @@ gem 'has_scope'
 gem 'cocoon'
 gem 'jquery-ui-sass-rails'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'aws-ses', '~> 0.6.0', require: 'aws/ses'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

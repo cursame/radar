@@ -292,3 +292,29 @@ es:
   shared:
     navbar:
       logout: Cerrar Sesión
+  user_survey_mailer:
+    denouncer_mail:
+      subject: Tu denuncia en Radar esta siendo atendida
+      title: Radar
+      subtitle: A continuación se muestra la información de tu denuncia.
+      user_survey: Denuncia
+      survey_type: "Tipo de denuncia: %{type}"
+      user_survey_state: "Grado de violencia: %{state}"
+      violence_types: Tipo de violencia en la denuncia
+      denouncer: Denunciante
+      denouncer_name: "Nombre: %{name}"
+      denouncer_phone: "Telefono: %{phone_number}"
+      denouncer_gender: "Género: %{gender}"
+      denouncer_grade: "Grado: %{grade}"
+      denouncer_group: "Grupo: %{group}"
+      victim: Víctima
+      victim_name: "Nombre: %{name}"
+      victim_grade: "Grado: %{grade}"
+      victim_group: "Grupo: %{group}"
+      answers: Preguntas contestas afirmativamente
+      aggressors: Agresores
+      witnesses: Testigos
+      name: Nombre
+      grade: Grado
+      group: Grupo
+      evidence_links: Links de evidencia

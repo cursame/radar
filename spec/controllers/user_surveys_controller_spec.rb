@@ -27,13 +27,16 @@ RSpec.describe UserSurveysController, type: :controller do
       @institution = create(:institution)
       @grade = create(:grade, institution_id: @institution.id)
       @group = create(:group, grade_id: @grade.id)
+      @denouncer_attributes = attributes_for(:denouncer)
       @aggressor_attributes = attributes_for(:aggressor)
       @victim_attributes = attributes_for(:victim)
+      @denouncer_attributes[:group_id] = @group.id
       @aggressor_attributes[:group_id] = @group.id
       @victim_attributes[:group_id] = @group.id
       ids = @survey.questions.map(&:id)
       post :create, user_survey: {
         survey_id: @survey.id,
+        denouncer_attributes: @denouncer_attributes,
         aggressors_attributes: [@aggressor_attributes],
         victim_attributes: @victim_attributes
       },

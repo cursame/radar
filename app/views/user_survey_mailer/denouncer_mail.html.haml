@@ -1,0 +1,80 @@
+!!!
+%html
+  %head
+    %title= t('.title')
+  %body
+    .container
+      .card
+        %p= t('.subtitle')
+        %h3.title= t('.user_survey')
+        %p= t('.survey_type', type: @user_survey.survey.type_survey)
+        %p= t('.user_survey_state', state: @user_survey.name_state)
+        -unless @user_survey.violence_types_array.blank?
+          .row
+            %table.table.table-striped.table-condensed
+              %thead
+                %tr
+                  %th= t('.violence_types')
+              %tbody
+                - @user_survey.violence_types_array.each do |violence|
+                  %tr
+                    %td= violence
+
+        %h3.title= t('.denouncer')
+        %p= t('.denouncer_name', name: @user_survey.denouncer.name) unless @user_survey.denouncer.name.blank?
+        %p= t('.denouncer_phone', phone_number: @user_survey.denouncer.phone_number) unless @user_survey.denouncer.phone_number.blank?
+        %p= t('.denouncer_gender', gender: I18n.t("user_genders.#{@user_survey.denouncer.gender}"))
+        %p= t('.denouncer_grade', grade: @user_survey.denouncer.group.grade.title)
+        %p= t('.denouncer_group', group: @user_survey.denouncer.group.title)
+
+        - unless @user_survey.victim.nil?
+          %h3.title= t('.victim')
+          %p= t('.victim_name', name: @user_survey.victim.name)
+          %p= t('.victim_grade', grade: @user_survey.victim.group.grade.title)
+          %p= t('.victim_group', group: @user_survey.victim.group.title)
+
+        %h3.title= t('.answers')
+        - @user_survey.user_answers.each do |answer|
+          %p= answer.question.text
+
+        - unless @user_survey.aggressors.blank?
+          %h3.title= t('.aggressors')
+          .row
+            %table.table.table-striped.table-condensed
+              %thead
+                %tr
+                  %th= t('.name')
+                  %th= t('.grade')
+                  %th= t('.group')
+              %tbody
+                - @user_survey.aggressors.each do |aggressor|
+                  %tr
+                    %td= aggressor.name
+                    %td= aggressor.group.grade.title
+                    %td= aggressor.group.title
+
+        - unless @user_survey.witnesses.blank?
+          %h3.title= t('.witnesses')
+          .row
+            %table.table.table-striped.table-condensed
+              %thead
+                %tr
+                  %th= t('.name')
+                  %th= t('.grade')
+                  %th= t('.group')
+              %tbody
+                - @user_survey.witnesses.each do |witness|
+                  %tr
+                    %td= witness.name
+                    %td= witness.group.grade.title
+                    %td= witness.group.title
+
+        - unless @user_survey.evidence_links.blank?
+          %h3.title= t('.evidence_links')
+          - @user_survey.evidence_links.each do |link|
+            %p= link.url
+
+        - unless @user_survey.evidence.blank?
+          - @user_survey.evidence.each do |file|
+            - filename = File.basename(file.path)
+            - attachments[filename] = File.read(file.path)
